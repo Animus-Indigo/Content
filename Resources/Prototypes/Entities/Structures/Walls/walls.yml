@@ -589,6 +589,7 @@
   components:
   - type: Sprite
     sprite: Structures/Walls/solid.rsi
+    color: '#666666'
   - type: Icon
     sprite: Structures/Walls/solid.rsi
     state: rgeneric
@@ -661,28 +662,6 @@
   - type: IconSmooth
     key: walls
     base: reinf_over
-
-- type: entity
-  parent: WallShuttleDiagonal
-  id: WallReinforcedDiagonal
-  name: reinforced wall
-  suffix: diagonal
-  placement:
-    mode: SnapgridCenter
-    snap:
-    - Wall
-  components:
-  - type: Sprite
-    drawdepth: Walls
-    sprite: Structures/Walls/reinforced_diagonal.rsi
-    state: state0
-  - type: IconSmooth
-    mode: Diagonal
-    key: walls
-    base: state
-  - type: Icon
-    sprite: Structures/Walls/reinforced_diagonal.rsi
-    state: state0
 
 # Riveting
 - type: entity
@@ -929,6 +908,7 @@
       - Wall
   - type: Sprite
     sprite: Structures/Walls/solid.rsi
+    color: '#666666'
   - type: WallReplacementMarker
   - type: Construction
     graph: Girder
@@ -964,28 +944,6 @@
   - type: IconSmooth
     key: walls
     base: solid
-
-- type: entity
-  parent: WallShuttleDiagonal
-  id: WallSolidDiagonal
-  name: solid wall
-  suffix: diagonal
-  placement:
-    mode: SnapgridCenter
-    snap:
-    - Wall
-  components:
-  - type: Sprite
-    drawdepth: Walls
-    sprite: Structures/Walls/solid_diagonal.rsi
-    state: state0
-  - type: IconSmooth
-    mode: Diagonal
-    key: walls
-    base: state
-  - type: Icon
-    sprite: Structures/Walls/solid_diagonal.rsi
-    state: state0
 
 - type: entity
   parent: WallSolid
@@ -1177,29 +1135,6 @@
   - type: IconSmooth
     key: walls
     base: mining
-
-- type: entity
-  parent: WallShuttleDiagonal
-  id: WallMiningDiagonal
-  name: wall
-  suffix: diagonal
-  placement:
-    mode: SnapgridCenter
-    snap:
-    - Wall
-  components:
-  - type: Sprite
-    drawdepth: Walls
-    sprite: Structures/Walls/mining_diagonal.rsi
-    state: state0
-  - type: IconSmooth
-    mode: Diagonal
-    key: walls
-    base: state
-  - type: Icon
-    sprite: Structures/Walls/mining_diagonal.rsi
-    state: state0
-
 
 # Vault Walls
 

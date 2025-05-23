@@ -104,7 +104,6 @@
     entries:
     - prototype: Window
     - prototype: WindowDirectional
-    - prototype: WindowDiagonal
     - prototype: SheetRGlass
     - prototype: SheetPGlass
     - prototype: SheetUGlass
@@ -207,7 +206,6 @@
     - prototype: SheetRPGlass1
     - prototype: SheetRUGlass1
     - prototype: ReinforcedWindow
-    - prototype: ReinforcedWindowDiagonal
     - prototype: WindowReinforcedDirectional
 
 - type: entity
@@ -310,7 +308,6 @@
     entries:
     - prototype: SheetRPGlass0
     - prototype: PlasmaWindow
-    - prototype: PlasmaWindowDiagonal
     - prototype: PlasmaWindowDirectional
 
 - type: entity
@@ -401,7 +398,6 @@
   - type: ShortConstruction
     entries:
     - prototype: ReinforcedPlasmaWindow
-    - prototype: ReinforcedPlasmaWindowDiagonal
     - prototype: PlasmaReinforcedWindowDirectional
 
 - type: entity
@@ -502,7 +498,6 @@
     entries:
     - prototype: SheetRUGlass0
     - prototype: UraniumWindow
-    - prototype: UraniumWindowDiagonal
     - prototype: UraniumWindowDirectional
 
 - type: entity
@@ -581,7 +576,6 @@
   - type: ShortConstruction
     entries:
     - prototype: ReinforcedUraniumWindow
-    - prototype: ReinforcedUraniumWindowDiagonal
     - prototype: UraniumReinforcedWindowDirectional
 
 - type: entity
