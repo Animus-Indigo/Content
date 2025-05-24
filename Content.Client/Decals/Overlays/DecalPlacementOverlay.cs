@@ -30,7 +30,7 @@ public sealed class DecalPlacementOverlay : Overlay
 
     protected override void Draw(in OverlayDrawArgs args)
     {
-        var (decal, snap, rotation, color) = _placement.GetActiveDecal();
+        var (decal, snap, rotation, color, positionX, positionY) = _placement.GetActiveDecal();
 
         if (decal == null)
             return;
@@ -57,7 +57,7 @@ public sealed class DecalPlacementOverlay : Overlay
 
         if (snap)
         {
-            localPos = localPos.Floored() + grid.TileSizeHalfVector;
+            localPos = localPos.Floored() + new Vector2(positionX, positionY) + grid.TileSizeHalfVector;
         }
 
         // Nothing uses snap cardinals so probably don't need preview?

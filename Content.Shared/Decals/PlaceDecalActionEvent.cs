@@ -5,7 +5,7 @@ namespace Content.Shared.Decals;
 
 public sealed partial class PlaceDecalActionEvent : WorldTargetActionEvent
 {
-    [DataField("decalId", customTypeSerializer:typeof(PrototypeIdSerializer<DecalPrototype>), required:true)]
+    [DataField("decalId", customTypeSerializer: typeof(PrototypeIdSerializer<DecalPrototype>), required: true)]
     public string DecalId = string.Empty;
 
     [DataField("color")]
@@ -16,6 +16,12 @@ public sealed partial class PlaceDecalActionEvent : WorldTargetActionEvent
 
     [DataField("snap")]
     public bool Snap;
+
+    [DataField("positionX")]
+    public float PositionX;
+
+    [DataField("positionY")]
+    public float PositionY;
 
     [DataField("zIndex")]
     public int ZIndex;

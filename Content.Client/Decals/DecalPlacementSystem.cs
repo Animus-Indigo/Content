@@ -30,16 +30,18 @@ public sealed class DecalPlacementSystem : EntitySystem
     private bool _snap;
     private int _zIndex;
     private bool _cleanable;
+    private float _positionX;
+    private float _positionY;
 
     private bool _active;
     private bool _placing;
     private bool _erasing;
 
-    public (DecalPrototype? Decal, bool Snap, Angle Angle, Color Color) GetActiveDecal()
+    public (DecalPrototype? Decal, bool Snap, Angle Angle, Color Color, float PositionX, float PositionY) GetActiveDecal()
     {
         return _active && _decalId != null ?
-            (_protoMan.Index<DecalPrototype>(_decalId), _snap, _decalAngle, _decalColor) :
-            (null, false, Angle.Zero, Color.Wheat);
+            (_protoMan.Index<DecalPrototype>(_decalId), _snap, _decalAngle, _decalColor, _positionX, _positionY) :
+            (null, false, Angle.Zero, Color.Wheat, 0.5f, 0.5f);
     }
 
     public override void Initialize()
@@ -58,8 +60,8 @@ public sealed class DecalPlacementSystem : EntitySystem
                 if (_snap)
                 {
                     var newPos = new Vector2(
-                        (float) (MathF.Round(coords.X - 0.5f, MidpointRounding.AwayFromZero) + 0.5),
-                        (float) (MathF.Round(coords.Y - 0.5f, MidpointRounding.AwayFromZero) + 0.5)
+                        (float) (MathF.Round(coords.X - 0.5f, MidpointRounding.AwayFromZero) + 0.5 + _positionX),
+                        (float) (MathF.Round(coords.Y - 0.5f, MidpointRounding.AwayFromZero) + 0.5 + _positionY)
                     );
                     coords = coords.WithPosition(newPos);
                 }
@@ -148,6 +150,8 @@ public sealed class DecalPlacementSystem : EntitySystem
             Color = _decalColor,
             Rotation = _decalAngle.Degrees,
             Snap = _snap,
+            PositionX = _positionX,
+            PositionY = _positionY,
             ZIndex = _zIndex,
             Cleanable = _cleanable,
         };
@@ -179,7 +183,7 @@ public sealed class DecalPlacementSystem : EntitySystem
         CommandBinds.Unregister<DecalPlacementSystem>();
     }
 
-    public void UpdateDecalInfo(string id, Color color, float rotation, bool snap, int zIndex, bool cleanable)
+    public void UpdateDecalInfo(string id, Color color, float rotation, float positionX, float positionY, bool snap, int zIndex, bool cleanable)
     {
         _decalId = id;
         _decalColor = color;
@@ -187,6 +191,8 @@ public sealed class DecalPlacementSystem : EntitySystem
         _snap = snap;
         _zIndex = zIndex;
         _cleanable = cleanable;
+        _positionX = positionX;
+        _positionY = positionY;
     }
 
     public void SetActive(bool active)

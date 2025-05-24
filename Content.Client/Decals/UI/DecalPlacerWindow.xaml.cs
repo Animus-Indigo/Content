@@ -29,6 +29,10 @@ public sealed partial class DecalPlacerWindow : DefaultWindow
     private bool _useColor;
     private bool _snap;
     private float _rotation;
+    private Slider _positionXSlider => PositionX;
+    private Slider _positionYSlider => PositionY;
+    private float _positionX = 0;
+    private float _positionY = 0;
     private bool _cleanable;
     private int _zIndex;
 
@@ -83,6 +87,18 @@ public sealed partial class DecalPlacerWindow : DefaultWindow
             _rotation = args.Value;
             UpdateDecalPlacementInfo();
         };
+        _positionXSlider.OnValueChanged += args =>
+        {
+            args.Value = (float) Math.Round(args.Value, 1);
+            _positionX = args.Value;
+            UpdateDecalPlacementInfo();
+        };
+        _positionYSlider.OnValueChanged += args =>
+        {
+            args.Value = (float) Math.Round(args.Value, 1);
+            _positionY = args.Value;
+            UpdateDecalPlacementInfo();
+        };
         EnableAuto.OnToggled += args =>
         {
             _auto = args.Pressed;
@@ -125,7 +141,7 @@ public sealed partial class DecalPlacerWindow : DefaultWindow
             return;
 
         var color = _useColor ? _color : Color.White;
-        _decalPlacementSystem.UpdateDecalInfo(_selected, color, _rotation, _snap, _zIndex, _cleanable);
+        _decalPlacementSystem.UpdateDecalInfo(_selected, color, _rotation, _positionX, _positionY, _snap, _zIndex, _cleanable);
     }
 
     private void RefreshList()

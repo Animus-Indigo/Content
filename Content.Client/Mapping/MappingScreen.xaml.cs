@@ -26,10 +26,14 @@ public sealed partial class MappingScreen : InGameScreen
 
     private ProtoId<DecalPrototype>? _id;
     private readonly FloatSpinBox _rotationSpinBox;
+    private Slider _positionXSlider => PositionX;
+    private Slider _positionYSlider => PositionY;
     public Color DecalColor { get; private set; } = Color.White;
     private bool _decalEnableColor;
     private float _decalRotation;
     private bool _decalSnap;
+    private float _decalPositionX = 0;
+    private float _decalPositionY = 0;
     private int _decalZIndex;
     private bool _decalCleanable;
 
@@ -67,6 +71,18 @@ public sealed partial class MappingScreen : InGameScreen
         _rotationSpinBox.OnValueChanged += args =>
         {
             _decalRotation = args.Value;
+            UpdateDecal();
+        };
+        _positionXSlider.OnValueChanged += args =>
+        {
+            args.Value = (float) Math.Round(args.Value, 1);
+            _decalPositionX = args.Value;
+            UpdateDecal();
+        };
+        _positionYSlider.OnValueChanged += args =>
+        {
+            args.Value = (float) Math.Round(args.Value, 1);
+            _decalPositionY = args.Value;
             UpdateDecal();
         };
         DecalEnableAuto.OnToggled += args =>
@@ -165,7 +181,7 @@ public sealed partial class MappingScreen : InGameScreen
         if (_id is not { } id)
             return;
 
-        DecalSystem.UpdateDecalInfo(id, _decalEnableColor ? DecalColor : Color.White, _decalRotation, _decalSnap, _decalZIndex, _decalCleanable);
+        DecalSystem.UpdateDecalInfo(id, _decalEnableColor ? DecalColor : Color.White, _decalRotation, _decalPositionX, _decalPositionY, _decalSnap, _decalZIndex, _decalCleanable);
     }
 
     public void SelectDecal(string decalId)
