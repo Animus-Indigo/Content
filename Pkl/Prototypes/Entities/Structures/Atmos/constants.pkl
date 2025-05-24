@@ -1,0 +1,1 @@
+typealias PipeLayer = UInt8(this < 5)

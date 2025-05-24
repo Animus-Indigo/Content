@@ -8,5 +8,6 @@ construction-category-machines = Machines
 construction-category-weapons = Weapons
 construction-category-tiles = Tiles
 construction-category-utilities = Utilities
+construction-category-gas-pipes = Gas pipes
 construction-category-misc = Misc
 construction-category-clothing = Clothing

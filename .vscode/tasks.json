@@ -103,7 +103,7 @@
             "type": "process",
             "args": [
                 "eval",
-                "${cwd}/Pkl/Prototypes/*.pkl",
+                "${cwd}/Pkl/Prototypes/**/*.pkl",
                 "--format",
                 "yaml",
                 "-o",
@@ -117,7 +117,7 @@
             "type": "process",
             "args": [
                 "eval",
-                "${cwd}/Pkl/Prototypes/*.pkl",
+                "${cwd}/Pkl/Prototypes/**/*.pkl",
                 "--format",
                 "yaml",
                 "-o",
@@ -131,7 +131,7 @@
             "type": "process",
             "args": [
                 "eval",
-                "${cwd}/Pkl/Prototypes/*.pkl",
+                "${cwd}/Pkl/Prototypes/**/*.pkl",
                 "--format",
                 "yaml",
                 "-o",

@@ -1,100 +1,24 @@
 module base
 
-// Base types
+import "typings.pkl"
 
-typealias EntityUid = String
+content: Listing<typings.Prototype|typings.EntityPrototype> = new {}
 
-typealias ProtoId = String
-
-typealias EntProtoId = String
-
-typealias LocId = String
-
-local const function IsResourceExists(p: String): Boolean = read("file:Resources\(p)") != null
-
-typealias ResPath = String(IsResourceExists(this))
-
-// typealias SoundSpecifier = String(IsResourceExists(this))
-
-class AudioParams {
-    volume: Float?
-    pitch: Float?
-    maxDistance: Float?
-    rolloffFactor: Float?
-    referenceDistance: Float?
-    loop: Boolean?
-    playOffsetSeconds: Float?
-    variation: Float?
-}
-
-abstract class SoundSpecifierBase {
-    params: AudioParams?
-}
-
-class SoundPathSpecifier extends SoundSpecifierBase {
-    path: ResPath
-}
-
-class SoundCollectionSpecifier extends SoundSpecifierBase {
-    collection: String|Null
-}
-
-typealias SoundSpecifier = SoundSpecifierBase|ResPath
-
-class Vector2i {
-    x: Int
-    y: Int
-}
-
-class Vector2 {
-    x: Float
-    y: Float
-}
-
-class Vector3 {
-    x: Float
-    y: Float
-    z: Float
-}
-
-local const function IsHexColor(hex: String): Boolean = hex.startsWith("#") && (hex.length == 7 || hex.length == 9)
-
-const function ColorRGB(r: UInt8, g: UInt8, b: UInt8): Color = ColorRGBA(r, g, b, 255)
-
-const function ColorRGBA(r: UInt8, g: UInt8, b: UInt8, a: UInt8): Color = "#\(r.toRadixString(16))\(g.toRadixString(16))\(b.toRadixString(16))\(a.toRadixString(16))"
-
-typealias Color = String(IsHexColor(this))
-
-typealias Angle = Int
-
-typealias FixedPoint2 = Float
-
-// Prototype
-
-abstract class Component {
-    fixed type: String
-    id: String
-    `abstract`: Boolean?
-}
-
-abstract class Prototype {
-    fixed type: String
-    id: String
-}
-
-typealias ComponentRegistry = Listing<Component>
-
-content: Listing<Prototype|Component> = new {
-
+local const function RenderTaggedClass(v: typings.TaggedClass): Any = new Mapping {
+    [new RenderDirective { text = "!type" }] = new RenderDirective { text = v.getClass().simpleName }
+    ...v.toMap()
 }
 
 output {
     value = content
     renderer = new YamlRenderer {
         converters {
-            [Vector2i] = (v) -> "\(v.x),\(v.y)"
-            [Vector2] = (v) -> "\(v.x),\(v.y)"
-            [Vector3] = (v) -> "\(v.x),\(v.y),\(v.z)"
+            [typings.Vector2] = (v) -> "\(v.x),\(v.y)"
+            [typings.Vector2i] = (v) -> "\(v.x),\(v.y)"
+            [typings.Vector3] = (v) -> "\(v.x),\(v.y),\(v.z)"
+            [typings.Box2] = (v) -> "\(v.left),\(v.bottom),\(v.right),\(v.top)"
+            [typings.Box2i] = (v) -> "\(v.left),\(v.bottom),\(v.right),\(v.top)"
+            [typings.TaggedClass] = (v) -> RenderTaggedClass(v)
         }
     }
 }

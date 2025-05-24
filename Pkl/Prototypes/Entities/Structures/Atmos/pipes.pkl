@@ -1,0 +1,534 @@
+amends "../../../../base.pkl"
+
+import "../../../../typings.pkl"
+import "constants.pkl"
+
+local typealias PipeLayer = constants.PipeLayer
+local const CommonParent = "GasPipeBase"
+
+content {
+    new typings.EntityPrototype {
+        parent { "BaseItem" }
+        id = CommonParent
+        `abstract` = true
+        placement {
+            mode = "SnapgridCenter"
+        }
+        components {
+            new typings.ItemComponent {
+                size = "Normal"
+            }
+            new typings.TransformComponent {
+                anchored = true
+            }
+            new typings.DamageableComponent {
+                damageContainer = "Inorganic"
+                damageModifierSet = "Metallic"
+            }
+            new typings.SubFloorHideComponent {}
+            new typings.CollideOnAnchorComponent {}
+            new typings.AnchorableComponent {}
+            new typings.RotatableComponent {}
+            new typings.RCDDeconstructableComponent {
+                cost = 1
+                delay = 2.0
+                fx = "EffectRCDDeconstruct2"
+                rpd = true
+            }
+            new typings.DestructibleComponent {
+                thresholds {
+                    // For nukes
+                    new typings.DamageThreshold {
+                        trigger = new typings.DamageTrigger {
+                            damage = 200
+                        }
+                        behaviors {
+                            new typings.DoActsBehavior {
+                                acts = "Destruction"
+                            }
+                        }
+                    }
+                    // Regular damage trigger (replace with broken pipe)
+                    new typings.DamageThreshold {
+                        trigger = new typings.DamageTrigger {
+                            damage = 100
+                        }
+                        behaviors {
+                            new typings.PlaySoundBehavior {
+                                sound = new typings.SoundCollectionSpecifier {
+                                    collection = "MetalBreak"
+                                    params {
+                                        volume = -8.0
+                                    }
+                                }
+                            }
+                            new typings.SpawnEntitiesBehavior {
+                                spawn {
+                                    ["GasPipeBroken"] {
+                                        min = 1
+                                        max = 1
+                                    }
+                                }
+                                offset = 0.0
+                            }
+                            new typings.DoActsBehavior {
+                                acts = "Breakage"
+                            }
+                        }
+                    }
+                }
+            }
+            new typings.SpriteComponent {
+                sprite = "/Textures/Structures/Piping/Atmospherics/pipe.rsi"
+                drawdepth = "ThinPipe"
+                netsync = false
+                visible = false
+                noRot = true
+            }
+            new typings.AppearanceComponent {}
+            new typings.PipeColorVisualsComponent {}
+            new typings.AtmosPipeConnectionVisualsComponent {}
+            new typings.NodeContainerComponent {}
+            new typings.AtmosUnsafeUnanchorComponent {}
+            new typings.AtmosPipeColorComponent {}
+            new typings.AtmosPipeComponent {}
+            new typings.AtmosMonitoringConsoleDeviceComponent {}
+            new typings.TagComponent {
+                tags = Set("Pipe")
+            }
+            new typings.PhysicsComponent {
+                canCollide = false
+                bodyType = "Static"
+            }
+            new typings.StaticPriceComponent {
+                price = 11.0
+            }
+        }
+    }
+
+    // Goobstation - Allow device-on-pipe stacking
+
+    new typings.EntityPrototype {
+        parent { CommonParent }
+        id = "GasPipeNoOverlap"
+        `abstract` = true
+        components {
+            new typings.PipeRestrictOverlapComponent {}
+        }
+    }
+
+    // Note: The PipeDirection of the PipeNode should be the south-facing version, because the entity starts at an angle of 0 (south)
+
+    // Half
+
+    new typings.EntityPrototype {
+        parent { "GasPipeNoOverlap" }
+        id = "GasPipeHalf"
+        `abstract` = true
+        components {
+            new typings.NodeContainerComponent {
+                nodes {
+                    ["pipe"] = new typings.PipeNode {
+                        nodeGroupID = "Pipe"
+                        pipeDirection = "South"
+                    }
+                }
+            }
+            new typings.IconComponent {
+                sprite = "/Textures/Structures/Piping/Atmospherics/pipe.rsi"
+                state = "pipeHalf"
+            }
+        }
+    }
+
+    GeneratePipeHalf(0)
+    GeneratePipeHalf(1)
+    GeneratePipeHalf(2)
+    GeneratePipeHalf(3)
+    GeneratePipeHalf(4)
+
+    new typings.EntityPrototype {
+        parent { CommonParent }
+        id = "GasPipeStraight"
+        `abstract` = true
+        components {
+            new typings.NodeContainerComponent {
+                nodes {
+                    ["pipe"] = new typings.PipeNode {
+                        nodeGroupID = "Pipe"
+                        pipeDirection = "Longitudinal"
+                    }
+                }
+            }
+            new typings.IconComponent {
+                sprite = "/Textures/Structures/Piping/Atmospherics/pipe.rsi"
+                state = "pipeStraight"
+            }
+            new typings.ItemComponent {
+                size = "Normal"
+                storedSprite = new typings.Rsi {
+                    sprite = "/Textures/Structures/Piping/Atmospherics/pipe.rsi"
+                    state = "storageStraight"
+                }
+                shape {
+                    typings.Box2i(0, 0, 0, 2)
+                }
+            }
+            new typings.MeleeWeaponComponent {
+                attackRate = 1.0
+                damage {
+                    types {
+                        ["Blunt"] = 8.0
+                    }
+                }
+                soundHit = new typings.SoundCollectionSpecifier {
+                    collection = "MetalThud"
+                }
+            }
+        }
+    }
+
+    GeneratePipeStraight(0)
+    GeneratePipeStraight(1)
+    GeneratePipeStraight(2)
+    GeneratePipeStraight(3)
+    GeneratePipeStraight(4)
+
+    new typings.EntityPrototype {
+        parent { "GasPipeNoOverlap" }
+        id = "GasPipeBend"
+        `abstract` = true
+        components {
+            new typings.NodeContainerComponent {
+                nodes {
+                    ["pipe"] = new typings.PipeNode {
+                        nodeGroupID = "Pipe"
+                        pipeDirection = "SWBend"
+                    }
+                }
+            }
+            new typings.IconComponent {
+                sprite = "/Textures/Structures/Piping/Atmospherics/pipe.rsi"
+                state = "pipeBend"
+            }
+            new typings.ItemComponent {
+                size = "Small"
+                shape {
+                    typings.Box2i(0, 0, 1, 0)
+                    typings.Box2i(1, 1, 1, 1)
+                }
+                heldPrefix = "Bend"
+                storedSprite = new typings.Rsi {
+                    sprite = "/Textures/Structures/Piping/Atmospherics/pipe.rsi"
+                    state = "storageBend"
+                }
+            }
+            new typings.MeleeWeaponComponent {
+                wideAnimationRotation = 180.0
+                attackRate = 1.0
+                damage {
+                    types {
+                        ["Blunt"] = 6.0
+                    }
+                }
+                soundHit = new typings.SoundCollectionSpecifier {
+                    collection = "MetalThud"
+                }
+            }
+            new typings.DamageOtherOnHitComponent {
+                damage {
+                    types {
+                        ["Blunt"] = 3.0
+                    }
+                }
+            }
+        }
+    }
+
+    GeneratePipeBend(0)
+    GeneratePipeBend(1)
+    GeneratePipeBend(2)
+    GeneratePipeBend(3)
+    GeneratePipeBend(4)
+
+    new typings.EntityPrototype {
+        parent { "GasPipeNoOverlap" }
+        id = "GasPipeTJunction"
+        `abstract` = true
+        components {
+            new typings.NodeContainerComponent {
+                nodes {
+                    ["pipe"] = new typings.PipeNode {
+                        nodeGroupID = "Pipe"
+                        pipeDirection = "TSouth"
+                    }
+                }
+            }
+            new typings.IconComponent {
+                sprite = "/Textures/Structures/Piping/Atmospherics/pipe.rsi"
+                state = "pipeTJunction"
+            }
+            new typings.ItemComponent {
+                size = "Normal"
+                shape {
+                    typings.Box2i(0, 0, 2, 0)
+                    typings.Box2i(1, 1, 1, 1)
+                }
+                heldPrefix = "TJunction"
+                storedSprite = new typings.Rsi {
+                    sprite = "/Textures/Structures/Piping/Atmospherics/pipe.rsi"
+                    state = "storageTJunction"
+                }
+            }
+            new typings.MeleeWeaponComponent {
+                wideAnimationRotation = 90.0
+                attackRate = 0.75
+                damage {
+                    types {
+                        ["Blunt"] = 10.0
+                    }
+                }
+                soundHit = new typings.SoundCollectionSpecifier {
+                    collection = "MetalThud"
+                }
+            }
+        }
+    }
+
+    GeneratePipeTJunction(0)
+    GeneratePipeTJunction(1)
+    GeneratePipeTJunction(2)
+    GeneratePipeTJunction(3)
+    GeneratePipeTJunction(4)
+
+    new typings.EntityPrototype {
+        parent { "GasPipeNoOverlap" }
+        id = "GasPipeFourway"
+        `abstract` = true
+        components {
+            new typings.TransformComponent {
+                noRot = true
+            }
+            new typings.NodeContainerComponent {
+                nodes {
+                    ["pipe"] = new typings.PipeNode {
+                        nodeGroupID = "Pipe"
+                        pipeDirection = "Fourway"
+                    }
+                }
+            }
+            new typings.IconComponent {
+                sprite = "/Textures/Structures/Piping/Atmospherics/pipe.rsi"
+                state = "pipeFourway"
+            }
+            new typings.ItemComponent {
+                size = "Normal"
+                shape {
+                    typings.Box2i(1, 0, 1, 2)
+                    typings.Box2i(0, 1, 2, 1)
+                }
+                heldPrefix = "Fourway"
+            }
+            new typings.MeleeWeaponComponent {
+                wideAnimationRotation = 90.0
+                attackRate = 0.75
+                damage {
+                    types {
+                        ["Blunt"] = 10.0
+                    }
+                }
+                soundHit = new typings.SoundCollectionSpecifier {
+                    collection = "MetalThud"
+                }
+            }
+        }
+    }
+
+    GeneratePipeFourway(0)
+    GeneratePipeFourway(1)
+    GeneratePipeFourway(2)
+    GeneratePipeFourway(3)
+    GeneratePipeFourway(4)
+
+    new typings.EntityPrototype {
+        parent { "GasPipeNoOverlap" }
+        id = "GasPipeBroken"
+        components {
+            new typings.SpriteComponent {
+                sprite = "/Textures/Structures/Piping/Atmospherics/pipe.rsi"
+                drawdepth = "ThinPipe"
+                state = "pipeBroken"
+                layers {
+                    new typings.PrototypeLayerData {
+                        state = "pipeBroken"
+                        map = Set("enum.PipeVisualLayers.Pipe")
+                    }
+                }
+            }
+            new typings.ConstructionComponent {
+                graph = "GasPipe"
+                node = "broken"
+            }
+            new typings.DestructibleComponent {
+                // Override parent to avoid recursive destruction
+                thresholds {
+                    new typings.DamageThreshold {
+                        trigger = new typings.DamageTrigger {
+                            damage = 100
+                        }
+                        behaviors {
+                            new typings.DoActsBehavior {
+                                acts = "Destruction"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+local const function GeneratePipeHalf(l: PipeLayer): typings.EntityPrototype = new typings.EntityPrototype {
+    parent { "GasPipeHalf" }
+    id = "GasPipeHalf\(l)"
+    suffix = "Half, \(l)"
+    components {
+        new typings.NodeContainerComponent {
+            nodes {
+                ["pipe"] = new typings.PipeNode {
+                    nodeGroupID = "Pipe"
+                    pipeDirection = "South"
+                    layer = l
+                }
+            }
+        }
+        new typings.SpriteComponent {
+            layers {
+                new typings.PrototypeLayerData {
+                    state = "pipeHalf_\(l)"
+                    map = Set("enum.PipeVisualLayers.Pipe")
+                }
+            }
+        }
+        new typings.ConstructionComponent {
+            graph = "GasPipe"
+            node = "half\(l)"
+        }
+    }
+}
+
+local const function GeneratePipeStraight(l: PipeLayer): typings.EntityPrototype = new typings.EntityPrototype {
+    parent { "GasPipeStraight" }
+    id = "GasPipeStraight\(l)"
+    suffix = "Straight, \(l)"
+    components {
+        new typings.NodeContainerComponent {
+            nodes {
+                ["pipe"] = new typings.PipeNode {
+                    nodeGroupID = "Pipe"
+                    pipeDirection = "Longitudinal"
+                    layer = 0
+                }
+            }
+        }
+        new typings.SpriteComponent {
+            layers {
+                new typings.PrototypeLayerData {
+                    state = "pipeStraight_\(l)"
+                    map = Set("enum.PipeVisualLayers.Pipe")
+                }
+            }
+        }
+        new typings.ConstructionComponent {
+            graph = "GasPipe"
+            node = "straight\(l)"
+        }
+    }
+}
+
+local const function GeneratePipeBend(l: PipeLayer): typings.EntityPrototype = new typings.EntityPrototype {
+    parent { "GasPipeBend" }
+    id = "GasPipeBend\(l)"
+    suffix = "Bend, \(l)"
+    components {
+        new typings.NodeContainerComponent {
+            nodes {
+                ["pipe"] = new typings.PipeNode {
+                    nodeGroupID = "Pipe"
+                    pipeDirection = "SWBend"
+                    layer = l
+                }
+            }
+        }
+        new typings.SpriteComponent {
+            layers {
+                new typings.PrototypeLayerData {
+                    state = "pipeBend_\(l)"
+                    map = Set("enum.PipeVisualLayers.Pipe")
+                }
+            }
+        }
+        new typings.ConstructionComponent {
+            graph = "GasPipe"
+            node = "bend\(l)"
+        }
+    }
+}
+
+local const function GeneratePipeTJunction(l: PipeLayer): typings.EntityPrototype = new typings.EntityPrototype {
+    parent { "GasPipeTJunction" }
+    id = "GasPipeTJunction\(l)"
+    suffix = "T-Junction, \(l)"
+    components {
+        new typings.NodeContainerComponent {
+            nodes {
+                ["pipe"] = new typings.PipeNode {
+                    nodeGroupID = "Pipe"
+                    pipeDirection = "TSouth"
+                    layer = l
+                }
+            }
+        }
+        new typings.SpriteComponent {
+            layers {
+                new typings.PrototypeLayerData {
+                    state = "pipeTJunction_\(l)"
+                    map = Set("enum.PipeVisualLayers.Pipe")
+                }
+            }
+        }
+        new typings.ConstructionComponent {
+            graph = "GasPipe"
+            node = "tjunction\(l)"
+        }
+    }
+}
+
+local const function GeneratePipeFourway(l: PipeLayer): typings.EntityPrototype = new typings.EntityPrototype {
+    parent { "GasPipeFourway" }
+    id = "GasPipeFourway\(l)"
+    suffix = "Fourway, \(l)"
+    components {
+        new typings.NodeContainerComponent {
+            nodes {
+                ["pipe"] = new typings.PipeNode {
+                    nodeGroupID = "Pipe"
+                    pipeDirection = "Fourway"
+                    layer = l
+                }
+            }
+        }
+        new typings.SpriteComponent {
+            layers {
+                new typings.PrototypeLayerData {
+                    state = "pipeFourway_\(l)"
+                    map = Set("enum.PipeVisualLayers.Pipe")
+                }
+            }
+        }
+        new typings.ConstructionComponent {
+            graph = "GasPope"
+            node = "fourway\(l)"
+        }
+    }
+}

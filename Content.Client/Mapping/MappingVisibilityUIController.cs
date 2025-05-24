@@ -1,3 +1,4 @@
+using Content.Client.Atmos.Components;
 using Content.Client.Decals;
 using Content.Client.Markers;
 using Content.Client.SubFloor;
@@ -10,7 +11,9 @@ using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 
+
 namespace Content.Client.Mapping;
+
 
 public sealed class MappingVisibilityUIController : UIController
 {
@@ -91,7 +94,7 @@ public sealed class MappingVisibilityUIController : UIController
         _window.Disposal.OnPressed += args => ToggleWithTag(args, DisposalTag);
 
         _window.Atmos.Pressed = true;
-        _window.Atmos.OnPressed += ToggleWithComp<PipeAppearanceComponent>;
+        _window.Atmos.OnPressed += ToggleWithComp<AtmosPipeConnectionVisualsComponent>;
 
         LayoutContainer.SetAnchorPreset(_window, LayoutContainer.LayoutPreset.CenterTop);
     }

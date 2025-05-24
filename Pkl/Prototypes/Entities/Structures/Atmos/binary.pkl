@@ -1,0 +1,679 @@
+amends "../../../../base.pkl"
+
+import "../../../../typings.pkl"
+import "constants.pkl"
+
+local typealias PipeLayer = constants.PipeLayer
+local const CommonParent = "GasBinaryBase"
+
+content {
+    new typings.EntityPrototype {
+        parent { "GasPipeBase" }
+        id = CommonParent
+        `abstract` = true
+        placement {
+            mode = "SnapgridCenter"
+        }
+        components {
+            new typings.AtmosDeviceComponent {}
+            new typings.TagComponent {
+                tags = Set("Unstackable")
+            }
+            new typings.SubFloorHideComponent {
+                blockInteractions = false
+                blockAmbience = false
+            }
+            new typings.NodeContainerComponent {
+                nodes {
+                    ["inlet"] = new typings.PipeNode {
+                        nodeGroupID = "Pipe"
+                        pipeDirection = "North"
+                    }
+                    ["outlet"] = new typings.PipeNode {
+                        nodeGroupID = "Pipe"
+                        pipeDirection = "South"
+                    }
+                }
+            }
+        }
+    }
+    new typings.EntityPrototype {
+        parent { CommonParent }
+        id = "GasPressurePump"
+        `abstract` = true
+        placement {
+            mode = "SnapgridCenter"
+        }
+        components {
+            new typings.SpriteComponent {
+                netsync = false
+                sprite = "Structures/Piping/Atmospherics/pump.rsi"
+            }
+            new typings.GasPressurePumpComponent {
+                enabled = false
+            }
+            new typings.UserInterfaceComponent {
+                interfaces {
+                    ["enum.GasPressurePumpUiKey.Key"] {
+                        type = "GasPressurePumpBoundUserInterface"
+                    }
+                }
+            }
+            new typings.AmbientSoundComponent {
+                enabled = false
+                volume = -9.0
+                range = 5.0
+                sound = new typings.SoundPathSpecifier {
+                    path = "/Audio/Ambience/Objects/gas_pump.ogg"
+                }
+            }
+            new typings.AtmosMonitoringConsoleDeviceComponent {
+                navMapBlip = "GasFlowRegulator"
+            }
+            new typings.StationAiWhitelistComponent {}
+        }
+    }
+
+    GeneratePressurePump(0)
+    GeneratePressurePump(1)
+    GeneratePressurePump(2)
+    GeneratePressurePump(3)
+    GeneratePressurePump(4)
+
+    new typings.EntityPrototype {
+        parent { CommonParent }
+        id = "GasVolumePump"
+        `abstract` = true
+        placement {
+            mode = "SnapgridCenter"
+        }
+        components {
+            new typings.SpriteComponent {
+                netsync = false
+                sprite = "Structures/Piping/Atmospherics/pump.rsi"
+            }
+            new typings.GasVolumePumpComponent {
+                enabled = false
+            }
+            new typings.UserInterfaceComponent {
+                interfaces {
+                    ["enum.GasVolumePumpUiKey.Key"] {
+                        type = "GasVolumePumpBoundUserInterface"
+                    }
+                }
+            }
+            new typings.ConstructionComponent {
+                graph = "GasBinary"
+                node = "volumepump"
+            }
+            new typings.AmbientSoundComponent {
+                enabled = false
+                volume = -9.0
+                range = 5.0
+                sound = new typings.SoundPathSpecifier {
+                    path = "/Audio/Ambience/Objects/gas_pump.ogg"
+                }
+            }
+            new typings.DeviceNetworkComponent {
+                deviceNetId = "AtmosDevices"
+                receiveFrequencyId = "AtmosMonitor"
+                transmitFrequencyId = "AtmosMonitor"
+                sendBroadcastAttemptEvent = true
+                examinableAddress = true
+                prefix = "device-address-prefix-volume-pump"
+            }
+            new typings.WiredNetworkComponent {}
+            new typings.AtmosMonitoringConsoleDeviceComponent {
+                navMapBlip = "GasFlowRegulator"
+            }
+            new typings.StationAiWhitelistComponent {}
+        }
+    }
+
+    GenerateVolumePump(0)
+    GenerateVolumePump(1)
+    GenerateVolumePump(2)
+    GenerateVolumePump(3)
+    GenerateVolumePump(4)
+
+    new typings.EntityPrototype {
+        parent { CommonParent }
+        id = "GasPassiveGate"
+        `abstract` = true
+        placement {
+            mode = "SnapgridCenter"
+        }
+        components {
+            new typings.SpriteComponent {
+                netsync = false
+                sprite = "Structures/Piping/Atmospherics/pump.rsi"
+            }
+            new typings.GasPassiveGateComponent {}
+            new typings.AmbientSoundComponent {
+                enabled = true
+                volume = -9.0
+                range = 5.0
+                sound = new typings.SoundPathSpecifier {
+                    path = "/Audio/Ambience/Objects/gas_hiss.ogg"
+                }
+            }
+            new typings.AtmosMonitoringConsoleDeviceComponent {
+                navMapBlip = "GasValve"
+            }
+        }
+    }
+
+    GeneratePassiveGate(0)
+    GeneratePassiveGate(1)
+    GeneratePassiveGate(2)
+    GeneratePassiveGate(3)
+    GeneratePassiveGate(4)
+
+    new typings.EntityPrototype {
+        parent { CommonParent }
+        id = "GasValve"
+        `abstract` = true
+        placement {
+            mode = "SnapgridCenter"
+        }
+        components {
+            new typings.SpriteComponent {
+                netsync = false
+                sprite = "Structures/Piping/Atmospherics/pump.rsi"
+            }
+            new typings.GasValveComponent {}
+            new typings.AmbientSoundComponent {
+                enabled = false
+                volume = -9.0
+                range = 5.0
+                sound = new typings.SoundPathSpecifier {
+                    path = "/Audio/Ambience/Objects/gas_hiss.ogg"
+                }
+            }
+            new typings.AtmosMonitoringConsoleDeviceComponent {
+                navMapBlip = "GasValve"
+            }
+        }
+    }
+
+    GenerateValve(0)
+    GenerateValve(1)
+    GenerateValve(2)
+    GenerateValve(3)
+    GenerateValve(4)
+
+    // TODO: SignalControlledValve
+
+    new typings.EntityPrototype {
+        parent { CommonParent }
+        id = "GasPort"
+        placement {
+            mode = "SnapgridCenter"
+        }
+        components {
+            new typings.SpriteComponent {
+                netsync = false
+                sprite = "Structures/Piping/Atmospherics/gascanisterport.rsi"
+                layers {
+                    new typings.PrototypeLayerData {
+                        sprite = "/Textures/Structures/Piping/Atmospherics/pipe.rsi"
+                        state = "pipeHalf_2"
+                        map = Set("enum.PipeVisualLayers.Pipe")
+                    }
+                    new typings.PrototypeLayerData {
+                        state = "gasCanisterPort"
+                        map = Set("enum.SubfloorLayers.FirstLayer")
+                    }
+                }
+            }
+            new typings.AppearanceComponent {}
+            new typings.PipeColorVisualsComponent {}
+            new typings.GasPortableComponent {}
+            new typings.NodeContainerComponent {
+                nodes {
+                    ["connected"] = new typings.PortPipeNode {
+                        nodeGroupID = "Pipe"
+                        pipeDirection = "South"
+                        layer = 2
+                    }
+                }
+            }
+            new typings.ConstructionComponent {
+                graph = "GasBinary"
+                node = "port"
+            }
+            new typings.AtmosMonitoringConsoleDeviceComponent {
+                navMapBlip = "GasVentOpening"
+            }
+        }
+    }
+
+    new typings.EntityPrototype {
+        parent { "GasVentPump" }
+        id = "GasDualPortVentPump"
+        placement {
+            mode = "SnapgridCenter"
+        }
+        components {
+            new typings.SpriteComponent {
+                drawdepth = "FloorObjects"
+                netsync = false
+                state = "Structures/Piping/Atmospherics/vent.rsi"
+                layers {
+                    new typings.PrototypeLayerData {
+                        sprite = "/Textures/Structures/Piping/Atmospherics/pipe.rsi"
+                        state = "pipeStraight_2"
+                        map = Set("enum.PipeVisualLayers.Pipe")
+                    }
+                    new typings.PrototypeLayerData {
+                        state = "vent_off"
+                        map = Set("enabled", "enum.SubfloorLayers.FirstLayer")
+                    }
+                }
+            }
+            new typings.GenericVisualizerComponent {
+                visuals {
+                    ["enum.VentPumpVisuals.State"] {
+                        ["enabled"] {
+                            ["Off"] = new typings.PrototypeLayerData {
+                                state = "vent_off"
+                            }
+                            ["In"] = new typings.PrototypeLayerData {
+                                state = "vent_in"
+                            }
+                            ["Out"] = new typings.PrototypeLayerData {
+                                state = "vent_out"
+                            }
+                            ["Welded"] = new typings.PrototypeLayerData {
+                                state = "vent_welded"
+                            }
+                        }
+                    }
+                }
+            }
+            new typings.GasVentPumpComponent {
+                inlet = "inlet"
+                outlet = "outlet"
+                canLink = true
+            }
+            new typings.DeviceNetworkComponent {
+                deviceNetId = "Wireless"
+                receiveFrequencyId = "BasicDevice"
+            }
+            new typings.WirelessNetworkComponent {
+                range = 200
+            }
+            new typings.DeviceLinkSinkComponent {
+                ports = Set("Pressurize", "Depressurize")
+            }
+            new typings.ConstructionComponent {
+                graph = "GasBinary"
+                node = "dualportventpump"
+            }
+            new typings.NodeContainerComponent {
+                nodes {
+                    ["inlet"] = new typings.PipeNode {
+                        nodeGroupID = "Pipe"
+                        pipeDirection = "North"
+                        layer = 2
+                    }
+                    ["outlet"] = new typings.PipeNode {
+                        nodeGroupID = "Pipe"
+                        pipeDirection = "South"
+                        layer = 2
+                    }
+                }
+            }
+            new typings.AtmosMonitoringConsoleDeviceComponent {
+                navMapBlip = "GasVentOpening"
+            }
+        }
+    }
+
+    new typings.EntityPrototype {
+        parent {
+            "BaseMachine"
+            "ConstructibleMachine"
+        }
+        id = "GasRecycler"
+        placement {
+            mode = "SnapgridCenter"
+        }
+        components {
+            new typings.SpriteComponent {
+                sprite = "Structures/Machines/gasrecycler.rsi"
+                netsync = false
+                layers {
+                    new typings.PrototypeLayerData {
+                        sprite = "/Textures/Structures/Piping/Atmospherics/pipe.rsi"
+                        state = "pipeStraight_2"
+                        map = Set("enum.PipeVisualLayers.Pipe")
+                    }
+                    new typings.PrototypeLayerData {
+                        state = "running"
+                    }
+                    new typings.PrototypeLayerData {
+                        state = "unlit"
+                        shader = "unshaded"
+                    }
+                }
+            }
+            new typings.GenericVisualizerComponent {
+                visuals {
+                    ["enum.PumpVisuals.Enabled"] {
+                        ["enabled"] {
+                            ["True"] {
+                                state = "running"
+                            }
+                            ["False"] {
+                                state = "unlit"
+                            }
+                        }
+                    }
+                }
+            }
+            new typings.AppearanceComponent {}
+            new typings.PipeColorVisualsComponent {}
+            new typings.RotatableComponent {}
+            new typings.GasRecyclerComponent {}
+            new typings.NodeContainerComponent {
+                nodes {
+                    ["inlet"] = new typings.PipeNode {
+                        nodeGroupID = "Pipe"
+                        pipeDirection = "North"
+                        layer = 2
+                    }
+                    ["outlet"] = new typings.PipeNode {
+                        nodeGroupID = "Pipe"
+                        pipeDirection = "South"
+                        layer = 2
+                    }
+                }
+            }
+            new typings.AtmosDeviceComponent {}
+            new typings.AtmosPipeColorComponent {}
+            new typings.AmbientSoundComponent {
+                enabled = false
+                volume = -9.0
+                range = 5.0
+                sound = new typings.SoundPathSpecifier {
+                    path = "/Audio/Ambience/Objects/gas_pump.ogg"
+                }
+            }
+            new typings.DestructibleComponent {
+                thresholds {
+                    new typings.DamageThreshold {
+                        trigger = new typings.DamageTrigger {
+                            damage = 100
+                        }
+                        behaviors {
+                            new typings.ChangeConstructionNodeBehavior {
+                                node = "machineFrame"
+                            }
+                            new typings.DoActsBehavior {
+                                acts = "Destruction"
+                            }
+                        }
+                    }
+                }
+            }
+            new typings.MachineComponent {
+                board = "GasRecyclerMachineCircuitboard"
+            }
+            new typings.AtmosMonitoringConsoleDeviceComponent {
+                navMapBlip = "GasValve"
+            }
+        }
+    }
+
+    // TODO: HeatExchanger
+
+    new typings.EntityPrototype {
+        parent { "GasBinaryBase" }
+        id = "GasPipeAdapter"
+        components {
+            new typings.SpriteComponent {
+                sprite = "Structures/Piping/Atmospherics/pipeAdapter.rsi"
+                layers {
+                    new typings.PrototypeLayerData {
+                        state = "base"
+                    }
+                    new typings.PrototypeLayerData {
+                        state = "outletSelected_2"
+                        map = Set("enum.GasPipeAdapterVisualLayers.OutletSelected")
+                    }
+                    new typings.PrototypeLayerData {
+                        state = "inletSelected_2"
+                        map = Set("enum.GasPipeAdapterVisualLayers.InletSelected")
+                    }
+                }
+            }
+            new typings.GasPipeAdapterVisualsComponent {}
+            new typings.GasPipeAdapterComponent {}
+            new typings.ActivatableUIComponent {
+                key = "enum.GasPipeAdapterUiKey.Key"
+            }
+            new typings.UserInterfaceComponent {
+                interfaces {
+                    ["enum.GasPipeAdapterUiKey.Key"] {
+                        type = "GasPipeAdapterBoundUserInterface"
+                    }
+                }
+            }
+            new typings.NodeContainerComponent {
+                nodes {
+                    ["outlet"] = new typings.PipeNode {
+                        nodeGroupID = "Pipe"
+                        pipeDirection = "North"
+                        layer = 2
+                    }
+                    ["inlet"] = new typings.PipeNode {
+                        nodeGroupID = "Pipe"
+                        pipeDirection = "South"
+                        layer = 2
+                    }
+                }
+            }
+            new typings.ConstructionComponent {
+                graph = "GasBinary"
+                node = "gaspipeadapter"
+            }
+        }
+    }
+}
+
+local const function GeneratePressurePump(l: PipeLayer): typings.EntityPrototype = new typings.EntityPrototype {
+    parent { "GasPressurePump" }
+    id = "GasPressurePump\(l)"
+    suffix = "\(l)"
+    components {
+        new typings.NodeContainerComponent {
+            nodes {
+                ["inlet"] = new typings.PipeNode {
+                    nodeGroupID = "Pipe"
+                    pipeDirection = "North"
+                    layer = l
+                }
+                ["outlet"] = new typings.PipeNode {
+                    nodeGroupID = "Pipe"
+                    pipeDirection = "South"
+                    layer = l
+                }
+            }
+        }
+        new typings.SpriteComponent {
+            layers {
+                new typings.PrototypeLayerData {
+                    sprite = "/Textures/Structures/Piping/Atmospherics/pipe.rsi"
+                    state = "pipeStraight_0"
+                    map = Set("enum.SubfloorLayers.FirstLayer", "enabled")
+                }
+            }
+        }
+        new typings.GenericVisualizerComponent {
+            visuals {
+                ["enum.PumpVisuals.Enabled"] {
+                    ["enabled"] {
+                        ["True"] = new typings.PrototypeLayerData {
+                            state = "pumpPressureOn_\(l)"
+                        }
+                        ["False"] = new typings.PrototypeLayerData {
+                            state = "pumpPressure_\(l)"
+                        }
+                    }
+                }
+            }
+        }
+        new typings.ConstructionComponent {
+            graph = "GasBinary"
+            node = "pressurepump\(l)"
+        }
+    }
+}
+
+local const function GenerateVolumePump(l: PipeLayer): typings.EntityPrototype = new typings.EntityPrototype {
+    parent { "GasVolumePump" }
+    id = "GasVolumePump\(l)"
+    suffix = "\(l)"
+    components {
+        new typings.NodeContainerComponent {
+            nodes {
+                ["inlet"] = new typings.PipeNode {
+                    nodeGroupID = "Pipe"
+                    pipeDirection = "North"
+                    layer = l
+                }
+                ["outlet"] = new typings.PipeNode {
+                    nodeGroupID = "Pipe"
+                    pipeDirection = "South"
+                    layer = l
+                }
+            }
+        }
+        new typings.SpriteComponent {
+            layers {
+                new typings.PrototypeLayerData {
+                    sprite = "/Textures/Structures/Piping/Atmospherics/pipe.rsi"
+                    state = "pipeStraight_\(l)"
+                    map = Set("enum.PipeVisualLayers.Pipe")
+                }
+                new typings.PrototypeLayerData {
+                    state = "pumpVolume_\(l)"
+                    map = Set("enum.SubfloorLayers.FirstLayer", "enabled")
+                }
+            }
+        }
+        new typings.GenericVisualizerComponent {
+            visuals {
+                ["enum.PumpVisuals.Enabled"] {
+                    ["enabled"] {
+                        ["True"] {
+                            state = "pumpVolumeOn_\(l)"
+                        }
+                        ["False"] {
+                            state = "pumpVolume_\(l)"
+                        }
+                    }
+                }
+            }
+        }
+        new typings.ConstructionComponent {
+            graph = "GasBinary"
+            node = "volumepump\(l)"
+        }
+    }
+}
+
+local const function GeneratePassiveGate(l: PipeLayer): typings.EntityPrototype = new typings.EntityPrototype {
+    parent { "GasPassiveGate" }
+    id = "GasPassiveGate\(l)"
+    suffix = "\(l)"
+    components {
+        new typings.NodeContainerComponent {
+            nodes {
+                ["inlet"] = new typings.PipeNode {
+                    nodeGroupID = "Pipe"
+                    pipeDirection = "North"
+                    layer = l
+                }
+                ["outlet"] = new typings.PipeNode {
+                    nodeGroupID = "Pipe"
+                    pipeDirection = "South"
+                    layer = l
+                }
+            }
+        }
+        new typings.SpriteComponent {
+            layers {
+                new typings.PrototypeLayerData {
+                    sprite = "/Textures/Structures/Piping/Atmospherics/pipe.rsi"
+                    state = "pipeStraight_\(l)"
+                    map = Set("enum.PipeVisualLayers.Pipe")
+                }
+                new typings.PrototypeLayerData {
+                    state = "pumpPassiveGate_\(l)"
+                    map = Set("enum.SubfloorLayers.FirstLayer")
+                }
+            }
+        }
+        new typings.ConstructionComponent {
+            graph = "GasBinary"
+            node = "passivegate\(l)"
+        }
+    }
+}
+
+local const function GenerateValve(l: PipeLayer): typings.EntityPrototype = new typings.EntityPrototype {
+    parent { "GasValve" }
+    id = "GasValve\(l)"
+    suffix = "\(l)"
+    components {
+        new typings.SpriteComponent {
+            layers {
+                new typings.PrototypeLayerData {
+                    sprite = "/Textures/Structures/Piping/Atmospherics/pipe.rsi"
+                    state = "pipeStraight_\(l)"
+                    map = Set("enum.SubfloorLayers.FirstLayer", "enabled")
+                }
+                new typings.PrototypeLayerData {
+                    state = "pumpManualValve_\(l)"
+                    map = Set("enum.SubfloorLayers.FirstLayer", "enabled")
+                }
+            }
+        }
+        new typings.GenericVisualizerComponent {
+            visuals {
+                ["enum.FilterVisuals.Enabled"] {
+                    ["enabled"] {
+                        ["True"] {
+                            state = "pumpManualValveOn_\(l)"
+                        }
+                        ["False"] {
+                            state = "pumpManualValve_\(l)"
+                        }
+                    }
+                }
+            }
+        }
+        new typings.NodeContainerComponent {
+            nodes {
+                ["inlet"] = new typings.PipeNode {
+                    nodeGroupID = "Pipe"
+                    pipeDirection = "North"
+                    volume = 100.0
+                    layer = l
+                }
+                ["outlet"] = new typings.PipeNode {
+                    nodeGroupID = "Pipe"
+                    pipeDirection = "South"
+                    volume = 100.0
+                    layer = l
+                }
+            }
+        }
+        new typings.ConstructionComponent {
+            graph = "GasBinary"
+            node = "valve\(l)"
+        }
+    }
+}

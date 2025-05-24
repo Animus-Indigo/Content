@@ -5,6 +5,8 @@ import "../typings.pkl"
 content {
     new typings.RoundAnnouncementPrototype {
         id = "Welcome"
-        sound = "/Audio/Announcements/welcome.ogg"
+        sound = new typings.SoundPathSpecifier {
+            path = "/Audio/Announcements/welcome.ogg"
+        }
     }
 }

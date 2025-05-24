@@ -23,13 +23,12 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using Content.IntegrationTests;
 using Content.Shared.FixedPoint;
-using Robust.Shared.Audio;
+using Robust.Client.GameObjects;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Localization;
 using Robust.Shared.Maths;
@@ -37,6 +36,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Reflection;
 using Robust.Shared.Serialization.Manager.Attributes;
 using Robust.Shared.Utility;
+using Attribute = System.Attribute;
 using Vector3 = Robust.Shared.Maths.Vector3;
 
 
@@ -111,10 +111,254 @@ internal sealed class ReflectionManager
     }
 }
 
+internal sealed class AdHocComponentClass;
+
+internal sealed class AdHocPrototypeClass;
+
+internal sealed class AdHocTaggedClass;
+
+internal static class MetaTypes
+{
+    public static readonly Dictionary<System.Type, (string Name, string? Code)> AdHocTypes = new()
+    {
+        {
+            typeof(AdHocComponentClass),
+            ("Component",
+                """
+                abstract class Component {
+                    fixed type: String
+                }
+                """)
+        },
+        {
+            typeof(AdHocPrototypeClass),
+            ("Prototype",
+                """
+                abstract class Prototype {
+                    fixed type: String
+                    id: String
+                }
+                """
+            )
+        },
+        {
+            typeof(AdHocTaggedClass),
+            ("TaggedClass", "abstract class TaggedClass {}")
+        },
+        {
+            typeof(EntityUid),
+            ("EntityUid", "typealias EntityUid = String")
+        },
+        {
+            typeof(ProtoId<>),
+            ("ProtoId", "typealias ProtoId<T> = String")
+        },
+        {
+            typeof(EntProtoId),
+            ("ProtoId", null)
+        },
+        {
+            typeof(EntProtoId<>),
+            ("ProtoId", null)
+        },
+        {
+            typeof(LocId),
+            ("LocId", "typealias LocId = String")
+        },
+        {
+            typeof(ResPath),
+            ("ResPath", "typealias ResPath = String(read(\"file:Resources\\(this)\") != null)")
+        },
+        {
+            typeof(Vector2i),
+            ("Vector2i",
+                """
+                class Vector2i {
+                    x: Int
+                    y: Int
+                }
+                """
+            )
+        },
+        {
+            typeof(Vector2),
+            ("Vector2",
+                """
+                class Vector2 {
+                    x: Float
+                    y: Float
+                }
+                """
+            )
+        },
+        {
+            typeof(Vector3),
+            ("Vector3",
+                """
+                class Vector3 {
+                    x: Float
+                    y: Float
+                    z: Float
+                }
+                """
+            )
+        },
+        {
+            typeof(Box2),
+            ("Box2",
+                """
+                const function Box2(l: Float, b: Float, r: Float, t: Float): Box2 = new Box2 {
+                    left = l
+                    bottom = b
+                    right = r
+                    top = t
+                }
+
+                class Box2 {
+                    left: Float
+                    bottom: Float
+                    right: Float
+                    top: Float
+                }
+                """
+            )
+        },
+        {
+            typeof(Box2i),
+            ("Box2i",
+                """
+                const function Box2i(l: Int32, b: Int32, r: Int32, t: Int32): Box2i = new Box2i {
+                    left = l
+                    bottom = b
+                    right = r
+                    top = t
+                }
+
+                class Box2i {
+                    left: Int32
+                    bottom: Int32
+                    right: Int32
+                    top: Int32
+                }
+                """
+            )
+        },
+        {
+            typeof(Color),
+            ("Color",
+                """
+                local const function IsHexColor(hex: String): Boolean = hex.startsWith("#") && (hex.length == 7 || hex.length == 9)
+
+                const function ColorRGB(r: UInt8, g: UInt8, b: UInt8): Color = ColorRGBA(r, g, b, 255)
+
+                const function ColorRGBA(r: UInt8, g: UInt8, b: UInt8, a: UInt8): Color = "#\(r.toRadixString(16))\(g.toRadixString(16))\(b.toRadixString(16))\(a.toRadixString(16))"
+
+                typealias Color = String(IsHexColor(this))
+                """
+            )
+        },
+        {
+            typeof(Angle),
+            ("Angle", "typealias Angle = Float")
+        },
+        {
+            typeof(FixedPoint2),
+            ("FixedPoint2", "typealias FixedPoint2 = Float")
+        },
+        {
+            typeof(SpriteComponent),
+            ("SpriteComponent",
+                """
+                typealias DrawDepth = "LowFloors"
+                    |"ThickPipe"
+                    |"ThickWire"
+                    |"ThinPipe"
+                    |"ThinWire"
+                    |"BelowFloor"
+                    |"FloorTiles"
+                    |"FloorObjects"
+                    |"Puddles"
+                    |"HighFloorObjects"
+                    |"DeadMobs"
+                    |"SmallMobs"
+                    |"Walls"
+                    |"WallTops"
+                    |"Objects"
+                    |"SmallObjects"
+                    |"WallMountedItems"
+                    |"Items"
+                    |"BelowMobs"
+                    |"Mobs"
+                    |"OverMobs"
+                    |"Doors"
+                    |"BlastDoors"
+                    |"Overdoors"
+                    |"Effects"
+                    |"Ghosts"
+                    |"Overlays"
+
+                typealias LayerRenderingStrategy = "Default"
+                    |"SnapToCardinals"
+                    |"NoRotation"
+                    |"UseSpriteStrategy"
+
+                class SpriteComponent extends Component {
+                    fixed type: String = "spriteComponent"
+                    netsync: Boolean?
+                    granularLayersRendering: Boolean?
+                    visible: Boolean?
+                    drawdepth: DrawDepth?
+                    scale: Vector2?
+                    rotation: Angle?
+                    offset: Vector2?
+                    color: Color?
+                    sprite: String?
+                    layers: Listing<PrototypeLayerData>?
+                    state: String?
+                    texture: String?
+                    overrideContainerOcclusion: Boolean?
+                    getScreenTexture: Boolean?
+                    raiseShaderEvent: Boolean?
+                    noRot: Boolean?
+                    snapCardinals: Boolean?
+                    overrideDir: Direction?
+                    enableOverrideDir: Boolean?
+                }
+                """
+            )
+        },
+        {
+            typeof(ComponentRegistry),
+            ("ComponentRegistry", "typealias ComponentRegistry = Listing<Component>(isDistinctBy((c) -> c.type))")
+        }
+    };
+
+    public static readonly Dictionary<System.Type, Func<Type>> BuiltinTypes = new()
+    {
+        { typeof(char), () => new("Char", false, null) },
+        { typeof(string), () => new("String", false, null) },
+        { typeof(TimeSpan), () => new("String", false, null) },
+        { typeof(bool), () => new("Boolean", false, null) },
+        { typeof(short), () => new("Int16", false, null) },
+        { typeof(int), () => new("Int32", false, null) },
+        { typeof(uint), () => new("UInt32", false, null) },
+        { typeof(float), () => new("Float", false, null) },
+        { typeof(double), () => new("Float", false, null) },
+        { typeof(HashSet<>), () => new("Set", false, null) },
+        { typeof(ImmutableHashSet<>), () => new("Set", false, null) },
+        { typeof(Dictionary<,>), () => new("Mapping", false, null) },
+        { typeof(ImmutableDictionary<,>), () => new("Mapping", false, null) },
+        { typeof(ReadOnlyDictionary<,>), () => new("Mapping", false, null) },
+        { typeof(FrozenDictionary<,>), () => new("Mapping", false, null) },
+        { typeof(List<>), () => new("Listing", false, null) },
+        { typeof(IReadOnlyList<>), () => new("Listing", false, null) },
+        { typeof(ImmutableList<>), () => new("Listing", false, null) },
+        { typeof(IReadOnlyCollection<>), () => new("Listing", false, null) }
+    };
+}
+
 internal record struct Type
 {
-    public const string BaseModuleName = "base";
-
     public string Name;
 
     public bool IsNullable;
@@ -136,115 +380,6 @@ internal record struct Type
         TypeArguments = typeArguments ?? [];
     }
 
-    public static Type? TryToBuiltinType(System.Type t, bool skipGenericCheck = false)
-    {
-        if (!skipGenericCheck && t.IsGenericType)
-        {
-            var genericDef = t.GetGenericTypeDefinition();
-
-            if (genericDef == typeof(Nullable<>))
-            {
-                var ty = TryToBuiltinType(t.GenericTypeArguments[0], true);
-
-                if (ty.HasValue)
-                    ty = ty.Value with { IsNullable = true, };
-
-                return ty;
-            }
-
-            var type = TryToBuiltinType(genericDef, true);
-
-            if (type is null)
-                return null;
-
-            foreach (var p in t.GenericTypeArguments)
-            {
-                if (TryToBuiltinType(p) is not { } pType)
-                    continue;
-
-                type.Value.TypeArguments.Add(pType);
-            }
-
-            return type;
-        }
-
-        if (t == typeof(char))
-            return new("Char", false, null);
-
-        if (t == typeof(string) || t == typeof(TimeSpan))
-            return new("String", false, null);
-
-        if (t == typeof(bool))
-            return new("Boolean", false, null);
-
-        if (t == typeof(short))
-            return new("Int16", false, null);
-
-        if (t == typeof(int))
-            return new("Int32", false, null);
-
-        if (t == typeof(uint))
-            return new("UInt32", false, null);
-
-        if (t == typeof(float) || t == typeof(double))
-            return new("Float", false, null);
-
-        if (t == typeof(EntityUid))
-            return new("EntityUid", false, BaseModuleName);
-
-        if (t == typeof(ProtoId<>))
-            return new Type("ProtoId", false, BaseModuleName);
-
-        if (t == typeof(EntProtoId) || t == typeof(EntProtoId<>))
-            return new Type("EntProtoId", false, BaseModuleName);
-
-        if (t == typeof(LocId))
-            return new Type("LocId", false, BaseModuleName);
-
-        if (t == typeof(ResPath))
-            return new Type("ResPath", false, BaseModuleName);
-
-        if (t == typeof(AudioParams))
-            return new Type("AudioParams", false, BaseModuleName);
-
-        if (t == typeof(SoundSpecifier))
-            return new Type("SoundSpecifier", false, BaseModuleName);
-
-        if (t == typeof(Vector2i))
-            return new Type("Vector2i", false, BaseModuleName);
-
-        if (t == typeof(Vector2))
-            return new Type("Vector2", false, BaseModuleName);
-
-        if (t == typeof(Vector3))
-            return new Type("Vector3", false, BaseModuleName);
-
-        if (t == typeof(Color))
-            return new Type("Color", false, BaseModuleName);
-
-        if (t == typeof(Angle))
-            return new Type("Angle", false, BaseModuleName);
-
-        if (t == typeof(FixedPoint2))
-            return new Type("FixedPoint2", false, BaseModuleName);
-
-        if (t == typeof(HashSet<>) || t == typeof(ImmutableHashSet<>))
-            return new Type("Set", false, null);
-
-        if (t == typeof(Dictionary<,>) || t == typeof(ImmutableDictionary<,>) || t == typeof(ReadOnlyDictionary<,>) ||
-            t == typeof(FrozenDictionary<,>))
-            return new Type("Mapping", false, null);
-
-        if (t == typeof(List<>) || t == typeof(IReadOnlyList<>) || t == typeof(ImmutableList<>) ||
-            t == typeof(IReadOnlyCollection<>) || t.IsArray)
-            return new Type("Listing", false, null);
-
-        if (t == typeof(ComponentRegistry))
-            return new Type("ComponentRegistry", false, BaseModuleName);
-
-        return null;
-    }
-
     public string Stringify()
     {
         var sb = new StringBuilder();
@@ -254,22 +389,17 @@ internal record struct Type
 
         sb.Append(Name);
 
-        if (TypeArguments.Count == 0)
+        if (TypeArguments.Count != 0)
         {
-            if (IsNullable)
-                sb.Append('?');
+            sb.Append('<');
 
-            return sb.ToString();
-        }
+            for (var i = 0; i < TypeArguments.Count; i++)
+            {
+                var type = TypeArguments[i];
 
-        sb.Append('<');
-
-        for (var i = 0; i < TypeArguments.Count; i++)
-        {
-            var type = TypeArguments[i];
-
-            sb.Append(type.Stringify());
-            sb.Append(i != TypeArguments.Count - 1 ? ',' : '>');
+                sb.Append(type.Stringify());
+                sb.Append(i != TypeArguments.Count - 1 ? ',' : '>');
+            }
         }
 
         if (IsNullable)
@@ -333,7 +463,7 @@ internal record struct FieldDefinition
     }
 }
 
-interface ITypeDefinition
+internal interface ITypeDefinition
 {
     public string Name { get; }
 
@@ -372,6 +502,13 @@ internal record struct EnumDefinition : ITypeDefinition
     }
 }
 
+internal enum ClassModifier : byte
+{
+    None,
+    Abstract,
+    Open
+}
+
 internal record struct ClassDefinition : ITypeDefinition
 {
     public string Name { get; }
@@ -380,16 +517,40 @@ internal record struct ClassDefinition : ITypeDefinition
 
     public Type? Base;
 
-    public ClassDefinition(string name, List<FieldDefinition> fields, Type? baseClass = null)
+    public ClassModifier Modifier;
+
+    public ClassDefinition(
+        string name,
+        List<FieldDefinition> fields,
+        Type? baseClass = null,
+        ClassModifier? modifier = null
+    )
     {
         Name = name;
         Fields = fields;
         Base = baseClass;
+        Modifier = modifier ?? ClassModifier.None;
     }
 
     public string Stringify()
     {
         var sb = new StringBuilder();
+
+        switch (Modifier)
+        {
+            case ClassModifier.None:
+                break;
+            case ClassModifier.Abstract:
+                sb.Append("abstract ");
+
+                break;
+            case ClassModifier.Open:
+                sb.Append("open ");
+
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
 
         sb.Append($"class {Name} ");
 
@@ -459,12 +620,11 @@ internal static class Program
     private const string PklTypingsFile = $"{PklFolder}/typings.pkl";
 
     private static readonly Dictionary<System.Type, ITypeDefinition> GlobalTypes = [];
-    private static readonly HashSet<string> ReservedWords = ["hidden", "abstract", "open", "delete",];
+    private static readonly HashSet<string> ReservedWords = ["hidden", "abstract", "open", "delete", "true", "false",];
+    private static readonly ReflectionManager ReflectionManager = new();
 
     private static async Task<int> Main()
     {
-        var reflectionManager = new ReflectionManager();
-
         if (Path.GetFileName(Environment.CurrentDirectory) == $"{nameof(Content)}.{nameof(TypingsGenerator)}")
             Environment.CurrentDirectory = Path.GetFullPath(Path.Join(Environment.CurrentDirectory, "../../"));
 
@@ -481,7 +641,7 @@ internal static class Program
         var stopwatch = new Stopwatch();
         stopwatch.Start();
 
-        var classes = GenerateTypings(reflectionManager);
+        var classes = GenerateTypings(ReflectionManager);
 
         Console.WriteLine($"Typings generated in {(int) stopwatch.Elapsed.TotalMilliseconds} ms.");
 
@@ -490,6 +650,18 @@ internal static class Program
         sb.AppendLine("// AUTO GENERATED\n");
         sb.AppendLine("import \"base.pkl\"");
         sb.AppendLine();
+        sb.AppendLine("// AD HOC TYPES");
+
+        foreach (var adhoc in MetaTypes.AdHocTypes)
+        {
+            if (string.IsNullOrEmpty(adhoc.Value.Code))
+                continue;
+
+            sb.AppendLine(adhoc.Value.Code);
+            sb.AppendLine();
+        }
+
+        sb.AppendLine("// GENERATED TYPINGS");
 
         foreach (var c in classes)
             sb.AppendLine(c.Value.Stringify());
@@ -521,6 +693,9 @@ internal static class Program
             if (prototype.FullName!.StartsWith("Robust.UnitTesting"))
                 continue;
 
+            if (TryToMetaType(prototype) is not null)
+                continue;
+
             var typeValue = CalculatePrototypeTypeName(prototype);
 
             var classDef = GenerateClassDefinition(
@@ -533,7 +708,7 @@ internal static class Program
                             $"\"{typeValue}\"")
                     ]) with
                 {
-                    Base = new Type("Prototype", false, "base")
+                    Base = new Type("Prototype", false, null)
                 };
 
             if (classes.TryGetValue(classDef.Name, out var oldDef))
@@ -558,7 +733,10 @@ internal static class Program
             if (component.FullName!.StartsWith("Robust.UnitTesting"))
                 continue;
 
-            var typeValue = JsonNamingPolicy.CamelCase.ConvertName(component.Name.Replace("Prototype", null));
+            if (TryToMetaType(component) is not null)
+                continue;
+
+            var typeValue = CalculateComponentName(component);
 
             var classDef = GenerateClassDefinition(
                     component,
@@ -570,7 +748,7 @@ internal static class Program
                             $"\"{typeValue}\"")
                     ]) with
                 {
-                    Base = new Type("Component", false, "base")
+                    Base = new Type("Component", false, null)
                 };
 
             if (classes.TryGetValue(classDef.Name, out var oldDef))
@@ -604,12 +782,36 @@ internal static class Program
             fields.TryAdd(field.Name, field);
 
         foreach (var prop in t.GetAllProperties())
+        {
+            if (prop.HasCustomAttribute<IncludeDataFieldAttribute>())
+            {
+                var inlinedFields = GenerateClassDefinition(prop.PropertyType).Fields;
+
+                foreach (var inlinedField in inlinedFields)
+                    fields.TryAdd(inlinedField.Name, inlinedField);
+
+                continue;
+            }
+
             if (GenerateFieldDefinition(t, prop) is { } def)
                 fields.TryAdd(def.Name, def);
+        }
 
         foreach (var field in t.GetAllFields())
+        {
+            if (field.HasCustomAttribute<IncludeDataFieldAttribute>())
+            {
+                var inlinedFields = GenerateClassDefinition(field.FieldType).Fields;
+
+                foreach (var inlinedField in inlinedFields)
+                    fields.TryAdd(inlinedField.Name, inlinedField);
+
+                continue;
+            }
+
             if (GenerateFieldDefinition(t, field) is { } def)
                 fields.TryAdd(def.Name, def);
+        }
 
         return new(t.Name, fields.Values.ToList());
     }
@@ -626,7 +828,8 @@ internal static class Program
 
     private static FieldDefinition? GenerateFieldDefinition(System.Type t, MemberInfo info)
     {
-        if (info.GetCustomAttribute<DataFieldAttribute>() is not { } dataFieldAttribute)
+        if (info.HasCustomAttribute<JsonIgnoreAttribute>() ||
+            info.HasCustomAttribute<Newtonsoft.Json.JsonIgnoreAttribute>())
             return null;
 
         System.Type type;
@@ -638,62 +841,106 @@ internal static class Program
         else
             return null;
 
+        if (info.GetCustomAttribute<DataFieldAttribute>() is not { } dataFieldAttribute)
+            return null;
+
+        var fieldName = GetFieldName(info, dataFieldAttribute);
+
         var isNullable = !dataFieldAttribute.Required;
-        var def = Type.TryToBuiltinType(type);
+
+        var def = TryToMetaType(type) ?? GenerateTypeDefinition(type);
 
         if (def is null)
         {
-            if (type.IsGenericType)
-            {
-                Console.WriteLine(
-                    $"Couldn't make the typings for the field '{type.FullName} {type.Name}' of type '{t.FullName}'");
+            Console.WriteLine(
+                $"Couldn't make the typings for the field '{type.FullName} {type.Name}' of type '{t.FullName}'");
 
-                return null;
-            }
-
-            if (GlobalTypes.TryGetValue(type, out var globalType))
-                def = new Type(globalType.Name, isNullable, null);
-            else
-            {
-                if (!type.IsEnum && !type.HasCustomAttribute<DataDefinitionAttribute>() &&
-                    !type.HasCustomAttribute<SerializableAttribute>())
-                {
-                    Console.WriteLine(
-                        $"Couldn't make the typings for the field '{type.FullName} {type.Name}' of type '{t.FullName}'");
-
-                    return new(GetFieldName(info, dataFieldAttribute), new Type("Dynamic", isNullable, null));
-                }
-
-                // TODO:
-                if (type.IsAbstract || type.IsInterface)
-                {
-                    Console.WriteLine(
-                        $"Couldn't make the typings for the field '{type.FullName} {type.Name}' of type '{t.FullName}'");
-
-                    def = new Type("Dynamic", isNullable, null);
-                }
-                else if (type.IsEnum)
-                {
-                    var newEnum = GenerateEnumDefinition(type);
-
-                    def = new Type(newEnum.Name, isNullable, null);
-
-                    GlobalTypes.Add(type, newEnum);
-                }
-                else
-                {
-                    var newClass = GenerateClassDefinition(type);
-
-                    def = new Type(newClass.Name, isNullable, null);
-
-                    GlobalTypes.Add(type, newClass);
-                }
-            }
+            def = new("Any", false, null);
         }
 
         def = def.Value with { IsNullable = isNullable, };
 
-        return new(GetFieldName(info, dataFieldAttribute), def.Value);
+        return new(fieldName, def.Value);
+    }
+
+    private static Type? GenerateTypeDefinition(System.Type t)
+    {
+        if (t.IsGenericType)
+            return null;
+
+        if (t == typeof(Enum))
+            return null;
+
+        Type? def;
+
+        if (GlobalTypes.TryGetValue(t, out var globalType))
+            def = new Type(globalType.Name, false, null);
+        else
+        {
+            if (t is { IsEnum: false, IsAbstract: false, IsInterface: false, })
+            {
+                if (!t.HasCustomAttribute<DataDefinitionAttribute>() &&
+                    !t.HasCustomAttribute<SerializableAttribute>() && !t.IsDefined(
+                        typeof(ImplicitDataDefinitionForInheritorsAttribute),
+                        true))
+                    return null;
+            }
+
+            // TODO:
+            if (t.IsAbstract || t.IsInterface)
+            {
+                var newClass = GenerateClassDefinition(t) with
+                {
+                    Modifier = ClassModifier.Abstract,
+                    Base = new Type("TaggedClass", false, null)
+                };
+
+                GlobalTypes.Add(t, newClass);
+
+                var newClassType = new Type(newClass.Name, false, null);
+
+                foreach (var child in ReflectionManager.GetAllChildren(t))
+                {
+                    if (child.IsGenericType)
+                        continue;
+
+                    if (GlobalTypes.ContainsKey(child))
+                        continue;
+
+                    var childDef = GenerateClassDefinition(child) with
+                    {
+                        Base = newClassType,
+                        Modifier = child.IsAbstract || child.IsInterface ? ClassModifier.Abstract : ClassModifier.None
+                    };
+
+                    GlobalTypes.TryAdd(child, childDef);
+                }
+
+                return newClassType;
+            }
+
+            if (t.IsEnum)
+            {
+                var newEnum = GenerateEnumDefinition(t);
+
+                def = new Type(newEnum.Name, false, null);
+
+                GlobalTypes.Add(t, newEnum);
+            }
+            else
+            {
+                // Stack overflow saver
+                GlobalTypes.Add(t, new ClassDefinition(t.Name, []));
+
+                var newClass = GenerateClassDefinition(t);
+
+                def = new Type(newClass.Name, false, null);
+
+                GlobalTypes[t] = newClass;
+            }
+        }
+
+        return def;
     }
 
     private static string GetFieldName(MemberInfo fieldInfo, DataFieldAttribute dataField)
@@ -721,5 +968,87 @@ internal static class Program
 
         var name = type.Name.AsSpan();
         return $"{char.ToLowerInvariant(name[0])}{name[1..^prototype.Length]}";
+    }
+
+    private static string CalculateComponentName(System.Type type)
+    {
+        // Attributes can use any name they want, they are for bypassing the automatic names
+        // If a parent class has this attribute, a child class will use the same name, unless it also uses this attribute
+        if (Attribute.GetCustomAttribute(type, typeof(ComponentProtoNameAttribute)) is ComponentProtoNameAttribute
+            attribute)
+            return attribute.PrototypeName;
+
+        const string component = "Component";
+        var typeName = type.Name;
+        if (!typeName.EndsWith(component))
+            throw new InvalidComponentNameException($"Component {type} must end with the word Component");
+
+        var name = typeName[..^component.Length];
+
+        const string client = "Client";
+        const string server = "Server";
+        const string shared = "Shared";
+
+        if (typeName.StartsWith(client, StringComparison.Ordinal))
+            name = typeName[client.Length..^component.Length];
+        else if (typeName.StartsWith(server, StringComparison.Ordinal))
+            name = typeName[server.Length..^component.Length];
+        else if (typeName.StartsWith(shared, StringComparison.Ordinal))
+            name = typeName[shared.Length..^component.Length];
+
+        DebugTools.Assert(name != string.Empty, $"Component {type} has invalid name {type.Name}");
+
+        return name;
+    }
+
+    public static Type? TryToMetaType(System.Type t, bool skipGenericCheck = false)
+    {
+        if (!skipGenericCheck && t.IsGenericType)
+        {
+            var genericDef = t.GetGenericTypeDefinition();
+
+            if (genericDef == typeof(Nullable<>))
+            {
+                var ty = TryToMetaType(t.GenericTypeArguments[0]);
+
+                if (ty.HasValue)
+                    ty = ty.Value with { IsNullable = true, };
+
+                return ty;
+            }
+
+            if (TryToMetaType(genericDef, true) is not { } type)
+                return null;
+
+            foreach (var p in t.GenericTypeArguments)
+            {
+                var pType = TryToMetaType(p) ?? GenerateTypeDefinition(p);
+
+                if (pType is null)
+                {
+                    Console.WriteLine(
+                        $"Couldn't make the typings for the generic type argument '{p.FullName} {p.Name}' in type '{t.FullName}'");
+
+                    type.TypeArguments.Add(new("Any", false, null));
+
+                    continue;
+                }
+
+                type.TypeArguments.Add(pType.Value);
+            }
+
+            return type;
+        }
+
+        if (t.IsArray)
+            return new Type("Listing", false, null);
+
+        if (MetaTypes.BuiltinTypes.TryGetValue(t, out var builtinType))
+            return builtinType();
+
+        if (MetaTypes.AdHocTypes.TryGetValue(t, out var adHocType))
+            return new Type(adHocType.Name, false, null);
+
+        return null;
     }
 }
