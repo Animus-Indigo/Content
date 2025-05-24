@@ -29,3 +29,9 @@
   background: /Textures/LobbyScreens/indigo5.png
   name: Indigo5
   artist: igorsaux
+
+- type: lobbyBackground
+  id: Indigo_Felinid
+  background: /Textures/LobbyScreens/indigo_felinid.png
+  name: Indigo Felinid
+  artist: greenfox
