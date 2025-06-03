@@ -662,6 +662,20 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-smite-reptilian-species-swap-description"),
         };
         args.Verbs.Add(reptilian);
+        
+        Verb vulp = new()
+        {
+            Text = "Vulp Species Swap",
+            Category = VerbCategory.Smite,
+            Icon = new SpriteSpecifier.Rsi(new ("/Textures/Objects/Fun/toys.rsi"), "plushie_vulp"),
+            Act = () =>
+            {
+                _polymorphSystem.PolymorphEntity(args.Target, "AdminVulpSmite");
+            },
+            Impact = LogImpact.Extreme,
+            Message = Loc.GetString("admin-smite-vulp-species-swap-description"),
+        };
+        args.Verbs.Add(vulp);
 
         Verb locker = new()
         {
