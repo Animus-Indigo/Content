@@ -40,7 +40,7 @@ public static class Colors
 
     public static readonly Color Yellow = Color.FromHex("#E8BD13");
 
-    public static readonly Color Green  = Color.FromHex("#21D321");
+    public static readonly Color Green  = Color.FromHex("#24AF08");
 
     public static Color AccentLight => IndigoLight;
     public static Color Accent      => Indigo;
