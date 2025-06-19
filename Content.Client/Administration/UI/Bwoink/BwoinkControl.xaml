@@ -10,14 +10,14 @@
                 <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
                     <controls:FancyCheckBox Visible="True" Name="PlaySound" Access="Public" Text="{Loc 'admin-bwoink-play-sound'}" Pressed="True" />
                     <Control HorizontalExpand="True" MinWidth="5" />
-                    <controls:FancyButton Visible="True" Name="PopOut" Access="Public" Text="{Loc 'admin-logs-pop-out'}" Style="OpenBoth" HorizontalAlignment="Left" />
+                    <controls:FancyButton Visible="True" Name="PopOut" Access="Public" Text="{Loc 'admin-logs-pop-out'}" BordersStyle="OpenBoth" HorizontalAlignment="Left" />
                     <Control HorizontalExpand="True" />
-                    <controls:FancyButton Visible="False" Name="Bans" Text="{Loc 'admin-player-actions-bans'}" Style="OpenRight" />
-                    <controls:FancyButton Visible="False" Name="Notes" Text="{Loc 'admin-player-actions-notes'}" Style="OpenBoth" />
-                    <controls:FancyButton Visible="False" Name="Kick" Text="{Loc 'admin-player-actions-kick'}" Style="OpenBoth" />
-                    <controls:FancyButton Visible="False" Name="Ban" Text="{Loc 'admin-player-actions-ban'}" Style="OpenBoth" />
-                    <controls:FancyButton Visible="False" Name="Respawn" Text="{Loc 'admin-player-actions-respawn'}" Style="OpenBoth" />
-                    <controls:FancyButton Visible="False" Name="Follow" Text="{Loc 'admin-player-actions-follow'}" Style="OpenLeft" />
+                    <controls:FancyButton Visible="False" Name="Bans" Text="{Loc 'admin-player-actions-bans'}" BordersStyle="OpenRight" />
+                    <controls:FancyButton Visible="False" Name="Notes" Text="{Loc 'admin-player-actions-notes'}" BordersStyle="OpenBoth" />
+                    <controls:FancyButton Visible="False" Name="Kick" Text="{Loc 'admin-player-actions-kick'}" BordersStyle="OpenBoth" />
+                    <controls:FancyButton Visible="False" Name="Ban" Text="{Loc 'admin-player-actions-ban'}" BordersStyle="OpenBoth" />
+                    <controls:FancyButton Visible="False" Name="Respawn" Text="{Loc 'admin-player-actions-respawn'}" BordersStyle="OpenBoth" />
+                    <controls:FancyButton Visible="False" Name="Follow" Text="{Loc 'admin-player-actions-follow'}" BordersStyle="OpenLeft" />
                 </BoxContainer>
             </BoxContainer>
         </SplitContainer>

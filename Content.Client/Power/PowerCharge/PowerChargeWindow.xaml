@@ -64,13 +64,15 @@
                                   Text="{Loc 'power-charge-window-power-on'}"
                                   HorizontalExpand="True"
                                   Color="Accent"
-                                  Style="OpenRight" />
+                                  Style="Outlined"
+                                  BordersStyle="OpenRight" />
 
             <controls:FancyButton Name="OffButton"
                                   Text="{Loc 'power-charge-window-power-off'}"
                                   HorizontalExpand="True"
                                   Color="Accent"
-                                  Style="OpenLeft" />
+                                  Style="Outlined"
+                                  BordersStyle="OpenLeft" />
         </BoxContainer>
     </BoxContainer>
 </controls:FancyWindow>

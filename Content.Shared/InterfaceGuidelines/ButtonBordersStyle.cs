@@ -16,9 +16,11 @@
 namespace Content.Shared.InterfaceGuidelines;
 
 
-public enum ButtonStyle
+public enum ButtonBordersStyle
 {
-    Default,
-    Ghost,
-    Outlined
+    Rounded,
+    OpenRight,
+    OpenBoth,
+    OpenLeft,
+    None
 }

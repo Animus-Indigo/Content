@@ -40,6 +40,16 @@ public partial class FancyButton : ContainerButton
         }
     }
 
+    public ButtonBordersStyle BordersStyle
+    {
+        get => _bordersStyle;
+        set
+        {
+            _bordersStyle = value;
+            _isDirty      = true;
+        }
+    }
+
     public ButtonColor Color
     {
         get => _color;
@@ -122,13 +132,13 @@ public partial class FancyButton : ContainerButton
         }
     }
 
-    public bool? Filled
+    public bool? IconFilled
     {
-        get => _filled;
+        get => _iconFilled;
         set
         {
-            _filled  = value;
-            _isDirty = true;
+            _iconFilled = value;
+            _isDirty    = true;
         }
     }
 
@@ -142,17 +152,18 @@ public partial class FancyButton : ContainerButton
         }
     }
 
-    private ButtonStyle _style = ButtonStyle.Default;
-    private ButtonColor _color = ButtonColor.Default;
-    private string?     _icon;
-    private TextStyle?  _textStyle;
-    private FontWeight? _fontWeight;
-    private FontType?   _fontType;
-    private bool?       _filled;
-    private FontWeight? _iconFontWeight;
-    private TextStyle?  _iconTextStyle;
-    private bool        _isIconAtLeft = true;
-    private Color?      _fontColor;
+    private ButtonStyle        _style = ButtonStyle.Default;
+    private ButtonColor        _color = ButtonColor.Default;
+    private string?            _icon;
+    private TextStyle?         _textStyle;
+    private FontWeight?        _fontWeight;
+    private FontType?          _fontType;
+    private bool?              _iconFilled;
+    private FontWeight?        _iconFontWeight;
+    private TextStyle?         _iconTextStyle;
+    private bool               _isIconAtLeft = true;
+    private Color?             _fontColor;
+    private ButtonBordersStyle _bordersStyle;
 
     public FancyButton()
     {
@@ -218,7 +229,7 @@ public partial class FancyButton : ContainerButton
 
         if (Icon is { } icon)
         {
-            iconLabel.Filled     = Filled ?? true;
+            iconLabel.Filled     = IconFilled ?? true;
             iconLabel.TextStyle  = IconTextStyle ?? InterfaceGuidelines.TextStyle.Title2;
             iconLabel.FontWeight = IconFontWeight ?? FontWeight ?? InterfaceGuidelines.FontWeight.Medium;
             iconLabel.Text       = icon;
@@ -253,24 +264,20 @@ public partial class FancyButton : ContainerButton
 
         ButtonContainer.Margin = new(12.0f, 2.0f);
 
-        Rounding rounding = Style switch
+        Rounding rounding = BordersStyle switch
         {
-            ButtonStyle.Default   => new(6.0f),
-            ButtonStyle.OpenRight => new(6.0f, 0.0f, 0.0f, 6.0f),
-            ButtonStyle.OpenBoth  => new(0.0f),
-            ButtonStyle.OpenLeft  => new(0.0f, 6.0f, 6.0f, 0.0f),
-            _                     => throw new ArgumentOutOfRangeException()
+            ButtonBordersStyle.Rounded   => new(6.0f),
+            ButtonBordersStyle.OpenRight => new(6.0f, 0.0f, 0.0f, 6.0f),
+            ButtonBordersStyle.OpenBoth  => new(0.0f),
+            ButtonBordersStyle.OpenLeft  => new(0.0f, 6.0f, 6.0f, 0.0f),
+            ButtonBordersStyle.None      => new(0.0f),
+            _                            => throw new ArgumentOutOfRangeException()
         };
 
         Color   backgroundColor;
         Border? insetBorders;
 
-        if (Group is null)
-        {
-            backgroundColor = GetColorFor(Color, DrawMode);
-            insetBorders    = null;
-        }
-        else
+        if (Style == ButtonStyle.Outlined)
         {
             var insetBorderColor = GetColorFor(Color, DrawModeEnum.Normal);
 
@@ -284,6 +291,11 @@ public partial class FancyButton : ContainerButton
                     2.0f
                 )
             );
+        }
+        else
+        {
+            backgroundColor = GetColorFor(Color, DrawMode);
+            insetBorders    = null;
         }
 
 

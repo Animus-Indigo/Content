@@ -29,11 +29,11 @@
             <BoxContainer Orientation="Horizontal">
                 <controls:FancyButton Name="SetMaxRateButton"
                                       Text="{Loc comp-gas-pump-ui-pump-set-max}"
-                                      Style="OpenRight" />
+                                      BordersStyle="OpenRight" />
 
                 <controls:FancyButton Name="SetTransferRateButton"
                                       Text="{Loc comp-gas-pump-ui-pump-set-rate}"
-                                      Style="OpenLeft"
+                                      BordersStyle="OpenLeft"
                                       Disabled="True" />
             </BoxContainer>
         </BoxContainer>

@@ -41,15 +41,16 @@ public sealed partial class PipeLayerSelectorControl : BoxContainer
             var layer = i;
             var style = layer switch
                 {
-                    0 => ButtonStyle.OpenRight,
-                    4 => ButtonStyle.OpenLeft,
-                    _ => ButtonStyle.OpenBoth
+                    0 => ButtonBordersStyle.OpenRight,
+                    4 => ButtonBordersStyle.OpenLeft,
+                    _ => ButtonBordersStyle.OpenBoth
                 }
                 ;
             var button = new FancyButton
             {
                 Text  = i.ToString(),
-                Style = style,
+                BordersStyle = style,
+                Style = ButtonStyle.Outlined,
                 Group = _group
             };
 

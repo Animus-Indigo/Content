@@ -102,13 +102,15 @@
                             <controls:FancyButton Name="ReleaseValveOpenButton"
                                                   Text="{Loc comp-gas-canister-ui-release-valve-open}"
                                                   Color="Danger"
-                                                  Style="OpenRight"
+                                                  Style="Outlined"
+                                                  BordersStyle="OpenRight"
                                                   ToggleMode="True" />
 
                             <controls:FancyButton Name="ReleaseValveCloseButton"
                                                   Text="{Loc comp-gas-canister-ui-release-valve-close}"
                                                   Color="Danger"
-                                                  Style="OpenLeft"
+                                                  Style="Outlined"
+                                                  BordersStyle="OpenLeft"
                                                   ToggleMode="True" />
                         </BoxContainer>
                     </BoxContainer>

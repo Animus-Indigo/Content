@@ -18,12 +18,12 @@
                 <ui:FancyButton Name="ImportButton"
                                 Icon="{x:Static ig:SymbolIcons.Download}"
                                 ToolTip="{Loc 'humanoid-profile-editor-import-button'}"
-                                Style="OpenRight" />
+                                BordersStyle="OpenRight" />
 
                 <ui:FancyButton Name="ExportButton"
                                 Icon="{x:Static ig:SymbolIcons.Upload}"
                                 ToolTip="{Loc 'humanoid-profile-editor-export-button'}"
-                                Style="OpenLeft" />
+                                BordersStyle="OpenLeft" />
             </BoxContainer>
 
             <Control HorizontalExpand="True" />
@@ -32,17 +32,17 @@
                 <ui:FancyButton Name="SaveButton"
                                 Icon="{x:Static ig:SymbolIcons.Save}"
                                 ToolTip="{Loc 'humanoid-profile-editor-save-button'}"
-                                Style="OpenRight" />
+                                BordersStyle="OpenRight" />
 
                 <ui:FancyButton Name="ResetButton" Disabled="True"
                                 Icon="{x:Static ig:SymbolIcons.Undo}"
                                 ToolTip="{Loc 'humanoid-profile-editor-reset-button'}"
-                                Style="OpenBoth" />
+                                BordersStyle="OpenBoth" />
 
                 <ui:FancyButton Name="RandomizeEverything"
                                 Icon="{x:Static ig:SymbolIcons.Casino}"
                                 ToolTip="{Loc 'humanoid-profile-editor-randomize-everything-button'}"
-                                Style="OpenLeft" />
+                                BordersStyle="OpenLeft" />
             </BoxContainer>
         </BoxContainer>
 
@@ -439,7 +439,7 @@
                         Name="TraitsShowUnusableButton"
                         Text="{Loc 'humanoid-profile-editor-traits-show-unusable-button'}"
                         ToolTip="{Loc 'humanoid-profile-editor-traits-show-unusable-button-tooltip'}"
-                        Style="OpenRight"
+                        BordersStyle="OpenRight"
                         ToggleMode="True"
                         HorizontalAlignment="Stretch"
                         HorizontalExpand="True" />
@@ -448,7 +448,7 @@
                         Name="TraitsRemoveUnusableButton"
                         Text="You shouldn't see this"
                         ToolTip="{Loc 'humanoid-profile-editor-traits-remove-unusable-button-tooltip'}"
-                        Style="OpenLeft"
+                        BordersStyle="OpenLeft"
                         HorizontalAlignment="Stretch"
                         HorizontalExpand="True" />
                 </BoxContainer>
@@ -470,7 +470,7 @@
                         Name="LoadoutsShowUnusableButton"
                         Text="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button'}"
                         ToolTip="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button-tooltip'}"
-                        Style="OpenRight"
+                        BordersStyle="OpenRight"
                         ToggleMode="True"
                         HorizontalAlignment="Stretch"
                         HorizontalExpand="True" />
@@ -478,7 +478,7 @@
                         Name="LoadoutsRemoveUnusableButton"
                         Text="You shouldn't see this"
                         ToolTip="{Loc 'humanoid-profile-editor-loadouts-remove-unusable-button-tooltip'}"
-                        Style="OpenLeft"
+                        BordersStyle="OpenLeft"
                         HorizontalAlignment="Stretch"
                         HorizontalExpand="True" />
                 </BoxContainer>

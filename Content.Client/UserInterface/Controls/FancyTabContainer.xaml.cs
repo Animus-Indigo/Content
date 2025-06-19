@@ -124,7 +124,7 @@ public sealed partial class FancyTabContainer : BoxContainer
             MaxHeight        = 32,
             HorizontalExpand = true,
             Icon             = icon,
-            Filled           = iconFilled
+            IconFilled           = iconFilled
         };
         button.OnPressed += _ => SelectTab(control);
 
@@ -254,7 +254,7 @@ public sealed partial class FancyTabContainer : BoxContainer
                 button.Style = ButtonStyle.Default;
 
                 if (FirstTabOpenBoth)
-                    button.Style = ButtonStyle.OpenBoth;
+                    button.BordersStyle = ButtonBordersStyle.OpenBoth;
 
                 return;
             }
@@ -268,7 +268,7 @@ public sealed partial class FancyTabContainer : BoxContainer
 
             if (FirstTabOpenBoth && i == 0 || LastTabOpenBoth && i == visibleTabs.Count - 1)
             {
-                button.Style = ButtonStyle.OpenBoth;
+                button.BordersStyle = ButtonBordersStyle.OpenBoth;
 
                 continue;
             }
@@ -280,35 +280,35 @@ public sealed partial class FancyTabContainer : BoxContainer
                 _                                 => 1
             };
 
-            button.Style = GetDirection(TabLocation, position);
+            button.BordersStyle = GetDirection(TabLocation, position);
         }
 
         return;
 
-        ButtonStyle GetDirection(Direction direction, int position) =>
+        ButtonBordersStyle GetDirection(Direction direction, int position) =>
             position switch
             {
                 // First
                 0 => direction switch
                 {
-                    North => ButtonStyle.OpenRight,
-                    South => ButtonStyle.OpenRight,
-                    East  => ButtonStyle.OpenLeft,
-                    West  => ButtonStyle.OpenLeft,
-                    _     => ButtonStyle.OpenRight
+                    North => ButtonBordersStyle.OpenRight,
+                    South => ButtonBordersStyle.OpenRight,
+                    East  => ButtonBordersStyle.OpenLeft,
+                    West  => ButtonBordersStyle.OpenLeft,
+                    _     => ButtonBordersStyle.OpenRight
                 },
                 // Middle
-                1 => ButtonStyle.OpenBoth,
+                1 => ButtonBordersStyle.OpenBoth,
                 // Last
                 2 => direction switch
                 {
-                    North => ButtonStyle.OpenLeft,
-                    South => ButtonStyle.OpenLeft,
-                    East  => ButtonStyle.OpenRight,
-                    West  => ButtonStyle.OpenRight,
-                    _     => ButtonStyle.OpenLeft
+                    North => ButtonBordersStyle.OpenLeft,
+                    South => ButtonBordersStyle.OpenLeft,
+                    East  => ButtonBordersStyle.OpenRight,
+                    West  => ButtonBordersStyle.OpenRight,
+                    _     => ButtonBordersStyle.OpenLeft
                 },
-                _ => ButtonStyle.OpenBoth
+                _ => ButtonBordersStyle.OpenBoth
             };
     }
 }

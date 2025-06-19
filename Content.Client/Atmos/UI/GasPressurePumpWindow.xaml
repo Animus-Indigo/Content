@@ -29,12 +29,12 @@
             <BoxContainer Orientation="Horizontal">
                 <controls:FancyButton Name="SetMaxPressureButton"
                                       Text="{Loc comp-gas-pump-ui-pump-set-max}"
-                                      Style="OpenRight" />
+                                      BordersStyle="OpenRight" />
 
                 <controls:FancyButton Name="SetOutputPressureButton"
                                       Text="{Loc comp-gas-pump-ui-pump-set-rate}"
                                       HorizontalAlignment="Right"
-                                      Style="OpenLeft"
+                                      BordersStyle="OpenLeft"
                                       Disabled="True" />
             </BoxContainer>
         </BoxContainer>
