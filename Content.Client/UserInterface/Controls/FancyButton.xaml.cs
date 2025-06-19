@@ -285,10 +285,10 @@ public partial class FancyButton : ContainerButton
             insetBorders = new(
                 insetBorderColor,
                 new(
-                    rounding.TopLeft + rounding.BottomLeft == 0.0f ? 0.0f : 2.0f,
-                    2.0f,
-                    rounding.TopRight + rounding.BottomRight == 0.0f ? 0.0f : 2.0f,
-                    2.0f
+                    rounding.TopLeft + rounding.BottomLeft == 0.0f ? 0.0f : 4.0f,
+                    4.0f,
+                    rounding.TopRight + rounding.BottomRight == 0.0f ? 0.0f : 4.0f,
+                    4.0f
                 )
             );
         }
