@@ -168,9 +168,6 @@ namespace Content.Client.ContextMenu.UI
             if (_stateManager.CurrentState is not GameplayStateBase)
                 return false;
 
-            if (_combatMode.IsInCombatMode(args.Session?.AttachedEntity))
-                return false;
-
             var coords = args.Coordinates.ToMap(_entityManager, _xform);
 
             if (_verbSystem.TryGetEntityMenuEntities(coords, out var entities))
