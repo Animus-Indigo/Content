@@ -15,6 +15,7 @@ using Robust.Client.Input;
 using Robust.Client.Player;
 using Robust.Client.State;
 using Robust.Shared.Input;
+using Robust.Shared.Input.Binding;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 
@@ -31,6 +32,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
     [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
 
     private EntityQuery<TransformComponent> _xformQuery;
+    private bool                            _altDown;
 
     private const string MeleeLungeKey = "melee-lunge";
 
@@ -40,6 +42,17 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         _xformQuery = GetEntityQuery<TransformComponent>();
         SubscribeNetworkEvent<MeleeLungeEvent>(OnMeleeLunge);
         UpdatesOutsidePrediction = true;
+
+        CommandBinds.Builder
+            .Bind(EngineKeyFunctions.UseSecondary, new PointerInputCmdHandler(UseSecondaryInputCmdHandler, false))
+            .Register<MeleeWeaponSystem>();
+    }
+
+    private bool UseSecondaryInputCmdHandler(in PointerInputCmdHandler.PointerInputCmdArgs ev)
+    {
+        _altDown = ev.State == BoundKeyState.Down;
+
+        return ev.Session?.AttachedEntity is {} playerEntity && CombatMode.IsInCombatMode(playerEntity);
     }
 
     public override void FrameUpdate(float frameTime)
