@@ -41,9 +41,6 @@ namespace Content.Client.Gameplay
 
             LoadMainScreen();
 
-            // Add the hand-item overlay.
-            _overlayManager.AddOverlay(new ShowHandItemOverlay());
-
             // FPS counter.
             // yeah this can just stay here, whatever
             _fpsCounter = new FpsCounter(_gameTiming);
@@ -54,8 +51,6 @@ namespace Content.Client.Gameplay
 
         protected override void Shutdown()
         {
-            _overlayManager.RemoveOverlay<ShowHandItemOverlay>();
-
             base.Shutdown();
             // Clear viewport to some fallback, whatever.
             _eyeManager.MainViewport = UserInterfaceManager.MainViewport;

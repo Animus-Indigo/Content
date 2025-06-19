@@ -958,18 +958,6 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
         // override "held-item" overlay
         var provider = action.Container;
 
-        if (action.TargetingIndicator && _overlays.TryGetOverlay<ShowHandItemOverlay>(out var handOverlay))
-        {
-            if (action.ItemIconStyle == ItemActionIconStyle.BigItem && action.Container != null)
-            {
-                handOverlay.EntityOverride = provider;
-            }
-            else if (action.Toggled && action.IconOn != null)
-                handOverlay.IconOverride = _spriteSystem.Frame0(action.IconOn);
-            else if (action.Icon != null)
-                handOverlay.IconOverride = _spriteSystem.Frame0(action.Icon);
-        }
-
         if (_container != null)
         {
             foreach (var button in _container.GetButtons())
@@ -1027,12 +1015,6 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
                     button.UpdateIcons();
             }
         }
-
-        if (!_overlays.TryGetOverlay<ShowHandItemOverlay>(out var handOverlay))
-            return;
-
-        handOverlay.IconOverride = null;
-        handOverlay.EntityOverride = null;
     }
 
     //TODO: Serialize this shit
