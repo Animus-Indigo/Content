@@ -1,19 +1,22 @@
 <PanelContainer xmlns="https://spacestation14.io"
+                xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                 HorizontalExpand="True">
     <BoxContainer Orientation="Horizontal">
         <TextureRect Name="Icon"
                      Access="Public"
                      MinSize="32 32"
                      RectClipContent="True" />
+
         <BoxContainer Orientation="Vertical"
                       HorizontalExpand="True"
                       VerticalExpand="False">
-            <Label Name="ProductName"
-                   Access="Public"
-                   HorizontalExpand="True"
-                   ClipText="True"
-                   Margin="4 4 4 4"/>
+            <controls:FancyLabel Name="ProductName"
+                                 Access="Public"
+                                 HorizontalExpand="True"
+                                 TextStyle="Headline"
+                                 ClipText="True" />
         </BoxContainer>
+
         <BoxContainer Name="Content"
                       Orientation="Horizontal"
                       HorizontalAlignment="Right">
