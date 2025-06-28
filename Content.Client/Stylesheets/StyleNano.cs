@@ -264,20 +264,9 @@ public sealed class StyleNano : StyleBase
         };
 
     public static StyleBoxFlat FancyPopupItemPanelHover =>
-        new(Colors.Accent.WithAlpha(0.4f))
+        new(Colors.Accent800.WithAlpha(0.4f))
         {
             Padding = new(12.0f, 4.0f)
-        };
-
-    #endregion
-
-    #region Tab Container
-
-    public static RectBox FancyTabContainerPanel =>
-        new()
-        {
-            Borders         = new(Colors.TabContainerBorder, new(2.0f)),
-            BackgroundColor = Colors.TabContainerBackground
         };
 
     #endregion
@@ -470,13 +459,13 @@ public sealed class StyleNano : StyleBase
 
         var progressBarBackground = new StyleBoxFlat
         {
-            BackgroundColor = Colors.Black
+            BackgroundColor = Colors.IndigoGray1400
         };
         progressBarBackground.SetContentMarginOverride(StyleBox.Margin.Vertical, 14.5f);
 
         var progressBarForeground = new StyleBoxFlat
         {
-            BackgroundColor = Colors.Green
+            BackgroundColor = Colors.Green900
         };
         progressBarForeground.SetContentMarginOverride(StyleBox.Margin.Vertical, 14.5f);
 
@@ -712,7 +701,7 @@ public sealed class StyleNano : StyleBase
                     new(
                         new SelectorElement(null, null, null, null),
                         [
-                            new(Label.StylePropertyFontColor, Colors.Label)
+                            new(Label.StylePropertyFontColor, Colors.Gray100)
                         ]
                     ),
 
@@ -802,14 +791,6 @@ public sealed class StyleNano : StyleBase
                         .Prop(
                             Label.StylePropertyFont,
                             typographyManager.GetFont(FontType.SansSerif, TextStyle.Footnote, FontWeight.Bold)),
-
-                    #endregion
-
-                    #region Tab Container
-
-                    Element<PanelContainer>()
-                        .Class(UIStyleClasses.FancyTabContainerPanel)
-                        .Prop(PanelContainer.StylePropertyPanel, FancyTabContainerPanel),
 
                     #endregion
 
@@ -1223,7 +1204,6 @@ public sealed class StyleNano : StyleBase
                     new(
                         new SelectorElement(typeof(TabContainer), null, null, null),
                         [
-                            new(TabContainer.StylePropertyPanelStyleBox, FancyTabContainerPanel),
                             new(TabContainer.StylePropertyTabStyleBox, tabContainerBoxActive),
                             new(
                                 TabContainer.StylePropertyTabStyleBoxInactive,
@@ -1427,7 +1407,7 @@ public sealed class StyleNano : StyleBase
                                 ItemList.StylePropertyBackground,
                                 new StyleBoxFlat
                                 {
-                                    BackgroundColor = Colors.Black,
+                                    BackgroundColor = Colors.IndigoGray1400,
                                     BorderColor     = Colors.WindowInsetBorder,
                                     BorderThickness = new(2.0f)
                                 }),
@@ -1435,19 +1415,19 @@ public sealed class StyleNano : StyleBase
                                 ItemList.StylePropertyItemBackground,
                                 new StyleBoxFlat
                                 {
-                                    BackgroundColor = Colors.Black
+                                    BackgroundColor = Colors.IndigoGray1400
                                 }),
                             new(
                                 ItemList.StylePropertyDisabledItemBackground,
                                 new StyleBoxFlat
                                 {
-                                    BackgroundColor = Colors.BlackDark
+                                    BackgroundColor = Colors.IndigoGray1500
                                 }),
                             new(
                                 ItemList.StylePropertySelectedItemBackground,
                                 new StyleBoxFlat
                                 {
-                                    BackgroundColor = Colors.GrayDark
+                                    BackgroundColor = Colors.IndigoGray1200
                                 })
                         ]),
 

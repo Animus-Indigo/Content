@@ -14,17 +14,23 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Content.Shared.InterfaceGuidelines;
+using Robust.Client.UserInterface.Controls;
 
 
-namespace Content.Client.UserInterface.GlobalMenu;
+namespace Content.Client.UserInterface.Controls;
 
 
-public readonly record struct GlobalMenuStyle(Color Background, Color Border, Color InsetBorder)
+public sealed class FancyPanelContainer : PanelContainer
 {
-    public static readonly GlobalMenuStyle Default = new(
-        Colors.PopupBackground,
-        Colors.PopupBorder,
-        Colors.PopupInsetBorder);
+    public Rounding Rounding { get; set; } = new(0.0f);
 
-    public static readonly GlobalMenuStyle Combat = new(Colors.Red800, Colors.PopupBorder, Colors.Red600);
+    public FancyPanelContainer()
+    {
+        PanelOverride = new RectBox
+        {
+            BackgroundColor = Colors.IndigoGray1400,
+            Borders         = new(Colors.WindowInsetBorder, new(2.0f)),
+            Rounding        = Rounding
+        };
+    }
 }

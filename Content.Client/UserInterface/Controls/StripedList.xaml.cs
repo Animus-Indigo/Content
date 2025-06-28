@@ -50,8 +50,8 @@ public sealed partial class StripedList : BoxContainer
     public List<Color> Colors =
         new()
         {
-            Shared.InterfaceGuidelines.Colors.GrayDark,
-            Shared.InterfaceGuidelines.Colors.BlackLight
+            Shared.InterfaceGuidelines.Colors.IndigoGray1300,
+            Shared.InterfaceGuidelines.Colors.IndigoGray1200
         };
 
 

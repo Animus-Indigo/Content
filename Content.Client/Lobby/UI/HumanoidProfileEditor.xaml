@@ -59,8 +59,7 @@
                                  HScrollEnabled="True"
                                  VerticalExpand="True"
                                  VScrollEnabled="True">
-                    <BoxContainer Margin="8 8"
-                                  HorizontalExpand="True"
+                    <BoxContainer HorizontalExpand="True"
                                   Orientation="Vertical"
                                   SeparationOverride="8">
                         <ui:StripedList Orientation="Vertical" HorizontalExpand="True">
@@ -77,7 +76,7 @@
                                                 Icon="{x:Static ig:SymbolIcons.Help}"
                                                 ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"
                                                 Style="Ghost"
-                                                FontColor="{x:Static ig:Colors.Yellow}" />
+                                                FontColor="{x:Static ig:Colors.WindowTitlebarHelpButton}" />
 
                                 <ui:FancyOptionButton
                                     Name="SpeciesButton"
@@ -321,7 +320,6 @@
             </BoxContainer>
 
             <BoxContainer Name="Background"
-                          Margin="8 8"
                           HorizontalExpand="True"
                           Orientation="Vertical">
                 <!-- Background -->
@@ -405,7 +403,6 @@
                                  VScrollEnabled="True">
                     <BoxContainer HorizontalExpand="True"
                                   Orientation="Vertical"
-                                  Margin="8 8"
                                   SeparationOverride="8">
                         <ui:FancyOptionButton Name="PreferenceUnavailableButton" />
 
@@ -420,13 +417,11 @@
                                  HScrollEnabled="True"
                                  VerticalExpand="True"
                                  VScrollEnabled="True">
-                    <BoxContainer Name="AntagList"
-                                  Margin="8 8" />
+                    <BoxContainer Name="AntagList" />
                 </ScrollContainer>
             </BoxContainer>
 
             <BoxContainer Name="TraitsTab"
-                          Margin="8 8"
                           HorizontalExpand="True"
                           Orientation="Vertical">
                 <!-- Traits -->
@@ -457,7 +452,6 @@
             </BoxContainer>
 
             <BoxContainer Name="LoadoutsTab"
-                          Margin="8 8"
                           HorizontalExpand="True"
                           Orientation="Vertical">
                 <!-- Loadouts -->
@@ -488,7 +482,6 @@
 
             <BoxContainer
                 Name="MarkingsTab"
-                Margin="8 8"
                 HorizontalExpand="True"
                 Orientation="Vertical">
                 <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True"
@@ -504,7 +497,7 @@
     <!-- Sprite View -->
     <PanelContainer VerticalExpand="True" VerticalAlignment="Center">
         <PanelContainer.PanelOverride>
-            <graphics:StyleBoxFlat BackgroundColor="{x:Static ig:Colors.Gray}" />
+            <graphics:StyleBoxFlat BackgroundColor="{x:Static ig:Colors.IndigoGray1400}" />
         </PanelContainer.PanelOverride>
 
         <BoxContainer Orientation="Vertical" VerticalExpand="True" VerticalAlignment="Center">

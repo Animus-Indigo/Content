@@ -294,8 +294,18 @@ public partial class FancyButton : ContainerButton
         }
         else
         {
+            var insetBorderColor = Color switch
+            {
+                ButtonColor.Default => Colors.ButtonInsetBorder,
+                ButtonColor.Accent  => Colors.ButtonAccentInsetBorder,
+                ButtonColor.Danger  => Colors.ButtonDangerInsetBorder,
+                _                   => throw new ArgumentOutOfRangeException()
+            };
+
             backgroundColor = GetColorFor(Color, DrawMode);
-            insetBorders    = null;
+            insetBorders = DrawMode == DrawModeEnum.Disabled
+                ? null
+                : new(insetBorderColor, new(0.0f, 2.0f, 0.0f, 0.0f));
         }
 
 

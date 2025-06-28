@@ -54,12 +54,6 @@ public static class UIStyleClasses
 
     #endregion
 
-    #region Tab Container
-
-    public const string FancyTabContainerPanel = "FancyTabContainerPanel";
-
-    #endregion
-
     #region Chat
 
     public const string ChatPanel = "ChatPanel";
