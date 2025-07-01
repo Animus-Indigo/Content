@@ -110,6 +110,20 @@
           cost: 8
         - proto: ClothingEyesGlassesThermal
           cost: 8
+        - proto: FishingRodGolden
+          cost: 5
+          prob: 0.5
+        - proto: FishingRod
+        - proto: ModsuitCoreStandard
+          cost: 5
+        - proto: MiningVoucher
+          cost: 4
+        - proto: PKAUpgradeDamage
+          cost: 3
+        - proto: PKAUpgradeFireRate
+          cost: 3
+        - proto: PKAUpgradeRange
+          cost: 2
 
 # Mob loot table
 
