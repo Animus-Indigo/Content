@@ -26,9 +26,10 @@
   id: Carps
   entries:
     - proto: MobCarpDungeon
-    - proto: MobCarpHolo
-      cost: 5
-      prob: 0.2
+    # These do too much damage for salvage, need nerfs
+    #- proto: MobCarpHolo
+    #  cost: 5
+    #  prob: 0.1
     - proto: MobCarpMagic
       cost: 5
       prob: 0.2
