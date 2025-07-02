@@ -6,7 +6,7 @@
       cost: 2
     - proto: MobXenoPraetorian
       cost: 5
-      prob: 0.1
+      prob: 0.2
     - proto: MobXenoQueen
       cost: 10
       prob: 0.02
@@ -30,12 +30,12 @@
     #- proto: MobCarpHolo
     #  cost: 5
     #  prob: 0.1
-    #- proto: MobCarpMagic
-    #  cost: 5
-    #  prob: 0.1
+    - proto: MobCarpMagic
+      cost: 5
+      prob: 0.2
     - proto: MobCarpRainbow # carp version of rouny...
       cost: 3
-      prob: 0.05
+      prob: 0.1
     - proto: MobDragonDungeon
       cost: 10
       prob: 0.02

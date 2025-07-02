@@ -17,6 +17,8 @@
   - MechEquipmentDrill # Goobstation
   - OreProcessorIndustrialMachineCircuitboard
   - ClothingMaskWeldingGas
+  - SalvageExpeditionsComputerCircuitboard
+  - SalvageMagnetMachineCircuitboard
 
 - type: technology
   id: AdvancedPowercells
