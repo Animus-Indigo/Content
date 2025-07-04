@@ -1,7 +1,8 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     SetWidth="550"
     Resizable="False"
     MouseFilter="Stop">
@@ -140,4 +141,4 @@
             <Label Text="⚠" Margin="4 0 0 4" HorizontalExpand="True" HorizontalAlignment="Left"/>
         </BoxContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

@@ -7,11 +7,13 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Botany.PlantAnalyzer;
 
 [GenerateTypedNameReferences]
-public sealed partial class PlantAnalyzerWindow : FancyWindow
+public sealed partial class PlantAnalyzerWindow : UIKWindow
 {
     private readonly IEntityManager _entityManager;
     private readonly IPrototypeManager _prototypeManager;

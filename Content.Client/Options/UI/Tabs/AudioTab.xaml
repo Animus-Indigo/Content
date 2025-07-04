@@ -1,17 +1,17 @@
 ﻿<BoxContainer xmlns="https://spacestation14.io"
               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-              xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+              xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
               HorizontalExpand="True"
               Orientation="Vertical"
               SeparationOverride="8">
     <BoxContainer Orientation="Vertical" SeparationOverride="8">
-        <controls:FancyLabel Text="{Loc 'ui-options-volume-label'}"
+        <uik:UIKLabel Text="{Loc 'ui-options-volume-label'}"
                              TextStyle="Headline" />
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
             <Label Text="{Loc 'ui-options-master-volume'}" HorizontalExpand="True" />
 
-            <controls:FancySlider Name="MasterVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True"
+            <uik:UIKSlider Name="MasterVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True"
                                   MinSize="80 0" Rounded="True" />
 
             <Label Name="MasterVolumeLabel" MinSize="48 0" Align="Right" />
@@ -20,7 +20,7 @@
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
             <Label Text="{Loc 'ui-options-midi-volume'}" HorizontalExpand="True" />
 
-            <controls:FancySlider Name="MidiVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True"
+            <uik:UIKSlider Name="MidiVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True"
                                   MinSize="80 0"
                                   Rounded="True" />
 
@@ -30,7 +30,7 @@
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
             <Label Text="{Loc 'ui-options-ambient-music-volume'}" HorizontalExpand="True" />
 
-            <controls:FancySlider Name="AmbientMusicVolumeSlider" MinValue="0" MaxValue="100"
+            <uik:UIKSlider Name="AmbientMusicVolumeSlider" MinValue="0" MaxValue="100"
                                   HorizontalExpand="True"
                                   MinSize="80 0" Rounded="True" />
 
@@ -40,7 +40,7 @@
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
             <Label Text="{Loc 'ui-options-ambience-volume'}" HorizontalExpand="True" />
 
-            <controls:FancySlider Name="AmbienceVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True"
+            <uik:UIKSlider Name="AmbienceVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True"
                                   MinSize="80 0" Rounded="True" />
 
             <Label Name="AmbienceVolumeLabel" MinSize="48 0" Align="Right" />
@@ -49,7 +49,7 @@
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
             <Label Text="{Loc 'ui-options-lobby-volume'}" HorizontalExpand="True" />
 
-            <controls:FancySlider Name="LobbyVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True"
+            <uik:UIKSlider Name="LobbyVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True"
                                   MinSize="80 0"
                                   Rounded="True" />
 
@@ -59,7 +59,7 @@
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
             <Label Text="{Loc 'ui-options-interface-volume'}" HorizontalExpand="True" />
 
-            <controls:FancySlider Name="InterfaceVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True"
+            <uik:UIKSlider Name="InterfaceVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True"
                                   MinSize="80 0" Rounded="True" />
 
             <Label Name="InterfaceVolumeLabel" MinSize="48 0" Align="Right" />
@@ -68,7 +68,7 @@
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
             <Label Text="{Loc 'ui-options-ambience-max-sounds'}" HorizontalExpand="True" />
 
-            <controls:FancySlider Name="AmbienceSoundsSlider" MinValue="0" MaxValue="1" HorizontalExpand="True"
+            <uik:UIKSlider Name="AmbienceSoundsSlider" MinValue="0" MaxValue="1" HorizontalExpand="True"
                                   MinSize="80 0" Rounded="True" />
 
             <Label Name="AmbienceSoundsLabel" MinSize="48 0" Align="Right" />
@@ -77,36 +77,36 @@
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
             <Label Text="{Loc 'ui-options-announcer-volume'}" HorizontalExpand="True" />
 
-            <controls:FancySlider Name="AnnouncerVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True"
+            <uik:UIKSlider Name="AnnouncerVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True"
                                   MinSize="80 0" Rounded="True" />
 
             <Label Name="AnnouncerVolumeLabel" MinSize="48 0" Align="Right" />
         </BoxContainer>
 
         <BoxContainer Orientation="Vertical" SeparationOverride="8">
-            <controls:FancyCheckBox Name="LobbyMusicCheckBox"
+            <uik:UIKFancyCheckBox Name="LobbyMusicCheckBox"
                                     Text="{Loc 'ui-options-lobby-music'}" />
 
-            <controls:FancyCheckBox Name="RestartSoundsCheckBox"
+            <uik:UIKFancyCheckBox Name="RestartSoundsCheckBox"
                                     Text="{Loc 'ui-options-restart-sounds'}" />
 
-            <controls:FancyCheckBox Name="EventMusicCheckBox"
+            <uik:UIKFancyCheckBox Name="EventMusicCheckBox"
                                     Text="{Loc 'ui-options-event-music'}" />
 
-            <controls:FancyCheckBox Name="AnnouncerDisableMultipleSoundsCheckBox"
+            <uik:UIKFancyCheckBox Name="AnnouncerDisableMultipleSoundsCheckBox"
                                     Text="{Loc 'ui-options-announcer-disable-multiple-sounds'}"
                                     ToolTip="{Loc 'ui-options-announcer-disable-multiple-sounds-tooltip'}" />
 
-            <controls:FancyCheckBox Name="AdminSoundsCheckBox"
+            <uik:UIKFancyCheckBox Name="AdminSoundsCheckBox"
                                     Text="{Loc 'ui-options-admin-sounds'}" />
         </BoxContainer>
     </BoxContainer>
 
     <BoxContainer Orientation="Horizontal" Align="End" HorizontalExpand="True" SeparationOverride="12">
-        <controls:FancyButton Name="ResetButton"
+        <uik:UIKButton Name="ResetButton"
                               Text="{Loc 'ui-options-reset-all'}"
                               HorizontalAlignment="Right" />
-        <controls:FancyButton Name="ApplyButton"
+        <uik:UIKButton Name="ApplyButton"
                               Color="Accent"
                               Text="{Loc 'ui-options-apply'}"
                               HorizontalAlignment="Right" />

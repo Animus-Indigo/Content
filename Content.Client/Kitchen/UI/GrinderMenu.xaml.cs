@@ -6,11 +6,13 @@ using Robust.Client.GameObjects;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Kitchen.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class GrinderMenu : FancyWindow
+    public sealed partial class GrinderMenu : UIKWindow
     {
         [Dependency] private readonly IEntityManager _entityManager = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;

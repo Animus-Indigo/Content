@@ -1,7 +1,7 @@
-﻿<controls:FancyWindow
+﻿<uik:UIKWindow
     xmlns="https://spacestation14.io"
     xmlns:ui="clr-namespace:Content.Client.Disposal.UI"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     MinSize="300 400"
     SetSize="300 400"
     Resizable="False">
@@ -52,4 +52,4 @@
                          StyleClasses="OpenLeft" />
         </BoxContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

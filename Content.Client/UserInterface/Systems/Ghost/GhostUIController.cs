@@ -1,5 +1,5 @@
-﻿using Content.Client.Ghost;
-using Content.Client.UserInterface.GlobalMenu;
+﻿using Content.Client.GameBar;
+using Content.Client.Ghost;
 using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Client.UserInterface.Systems.Ghost.Widgets;
 using Content.Shared.Ghost;
@@ -15,7 +15,7 @@ namespace Content.Client.UserInterface.Systems.Ghost;
 public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSystem>
 {
     [Dependency] private readonly IEntityNetworkManager _net               = default!;
-    [Dependency] private readonly GlobalMenuManager     _globalMenuManager = null!;
+    [Dependency] private readonly GameBarManager     _gameBarManager = null!;
 
     [UISystemDependency] private readonly GhostSystem? _system = default;
 
@@ -29,8 +29,8 @@ public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSyst
         gameplayStateLoad.OnScreenLoad   += OnScreenLoad;
         gameplayStateLoad.OnScreenUnload += OnScreenUnload;
 
-        _globalMenuManager
-            .GetCategory(GlobalMenuCategory.Ghost)
+        _gameBarManager
+            .GetCategory(GameBarCategory.Ghost)
             .RegisterItem(
                 new(
                     new("global-menu-ghost-warp-item"),

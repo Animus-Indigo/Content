@@ -1,8 +1,8 @@
 <BoxContainer xmlns="https://spacestation14.io"
-              xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+              xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
               HorizontalExpand="True" Orientation="Vertical"
             Margin = "20 0 0 0" MinSize="160 0" >
     <Label Name="CBoundLabel" HorizontalAlignment="Center" />
-    <controls:FancyCheckBox Name="CBoundEnabled" HorizontalAlignment="Center" Text="{Loc 'Enable'}" Pressed="True" />
+    <uik:UIKFancyCheckBox Name="CBoundEnabled" HorizontalAlignment="Center" Text="{Loc 'Enable'}" Pressed="True" />
     <FloatSpinBox Name="CSpinner" />
 </BoxContainer>

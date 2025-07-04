@@ -1,12 +1,13 @@
 using Content.Shared.Buckle.Components;
 using Content.Shared.Interaction;
-using Content.Shared.InterfaceGuidelines;
 using Content.Shared.Verbs;
 using Content.Shared.Plunger.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Content.Shared.Toilet.Components;
+using Content.Shared.UIKit;
+
 
 namespace Content.Shared.Toilet.Systems
 {

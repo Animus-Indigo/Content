@@ -3,7 +3,7 @@ using Content.Server.Construction.Components;
 using Content.Server.Examine;
 using Content.Shared.Construction.Components;
 using Content.Shared.Construction.Prototypes;
-using Content.Shared.InterfaceGuidelines;
+using Content.Shared.UIKit;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
 using Robust.Shared.Map.Components;

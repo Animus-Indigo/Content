@@ -1,6 +1,6 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc 'forensic-scanner-interface-title'}"
     MinSize="350 200"
     SetSize="350 500">
@@ -26,4 +26,4 @@
             Name="Diagnostics"
             Text="{Loc forensic-scanner-interface-no-data}"/>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

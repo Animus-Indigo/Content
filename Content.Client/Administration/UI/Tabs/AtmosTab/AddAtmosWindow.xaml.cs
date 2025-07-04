@@ -7,12 +7,14 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Map.Components;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Administration.UI.Tabs.AtmosTab
 {
     [GenerateTypedNameReferences]
     [UsedImplicitly]
-    public sealed partial class AddAtmosWindow : FancyWindow
+    public sealed partial class AddAtmosWindow : UIKWindow
     {
         [Dependency] private readonly IPlayerManager _players = default!;
         [Dependency] private readonly IEntityManager _entities = default!;

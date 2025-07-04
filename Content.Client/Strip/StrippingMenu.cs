@@ -2,10 +2,12 @@ using Content.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Strip
 {
-    public sealed class StrippingMenu : FancyWindow
+    public sealed class StrippingMenu : UIKWindow
     {
         public LayoutContainer InventoryContainer = new();
         public BoxContainer HandsContainer = new() { Orientation = LayoutOrientation.Horizontal };

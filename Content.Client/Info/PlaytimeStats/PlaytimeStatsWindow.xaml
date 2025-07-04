@@ -1,7 +1,7 @@
-<ui:FancyWindow xmlns="https://spacestation14.io"
-                xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
-                xmlns:pt="clr-namespace:Content.Client.Info.PlaytimeStats"
+<controls:UIKWindow xmlns="https://spacestation14.io"
+                    xmlns:pt="clr-namespace:Content.Client.Info.PlaytimeStats"
                 xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
+                xmlns:controls="clr-namespace:Content.Client.UIKit.Controls"
                 VerticalExpand="True" HorizontalExpand="True"
                 Title="{Loc ui-playtime-stats-title}"
                 SetSize="600 400">
@@ -22,4 +22,4 @@
             </ScrollContainer>
         </BoxContainer>
     </Control>
-</ui:FancyWindow>
+</controls:UIKWindow>

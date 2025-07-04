@@ -10,8 +10,8 @@ using Content.Shared.Verbs;
 using Content.Shared.SubFloor;
 using Content.Shared.Inventory;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.InterfaceGuidelines;
 using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared.UIKit;
 using Content.Shared.Whitelist;
 
 namespace Content.Server.Paint;

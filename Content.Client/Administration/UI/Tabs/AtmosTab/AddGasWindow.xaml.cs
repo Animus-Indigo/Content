@@ -8,12 +8,14 @@ using Robust.Client.Console;
 using Robust.Client.Player;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Map.Components;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Administration.UI.Tabs.AtmosTab
 {
     [GenerateTypedNameReferences]
     [UsedImplicitly]
-    public sealed partial class AddGasWindow : FancyWindow
+    public sealed partial class AddGasWindow : UIKWindow
     {
         private List<NetEntity>? _gridData;
         private IEnumerable<GasPrototype>? _gasData;

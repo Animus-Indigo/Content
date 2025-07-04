@@ -1,8 +1,7 @@
 using System.Linq;
 using System.Numerics;
-using Content.Client.InterfaceGuidelines;
+using Content.Client.UIKit;
 using Content.Client.Radiation.Systems;
-using Content.Shared.InterfaceGuidelines;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Enums;

@@ -17,11 +17,14 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using UIKFancyCheckBox = Content.Client.UIKit.Controls.UIKFancyCheckBox;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Atmos.Consoles;
 
 [GenerateTypedNameReferences]
-public sealed partial class AtmosAlertsComputerWindow : FancyWindow
+public sealed partial class AtmosAlertsComputerWindow : UIKWindow
 {
     private readonly IEntityManager _entManager;
     private readonly SpriteSystem _spriteSystem;
@@ -107,7 +110,7 @@ public sealed partial class AtmosAlertsComputerWindow : FancyWindow
 
     #region Toggle handling
 
-    private void OnShowAlarmsToggled(FancyCheckBox toggle, AtmosAlarmType toggledAlarmState)
+    private void OnShowAlarmsToggled(UIKFancyCheckBox toggle, AtmosAlarmType toggledAlarmState)
     {
         if (_owner == null)
             return;

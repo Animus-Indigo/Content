@@ -1,7 +1,7 @@
 using Content.Shared.Actions;
 using Content.Shared.Examine;
 using Content.Shared.Hands;
-using Content.Shared.InterfaceGuidelines;
+using Content.Shared.UIKit;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Utility;

@@ -1,9 +1,11 @@
 ﻿using Content.Client.UserInterface.Controls;
 using Content.Shared.Chat;
+using UIKFancyCheckBox = Content.Client.UIKit.Controls.UIKFancyCheckBox;
+
 
 namespace Content.Client.UserInterface.Systems.Chat.Controls;
 
-public sealed class ChannelFilterCheckbox : FancyCheckBox
+public sealed class ChannelFilterCheckbox : UIKFancyCheckBox
 {
     public readonly ChatChannel Channel;
 

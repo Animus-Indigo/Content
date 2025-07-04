@@ -23,7 +23,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
-using Content.Shared.InterfaceGuidelines;
+using Content.Shared.UIKit;
 using Content.Shared.Verbs;
 
 namespace Content.Server._Shitmed.Medical.Surgery;

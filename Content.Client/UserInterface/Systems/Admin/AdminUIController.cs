@@ -5,11 +5,11 @@ using Content.Client.Administration.UI.Tabs.ObjectsTab;
 using Content.Client.Administration.UI.Tabs.PanicBunkerTab;
 using Content.Client.Administration.UI.Tabs.BabyJailTab;
 using Content.Client.Administration.UI.Tabs.PlayerTab;
+using Content.Client.GameBar;
 using Content.Client.Gameplay;
 using Content.Client.Lobby;
 using Content.Client.Mapping;
 using Content.Client.UserInterface.Controls;
-using Content.Client.UserInterface.GlobalMenu;
 using Content.Client.Verbs.UI;
 using Content.Shared.Administration.Events;
 using Content.Shared.Input;
@@ -33,13 +33,13 @@ public sealed class AdminUIController : UIController,
     [Dependency] private readonly IClientConGroupController _conGroups         = default!;
     [Dependency] private readonly IClientConsoleHost        _conHost           = default!;
     [Dependency] private readonly VerbMenuUIController      _verb              = default!;
-    [Dependency] private readonly GlobalMenuManager         _globalMenuManager = null!;
+    [Dependency] private readonly GameBarManager         _gameBarManager = null!;
 
     private AdminMenuWindow?   _window;
     private PanicBunkerStatus? _panicBunker;
     private BabyJailStatus?    _babyJail;
 
-    private GlobalMenuItemDef _windowItem;
+    private GameBarItemDef _windowItem;
 
     public override void Initialize()
     {
@@ -107,8 +107,8 @@ public sealed class AdminUIController : UIController,
     {
         var isAdmin = _conGroups.CanAdminMenu();
 
-        _globalMenuManager
-            .GetCategory(GlobalMenuCategory.Admin)
+        _gameBarManager
+            .GetCategory(GameBarCategory.Admin)
             .KeepItem(_windowItem, when: isAdmin);
     }
 

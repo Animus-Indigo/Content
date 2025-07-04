@@ -1,6 +1,6 @@
-﻿using Content.Client.InterfaceGuidelines;
+﻿using Content.Client.UIKit;
+using Content.Client.UIKit.Controls;
 using Content.Client.UserInterface.Controls;
-using Content.Shared.InterfaceGuidelines;
 using Content.Shared.Verbs;
 using Robust.Client.UserInterface.Controls;
 
@@ -23,7 +23,7 @@ public sealed class ExamineButton : ContainerButton
 
     private const int Thickness = 4;
 
-    public FancyIcon Icon;
+    public UIKIcon Icon;
 
     public ExamineVerb Verb;
 

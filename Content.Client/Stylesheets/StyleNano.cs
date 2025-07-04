@@ -1,13 +1,13 @@
 using System.Linq;
 using Content.Client.ContextMenu.UI;
 using Content.Client.Examine;
-using Content.Client.InterfaceGuidelines;
+using Content.Client.UIKit;
 using Content.Client.PDA;
 using Content.Client.Resources;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Controls.FancyTree;
 using Content.Client.Verbs.UI;
-using Content.Shared.InterfaceGuidelines;
+using Content.Shared.UIKit;
 using Content.Shared.Verbs;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;

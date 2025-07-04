@@ -1,3 +1,4 @@
+using Content.Client.UIKit.Controls;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Administration.Notes;
 using Content.Shared.Database;
@@ -8,11 +9,13 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Administration.UI.Notes;
 
 [GenerateTypedNameReferences]
-public sealed partial class NoteEdit : FancyWindow
+public sealed partial class NoteEdit : UIKWindow
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IClientConsoleHost _console = default!;
@@ -123,7 +126,7 @@ public sealed partial class NoteEdit : FancyWindow
     private bool CanCreate { get; set; }
     private bool CanEdit { get; set; }
 
-    private void OnTypeChanged(FancyOptionButton.ItemSelectedEventArgs args)
+    private void OnTypeChanged(UIKOptionButton.ItemSelectedEventArgs args)
     {
         // We should be resetting the underlying values too but the server handles that anyway
         switch (args.Id)
@@ -181,7 +184,7 @@ public sealed partial class NoteEdit : FancyWindow
         IsSecret = SecretCheckBox.Pressed;
     }
 
-    private void OnSeverityChanged(FancyOptionButton.ItemSelectedEventArgs args)
+    private void OnSeverityChanged(UIKOptionButton.ItemSelectedEventArgs args)
     {
         NoteSeverity = args.Id == -1 ? NoteSeverity = null : (NoteSeverity) args.Id;
         SeverityOption.SelectId(args.Id);

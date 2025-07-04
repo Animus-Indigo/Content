@@ -1,6 +1,6 @@
-﻿<controls:FancyWindow
+﻿<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc 'cargo-console-order-menu-title'}">
     <BoxContainer Orientation="Vertical">
         <GridContainer Columns="2">
@@ -32,4 +32,4 @@
                 Text="{Loc 'cargo-console-order-menu-submit-button'}"
                 TextAlign="Center" />
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

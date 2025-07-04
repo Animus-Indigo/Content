@@ -14,6 +14,8 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Network;
 using Robust.Shared.Configuration;
 using Robust.Shared.Utility;
+using UIKButton = Content.Client.UIKit.Controls.UIKButton;
+
 
 namespace Content.Client.Administration.UI.Bwoink
 {
@@ -30,7 +32,7 @@ namespace Content.Client.Administration.UI.Bwoink
         public AdminAHelpUIHandler AHelpHelper = default!;
 
         private PlayerInfo? _currentPlayer;
-        private readonly Dictionary<FancyButton, ConfirmationData> _confirmations = new();
+        private readonly Dictionary<UIKButton, ConfirmationData> _confirmations = new();
 
         public BwoinkControl()
         {

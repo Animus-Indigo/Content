@@ -1,11 +1,11 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
     xmlns:humanoid="clr-namespace:Content.Client.Humanoid"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc 'magic-mirror-window-title'}"
     MinSize="600 400">
     <BoxContainer>
         <humanoid:SingleMarkingPicker Name="HairPicker" Category="Hair" />
         <humanoid:SingleMarkingPicker Name="FacialHairPicker" Category="FacialHair" />
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

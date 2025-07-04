@@ -8,12 +8,13 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using System.Linq;
 using Content.Client.UserInterface.Controls;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
 
 
 namespace Content.Client._Goobstation.Administration.UI.TimeTransferPanel;
 
 [GenerateTypedNameReferences]
-public sealed partial class TimeTransferPanel : FancyWindow
+public sealed partial class TimeTransferPanel : UIKWindow
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;

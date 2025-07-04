@@ -13,11 +13,13 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Timing;
 using ConsoleUIState = Content.Shared.SensorMonitoring.SensorMonitoringConsoleBoundInterfaceState;
 using IncrementalUIState = Content.Shared.SensorMonitoring.SensorMonitoringIncrementalUpdate;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.SensorMonitoring;
 
 [GenerateTypedNameReferences]
-public sealed partial class SensorMonitoringWindow : FancyWindow, IComputerWindow<ConsoleUIState>
+public sealed partial class SensorMonitoringWindow : UIKWindow, IComputerWindow<ConsoleUIState>
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly ILocalizationManager _loc = default!;

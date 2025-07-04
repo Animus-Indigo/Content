@@ -5,6 +5,7 @@
     xmlns:hotbar="clr-namespace:Content.Client.UserInterface.Systems.Hotbar.Widgets"
     xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:mapping="clr-namespace:Content.Client.Mapping"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     VerticalExpand="False"
     VerticalAlignment="Bottom"
     HorizontalAlignment="Center">
@@ -23,7 +24,7 @@
                 <Button Name="EntityReplaceButton" Access="Public" ToggleMode="True"
                         SetHeight="48"
                         StyleClasses="ButtonSquare" Text="{Loc 'mapping-replace'}" HorizontalExpand="True" />
-                <controls:FancyOptionButton Name="EntityPlacementMode" Access="Public"
+                <uik:UIKOptionButton Name="EntityPlacementMode" Access="Public"
                               SetHeight="48"
                               StyleClasses="ButtonSquare" TooltipDelay="0"
                               ToolTip="{Loc 'entity-spawn-window-override-menu-tooltip'}"
@@ -109,13 +110,13 @@
                             <graphics:StyleBoxFlat BackgroundColor="#222222AA" />
                         </PanelContainer.PanelOverride>
                         <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="3 3">
-                            <controls:FancyCheckBox Name="DecalEnableAuto" Margin="0 0 0 10"
+                            <uik:UIKFancyCheckBox Name="DecalEnableAuto" Margin="0 0 0 10"
                                                     Text="{Loc 'decal-placer-window-enable-auto'}" />
-                            <controls:FancyCheckBox Name="DecalEnableColor"
+                            <uik:UIKFancyCheckBox Name="DecalEnableColor"
                                                     Text="{Loc 'decal-placer-window-use-color'}" />
-                            <controls:FancyCheckBox Name="DecalEnableSnap"
+                            <uik:UIKFancyCheckBox Name="DecalEnableSnap"
                                                     Text="{Loc 'decal-placer-window-enable-snap'}" />
-                            <controls:FancyCheckBox Name="DecalEnableCleanable"
+                            <uik:UIKFancyCheckBox Name="DecalEnableCleanable"
                                                     Text="{Loc 'decal-placer-window-enable-cleanable'}" />
                             <BoxContainer Name="DecalSpinBoxContainer" Orientation="Horizontal">
                                 <Label Text="{Loc 'decal-placer-window-rotation'}" Margin="0 0 0 1" />

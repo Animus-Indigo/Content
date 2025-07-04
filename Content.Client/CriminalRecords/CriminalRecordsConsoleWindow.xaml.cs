@@ -11,12 +11,14 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.CriminalRecords;
 
 // TODO: dedupe shitcode from general records theres a lot
 [GenerateTypedNameReferences]
-public sealed partial class CriminalRecordsConsoleWindow : FancyWindow
+public sealed partial class CriminalRecordsConsoleWindow : UIKWindow
 {
     private readonly IPlayerManager _player;
     private readonly IPrototypeManager _proto;

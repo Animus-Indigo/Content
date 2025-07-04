@@ -4,6 +4,8 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Piping.Portable.Components;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Atmos.UI;
 
@@ -11,7 +13,7 @@ namespace Content.Client.Atmos.UI;
 ///     Client-side UI used to control a space heater.
 /// </summary>
 [GenerateTypedNameReferences]
-public sealed partial class SpaceHeaterWindow : FancyWindow
+public sealed partial class SpaceHeaterWindow : UIKWindow
 {
     // To account for a minimum delta temperature for atmos equalization to trigger we use a fixed step for target temperature increment/decrement
     public int TemperatureChangeDelta = 5;

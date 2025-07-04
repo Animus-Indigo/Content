@@ -5,7 +5,7 @@ using Content.Shared.Forensics;
 using Content.Shared.Examine;
 using Robust.Shared.Utility;
 using Content.Shared.IdentityManagement;
-using Content.Shared.InterfaceGuidelines;
+using Content.Shared.UIKit;
 
 
 namespace Content.Server.Forensics

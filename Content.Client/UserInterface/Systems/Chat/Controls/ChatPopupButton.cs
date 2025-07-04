@@ -1,4 +1,5 @@
-﻿using Content.Client.UserInterface.Controls;
+﻿using Content.Client.UIKit.Controls;
+using Content.Client.UserInterface.Controls;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
@@ -12,7 +13,7 @@ namespace Content.Client.UserInterface.Systems.Chat.Controls;
 /// Base type of <see cref="ChannelFilterButton"/> and <see cref="ChannelSelectorButton"/>.
 /// </summary>
 public abstract class ChatPopupButton<TPopup> : Button
-    where TPopup : FancyPopup, new()
+    where TPopup : UIKPopup, new()
 {
     private readonly IGameTiming _gameTiming;
 

@@ -4,7 +4,8 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
 using Content.Shared.Examine;   // Frontier
 using Content.Shared.Hands.Components;
-using Content.Shared.InterfaceGuidelines; // Frontier
+using Content.Shared.UIKit;
+// Frontier
 using Content.Shared.Verbs;               // Frontier
 using Robust.Shared.Utility;              // Frontier
 

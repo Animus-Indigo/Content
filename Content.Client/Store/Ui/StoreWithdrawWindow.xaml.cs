@@ -6,6 +6,8 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Store;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Store.Ui;
 
@@ -14,7 +16,7 @@ namespace Content.Client.Store.Ui;
 ///     Used as sub-window in Uplink UI
 /// </summary>
 [GenerateTypedNameReferences]
-public sealed partial class StoreWithdrawWindow : FancyWindow
+public sealed partial class StoreWithdrawWindow : UIKWindow
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 

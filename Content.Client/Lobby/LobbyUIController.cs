@@ -1,11 +1,11 @@
 using System.Linq;
+using Content.Client.GameBar;
 using Content.Client.Guidebook;
 using Content.Client.Humanoid;
 using Content.Client.Inventory;
 using Content.Client.Lobby.UI;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Station;
-using Content.Client.UserInterface.GlobalMenu;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
@@ -43,7 +43,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     [Dependency] private readonly MarkingManager            _markings             = default!;
     [Dependency] private readonly IRobustRandom             _random               = default!;
     [Dependency] private readonly JobRequirementsManager    _jobRequirements      = default!;
-    [Dependency] private readonly GlobalMenuManager         _globalMenuManager    = null!;
+    [Dependency] private readonly GameBarManager         _gameBarManager    = null!;
 
     [UISystemDependency] private readonly HumanoidAppearanceSystem _humanoid        = default!;
     [UISystemDependency] private readonly ClientInventorySystem    _inventory       = default!;

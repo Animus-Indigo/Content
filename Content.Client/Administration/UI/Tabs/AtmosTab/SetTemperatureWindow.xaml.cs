@@ -5,12 +5,14 @@ using Robust.Client.Console;
 using Robust.Client.Player;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Map.Components;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Administration.UI.Tabs.AtmosTab
 {
     [GenerateTypedNameReferences]
     [UsedImplicitly]
-    public sealed partial class SetTemperatureWindow : FancyWindow
+    public sealed partial class SetTemperatureWindow : UIKWindow
     {
         private List<NetEntity>? _data;
 

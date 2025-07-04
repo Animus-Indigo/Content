@@ -20,7 +20,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Chat;
-using Content.Shared.InterfaceGuidelines;
+using Content.Shared.UIKit;
 
 
 namespace Content.Server.Holopad;

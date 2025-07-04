@@ -1,6 +1,6 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc 'surveillance-camera-setup'}"
     MinWidth="400">
     <BoxContainer Orientation="Vertical">
@@ -9,8 +9,8 @@
             <Button Name="NameConfirm" Text="{Loc 'surveillance-camera-setup-ui-set'}"/>
         </BoxContainer>
         <BoxContainer Name="NetworkSection">
-            <controls:FancyOptionButton HorizontalExpand="True" Name="NetworkSelector" />
+            <uik:UIKOptionButton HorizontalExpand="True" Name="NetworkSelector" />
             <Button Name="NetworkConfirm" Text="{Loc 'surveillance-camera-setup-ui-set'}" />
         </BoxContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

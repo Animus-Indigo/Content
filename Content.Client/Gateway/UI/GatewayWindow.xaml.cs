@@ -10,11 +10,13 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Timing;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Gateway.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class GatewayWindow : FancyWindow,
+public sealed partial class GatewayWindow : UIKWindow,
     IComputerWindow<EmergencyConsoleBoundUserInterfaceState>
 {
     private readonly IGameTiming _timing;

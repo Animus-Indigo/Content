@@ -4,7 +4,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.DragDrop;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
-using Content.Shared.InterfaceGuidelines;
+using Content.Shared.UIKit;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
 

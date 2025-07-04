@@ -6,11 +6,13 @@ using Robust.Client.GameObjects;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Cargo.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class CargoShuttleMenu : FancyWindow
+    public sealed partial class CargoShuttleMenu : UIKWindow
     {
         public CargoShuttleMenu()
         {

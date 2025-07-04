@@ -16,11 +16,14 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using UIKFancyCheckBox = Content.Client.UIKit.Controls.UIKFancyCheckBox;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Administration.UI.BanPanel;
 
 [GenerateTypedNameReferences]
-public sealed partial class BanPanel : FancyWindow
+public sealed partial class BanPanel : UIKWindow
 {
     public event Action<string?, (IPAddress, int)?, bool, ImmutableTypedHwid?, bool, uint, string, NoteSeverity, string[]?, bool>? BanSubmitted;
     public event Action<string>? PlayerChanged;
@@ -33,7 +36,7 @@ public sealed partial class BanPanel : FancyWindow
     private TimeSpan? ButtonResetOn { get; set; }
     // This is less efficient than just holding a reference to the root control and enumerating children, but you
     // have to know how the controls are nested, which makes the code more complicated.
-    private readonly List<FancyCheckBox> _roleCheckboxes = new();
+    private readonly List<UIKFancyCheckBox> _roleCheckboxes = new();
     private readonly ISawmill _banpanelSawmill;
 
     [Dependency] private readonly IGameTiming _gameTiming = default!;
@@ -163,7 +166,7 @@ public sealed partial class BanPanel : FancyWindow
             Orientation = BoxContainer.LayoutOrientation.Vertical,
             Margin = new Thickness(4)
         };
-        var departmentCheckbox = new FancyCheckBox()
+        var departmentCheckbox = new UIKFancyCheckBox()
         {
             Name = $"{roleName}GroupCheckbox",
             Text = roleName,
@@ -181,7 +184,7 @@ public sealed partial class BanPanel : FancyWindow
         {
             foreach (var child in innerContainer.Children)
             {
-                if (child is FancyCheckBox c)
+                if (child is UIKFancyCheckBox c)
                 {
                     c.Pressed = args.Pressed;
                 }
@@ -205,7 +208,7 @@ public sealed partial class BanPanel : FancyWindow
                     {
                         foreach (var child in childContainer.Children)
                         {
-                            if (child is FancyCheckBox { Pressed: true })
+                            if (child is UIKFancyCheckBox { Pressed: true })
                                 return;
                         }
                     }
@@ -236,16 +239,16 @@ public sealed partial class BanPanel : FancyWindow
         RolesContainer.AddChild(new HSeparator());
     }
 
-    private void AddRoleCheckbox(string role, Control container, FancyCheckBox header)
+    private void AddRoleCheckbox(string role, Control container, UIKFancyCheckBox header)
     {
-        var roleCheckbox = new FancyCheckBox()
+        var roleCheckbox = new UIKFancyCheckBox()
         {
             Name = $"{role}RoleCheckbox",
             Text = role
         };
         roleCheckbox.OnToggled += args =>
         {
-            if (args is { Pressed: true, Button.Parent: { } } && args.Button.Parent.Children.Where(e => e is FancyCheckBox).All(e => ((FancyCheckBox) e).Pressed))
+            if (args is { Pressed: true, Button.Parent: { } } && args.Button.Parent.Children.Where(e => e is UIKFancyCheckBox).All(e => ((UIKFancyCheckBox) e).Pressed))
                 header.Pressed = args.Pressed;
             else
                 header.Pressed = false;

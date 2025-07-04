@@ -2,7 +2,7 @@ using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Popups;
 using Content.Shared.Examine;
 using Content.Shared.Construction.Components;
-using Content.Shared.InterfaceGuidelines;
+using Content.Shared.UIKit;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
 

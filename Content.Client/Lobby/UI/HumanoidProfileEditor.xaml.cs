@@ -39,6 +39,10 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
+using UIKButton = Content.Client.UIKit.Controls.UIKButton;
+using UIKStripedList = Content.Client.UIKit.Controls.UIKStripedList;
+using UIKTabContainer = Content.Client.UIKit.Controls.UIKTabContainer;
+
 
 namespace Content.Client.Lobby.UI
 {
@@ -85,7 +89,7 @@ namespace Content.Client.Lobby.UI
         private List<(string, RequirementsSelector)> _jobPriorities = new();
         private readonly Dictionary<string, BoxContainer> _jobCategories;
 
-        private Dictionary<FancyButton, ConfirmationData> _confirmationData = new();
+        private Dictionary<UIKButton, ConfirmationData> _confirmationData = new();
         private List<TraitPreferenceSelector>             _traitPreferences = new();
         private int                                       _traitCount;
         private HashSet<LoadoutPreferenceSelector>        _loadoutPreferences = new();
@@ -753,7 +757,7 @@ namespace Content.Client.Lobby.UI
                 ("humanoid-profile-editor-antag-preference-no-button", 1)
             };
             // Causes a weird error if I just replace AntagList so whatever, have a child
-            var alt = new StripedList { Orientation = LayoutOrientation.Vertical, };
+            var alt = new UIKStripedList { Orientation = LayoutOrientation.Vertical, };
             AntagList.AddChild(alt);
 
             foreach (var antag in _prototypeManager.EnumeratePrototypes<AntagPrototype>().OrderBy(a => Loc.GetString(a.Name)))
@@ -985,7 +989,7 @@ namespace Content.Client.Lobby.UI
 
                 if (!_jobCategories.TryGetValue(department.ID, out var category))
                 {
-                    category = new StripedList
+                    category = new UIKStripedList
                     {
                         Orientation = LayoutOrientation.Vertical,
                         Name = department.ID,
@@ -2043,7 +2047,7 @@ namespace Content.Client.Lobby.UI
             return;
 
 
-            void CreateCategoryUI(Dictionary<string, object> tree, FancyTabContainer parent)
+            void CreateCategoryUI(Dictionary<string, object> tree, UIKTabContainer parent)
             {
                 foreach (var (key, value) in tree)
                 {
@@ -2085,7 +2089,7 @@ namespace Content.Client.Lobby.UI
                     // If the value is a dictionary, create a new tab for it and recursively call this function to fill it
                     else
                     {
-                        var category = new FancyTabContainer
+                        var category = new UIKTabContainer
                         {
                             Name = key,
                             HorizontalExpand = true,
@@ -2167,10 +2171,10 @@ namespace Content.Client.Lobby.UI
             {
                 // If it's empty, hide it
                 if (tab != null)
-                    ((FancyTabContainer) tab.Parent!.Parent!.Parent!.Parent!).SetTabVisible(tab, tab.Children.First().Children.First().Children.Any());
+                    ((UIKTabContainer) tab.Parent!.Parent!.Parent!.Parent!).SetTabVisible(tab, tab.Children.First().Children.First().Children.Any());
 
                 // If it has a parent tab container, hide it if it's empty
-                if (tab?.Parent?.Parent is FancyTabContainer parent)
+                if (tab?.Parent?.Parent is UIKTabContainer parent)
                 {
                     var parentCats = parent.Contents.Select(c => _prototypeManager.Index<TraitCategoryPrototype>(c.Name!)).ToList();
                     HideEmptyTabs(parentCats);
@@ -2411,7 +2415,7 @@ namespace Content.Client.Lobby.UI
                 }
             }
 
-            void CreateCategoryUI(Dictionary<string, object> tree, FancyTabContainer parent)
+            void CreateCategoryUI(Dictionary<string, object> tree, UIKTabContainer parent)
             {
                 foreach (var (key, value) in tree)
                 {
@@ -2453,7 +2457,7 @@ namespace Content.Client.Lobby.UI
                     // If the value is a dictionary, create a new tab for it and recursively call this function to fill it
                     else
                     {
-                        var category = new FancyTabContainer
+                        var category = new UIKTabContainer
                         {
                             Name = key,
                             HorizontalExpand = true,
@@ -2528,7 +2532,7 @@ namespace Content.Client.Lobby.UI
             return tree;
         }
 
-        private BoxContainer? FindCategory(string id, FancyTabContainer parent)
+        private BoxContainer? FindCategory(string id, UIKTabContainer parent)
         {
             BoxContainer? match = null;
             foreach (var child in parent.Contents)
@@ -2543,7 +2547,7 @@ namespace Content.Client.Lobby.UI
             if (match != null)
                 return match;
 
-            foreach (var subcategory in parent.Contents.Where(c => c is FancyTabContainer).Cast<FancyTabContainer>())
+            foreach (var subcategory in parent.Contents.Where(c => c is UIKTabContainer).Cast<UIKTabContainer>())
                 match ??= FindCategory(id, subcategory);
 
             return match;
@@ -2555,10 +2559,10 @@ namespace Content.Client.Lobby.UI
             {
                 // If it's empty, hide it
                 if (tab != null)
-                    ((FancyTabContainer) tab.Parent!.Parent!.Parent!.Parent!).SetTabVisible(tab, tab.Children.First().Children.First().Children.Any());
+                    ((UIKTabContainer) tab.Parent!.Parent!.Parent!.Parent!).SetTabVisible(tab, tab.Children.First().Children.First().Children.Any());
 
                 // If it has a parent tab container, hide it if it's empty
-                if (tab?.Parent?.Parent is FancyTabContainer parent)
+                if (tab?.Parent?.Parent is UIKTabContainer parent)
                 {
                     var parentCats = parent.Contents.Select(c => _prototypeManager.Index<LoadoutCategoryPrototype>(c.Name!)).ToList();
                     HideEmptyTabs(parentCats);

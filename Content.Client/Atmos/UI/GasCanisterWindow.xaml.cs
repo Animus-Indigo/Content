@@ -5,6 +5,8 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Input;
 using Range = Robust.Client.UserInterface.Controls.Range;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Atmos.UI
 {
@@ -12,7 +14,7 @@ namespace Content.Client.Atmos.UI
     /// Client-side UI used to control a canister.
     /// </summary>
     [GenerateTypedNameReferences]
-    public sealed partial class GasCanisterWindow : FancyWindow
+    public sealed partial class GasCanisterWindow : UIKWindow
     {
         private readonly ButtonGroup _buttonGroup = new();
 

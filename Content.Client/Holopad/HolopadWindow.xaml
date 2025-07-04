@@ -1,6 +1,6 @@
-<controls:FancyWindow xmlns="https://spacestation14.io"
+<uik:UIKWindow xmlns="https://spacestation14.io"
                xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-               xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+               xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
                Resizable="False"
                MaxSize="400 800"
                MinSize="400 150">
@@ -13,14 +13,14 @@
                     <RichTextLabel Name="EmergencyBroadcastText" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10 10 10 10" ReservesSpace="False"/>
                 </PanelContainer>
             </controls:StripeBack>
-            
+
             <Label Text="{Loc 'holopad-window-controls-locked-out'}" HorizontalAlignment="Center" Margin="10 5 10 0" ReservesSpace="False"/>
             <RichTextLabel Name="LockOutIdText" HorizontalAlignment="Center" Margin="10 5 10 0" ReservesSpace="False"/>
             <Label Name="LockOutCountDownText" Text="{Loc 'holopad-window-controls-unlock-countdown'}" HorizontalAlignment="Center" Margin="10 15 10 10" ReservesSpace="False"/>
         </BoxContainer>
 
         <BoxContainer Name="ControlsContainer" Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True" ReservesSpace="False">
-        
+
             <!-- Active call controls (either this or the call placement controls will be active) -->
             <BoxContainer Name="ActiveCallControlsContainer" Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True" ReservesSpace="False">
 
@@ -115,4 +115,4 @@
         </BoxContainer>
     </BoxContainer>
 
-</controls:FancyWindow>
+</uik:UIKWindow>

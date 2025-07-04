@@ -1,7 +1,7 @@
-<controls:FancyWindow xmlns="https://spacestation14.io"
+<uik:UIKWindow xmlns="https://spacestation14.io"
                xmlns:ui="clr-namespace:Content.Client.Power"
                xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-               xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+               xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
                Title="{Loc 'power-monitoring-window-title'}"
                Resizable="False"
                SetSize="1120 750"
@@ -95,9 +95,9 @@
                 <BoxContainer Orientation="Vertical" Margin="0 10 0 0">
                     <Label Text="{Loc 'power-monitoring-window-show-cable-networks'}" Margin="0 0 0 5"/>
                     <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
-                        <controls:FancyCheckBox Name="ShowHVCable" Text="{Loc 'power-monitoring-window-show-hv-cable'}" Pressed="True" Margin="0 0 0 0"/>
-                        <controls:FancyCheckBox Name="ShowMVCable" Text="{Loc 'power-monitoring-window-show-mv-cable'}" Pressed="True" Margin="10 0 0 0"/>
-                        <controls:FancyCheckBox Name="ShowLVCable" Text="{Loc 'power-monitoring-window-show-lv-cable'}" Pressed="True" Margin="10 0 0 0"/>
+                        <uik:UIKFancyCheckBox Name="ShowHVCable" Text="{Loc 'power-monitoring-window-show-hv-cable'}" Pressed="True" Margin="0 0 0 0"/>
+                        <uik:UIKFancyCheckBox Name="ShowMVCable" Text="{Loc 'power-monitoring-window-show-mv-cable'}" Pressed="True" Margin="10 0 0 0"/>
+                        <uik:UIKFancyCheckBox Name="ShowLVCable" Text="{Loc 'power-monitoring-window-show-lv-cable'}" Pressed="True" Margin="10 0 0 0"/>
                     </BoxContainer>
                 </BoxContainer>
             </BoxContainer>
@@ -115,4 +115,4 @@
             </BoxContainer>
         </BoxContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

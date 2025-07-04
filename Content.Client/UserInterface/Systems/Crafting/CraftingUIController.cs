@@ -1,6 +1,6 @@
 using Content.Client.Construction.UI;
+using Content.Client.GameBar;
 using Content.Client.Gameplay;
-using Content.Client.UserInterface.GlobalMenu;
 using Content.Shared.Input;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface.Controllers;
@@ -11,7 +11,7 @@ namespace Content.Client.UserInterface.Systems.Crafting;
 [UsedImplicitly]
 public sealed class CraftingUIController : UIController, IOnStateChanged<GameplayState>
 {
-    [Dependency] private readonly GlobalMenuManager _globalMenuManager = null!;
+    [Dependency] private readonly GameBarManager _gameBarManager = null!;
 
     private ConstructionMenuPresenter? _presenter;
 
@@ -19,8 +19,8 @@ public sealed class CraftingUIController : UIController, IOnStateChanged<Gamepla
     {
         base.Initialize();
 
-        _globalMenuManager
-            .GetCategory(GlobalMenuCategory.Character)
+        _gameBarManager
+            .GetCategory(GameBarCategory.Character)
             .RegisterItem(
                 new(
                     new("global-menu-character-crafting-window-item"),

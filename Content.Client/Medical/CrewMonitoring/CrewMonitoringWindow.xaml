@@ -1,6 +1,7 @@
-<controls:FancyWindow xmlns="https://spacestation14.io"
+<uik:UIKWindow xmlns="https://spacestation14.io"
                xmlns:ui="clr-namespace:Content.Client.Medical.CrewMonitoring"
                xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+               xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
                Title="{Loc 'crew-monitoring-user-interface-title'}"
                Resizable="False"
                SetSize="1210 700"
@@ -47,4 +48,4 @@
             </BoxContainer>
         </BoxContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

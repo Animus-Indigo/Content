@@ -12,7 +12,7 @@ namespace Content.Client.UserInterface.Controls;
 /// Used by admin tools quick dialog system among other things.
 /// </summary>
 [GenerateTypedNameReferences]
-public sealed partial class DialogWindow : FancyWindow
+public sealed partial class DialogWindow : UIKit.Controls.UIKWindow
 {
     /// <summary>
     /// Action for when the ok button is pressed or the last field has enter pressed.

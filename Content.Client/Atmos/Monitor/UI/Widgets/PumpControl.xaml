@@ -1,6 +1,6 @@
 <BoxContainer xmlns="https://spacestation14.io"
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-         xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+         xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
          Orientation="Vertical" Margin="2 0 2 4">
     <Collapsible>
         <CollapsibleHeading Name="CAddress" />
@@ -8,16 +8,16 @@
         <CollapsibleBody Margin="20 0 0 0">
             <BoxContainer Orientation="Vertical">
                 <BoxContainer Orientation="Horizontal" Margin ="0 0 0 2">
-                    <controls:FancyCheckBox Name="CEnableDevice" Text="{Loc 'air-alarm-ui-widget-enable'}" />
+                    <uik:UIKFancyCheckBox Name="CEnableDevice" Text="{Loc 'air-alarm-ui-widget-enable'}" />
                 </BoxContainer>
                 <BoxContainer Orientation="Horizontal" Margin="0 0 0 2" HorizontalExpand="True">
                     <BoxContainer Orientation="Vertical" HorizontalExpand="True">
                         <Label Text="{Loc 'air-alarm-ui-vent-pump-label'}" Margin="0 0 0 1" />
-                        <controls:FancyOptionButton Name="CPumpDirection" />
+                        <uik:UIKOptionButton Name="CPumpDirection" />
                     </BoxContainer>
                     <BoxContainer Orientation="Vertical" HorizontalExpand="True">
                         <Label Text="{Loc 'air-alarm-ui-vent-pressure-label'}" Margin="0 0 0 1" />
-                        <controls:FancyOptionButton Name="CPressureCheck" />
+                        <uik:UIKOptionButton Name="CPressureCheck" />
                     </BoxContainer>
                 </BoxContainer>
                 <!-- Lower row: pressure bounds, copy settings -->

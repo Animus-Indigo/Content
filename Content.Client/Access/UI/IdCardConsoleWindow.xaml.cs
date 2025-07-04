@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Client.UIKit.Controls;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Access;
 using Content.Shared.Access.Systems;
@@ -8,11 +9,13 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using static Content.Shared.Access.Components.IdCardConsoleComponent;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Access.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class IdCardConsoleWindow : FancyWindow
+    public sealed partial class IdCardConsoleWindow : UIKWindow
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
@@ -88,7 +91,7 @@ namespace Content.Client.Access.UI
             }
         }
 
-        private void SelectJobPreset(FancyOptionButton.ItemSelectedEventArgs args)
+        private void SelectJobPreset(UIKOptionButton.ItemSelectedEventArgs args)
         {
             if (!_prototypeManager.TryIndex(_jobPrototypeIds[args.Id], out JobPrototype? job))
             {

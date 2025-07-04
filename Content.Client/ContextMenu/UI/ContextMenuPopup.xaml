@@ -1,8 +1,8 @@
-<controls:FancyPopup xmlns="https://spacestation14.io"
-                     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls">
+<uik:UIKPopup xmlns="https://spacestation14.io"
+                    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls">
     <PanelContainer Name="MenuPanel" StyleClasses="FancyPopupPanel">
         <ScrollContainer Name="Scroll" VerticalExpand="True" HScrollEnabled="False" ReturnMeasure="True"
                          ReserveScrollbarSpace="False" Margin="0 8">
         </ScrollContainer>
     </PanelContainer>
-</controls:FancyPopup>
+</uik:UIKPopup>

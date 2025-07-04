@@ -4,7 +4,7 @@ using System.Numerics;
 using Content.Client.Administration.Managers;
 using Content.Client.Administration.Systems;
 using Content.Client.Administration.UI.Bwoink;
-using Content.Client.UserInterface.GlobalMenu;
+using Content.Client.GameBar;
 using Content.Shared.Administration;
 using Content.Shared.Input;
 using JetBrains.Annotations;
@@ -28,7 +28,7 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
     [Dependency] private readonly IPlayerManager        _playerManager     = default!;
     [Dependency] private readonly IClyde                _clyde             = default!;
     [Dependency] private readonly IUserInterfaceManager _uiManager         = default!;
-    [Dependency] private readonly GlobalMenuManager     _globalMenuManager = null!;
+    [Dependency] private readonly GameBarManager     _gameBarManager = null!;
 
     [UISystemDependency] private readonly AudioSystem _audio = default!;
 
@@ -51,8 +51,8 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
 
         _adminManager.AdminStatusUpdated += OnAdminStatusUpdated;
 
-        _globalMenuManager
-            .GetCategory(GlobalMenuCategory.Global)
+        _gameBarManager
+            .GetCategory(GameBarCategory.Global)
             .RegisterItem(
                 new(
                     new("global-menu-global-ahelp-item"),

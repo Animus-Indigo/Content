@@ -1,6 +1,5 @@
-<controls:FancyWindow xmlns="https://spacestation14.io"
-                xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-                xmlns:networkConfigurator="clr-namespace:Content.Client.NetworkConfigurator"
+<uik:UIKWindow xmlns="https://spacestation14.io"
+                     xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
                 Title="Network Configurator" MinSize="620 400" RectClipContent="True">
     <BoxContainer Orientation="Vertical" VerticalExpand="True">
         <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
@@ -44,4 +43,4 @@
             </BoxContainer>
         </Control>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

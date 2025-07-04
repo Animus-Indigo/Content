@@ -1,12 +1,12 @@
-﻿<controls:FancyWindow
+﻿<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc Set Temperature}">
     <BoxContainer Orientation="Vertical">
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc Grid}" MinSize="100 0" />
             <Control MinSize="50 0" />
-            <controls:FancyOptionButton Name="GridOptions" MinSize="100 0" HorizontalExpand="True" />
+            <uik:UIKOptionButton Name="GridOptions" MinSize="100 0" HorizontalExpand="True" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc TileX}" MinSize="100 0" />
@@ -25,4 +25,4 @@
         </BoxContainer>
         <Button Name="SubmitButton" Text="{Loc Set Temperature}" />
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

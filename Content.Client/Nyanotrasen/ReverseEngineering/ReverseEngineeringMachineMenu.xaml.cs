@@ -6,11 +6,13 @@ using Robust.Client.State;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Utility;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Nyanotrasen.ReverseEngineering;
 
 [GenerateTypedNameReferences]
-public sealed partial class ReverseEngineeringMachineMenu : FancyWindow
+public sealed partial class ReverseEngineeringMachineMenu : UIKWindow
 {
     [Dependency] private readonly IEntityManager _ent = default!;
     public event Action<BaseButton.ButtonEventArgs>? OnScanButtonPressed;

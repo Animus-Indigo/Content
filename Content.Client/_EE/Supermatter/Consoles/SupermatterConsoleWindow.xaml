@@ -1,6 +1,5 @@
-<controls:FancyWindow xmlns="https://spacestation14.io"
-               xmlns:ui="clr-namespace:Content.Client.Pinpointer.UI"
-               xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+<uik:UIKWindow xmlns="https://spacestation14.io"
+                     xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
                Title="{Loc 'supermatter-console-window-title'}"
                Resizable="True"
                SetSize="700 400"
@@ -31,4 +30,4 @@
             </BoxContainer>
         </BoxContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

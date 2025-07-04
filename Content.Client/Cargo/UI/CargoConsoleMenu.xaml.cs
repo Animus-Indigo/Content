@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Client.UIKit.Controls;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.Components;
@@ -9,11 +10,13 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using static Robust.Client.UserInterface.Controls.BaseButton;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Cargo.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class CargoConsoleMenu : FancyWindow
+    public sealed partial class CargoConsoleMenu : UIKWindow
     {
         private IEntityManager _entityManager;
         private IPrototypeManager _protoManager;
@@ -41,7 +44,7 @@ namespace Content.Client.Cargo.UI
             Categories.OnItemSelected += OnCategoryItemSelected;
         }
 
-        private void OnCategoryItemSelected(FancyOptionButton.ItemSelectedEventArgs args)
+        private void OnCategoryItemSelected(UIKOptionButton.ItemSelectedEventArgs args)
         {
             SetCategoryText(args.Id);
             PopulateProducts();

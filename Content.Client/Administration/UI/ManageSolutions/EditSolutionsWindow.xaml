@@ -1,12 +1,12 @@
-<controls:FancyWindow
+<uik:UIKWindow
     SetSize="300 400"
     Margin="4 0"
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls">
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls">
     <BoxContainer Orientation="Vertical">
         <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="0 4">
             <Label Text="{Loc 'admin-solutions-window-solution-label'}" Margin="0 0 10 0" />
-            <controls:FancyOptionButton Name="SolutionOption" HorizontalExpand="True" />
+            <uik:UIKOptionButton Name="SolutionOption" HorizontalExpand="True" />
         </BoxContainer>
 
         <!-- The total volume / capacity of the solution -->
@@ -28,4 +28,4 @@
         <Button Name="AddButton" Text="{Loc 'admin-solutions-window-add-new-button'}" HorizontalExpand="True"
                 Margin="0 4" />
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

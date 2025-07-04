@@ -1,7 +1,7 @@
 using Content.Shared.Administration;
 using Content.Shared.Administration.Managers;
-using Content.Shared.InterfaceGuidelines;
 using Content.Shared.Mind.Components;
+using Content.Shared.UIKit;
 using Content.Shared.Verbs;
 using Robust.Client.Console;
 using Robust.Shared.Utility;

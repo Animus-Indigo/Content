@@ -1,6 +1,6 @@
-﻿<controls:FancyWindow
+﻿<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc 'decal-placer-window-title'}"
     MinSize="250 500"
     SetSize="250 500">
@@ -16,10 +16,10 @@
             <ColorSelectorSliders Name="ColorPicker" IsAlphaVisible="True" />
             <Button Name="PickerOpen" Text="{Loc 'decal-placer-window-palette'}" />
         </BoxContainer>
-        <controls:FancyCheckBox Name="EnableAuto" Text="{Loc 'decal-placer-window-enable-auto'}" Margin="0 0 0 10"/>
-        <controls:FancyCheckBox Name="EnableColor" Text="{Loc 'decal-placer-window-use-color'}" />
-        <controls:FancyCheckBox Name="EnableSnap" Text="{Loc 'decal-placer-window-enable-snap'}" />
-        <controls:FancyCheckBox Name="EnableCleanable" Text="{Loc 'decal-placer-window-enable-cleanable'}" />
+        <uik:UIKFancyCheckBox Name="EnableAuto" Text="{Loc 'decal-placer-window-enable-auto'}" Margin="0 0 0 10"/>
+        <uik:UIKFancyCheckBox Name="EnableColor" Text="{Loc 'decal-placer-window-use-color'}" />
+        <uik:UIKFancyCheckBox Name="EnableSnap" Text="{Loc 'decal-placer-window-enable-snap'}" />
+        <uik:UIKFancyCheckBox Name="EnableCleanable" Text="{Loc 'decal-placer-window-enable-cleanable'}" />
         <BoxContainer HorizontalExpand="True" Orientation="Vertical">
             <Label Text="{Loc 'decal-placer-window-positionx'}" />
             <Slider HorizontalExpand="True" Name="PositionX" MinValue="-1" MaxValue="1" Value="0" />
@@ -38,4 +38,4 @@
             <SpinBox Name="ZIndexSpinBox" HorizontalExpand ="True" />
         </BoxContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

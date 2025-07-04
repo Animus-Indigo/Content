@@ -11,6 +11,8 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 /// <summary>
 /// EVERYTHING HERE IS A MODIFIED VERSION OF CRIMINAL RECORDS
@@ -20,7 +22,7 @@ namespace Content.Client.PsionicsRecords;
 
 // TODO: dedupe shitcode from general records theres a lot
 [GenerateTypedNameReferences]
-public sealed partial class PsionicsRecordsConsoleWindow : FancyWindow
+public sealed partial class PsionicsRecordsConsoleWindow : UIKWindow
 {
     private readonly IPlayerManager _player;
     private readonly IPrototypeManager _proto;

@@ -11,11 +11,13 @@ using Robust.Shared.Input;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using System.Numerics;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.DeltaV.VendingMachines.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class ShopVendorWindow : FancyWindow
+public sealed partial class ShopVendorWindow : UIKWindow
 {
     [Dependency] private readonly IComponentFactory _factory = default!;
     [Dependency] private readonly IEntityManager _entMan = default!;

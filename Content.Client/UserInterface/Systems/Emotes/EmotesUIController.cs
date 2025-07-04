@@ -1,7 +1,7 @@
 ﻿using Content.Client.Chat.UI;
+using Content.Client.GameBar;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
-using Content.Client.UserInterface.GlobalMenu;
 using Content.Shared.Chat;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Input;
@@ -23,7 +23,7 @@ public sealed class EmotesUIController : UIController
     [Dependency] private readonly IEntityManager    _entityManager     = default!;
     [Dependency] private readonly IClyde            _displayManager    = default!;
     [Dependency] private readonly IInputManager     _inputManager      = default!;
-    [Dependency] private readonly GlobalMenuManager _globalMenuManager = null!;
+    [Dependency] private readonly GameBarManager _gameBarManager = null!;
 
     private EmotesMenu? _menu;
 
@@ -31,8 +31,8 @@ public sealed class EmotesUIController : UIController
     {
         base.Initialize();
 
-        _globalMenuManager
-            .GetCategory(GlobalMenuCategory.Character)
+        _gameBarManager
+            .GetCategory(GameBarCategory.Character)
             .RegisterItem(
                 new(
                     new("global-menu-character-emote-window-item"),

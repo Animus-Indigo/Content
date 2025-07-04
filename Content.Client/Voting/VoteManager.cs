@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Content.Client.UserInterface.GlobalMenu;
+using Content.Client.GameBar;
 using Content.Client.Voting.UI;
 using Content.Shared.Voting;
 using Robust.Client;
@@ -42,7 +42,7 @@ namespace Content.Client.Voting
         [Dependency] private readonly IClientNetManager  _netManager        = default!;
         [Dependency] private readonly IGameTiming        _gameTiming        = default!;
         [Dependency] private readonly IResourceCache     _res               = default!;
-        [Dependency] private readonly GlobalMenuManager  _globalMenuManager = null!;
+        [Dependency] private readonly GameBarManager  _gameBarManager = null!;
 
         private readonly Dictionary<StandardVoteType, TimeSpan> _standardVoteTimeouts = new();
         private readonly Dictionary<int, ActiveVote>            _votes                = new();
@@ -70,8 +70,8 @@ namespace Content.Client.Voting
 
             _client.RunLevelChanged += ClientOnRunLevelChanged;
 
-            _globalMenuManager
-                .GetCategory(GlobalMenuCategory.Global)
+            _gameBarManager
+                .GetCategory(GameBarCategory.Global)
                 .RegisterItem(
                     new(
                         new("global-menu-global-call-vote-item"),

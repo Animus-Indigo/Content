@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Client.UIKit.Controls;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Explosion;
 using JetBrains.Annotations;
@@ -10,12 +11,14 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using static Robust.Client.UserInterface.Controls.BaseButton;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Administration.UI.SpawnExplosion;
 
 [GenerateTypedNameReferences]
 [UsedImplicitly]
-public sealed partial class SpawnExplosionWindow : FancyWindow
+public sealed partial class SpawnExplosionWindow : UIKWindow
 {
     [Dependency] private readonly IClientConsoleHost _conHost = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
@@ -53,13 +56,13 @@ public sealed partial class SpawnExplosionWindow : FancyWindow
         MaxIntensity.OnValueChanged += (_) => UpdatePreview();
     }
 
-    private void ExplosionSelected(FancyOptionButton.ItemSelectedEventArgs args)
+    private void ExplosionSelected(UIKOptionButton.ItemSelectedEventArgs args)
     {
         ExplosionOption.SelectId(args.Id);
         UpdatePreview();
     }
 
-    private void MapSelected(FancyOptionButton.ItemSelectedEventArgs args)
+    private void MapSelected(UIKOptionButton.ItemSelectedEventArgs args)
     {
         MapOptions.SelectId(args.Id);
         UpdatePreview();

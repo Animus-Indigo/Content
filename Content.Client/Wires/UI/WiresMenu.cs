@@ -1,9 +1,10 @@
 using System.Numerics;
 using Content.Client.Examine;
-using Content.Client.InterfaceGuidelines;
+using Content.Client.UIKit;
 using Content.Client.Resources;
+using Content.Client.UIKit.Controls;
 using Content.Client.UserInterface.Controls;
-using Content.Shared.InterfaceGuidelines;
+using Content.Shared.UIKit;
 using Content.Shared.Wires;
 using Robust.Client.Animations;
 using Robust.Client.Graphics;
@@ -14,10 +15,12 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Animations;
 using Robust.Shared.Input;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Wires.UI
 {
-    public sealed class WiresMenu : FancyWindow
+    public sealed class WiresMenu : UIKWindow
     {
         [Dependency] private readonly IResourceCache _resourceCache = default!;
         [Dependency] private readonly TypographyManager _typographyManager = null!;
@@ -586,7 +589,7 @@ namespace Content.Client.Wires.UI
             }
         }
 
-        private sealed class HelpPopup : FancyPopup
+        private sealed class HelpPopup : UIKPopup
         {
             public HelpPopup()
             {

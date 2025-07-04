@@ -3,10 +3,12 @@ using Content.Client.UserInterface.Controls;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Ghost.UI;
 
-public sealed class ReturnToBodyMenu : FancyWindow
+public sealed class ReturnToBodyMenu : UIKWindow
 {
     public readonly Button DenyButton;
     public readonly Button AcceptButton;

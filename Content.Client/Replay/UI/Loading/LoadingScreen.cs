@@ -1,5 +1,4 @@
-using Content.Client.InterfaceGuidelines;
-using Content.Shared.InterfaceGuidelines;
+using Content.Client.UIKit;
 using Robust.Client.ResourceManagement;
 using Robust.Client.State;
 using Robust.Client.UserInterface;

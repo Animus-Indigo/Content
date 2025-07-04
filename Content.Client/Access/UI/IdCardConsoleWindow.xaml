@@ -1,6 +1,6 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     MinSize="650 290">
     <BoxContainer Orientation="Vertical">
         <GridContainer Columns="2">
@@ -30,8 +30,8 @@
         <Control MinSize="0 8" />
         <GridContainer Columns="2">
             <Label Text="{Loc 'id-card-console-window-job-selection-label'}" />
-            <controls:FancyOptionButton Name="JobPresetOptionButton" />
+            <uik:UIKOptionButton Name="JobPresetOptionButton" />
         </GridContainer>
         <Control Name="AccessLevelControlContainer" />
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

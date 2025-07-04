@@ -1,8 +1,8 @@
 <BoxContainer xmlns="https://spacestation14.io"
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-         xmlns:s="clr-namespace:Content.Client.Stylesheets"
          xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
          xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+         xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
          Orientation="Vertical" HorizontalExpand ="True" Margin="0 0 0 3">
 
     <!-- Device selection button -->
@@ -74,7 +74,7 @@
             </Control>
 
             <!-- Check box for silencing this alarm -->
-            <controls:FancyCheckBox Name="SilenceCheckBox" Text="{Loc 'atmos-alerts-window-silence-alerts'}" HorizontalAlignment="Left" Margin="5 5 5 5" Access="Public"></controls:FancyCheckBox>
+            <uik:UIKFancyCheckBox Name="SilenceCheckBox" Text="{Loc 'atmos-alerts-window-silence-alerts'}" HorizontalAlignment="Left" Margin="5 5 5 5" Access="Public"></uik:UIKFancyCheckBox>
         </BoxContainer>
     </PanelContainer>
 

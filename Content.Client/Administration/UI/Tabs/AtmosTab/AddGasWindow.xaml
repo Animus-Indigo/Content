@@ -1,12 +1,12 @@
-﻿<controls:FancyWindow
+﻿<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc Add Gas}">
     <BoxContainer Orientation="Vertical">
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc Grid}" MinSize="100 0" />
             <Control MinSize="50 0" />
-            <controls:FancyOptionButton Name="GridOptions" MinSize="100 0" HorizontalExpand="True" />
+            <uik:UIKOptionButton Name="GridOptions" MinSize="100 0" HorizontalExpand="True" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc TileX}" MinSize="100 0" />
@@ -21,7 +21,7 @@
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc Gas}" MinSize="100 0" />
             <Control MinSize="50 0" />
-            <controls:FancyOptionButton Name="GasOptions" MinSize="100 0" HorizontalExpand="True" />
+            <uik:UIKOptionButton Name="GasOptions" MinSize="100 0" HorizontalExpand="True" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc Amount}" MinSize="100 0" />
@@ -30,4 +30,4 @@
         </BoxContainer>
         <Button Name="SubmitButton" Text="{Loc Add Gas}" />
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

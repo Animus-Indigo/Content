@@ -1,5 +1,5 @@
-<controls:FancyWindow xmlns="https://spacestation14.io"
-                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+<uik:UIKWindow xmlns="https://spacestation14.io"
+                     xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
                       Title="{Loc 'handheld-radio-menu-title'}"
                       MinSize="200 150"
                       SetSize="200 150">
@@ -26,4 +26,4 @@
             </BoxContainer>
         </BoxContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

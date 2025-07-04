@@ -1,9 +1,9 @@
 using Content.Shared.Actions;
 using Content.Shared.Emag.Systems;
-using Content.Shared.InterfaceGuidelines;
 using Content.Shared.Light.Components;
 using Content.Shared.Mind.Components;
 using Content.Shared.Toggleable;
+using Content.Shared.UIKit;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;

@@ -2,6 +2,8 @@
 using Content.Shared.WhiteDream.BloodCult.UI;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface.Controls;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 // ReSharper disable InconsistentNaming
 
@@ -10,7 +12,7 @@ namespace Content.Client.WhiteDream.BloodCult.NameSelector;
 [UsedImplicitly]
 public sealed class NameSelectorBUI(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
 {
-    private readonly FancyWindow _window = new();
+    private readonly UIKWindow _window = new();
 
     protected override void Open()
     {

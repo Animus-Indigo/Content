@@ -1,6 +1,6 @@
-﻿<controls:FancyWindow
+﻿<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc sandbox-window-title}"
     Resizable="False">
     <BoxContainer Orientation="Vertical" SeparationOverride="4">
@@ -20,4 +20,4 @@
         <Button Name="ShowBbButton" Access="Public" Text="{Loc sandbox-window-show-bb-button}" ToggleMode="True"/>
         <Button Name="MachineLinkingButton" Access="Public" Text="{Loc sandbox-window-link-machines-button}" ToggleMode="True"/>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

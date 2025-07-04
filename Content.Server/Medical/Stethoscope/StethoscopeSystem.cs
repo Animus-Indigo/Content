@@ -7,11 +7,11 @@ using Content.Shared.Clothing;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
-using Content.Shared.InterfaceGuidelines;
 using Content.Shared.Medical;
 using Content.Shared.Medical.Stethoscope;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.UIKit;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
 

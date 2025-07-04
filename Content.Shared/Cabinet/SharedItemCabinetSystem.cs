@@ -1,7 +1,7 @@
 ﻿using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Interaction;
-using Content.Shared.InterfaceGuidelines;
 using Content.Shared.Lock;
+using Content.Shared.UIKit;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;

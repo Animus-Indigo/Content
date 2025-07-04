@@ -9,11 +9,13 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Timing;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Power
 {
     [GenerateTypedNameReferences]
-    public sealed partial class SolarControlWindow : FancyWindow, IComputerWindow<SolarControlConsoleBoundInterfaceState>
+    public sealed partial class SolarControlWindow : UIKWindow, IComputerWindow<SolarControlConsoleBoundInterfaceState>
     {
         [ViewVariables]
         private SolarControlConsoleBoundInterfaceState _lastState = new(0, 0, 0, 0);

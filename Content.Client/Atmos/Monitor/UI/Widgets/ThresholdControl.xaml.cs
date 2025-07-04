@@ -8,6 +8,8 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Localization;
+using UIKFancyCheckBox = Content.Client.UIKit.Controls.UIKFancyCheckBox;
+
 
 // holy FUCK
 // this technically works because some of this you can *not* do in XAML but holy FUCK
@@ -24,7 +26,7 @@ public sealed partial class ThresholdControl : BoxContainer
     public event Action<AtmosMonitorThresholdType, AtmosAlarmThreshold, Gas?>? ThresholdDataChanged;
 
     private CollapsibleHeading _name => CName;
-    private FancyCheckBox _enabled => CEnabled;
+    private UIKFancyCheckBox _enabled => CEnabled;
     private BoxContainer _dangerBounds => CDangerBounds;
     private BoxContainer _warningBounds => CWarningBounds;
     private ThresholdBoundControl _upperBoundControl;

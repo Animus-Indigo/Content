@@ -1,5 +1,5 @@
-﻿<controls:FancyWindow xmlns="https://spacestation14.io"
-                     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+﻿<uik:UIKWindow xmlns="https://spacestation14.io"
+                     xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
                      Title="{Loc 'intercom-menu-title'}"
                      MinSize="300 170"
                      SetSize="300 170">
@@ -10,7 +10,7 @@
         <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
             <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" HorizontalAlignment="Center">
                 <Label Text="{Loc 'intercom-channel-label'}"  HorizontalAlignment="Center"/>
-                <controls:FancyOptionButton Name="ChannelOptions" VerticalExpand="True" MinWidth="125"/>
+                <uik:UIKOptionButton Name="ChannelOptions" VerticalExpand="True" MinWidth="125"/>
             </BoxContainer>
         </BoxContainer>
         <Control MinHeight="10"/>
@@ -28,4 +28,4 @@
             </BoxContainer>
         </BoxContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

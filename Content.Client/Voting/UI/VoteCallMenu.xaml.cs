@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Client.UIKit.Controls;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Administration;
 using Content.Shared.Voting;
@@ -10,11 +11,13 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Console;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Voting.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class VoteCallMenu : FancyWindow
+    public sealed partial class VoteCallMenu : UIKWindow
     {
         [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
         [Dependency] private readonly IVoteManager _voteManager = default!;
@@ -117,12 +120,12 @@ namespace Content.Client.Voting.UI
             }
         }
 
-        private static void VoteSecondSelected(FancyOptionButton.ItemSelectedEventArgs obj)
+        private static void VoteSecondSelected(UIKOptionButton.ItemSelectedEventArgs obj)
         {
             obj.Button.SelectId(obj.Id);
         }
 
-        private void VoteTypeSelected(FancyOptionButton.ItemSelectedEventArgs obj)
+        private void VoteTypeSelected(UIKOptionButton.ItemSelectedEventArgs obj)
         {
             VoteTypeButton.SelectId(obj.Id);
 

@@ -1,6 +1,6 @@
-<controls:FancyWindow
+<uik:UIKWindow
         xmlns="https://spacestation14.io"
-        xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+        xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
         Title="{Loc 'autodoc-add-step'}">
     <BoxContainer Orientation="Vertical">
         <Button Name="SurgeryButton" Text="{Loc 'autodoc-add-step-surgery'}"/>
@@ -11,4 +11,4 @@
         <Button Name="SetLabelButton" Text="{Loc 'autodoc-add-step-set-label'}"/>
         <Button Name="WaitButton" Text="{Loc 'autodoc-add-step-wait'}"/>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

@@ -1,5 +1,5 @@
-<controls:FancyWindow xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+<uik:UIKWindow xmlns="https://spacestation14.io"
+                     xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc 'comms-console-menu-title'}"
     MinSize="400 300">
 
@@ -39,7 +39,7 @@
                     ToolTip="{Loc 'comms-console-menu-broadcast-button-tooltip'}"
                     StyleClasses="OpenBoth"/>
 
-                <controls:FancyOptionButton Name="AlertLevelButton"
+                <uik:UIKOptionButton Name="AlertLevelButton"
                     Access="Public"
                     ToolTip="{Loc 'comms-console-menu-alert-level-button-tooltip'}"
                     StyleClasses="OpenRight"/>
@@ -59,4 +59,4 @@
             </BoxContainer>
         </BoxContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

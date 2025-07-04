@@ -1,8 +1,8 @@
 ﻿<pda:PdaNavigationButton xmlns="https://spacestation14.io"
                          xmlns:pda="clr-namespace:Content.Client.PDA"
-                         xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls">
+                         xmlns:uik="clr-namespace:Content.Client.UIKit.Controls">
     <PanelContainer Name="Background" />
-    <controls:FancyIcon
+    <uik:UIKIcon
         Name="Icon"
         Visible="False"
         Margin="0 0 0 2"

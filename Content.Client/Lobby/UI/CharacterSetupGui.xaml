@@ -1,6 +1,6 @@
 <Control xmlns="https://spacestation14.io"
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-         xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+         xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
          VerticalExpand="True">
     <PanelContainer StyleClasses="FancyWindowPanel" />
 
@@ -12,13 +12,13 @@
 
             <Control HorizontalExpand="True" />
 
-            <controls:FancyButton Name="StatsButton"
+            <uik:UIKButton Name="StatsButton"
                                   Text="{Loc 'character-setup-gui-character-setup-stats-button'}" />
 
-            <controls:FancyButton Name="RulesButton"
+            <uik:UIKButton Name="RulesButton"
                                   Text="{Loc 'character-setup-gui-character-setup-rules-button'}" />
 
-            <controls:FancyButton Name="CloseButton"
+            <uik:UIKButton Name="CloseButton"
                                   Access="Public"
                                   Text="{Loc 'character-setup-gui-character-setup-close-button'}" />
         </BoxContainer>

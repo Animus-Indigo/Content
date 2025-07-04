@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+using Content.Client.UIKit.Controls;
 using Content.Client.UserInterface.Controls;
 using Content.Server.Ghost.Roles.Raffles;
 using Content.Shared.Ghost.Roles.Raffles;
@@ -7,11 +8,13 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using static Robust.Client.UserInterface.Controls.BaseButton;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
 {
     [GenerateTypedNameReferences]
-    public sealed partial class MakeGhostRoleWindow : FancyWindow
+    public sealed partial class MakeGhostRoleWindow : UIKWindow
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         private readonly List<GhostRoleRaffleSettingsPrototype> _rafflePrototypes = [];
@@ -102,7 +105,7 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
             }
         }
 
-        private void OnRaffleButtonItemSelected(FancyOptionButton.ItemSelectedEventArgs args)
+        private void OnRaffleButtonItemSelected(UIKOptionButton.ItemSelectedEventArgs args)
         {
             _raffleSettingId = args.Id;
             args.Button.SelectId(args.Id);

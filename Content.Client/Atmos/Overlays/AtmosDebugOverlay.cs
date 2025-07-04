@@ -1,10 +1,9 @@
 using System.Linq;
 using System.Numerics;
 using Content.Client.Atmos.EntitySystems;
-using Content.Client.InterfaceGuidelines;
+using Content.Client.UIKit;
 using Content.Client.Resources;
 using Content.Shared.Atmos;
-using Content.Shared.InterfaceGuidelines;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.ResourceManagement;

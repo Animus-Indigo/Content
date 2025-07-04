@@ -2,11 +2,12 @@
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Arcade;
 using Robust.Client.UserInterface.Controls;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
 
 
 namespace Content.Client.Arcade
 {
-    public sealed class SpaceVillainArcadeMenu : FancyWindow
+    public sealed class SpaceVillainArcadeMenu : UIKWindow
     {
         private readonly Label _enemyNameLabel;
         private readonly Label _playerInfoLabel;

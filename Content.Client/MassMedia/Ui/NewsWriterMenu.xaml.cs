@@ -4,11 +4,13 @@ using Robust.Client.UserInterface.XAML;
 using Content.Shared.MassMedia.Systems;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.MassMedia.Ui;
 
 [GenerateTypedNameReferences]
-public sealed partial class NewsWriterMenu : FancyWindow
+public sealed partial class NewsWriterMenu : UIKWindow
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
 

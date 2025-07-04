@@ -1,9 +1,9 @@
 using System.Linq;
+using Content.Client.GameBar;
 using Content.Client.Gameplay;
 using Content.Client.Guidebook;
 using Content.Client.Guidebook.Controls;
 using Content.Client.Lobby;
-using Content.Client.UserInterface.GlobalMenu;
 using Content.Shared.Guidebook;
 using Content.Shared.Input;
 using Robust.Client.UserInterface;
@@ -17,7 +17,7 @@ namespace Content.Client.UserInterface.Systems.Guidebook;
 public sealed class GuidebookUIController : UIController, IOnStateEntered<LobbyState>, IOnStateEntered<GameplayState>, IOnStateExited<LobbyState>, IOnStateExited<GameplayState>, IOnSystemChanged<GuidebookSystem>
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager  = default!;
-    [Dependency] private readonly GlobalMenuManager _globalMenuManager = null!;
+    [Dependency] private readonly GameBarManager _gameBarManager = null!;
 
     [UISystemDependency] private readonly GuidebookSystem _guidebookSystem = default!;
 
@@ -27,8 +27,8 @@ public sealed class GuidebookUIController : UIController, IOnStateEntered<LobbyS
     {
         base.Initialize();
 
-        _globalMenuManager
-            .GetCategory(GlobalMenuCategory.Global)
+        _gameBarManager
+            .GetCategory(GameBarCategory.Global)
             .RegisterItem(
                 new(
                     new("global-menu-global-guide-book-item"),

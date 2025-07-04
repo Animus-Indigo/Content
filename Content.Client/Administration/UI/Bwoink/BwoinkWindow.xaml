@@ -1,8 +1,8 @@
-﻿<controls:FancyWindow
+﻿<uik:UIKWindow
     xmlns="https://spacestation14.io"
     xmlns:cc="clr-namespace:Content.Client.Administration.UI.Bwoink"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     SetSize="900 500"
     Title="{Loc 'bwoink-user-title'}">
     <cc:BwoinkControl Name="Bwoink" Access="Public" />
-</controls:FancyWindow>
+</uik:UIKWindow>

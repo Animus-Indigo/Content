@@ -6,11 +6,13 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Collections;
 using Robust.Shared.Utility;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Bed.Cryostorage;
 
 [GenerateTypedNameReferences]
-public sealed partial class CryostorageMenu : FancyWindow
+public sealed partial class CryostorageMenu : UIKWindow
 {
     public event Action<NetEntity, string>? SlotRemoveButtonPressed;
     public event Action<NetEntity, string>? HandRemoveButtonPressed;

@@ -1,6 +1,6 @@
-﻿<controls:FancyWindow xmlns="https://spacestation14.io"
+﻿<uik:UIKWindow xmlns="https://spacestation14.io"
             xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-            xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+            xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
             SetSize="600 600"
             MinSize="600 600">
     <BoxContainer Orientation="Vertical">
@@ -37,4 +37,4 @@
         </PanelContainer>
         <TextureButton VerticalExpand="True" />
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

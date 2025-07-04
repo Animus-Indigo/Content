@@ -11,9 +11,12 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
 using System.Numerics;
+using Content.Client.UIKit.Controls;
 using Content.Shared.FixedPoint;
 using Robust.Client.Graphics;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Chemistry.UI
 {
@@ -21,7 +24,7 @@ namespace Content.Client.Chemistry.UI
     /// Client-side UI used to control a <see cref="SharedChemMasterComponent"/>
     /// </summary>
     [GenerateTypedNameReferences]
-    public sealed partial class ChemMasterWindow : FancyWindow
+    public sealed partial class ChemMasterWindow : UIKWindow
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         public event Action<BaseButton.ButtonEventArgs, ReagentButton, int, bool>? OnReagentButtonPressed;
@@ -206,7 +209,7 @@ namespace Content.Client.Chemistry.UI
             SortUpdated();
         }
 
-        private void HandleChildPressed(FancyOptionButton.ItemSelectedEventArgs args)
+        private void HandleChildPressed(UIKOptionButton.ItemSelectedEventArgs args)
         {
             HandleSortMethodChange(args.Id);
             OnSortMethodChanged?.Invoke(args.Id);

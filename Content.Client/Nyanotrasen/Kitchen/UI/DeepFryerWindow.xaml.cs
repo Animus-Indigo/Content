@@ -5,12 +5,14 @@ using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Nyanotrasen.Kitchen.UI
 {
     [GenerateTypedNameReferences]
     [Access(typeof(DeepFryerBoundUserInterface))]
-    public sealed partial class DeepFryerWindow : FancyWindow
+    public sealed partial class DeepFryerWindow : UIKWindow
     {
         [Dependency] private readonly IEntityManager _entityManager = default!;
 

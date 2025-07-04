@@ -7,16 +7,18 @@ using Robust.Client.UserInterface.Controls;
 using Content.Client.Stylesheets;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
-using FancyWindow = Content.Client.UserInterface.Controls.FancyWindow;
 using Content.Shared.Labels.Components;
 using Content.Shared.Prototypes;
 using System.Reflection.Emit;
 using Content.Client.Labels;
+using Content.Client.UserInterface.Controls;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.VendingMachines.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class VendingMachineMenu : FancyWindow
+    public sealed partial class VendingMachineMenu : UIKWindow
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 

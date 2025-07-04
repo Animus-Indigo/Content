@@ -1,5 +1,5 @@
 <BoxContainer xmlns="https://spacestation14.io"
-              xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+              xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
               HorizontalExpand="True"
               Orientation="Vertical"
               SeparationOverride="8">
@@ -7,38 +7,38 @@
         <BoxContainer Orientation="Vertical" VerticalExpand="True" SeparationOverride="12">
 
             <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                <controls:FancyLabel Text="{Loc 'ui-options-general-ui-style'}"
+                <uik:UIKLabel Text="{Loc 'ui-options-general-ui-style'}"
                                      TextStyle="Headline" />
 
                 <BoxContainer Orientation="Horizontal" SeparationOverride="12">
                     <Label Text="{Loc 'ui-options-hud-theme'}" />
-                    <controls:FancyOptionButton Name="HudThemeOption" />
+                    <uik:UIKOptionButton Name="HudThemeOption" />
                 </BoxContainer>
             </BoxContainer>
 
             <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                <controls:FancyLabel Text="{Loc 'ui-options-general-accessibility'}"
+                <uik:UIKLabel Text="{Loc 'ui-options-general-accessibility'}"
                                      TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                    <controls:FancyCheckBox Name="ReducedMotionCheckBox" Text="{Loc 'ui-options-reduced-motion'}" />
-                    <controls:FancyCheckBox Name="EnableColorNameCheckBox"
+                    <uik:UIKFancyCheckBox Name="ReducedMotionCheckBox" Text="{Loc 'ui-options-reduced-motion'}" />
+                    <uik:UIKFancyCheckBox Name="EnableColorNameCheckBox"
                                             Text="{Loc 'ui-options-enable-color-name'}" />
-                    <controls:FancyCheckBox Name="ColorblindFriendlyCheckBox"
+                    <uik:UIKFancyCheckBox Name="ColorblindFriendlyCheckBox"
                                             Text="{Loc 'ui-options-colorblind-friendly'}" />
-                    <controls:FancyCheckBox Name="DisableFiltersCheckBox" Text="{Loc 'ui-options-no-filters'}" />
+                    <uik:UIKFancyCheckBox Name="DisableFiltersCheckBox" Text="{Loc 'ui-options-no-filters'}" />
                 </BoxContainer>
 
                 <BoxContainer Orientation="Horizontal" SeparationOverride="12">
                     <Label Text="{Loc 'ui-options-chatstack'}" />
 
-                    <controls:FancyOptionButton Name="ChatStackOption" />
+                    <uik:UIKOptionButton Name="ChatStackOption" />
                 </BoxContainer>
 
                 <BoxContainer Orientation="Horizontal" SeparationOverride="12">
                     <Label Text="{Loc 'ui-options-screen-shake-intensity'}" />
 
-                    <controls:FancySlider Name="ScreenShakeIntensitySlider"
+                    <uik:UIKSlider Name="ScreenShakeIntensitySlider"
                                           MinValue="0"
                                           MaxValue="100"
                                           Rounded="True"
@@ -49,69 +49,69 @@
             </BoxContainer>
 
             <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                <controls:FancyLabel Text="{Loc 'ui-options-general-discord'}"
+                <uik:UIKLabel Text="{Loc 'ui-options-general-discord'}"
                                      TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                    <controls:FancyCheckBox Name="DiscordRich" Text="{Loc 'ui-options-discordrich'}" />
+                    <uik:UIKFancyCheckBox Name="DiscordRich" Text="{Loc 'ui-options-discordrich'}" />
                 </BoxContainer>
             </BoxContainer>
 
             <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                <controls:FancyLabel Text="{Loc 'ui-options-general-speech'}"
+                <uik:UIKLabel Text="{Loc 'ui-options-general-speech'}"
                                      TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                    <controls:FancyCheckBox Name="ShowOocPatronColor"
+                    <uik:UIKFancyCheckBox Name="ShowOocPatronColor"
                                             Text="{Loc 'ui-options-show-ooc-patron-color'}" />
-                    <controls:FancyCheckBox Name="ShowLoocAboveHeadCheckBox"
+                    <uik:UIKFancyCheckBox Name="ShowLoocAboveHeadCheckBox"
                                             Text="{Loc 'ui-options-show-looc-on-head'}" />
-                    <controls:FancyCheckBox Name="FancySpeechBubblesCheckBox"
+                    <uik:UIKFancyCheckBox Name="FancySpeechBubblesCheckBox"
                                             Text="{Loc 'ui-options-fancy-speech'}" />
-                    <controls:FancyCheckBox Name="FancyNameBackgroundsCheckBox"
+                    <uik:UIKFancyCheckBox Name="FancyNameBackgroundsCheckBox"
                                             Text="{Loc 'ui-options-fancy-name-background'}" />
                 </BoxContainer>
             </BoxContainer>
 
             <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                <controls:FancyLabel Text="{Loc 'ui-options-general-cursor'}"
+                <uik:UIKLabel Text="{Loc 'ui-options-general-cursor'}"
                                      TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                    <controls:FancyCheckBox Name="ShowHeldItemCheckBox"
+                    <uik:UIKFancyCheckBox Name="ShowHeldItemCheckBox"
                                             Text="{Loc 'ui-options-show-held-item'}" />
-                    <controls:FancyCheckBox Name="ShowCombatModeIndicatorsCheckBox"
+                    <uik:UIKFancyCheckBox Name="ShowCombatModeIndicatorsCheckBox"
                                             Text="{Loc 'ui-options-show-combat-mode-indicators'}" />
-                    <controls:FancyCheckBox Name="ShowOfferModeIndicatorsCheckBox"
+                    <uik:UIKFancyCheckBox Name="ShowOfferModeIndicatorsCheckBox"
                                             Text="{Loc 'ui-options-show-offer-mode-indicators'}" />
                 </BoxContainer>
             </BoxContainer>
 
             <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                <controls:FancyLabel Text="{Loc 'ui-options-general-storage'}"
+                <uik:UIKLabel Text="{Loc 'ui-options-general-storage'}"
                                      TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                    <controls:FancyCheckBox Name="OpaqueStorageWindowCheckBox"
+                    <uik:UIKFancyCheckBox Name="OpaqueStorageWindowCheckBox"
                                             Text="{Loc 'ui-options-opaque-storage-window'}" />
-                    <controls:FancyCheckBox Name="StaticStorageUI"
+                    <uik:UIKFancyCheckBox Name="StaticStorageUI"
                                             Text="{Loc 'ui-options-static-storage-ui'}" />
                 </BoxContainer>
             </BoxContainer>
 
             <BoxContainer Orientation="Vertical" SeparationOverride='8'>
-                <controls:FancyLabel Text="{Loc 'ui-options-general-other'}"
+                <uik:UIKLabel Text="{Loc 'ui-options-general-other'}"
                                      TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                    <controls:FancyCheckBox Name="ModernProgressBar" Text="{Loc 'ui-options-modern-progress-bar'}" />
+                    <uik:UIKFancyCheckBox Name="ModernProgressBar" Text="{Loc 'ui-options-modern-progress-bar'}" />
                 </BoxContainer>
             </BoxContainer>
 
         </BoxContainer>
     </ScrollContainer>
 
-    <controls:FancyButton Name="ApplyButton"
+    <uik:UIKButton Name="ApplyButton"
                           Color="Accent"
                           Text="{Loc 'ui-options-apply'}"
                           HorizontalAlignment="Right" />

@@ -1,7 +1,7 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     MinSize="280 160" Title="Temperature Control Unit">
     <BoxContainer Name="VboxContainer" Orientation="Vertical" Margin="5 5 5 5" SeparationOverride="10">
 
@@ -11,7 +11,7 @@
             </BoxContainer>
             <BoxContainer Orientation="Horizontal" SeparationOverride="5">
                 <Label Text="{Loc comp-space-heater-ui-mode}"/>
-                <controls:FancyOptionButton Access="Public" Name="ModeSelector"/>
+                <uik:UIKOptionButton Access="Public" Name="ModeSelector"/>
             </BoxContainer>
         </BoxContainer>
 
@@ -32,4 +32,4 @@
         </BoxContainer>
 
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

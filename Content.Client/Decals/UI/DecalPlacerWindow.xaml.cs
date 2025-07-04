@@ -9,11 +9,13 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Client.Utility;
 using Robust.Shared.Prototypes;
 using static Robust.Client.UserInterface.Controls.BaseButton;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Decals.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class DecalPlacerWindow : FancyWindow
+public sealed partial class DecalPlacerWindow : UIKWindow
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 

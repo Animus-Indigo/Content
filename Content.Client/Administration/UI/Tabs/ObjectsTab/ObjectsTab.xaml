@@ -1,11 +1,12 @@
 ﻿<Control xmlns="https://spacestation14.io"
          xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
          xmlns:ot="clr-namespace:Content.Client.Administration.UI.Tabs.ObjectsTab"
-         xmlns:co="clr-namespace:Content.Client.UserInterface.Controls">
+         xmlns:co="clr-namespace:Content.Client.UserInterface.Controls"
+         xmlns:controls="clr-namespace:Content.Client.UIKit.Controls">
     <BoxContainer Orientation="Vertical">
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc object-tab-object-type}" />
-            <co:FancyOptionButton Name="ObjectTypeOptions" HorizontalAlignment="Left" />
+            <controls:UIKOptionButton Name="ObjectTypeOptions" HorizontalAlignment="Left" />
             <LineEdit Name="SearchLineEdit" PlaceHolder="{Loc object-tab-object-search}" HorizontalExpand="True"
                       SizeFlagsStretchRatio="1" />
             <Button Name="RefreshListButton" Text="{Loc object-tab-refresh-button}" ToggleMode="False" />

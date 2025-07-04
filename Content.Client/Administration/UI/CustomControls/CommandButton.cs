@@ -4,11 +4,13 @@ using Content.Client.UserInterface.Controls;
 using Robust.Client.Console;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
+using UIKButton = Content.Client.UIKit.Controls.UIKButton;
+
 
 namespace Content.Client.Administration.UI.CustomControls
 {
     [Virtual]
-    public class CommandButton : FancyButton, IDocumentTag
+    public class CommandButton : UIKButton, IDocumentTag
     {
         public string? Command { get; set; }
 

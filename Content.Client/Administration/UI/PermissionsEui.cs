@@ -4,6 +4,7 @@ using System.Numerics;
 using Content.Client.Administration.Managers;
 using Content.Client.Eui;
 using Content.Client.Stylesheets;
+using Content.Client.UIKit.Controls;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Administration;
 using Content.Shared.Eui;
@@ -17,6 +18,9 @@ using Robust.Shared.Maths;
 using Robust.Shared.Utility;
 using static Content.Shared.Administration.PermissionsEuiMsg;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using UIKFancyCheckBox = Content.Client.UIKit.Controls.UIKFancyCheckBox;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Administration.UI
 {
@@ -28,7 +32,7 @@ namespace Content.Client.Administration.UI
         [Dependency] private readonly IClientAdminManager _adminManager = default!;
 
         private readonly Menu _menu;
-        private readonly List<FancyWindow> _subWindows = new();
+        private readonly List<UIKWindow> _subWindows = new();
 
         private Dictionary<int, PermissionsEuiState.AdminRankData> _ranks =
             new();
@@ -292,7 +296,7 @@ namespace Content.Client.Administration.UI
             OpenRankEditWindow(rank);
         }
 
-        private sealed class Menu : FancyWindow
+        private sealed class Menu : UIKWindow
         {
             private readonly PermissionsEui _ui;
             public readonly GridContainer AdminsList;
@@ -343,12 +347,12 @@ namespace Content.Client.Administration.UI
             }
         }
 
-        private sealed class EditAdminWindow : FancyWindow
+        private sealed class EditAdminWindow : UIKWindow
         {
             public readonly PermissionsEuiState.AdminData? SourceData;
             public readonly LineEdit?                      NameEdit;
             public readonly LineEdit                       TitleEdit;
-            public readonly FancyOptionButton              RankButton;
+            public readonly UIKOptionButton              RankButton;
             public readonly Button                         SaveButton;
             public readonly Button?                        RemoveButton;
 
@@ -378,7 +382,7 @@ namespace Content.Client.Administration.UI
                 }
 
                 TitleEdit = new LineEdit { PlaceHolder = Loc.GetString("permissions-eui-edit-admin-window-title-edit-placeholder") };
-                RankButton = new FancyOptionButton();
+                RankButton = new UIKOptionButton();
                 SaveButton = new Button { Text = Loc.GetString("permissions-eui-edit-admin-window-save-button"), HorizontalAlignment = HAlignment.Right };
 
                 RankButton.AddItem(Loc.GetString("permissions-eui-edit-admin-window-no-rank-button"), NoRank);
@@ -500,7 +504,7 @@ namespace Content.Client.Administration.UI
                 });
             }
 
-            private void RankSelected(FancyOptionButton.ItemSelectedEventArgs obj)
+            private void RankSelected(UIKOptionButton.ItemSelectedEventArgs obj)
             {
                 RankButton.SelectId(obj.Id);
             }
@@ -524,13 +528,13 @@ namespace Content.Client.Administration.UI
             }
         }
 
-        private sealed class EditAdminRankWindow : FancyWindow
+        private sealed class EditAdminRankWindow : UIKWindow
         {
             public readonly int? SourceId;
             public readonly LineEdit NameEdit;
             public readonly Button SaveButton;
             public readonly Button? RemoveButton;
-            public readonly Dictionary<AdminFlags, FancyCheckBox> FlagCheckBoxes = new();
+            public readonly Dictionary<AdminFlags, UIKFancyCheckBox> FlagCheckBoxes = new();
 
             public EditAdminRankWindow(PermissionsEui ui, KeyValuePair<int, PermissionsEuiState.AdminRankData>? data)
             {
@@ -566,7 +570,7 @@ namespace Content.Client.Administration.UI
                     var disable = !ui._adminManager.HasFlag(flag);
                     var flagName = flag.ToString().ToUpper();
 
-                    var checkBox = new FancyCheckBox
+                    var checkBox = new UIKFancyCheckBox
                     {
                         Disabled = disable,
                         Text = flagName

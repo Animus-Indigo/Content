@@ -1,5 +1,5 @@
-<ui:FancyWindow xmlns="https://spacestation14.io"
-                xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+<controls:UIKWindow xmlns="https://spacestation14.io"
+                    xmlns:controls="clr-namespace:Content.Client.UIKit.Controls"
                 VerticalExpand="True" HorizontalExpand="True"
                 Title="{Loc admin-remarks-title}"
                 SetSize="600 400">
@@ -10,4 +10,4 @@
             </ScrollContainer>
         </BoxContainer>
     </PanelContainer>
-</ui:FancyWindow>
+</controls:UIKWindow>

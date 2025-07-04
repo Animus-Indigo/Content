@@ -8,6 +8,9 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared;
 using Robust.Shared.Configuration;
+using UIKFancyCheckBox = Content.Client.UIKit.Controls.UIKFancyCheckBox;
+using UIKSlider = Content.Client.UIKit.Controls.UIKSlider;
+
 
 namespace Content.Client.Options.UI.Tabs
 {
@@ -60,10 +63,10 @@ namespace Content.Client.Options.UI.Tabs
                 {
                     switch (control)
                     {
-                        case FancySlider slider:
+                        case UIKSlider slider:
                             slider.OnValueChanged += _ => UpdateChanges();
                             break;
-                        case FancyCheckBox checkBox:
+                        case UIKFancyCheckBox checkBox:
                             checkBox.OnToggled += _ => UpdateChanges();
                             break;
                     }
@@ -102,10 +105,10 @@ namespace Content.Client.Options.UI.Tabs
                 {
                     switch (control)
                     {
-                        case FancySlider slider:
+                        case UIKSlider slider:
                             slider.OnValueChanged -= _ => UpdateChanges();
                             break;
-                        case FancyCheckBox checkBox:
+                        case UIKFancyCheckBox checkBox:
                             checkBox.OnToggled -= _ => UpdateChanges();
                             break;
                     }

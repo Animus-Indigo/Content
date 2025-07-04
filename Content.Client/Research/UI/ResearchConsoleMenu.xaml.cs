@@ -13,11 +13,13 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Research.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class ResearchConsoleMenu : FancyWindow
+public sealed partial class ResearchConsoleMenu : UIKWindow
 {
     public Action<string>? OnTechnologyCardPressed;
     public Action? OnServerButtonPressed;

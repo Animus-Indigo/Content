@@ -1,7 +1,7 @@
 using Content.Shared.DoAfter;
-using Content.Shared.InterfaceGuidelines;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.UIKit;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;

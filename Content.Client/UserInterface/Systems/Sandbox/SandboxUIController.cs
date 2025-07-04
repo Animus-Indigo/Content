@@ -1,9 +1,9 @@
 ﻿using Content.Client.Administration.Managers;
+using Content.Client.GameBar;
 using Content.Client.Gameplay;
 using Content.Client.Markers;
 using Content.Client.Sandbox;
 using Content.Client.UserInterface.Controls;
-using Content.Client.UserInterface.GlobalMenu;
 using Content.Client.UserInterface.Systems.DecalPlacer;
 using Content.Client.UserInterface.Systems.Sandbox.Windows;
 using Content.Shared.Input;
@@ -34,7 +34,7 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
     [Dependency] private readonly ILightManager       _light             = default!;
     [Dependency] private readonly IClientAdminManager _admin             = default!;
     [Dependency] private readonly IPlayerManager      _player            = default!;
-    [Dependency] private readonly GlobalMenuManager   _globalMenuManager = null!;
+    [Dependency] private readonly GameBarManager   _gameBarManager = null!;
 
     [UISystemDependency] private readonly DebugPhysicsSystem _debugPhysics = default!;
     [UISystemDependency] private readonly MarkerSystem _marker = default!;
@@ -47,10 +47,10 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
     private TileSpawningUIController TileSpawningController => UIManager.GetUIController<TileSpawningUIController>();
     private DecalPlacerUIController DecalPlacerController => UIManager.GetUIController<DecalPlacerUIController>();
 
-    private GlobalMenuItemDef _panelItem;
-    private GlobalMenuItemDef _entitySpawningWindowItem;
-    private GlobalMenuItemDef _tileSpawnWindowItem;
-    private GlobalMenuItemDef _decalSpawnWindowItem;
+    private GameBarItemDef _panelItem;
+    private GameBarItemDef _entitySpawningWindowItem;
+    private GameBarItemDef _tileSpawnWindowItem;
+    private GameBarItemDef _decalSpawnWindowItem;
 
     public override void Initialize()
     {
@@ -179,8 +179,8 @@ public sealed class SandboxUIController : UIController, IOnStateChanged<Gameplay
     {
         var isAdmin = _admin.CanAdminPlace();
 
-        _globalMenuManager
-            .GetCategory(GlobalMenuCategory.Sandbox)
+        _gameBarManager
+            .GetCategory(GameBarCategory.Sandbox)
             .KeepItem(_panelItem, when: isAdmin)
             .KeepItem(_entitySpawningWindowItem, when: isAdmin)
             .KeepItem(_tileSpawnWindowItem, when: isAdmin)

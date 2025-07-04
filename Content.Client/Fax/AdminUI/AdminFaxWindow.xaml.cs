@@ -5,11 +5,13 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Utility;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Fax.AdminUI;
 
 [GenerateTypedNameReferences]
-public sealed partial class AdminFaxWindow : FancyWindow
+public sealed partial class AdminFaxWindow : UIKWindow
 {
     private const string StampsRsiPath = "/Textures/Objects/Misc/bureaucracy.rsi";
 

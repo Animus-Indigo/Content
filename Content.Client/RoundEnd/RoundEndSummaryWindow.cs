@@ -6,10 +6,12 @@ using Content.Shared.GameTicking;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.RoundEnd
 {
-    public sealed class RoundEndSummaryWindow : FancyWindow
+    public sealed class RoundEndSummaryWindow : UIKWindow
     {
         private readonly IEntityManager _entityManager;
         public int RoundId;

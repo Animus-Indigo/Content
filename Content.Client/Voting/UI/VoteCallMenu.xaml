@@ -1,13 +1,13 @@
-﻿<controls:FancyWindow xmlns="https://spacestation14.io"
-                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+﻿<uik:UIKWindow xmlns="https://spacestation14.io"
+                     xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
                       Title="{Loc 'ui-vote-create-title'}"
                       MouseFilter="Stop" MinSize="350 150">
     <BoxContainer Orientation="Vertical">
         <BoxContainer Orientation="Vertical" Margin="8 2 8 0" VerticalExpand="True" VerticalAlignment="Top">
             <BoxContainer Orientation="Horizontal">
-                <controls:FancyOptionButton Name="VoteTypeButton" HorizontalExpand="True" />
+                <uik:UIKOptionButton Name="VoteTypeButton" HorizontalExpand="True" />
                 <Control HorizontalExpand="True">
-                    <controls:FancyOptionButton Name="VoteSecondButton" Visible="False" />
+                    <uik:UIKOptionButton Name="VoteSecondButton" Visible="False" />
                 </Control>
             </BoxContainer>
             <Label Name="VoteTypeTimeoutLabel" Visible="False" />
@@ -18,4 +18,4 @@
         <PanelContainer StyleClasses="LowDivider" />
         <Label Margin="12 0 0 0" StyleClasses="LabelSubText" Text="{Loc 'ui-vote-fluff'}" />
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

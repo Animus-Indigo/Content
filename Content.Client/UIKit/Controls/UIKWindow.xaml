@@ -1,0 +1,44 @@
+<uik:UIKWindow xmlns="https://spacestation14.io"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:ig="clr-namespace:Content.Shared.UIKit;assembly=Content.Shared"
+                      xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
+                      MouseFilter="Stop" MinWidth="200" MinHeight="150">
+    <PanelContainer StyleClasses="FancyWindowPanel" />
+
+    <BoxContainer Orientation="Vertical">
+        <PanelContainer Name="WindowTitlebar">
+            <BoxContainer Name="WindowTitlebarContainer"
+                          Margin="12 6"
+                          Orientation="Horizontal"
+                          VerticalAlignment="Center"
+                          HorizontalAlignment="Stretch">
+                <uik:UIKButton Name="HelpButton"
+                                      VerticalAlignment="Center"
+                                      Style="Ghost"
+                                      IconTextStyle="Title3"
+                                      IconFontWeight="Bold"
+                                      FontColor="{x:Static ig:Colors.WindowTitlebarHelpButton}" />
+
+                <uik:UIKLabel Name="WindowTitle"
+                                     HorizontalExpand="True"
+                                     HorizontalAlignment="Center"
+                                     VAlign="Center"
+                                     FontWeight="Bold"
+                                     FontColorOverride="{x:Static ig:Colors.WindowTitle}" />
+
+                <uik:UIKButton Name="CloseButton"
+                                      VerticalAlignment="Center"
+                                      Style="Ghost"
+                                      IconTextStyle="Title3"
+                                      IconFontWeight="Bold"
+                                      FontColor="{x:Static ig:Colors.WindowTitlebarCloseButton}" />
+            </BoxContainer>
+        </PanelContainer>
+
+        <Control Name="ContentsContainer"
+                 Margin="12 12"
+                 Access="Public"
+                 RectClipContent="True"
+                 VerticalExpand="true" />
+    </BoxContainer>
+</uik:UIKWindow>

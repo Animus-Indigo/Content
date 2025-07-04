@@ -6,11 +6,13 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using static Content.Shared.Access.Components.AccessOverriderComponent;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Access.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class AccessOverriderWindow : FancyWindow
+    public sealed partial class AccessOverriderWindow : UIKWindow
     {
         [Dependency] private readonly ILocalizationManager _localization = default!;
         private readonly Dictionary<string, Button> _accessButtons = new();

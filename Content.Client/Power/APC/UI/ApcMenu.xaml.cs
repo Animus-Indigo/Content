@@ -4,18 +4,20 @@ using Robust.Client.GameObjects;
 using Robust.Shared.IoC;
 using System;
 using Content.Client.Stylesheets;
+using Content.Client.UserInterface.Controls;
 using Content.Shared.APC;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Localization;
 using Robust.Shared.Maths;
-using FancyWindow = Content.Client.UserInterface.Controls.FancyWindow;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Power.APC.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class ApcMenu : FancyWindow
+    public sealed partial class ApcMenu : UIKWindow
     {
         public event Action? OnBreaker;
 

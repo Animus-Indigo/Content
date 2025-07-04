@@ -18,7 +18,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Utility;
 using Content.Shared.Emp;
 using Content.Shared.Interaction;
-using Content.Shared.InterfaceGuidelines;
+using Content.Shared.UIKit;
 
 
 namespace Content.Server.Power.EntitySystems

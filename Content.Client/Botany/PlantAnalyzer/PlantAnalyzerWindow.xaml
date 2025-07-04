@@ -1,6 +1,6 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     MinWidth="320"
     MaxWidth="320">
     <ScrollContainer
@@ -118,4 +118,4 @@
             </BoxContainer>
         </BoxContainer>
     </ScrollContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

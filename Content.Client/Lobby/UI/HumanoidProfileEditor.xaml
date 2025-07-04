@@ -1,9 +1,9 @@
 <BoxContainer xmlns="https://spacestation14.io"
               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
               xmlns:humanoid="clr-namespace:Content.Client.Humanoid"
-              xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
               xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-              xmlns:ig="clr-namespace:Content.Shared.InterfaceGuidelines;assembly=Content.Shared"
+              xmlns:ig="clr-namespace:Content.Shared.UIKit;assembly=Content.Shared"
+              xmlns:controls="clr-namespace:Content.Client.UIKit.Controls"
               HorizontalExpand="True"
               SeparationOverride="12">
     <!-- Left side -->
@@ -15,12 +15,12 @@
                       HorizontalExpand="True"
                       SeparationOverride="12">
             <BoxContainer Orientation="Horizontal">
-                <ui:FancyButton Name="ImportButton"
+                <controls:UIKButton Name="ImportButton"
                                 Icon="{x:Static ig:SymbolIcons.Download}"
                                 ToolTip="{Loc 'humanoid-profile-editor-import-button'}"
                                 BordersStyle="OpenRight" />
 
-                <ui:FancyButton Name="ExportButton"
+                <controls:UIKButton Name="ExportButton"
                                 Icon="{x:Static ig:SymbolIcons.Upload}"
                                 ToolTip="{Loc 'humanoid-profile-editor-export-button'}"
                                 BordersStyle="OpenLeft" />
@@ -29,17 +29,17 @@
             <Control HorizontalExpand="True" />
 
             <BoxContainer Orientation="Horizontal">
-                <ui:FancyButton Name="SaveButton"
+                <controls:UIKButton Name="SaveButton"
                                 Icon="{x:Static ig:SymbolIcons.Save}"
                                 ToolTip="{Loc 'humanoid-profile-editor-save-button'}"
                                 BordersStyle="OpenRight" />
 
-                <ui:FancyButton Name="ResetButton" Disabled="True"
+                <controls:UIKButton Name="ResetButton" Disabled="True"
                                 Icon="{x:Static ig:SymbolIcons.Undo}"
                                 ToolTip="{Loc 'humanoid-profile-editor-reset-button'}"
                                 BordersStyle="OpenBoth" />
 
-                <ui:FancyButton Name="RandomizeEverything"
+                <controls:UIKButton Name="RandomizeEverything"
                                 Icon="{x:Static ig:SymbolIcons.Casino}"
                                 ToolTip="{Loc 'humanoid-profile-editor-randomize-everything-button'}"
                                 BordersStyle="OpenLeft" />
@@ -47,7 +47,7 @@
         </BoxContainer>
 
         <!-- TabContainer -->
-        <ui:FancyTabContainer Name="CTabContainer"
+        <controls:UIKTabContainer Name="CTabContainer"
                               VerticalExpand="True"
                               HScrollEnabled="False"
                               VScrollEnabled="False">
@@ -62,7 +62,7 @@
                     <BoxContainer HorizontalExpand="True"
                                   Orientation="Vertical"
                                   SeparationOverride="8">
-                        <ui:StripedList Orientation="Vertical" HorizontalExpand="True">
+                        <controls:UIKStripedList Orientation="Vertical" HorizontalExpand="True">
                             <!-- Species -->
                             <BoxContainer Margin="8 4"
                                           HorizontalExpand="True"
@@ -71,14 +71,14 @@
 
                                 <Control HorizontalExpand="True" />
 
-                                <ui:FancyButton Name="SpeciesInfoButton"
+                                <controls:UIKButton Name="SpeciesInfoButton"
                                                 VerticalAlignment="Center"
                                                 Icon="{x:Static ig:SymbolIcons.Help}"
                                                 ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"
                                                 Style="Ghost"
                                                 FontColor="{x:Static ig:Colors.WindowTitlebarHelpButton}" />
 
-                                <ui:FancyOptionButton
+                                <controls:UIKOptionButton
                                     Name="SpeciesButton"
                                     HorizontalAlignment="Right" />
                             </BoxContainer>
@@ -118,7 +118,7 @@
 
                                 <Control HorizontalExpand="True" />
 
-                                <ui:FancyOptionButton
+                                <controls:UIKOptionButton
                                     Name="SexButton"
                                     HorizontalAlignment="Right" />
                             </BoxContainer>
@@ -131,7 +131,7 @@
 
                                 <Control HorizontalExpand="True" />
 
-                                <ui:FancyOptionButton
+                                <controls:UIKOptionButton
                                     Name="PronounsButton"
                                     HorizontalAlignment="Right" />
                             </BoxContainer>
@@ -159,7 +159,7 @@
 
                                 <Control HorizontalExpand="True" />
 
-                                <ui:FancyButton Name="NameRandomize"
+                                <controls:UIKButton Name="NameRandomize"
                                                 Text="{Loc 'humanoid-profile-editor-name-random-button'}"
                                                 StyleClasses="OpenRight" />
 
@@ -204,7 +204,7 @@
 
                                 <Control HorizontalExpand="True" />
 
-                                <ui:FancyButton Name="ShowClothes"
+                                <controls:UIKButton Name="ShowClothes"
                                                 Text="{Loc 'humanoid-profile-editor-clothing-show'}"
                                                 Pressed="True"
                                                 ToggleMode="True"
@@ -219,7 +219,7 @@
 
                                 <Control HorizontalExpand="True" />
 
-                                <ui:FancyButton Name="ShowLoadouts"
+                                <controls:UIKButton Name="ShowLoadouts"
                                                 Text="{Loc 'Show'}"
                                                 Pressed="True"
                                                 ToggleMode="True"
@@ -234,7 +234,7 @@
 
                                 <Control HorizontalExpand="True" />
 
-                                <ui:FancyOptionButton
+                                <controls:UIKOptionButton
                                     Name="SpawnPriorityButton"
                                     HorizontalAlignment="Right" />
                             </BoxContainer>
@@ -246,13 +246,13 @@
                                 <Label Name="HeightLabel"
                                        MinWidth="110" />
 
-                                <ui:FancySlider Name="HeightSlider"
+                                <controls:UIKSlider Name="HeightSlider"
                                                 MinValue="0.5"
                                                 Value="1"
                                                 MaxValue="1.5"
                                                 HorizontalExpand="True" />
 
-                                <ui:FancyButton Name="HeightReset"
+                                <controls:UIKButton Name="HeightReset"
                                                 Text="{Loc 'ui-options-bind-reset'}" />
                             </BoxContainer>
 
@@ -262,13 +262,13 @@
                                           HorizontalExpand="True">
                                 <Label Name="WidthLabel" MinWidth="110" />
 
-                                <ui:FancySlider Name="WidthSlider"
+                                <controls:UIKSlider Name="WidthSlider"
                                                 MinValue="0.5"
                                                 Value="1"
                                                 MaxValue="1.5"
                                                 HorizontalExpand="True" />
 
-                                <ui:FancyButton Name="WidthReset"
+                                <controls:UIKButton Name="WidthReset"
                                                 Text="{Loc 'ui-options-bind-reset'}" />
                             </BoxContainer>
 
@@ -278,7 +278,7 @@
                                           HorizontalExpand="True">
                                 <Label Name="WeightLabel" />
                             </BoxContainer>
-                        </ui:StripedList>
+                        </controls:UIKStripedList>
 
                         <!-- Skin -->
                         <BoxContainer SeparationOverride="8"
@@ -286,7 +286,7 @@
                                       Orientation="Vertical">
                             <Label Text="{Loc 'humanoid-profile-editor-skin-color-label'}" />
 
-                            <ui:FancySlider HorizontalExpand="True"
+                            <controls:UIKSlider HorizontalExpand="True"
                                             Name="Skin"
                                             MinValue="0"
                                             MaxValue="100"
@@ -310,7 +310,7 @@
                         <!-- Eyes -->
                         <BoxContainer Orientation="Vertical"
                                       SeparationOverride="8">
-                            <ui:FancyLabel Text="{Loc 'humanoid-profile-editor-eyes-label'}"
+                            <controls:UIKLabel Text="{Loc 'humanoid-profile-editor-eyes-label'}"
                                            TextStyle="Headline" />
 
                             <humanoid:EyeColorPicker Name="EyeColorPicker" />
@@ -323,7 +323,7 @@
                           HorizontalExpand="True"
                           Orientation="Vertical">
                 <!-- Background -->
-                <ui:StripedList Orientation="Vertical" VerticalExpand="False">
+                <controls:UIKStripedList Orientation="Vertical" VerticalExpand="False">
                     <!-- Nationality -->
                     <BoxContainer HorizontalExpand="True"
                                   Margin="8 4">
@@ -336,7 +336,7 @@
                                        VerticalAlignment="Center"
                                        ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}" />
 
-                        <ui:FancyOptionButton Name="NationalityButton"
+                        <controls:UIKOptionButton Name="NationalityButton"
                                               HorizontalAlignment="Right" />
                     </BoxContainer>
 
@@ -358,7 +358,7 @@
                                        VerticalAlignment="Center"
                                        ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}" />
 
-                        <ui:FancyOptionButton Name="EmployerButton"
+                        <controls:UIKOptionButton Name="EmployerButton"
                                               HorizontalAlignment="Right" />
                     </BoxContainer>
 
@@ -382,7 +382,7 @@
                                        VerticalAlignment="Center"
                                        ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}" />
 
-                        <ui:FancyOptionButton Name="LifepathButton"
+                        <controls:UIKOptionButton Name="LifepathButton"
                                               HorizontalAlignment="Right" />
                     </BoxContainer>
 
@@ -392,7 +392,7 @@
                                        Text=""
                                        HorizontalExpand="False" MaxWidth="600" />
                     </BoxContainer>
-                </ui:StripedList>
+                </controls:UIKStripedList>
             </BoxContainer>
 
             <BoxContainer Name="Jobs" HorizontalExpand="True">
@@ -404,7 +404,7 @@
                     <BoxContainer HorizontalExpand="True"
                                   Orientation="Vertical"
                                   SeparationOverride="8">
-                        <ui:FancyOptionButton Name="PreferenceUnavailableButton" />
+                        <controls:UIKOptionButton Name="PreferenceUnavailableButton" />
 
                         <BoxContainer Name="JobList" Orientation="Vertical" />
                     </BoxContainer>
@@ -430,7 +430,7 @@
                 <ProgressBar Name="TraitPointsBar" MaxValue="1" Value="1" MaxHeight="8" Margin="0 5" />
 
                 <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
-                    <ui:FancyButton
+                    <controls:UIKButton
                         Name="TraitsShowUnusableButton"
                         Text="{Loc 'humanoid-profile-editor-traits-show-unusable-button'}"
                         ToolTip="{Loc 'humanoid-profile-editor-traits-show-unusable-button-tooltip'}"
@@ -439,7 +439,7 @@
                         HorizontalAlignment="Stretch"
                         HorizontalExpand="True" />
 
-                    <ui:FancyButton
+                    <controls:UIKButton
                         Name="TraitsRemoveUnusableButton"
                         Text="You shouldn't see this"
                         ToolTip="{Loc 'humanoid-profile-editor-traits-remove-unusable-button-tooltip'}"
@@ -448,7 +448,7 @@
                         HorizontalExpand="True" />
                 </BoxContainer>
 
-                <ui:FancyTabContainer Name="TraitsTabs" VerticalExpand="True" />
+                <controls:UIKTabContainer Name="TraitsTabs" VerticalExpand="True" />
             </BoxContainer>
 
             <BoxContainer Name="LoadoutsTab"
@@ -460,7 +460,7 @@
                 <ProgressBar Name="LoadoutPointsBar" MaxValue="1" Value="1" MaxHeight="8" Margin="0 5" />
 
                 <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
-                    <ui:FancyButton
+                    <controls:UIKButton
                         Name="LoadoutsShowUnusableButton"
                         Text="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button'}"
                         ToolTip="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button-tooltip'}"
@@ -468,7 +468,7 @@
                         ToggleMode="True"
                         HorizontalAlignment="Stretch"
                         HorizontalExpand="True" />
-                    <ui:FancyButton
+                    <controls:UIKButton
                         Name="LoadoutsRemoveUnusableButton"
                         Text="You shouldn't see this"
                         ToolTip="{Loc 'humanoid-profile-editor-loadouts-remove-unusable-button-tooltip'}"
@@ -477,7 +477,7 @@
                         HorizontalExpand="True" />
                 </BoxContainer>
 
-                <ui:FancyTabContainer Name="LoadoutsTabs" VerticalExpand="True" />
+                <controls:UIKTabContainer Name="LoadoutsTabs" VerticalExpand="True" />
             </BoxContainer>
 
             <BoxContainer
@@ -490,7 +490,7 @@
                     <humanoid:MarkingPicker Name="Markings" IgnoreCategories="Hair,FacialHair" />
                 </ScrollContainer>
             </BoxContainer>
-        </ui:FancyTabContainer>
+        </controls:UIKTabContainer>
     </BoxContainer>
 
     <!-- Right side -->

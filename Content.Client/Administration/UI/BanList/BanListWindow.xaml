@@ -1,11 +1,11 @@
-﻿<controls1:FancyWindow
+﻿<controls:UIKWindow
     xmlns="https://spacestation14.io"
     xmlns:bans="clr-namespace:Content.Client.Administration.UI.BanList.Bans"
     xmlns:roleBans="clr-namespace:Content.Client.Administration.UI.BanList.RoleBans"
-    xmlns:controls1="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:controls="clr-namespace:Content.Client.UIKit.Controls"
     SetSize="1400 400">
     <TabContainer Name="TabContainer">
         <bans:BanListControl Name="BanList" Access="Public"/>
         <roleBans:RoleBanListControl Name="RoleBanList" Access="Public"/>
     </TabContainer>
-</controls1:FancyWindow>
+</controls:UIKWindow>

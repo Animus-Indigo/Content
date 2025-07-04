@@ -1,21 +1,22 @@
 using System.Numerics;
-using Content.Client.InterfaceGuidelines;
+using Content.Client.UIKit;
 using Content.Client.Message;
 using Content.Client.Resources;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Atmos.Components;
-using Content.Shared.InterfaceGuidelines;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.UserInterface.Systems.Atmos.GasTank;
 
 public sealed class GasTankWindow
-    : FancyWindow
+    : UIKWindow
 {
     [Dependency] private readonly IResourceCache _cache = default!;
     [Dependency] private readonly TypographyManager _typographyManager = null!;

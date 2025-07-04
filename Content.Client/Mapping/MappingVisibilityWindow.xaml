@@ -1,7 +1,7 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
     xmlns:mapping="clr-namespace:Content.Client.Mapping"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc 'mapping-visibility-window-title'}"
     Resizable="False"
     MinWidth="250">
@@ -19,4 +19,4 @@
         <mapping:MappingVisibilityButton Name="Disposal" Text="{Loc 'mapping-visibility-disposal'}" Access="Public"/>
         <mapping:MappingVisibilityButton Name="Atmos" Text="{Loc 'mapping-visibility-atmos'}" Access="Public"/>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

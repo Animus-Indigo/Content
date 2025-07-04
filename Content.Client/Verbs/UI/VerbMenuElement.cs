@@ -1,8 +1,8 @@
 using System.Numerics;
 using Content.Client.ContextMenu.UI;
-using Content.Client.InterfaceGuidelines;
+using Content.Client.UIKit;
+using Content.Client.UIKit.Controls;
 using Content.Client.UserInterface.Controls;
-using Content.Shared.InterfaceGuidelines;
 using Content.Shared.Verbs;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface.Controls;
@@ -65,7 +65,7 @@ public sealed partial class VerbMenuElement : ContextMenuElement
         }
         else if (verb.GlyphIcon is { } glyphIcon)
         {
-            var label = new FancyIcon
+            var label = new UIKIcon
             {
                 Text      = glyphIcon,
                 Align     = Label.AlignMode.Center,
@@ -94,7 +94,7 @@ public sealed partial class VerbMenuElement : ContextMenuElement
         }
         else if (category.GlypIcon is { } glyphIcon)
         {
-            var label = new FancyIcon
+            var label = new UIKIcon
             {
                 Text      = glyphIcon,
                 TextStyle = TextStyle.Title1

@@ -7,11 +7,13 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.DeltaV.AACTablet.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class AACWindow : FancyWindow
+public sealed partial class AACWindow : UIKWindow
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     public event Action<ProtoId<QuickPhrasePrototype>>? PhraseButtonPressed;

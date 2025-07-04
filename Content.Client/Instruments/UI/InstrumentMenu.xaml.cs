@@ -12,11 +12,13 @@ using Robust.Shared.Input;
 using Robust.Shared.Timing;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 using Range = Robust.Client.UserInterface.Controls.Range;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Instruments.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class InstrumentMenu : FancyWindow
+    public sealed partial class InstrumentMenu : UIKWindow
     {
         [Dependency] private readonly IEntityManager _entManager = default!;
         [Dependency] private readonly IFileDialogManager _dialogs = default!;

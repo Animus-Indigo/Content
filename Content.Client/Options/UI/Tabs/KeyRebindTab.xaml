@@ -1,5 +1,6 @@
 ﻿<BoxContainer xmlns="https://spacestation14.io"
               xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+              xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
               HorizontalExpand="True"
               Orientation="Vertical"
               SeparationOverride="8">
@@ -8,11 +9,11 @@
                       HorizontalExpand="True">
             <Label Text="{Loc ui-options-binds-keys-preset}" />
 
-            <controls:FancyOptionButton Name="KeyPresetsOption" />
+            <uik:UIKOptionButton Name="KeyPresetsOption" />
 
             <controls:HSpacer HorizontalExpand="True" />
 
-            <controls:FancyButton Text="{Loc 'ui-options-binds-apply-keys-preset'}"
+            <uik:UIKButton Text="{Loc 'ui-options-binds-apply-keys-preset'}"
                                   Color="Accent"
                                   Name="ApplyKeysPreset" />
         </BoxContainer>
@@ -35,14 +36,14 @@
     </ScrollContainer>
 
     <BoxContainer Orientation="Horizontal" SeparationOverride="12" HorizontalExpand="True">
-        <controls:FancyLabel
+        <uik:UIKLabel
             Text="{Loc 'ui-options-binds-explanation'}"
             FontWeight="SemiBold"
             HorizontalAlignment="Left" />
 
         <controls:HSpacer HorizontalExpand="True" />
 
-        <controls:FancyButton Name="ResetAllButton"
+        <uik:UIKButton Name="ResetAllButton"
                               Color="Danger"
                               Text="{Loc 'ui-options-binds-reset-all'}"
                               HorizontalAlignment="Right" />

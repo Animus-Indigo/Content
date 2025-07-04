@@ -34,10 +34,11 @@ using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.CCVar;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.InterfaceGuidelines;
 using Content.Shared.Whitelist;
 using Robust.Shared.Configuration;
 using Content.Shared.Mood;
+using Content.Shared.UIKit;
+
 
 namespace Content.Server.Nutrition.EntitySystems;
 

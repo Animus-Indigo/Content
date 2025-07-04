@@ -1,7 +1,7 @@
 using Content.Server.Popups;
-using Content.Shared.InterfaceGuidelines;
 using Content.Shared.Popups;
 using Content.Shared.Rotatable;
+using Content.Shared.UIKit;
 using Content.Shared.Verbs;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;

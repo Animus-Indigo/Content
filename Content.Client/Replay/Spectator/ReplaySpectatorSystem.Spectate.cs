@@ -1,6 +1,6 @@
 using System.Numerics;
 using Content.Client.Replay.UI;
-using Content.Shared.InterfaceGuidelines;
+using Content.Shared.UIKit;
 using Content.Shared.Verbs;
 using Robust.Shared.Console;
 using Robust.Shared.Map;

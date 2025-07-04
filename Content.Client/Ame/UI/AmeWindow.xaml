@@ -1,6 +1,6 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc 'ame-window-title'}"
     MinSize="250 250">
     <GridContainer Columns="2">
@@ -59,4 +59,4 @@
             <Label Text=" kW" />
         </BoxContainer>
     </GridContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

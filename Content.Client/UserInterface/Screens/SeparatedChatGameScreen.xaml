@@ -9,7 +9,7 @@
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:inventory="clr-namespace:Content.Client.UserInterface.Systems.Inventory.Widgets"
     xmlns:targeting="clr-namespace:Content.Client._Shitmed.UserInterface.Systems.Targeting.Widgets"
-    xmlns:ui="clr-namespace:Content.Client.UserInterface.GlobalMenu.UI"
+    xmlns:ui1="clr-namespace:Content.Client.GameBar.UI"
     Name="SeparatedChatHud"
     VerticalExpand="False"
     VerticalAlignment="Bottom"
@@ -19,7 +19,7 @@
         <!-- Viewport and Global Menu -->
         <BoxContainer Orientation="Vertical" VerticalExpand="True">
             <!-- Global Menu -->
-            <ui:GlobalMenu />
+            <ui1:GameBar />
 
             <!-- Viewport -->
             <LayoutContainer Name="ViewportContainer" HorizontalExpand="True" VerticalExpand="True">

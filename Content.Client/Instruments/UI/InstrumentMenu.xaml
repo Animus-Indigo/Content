@@ -1,6 +1,6 @@
-<controls:FancyWindow xmlns="https://spacestation14.io"
+<uik:UIKWindow xmlns="https://spacestation14.io"
                       xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls">
+                      xmlns:uik="clr-namespace:Content.Client.UIKit.Controls">
     <BoxContainer Orientation="Vertical" SeparationOverride="5">
         <BoxContainer Orientation="Horizontal" VerticalExpand="True">
             <Button Name="InputButton" ToggleMode="True" Text="{Loc 'instruments-component-menu-input-button'}"
@@ -42,4 +42,4 @@
                StyleClasses="LabelBig"
                Text="{Loc instruments-component-menu-no-midi-support}" />
     </PanelContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

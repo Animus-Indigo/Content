@@ -9,11 +9,13 @@ using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Timing;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client._Lavaland.Shuttles.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class DockingConsoleWindow : FancyWindow
+public sealed partial class DockingConsoleWindow : UIKWindow
 {
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly IGameTiming _timing = default!;

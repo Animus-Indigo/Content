@@ -10,11 +10,13 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BaseButton;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Crayon.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class CrayonWindow : FancyWindow
+    public sealed partial class CrayonWindow : UIKWindow
     {
         [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
         private readonly SpriteSystem _spriteSystem = default!;

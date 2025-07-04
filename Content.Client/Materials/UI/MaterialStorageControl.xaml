@@ -1,16 +1,16 @@
 <ScrollContainer xmlns="https://spacestation14.io"
-                 xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                 xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
                  SizeFlagsStretchRatio="8"
                  HorizontalExpand="True"
                  VerticalExpand="True">
     <BoxContainer Name="MaterialList"
                   Orientation="Vertical"
                   SeparationOverride="8">
-        <controls:FancyLabel Name="ConnectToSiloLabel"
+        <uik:UIKLabel Name="ConnectToSiloLabel"
                              Text="{Loc 'lathe-menu-connected-to-silo-message'}"
                              TextStyle="Callout"
                              Align="Center" />
-        <controls:FancyLabel
+        <uik:UIKLabel
             Name="NoMatsLabel"
             Text="{Loc 'lathe-menu-no-materials-message'}"
             TextStyle="Callout"

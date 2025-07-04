@@ -1,31 +1,31 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
     xmlns:viewport="clr-namespace:Content.Client.Viewport"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc 'surveillance-camera-monitor-ui-window'}"
     TitlebarStyle="Inlined">
     <BoxContainer Orientation="Horizontal" SeparationOverride="12">
         <BoxContainer Orientation="Vertical" MinWidth="350" VerticalExpand="True" SeparationOverride="8">
             <!-- lazy -->
-            <controls:FancyOptionButton Name="SubnetSelector" />
+            <uik:UIKOptionButton Name="SubnetSelector" />
 
-            <controls:FancyButton Name="SubnetRefreshButton"
+            <uik:UIKButton Name="SubnetRefreshButton"
                                   Text="{Loc 'surveillance-camera-monitor-ui-refresh-subnets'}" />
 
             <ScrollContainer VerticalExpand="True">
                 <ItemList Name="SubnetList" />
             </ScrollContainer>
 
-            <controls:FancyButton Name="CameraRefreshButton"
+            <uik:UIKButton Name="CameraRefreshButton"
                                   Text="{Loc 'surveillance-camera-monitor-ui-refresh-cameras'}" />
 
-            <controls:FancyButton Name="CameraDisconnectButton"
+            <uik:UIKButton Name="CameraDisconnectButton"
                                   Text="{Loc 'surveillance-camera-monitor-ui-disconnect'}" />
 
-            <controls:FancyLabel Name="CameraStatus" TextStyle="Subheadline" />
+            <uik:UIKLabel Name="CameraStatus" TextStyle="Subheadline" />
         </BoxContainer>
 
-        <controls:FancyPanelContainer VerticalExpand="True" HorizontalExpand="True" Name="CameraViewBox">
+        <uik:UIKPanelContainer VerticalExpand="True" HorizontalExpand="True" Name="CameraViewBox">
             <Control Margin="4 4">
                 <viewport:ScalingViewport Name="CameraView"
                                           VerticalExpand="True"
@@ -36,6 +36,6 @@
                 <TextureRect VerticalExpand="True" HorizontalExpand="True" MinSize="500 500"
                              Name="CameraViewBackground" />
             </Control>
-        </controls:FancyPanelContainer>
+        </uik:UIKPanelContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

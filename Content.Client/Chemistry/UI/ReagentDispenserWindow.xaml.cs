@@ -7,6 +7,8 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Chemistry.UI
 {
@@ -14,7 +16,7 @@ namespace Content.Client.Chemistry.UI
     /// Client-side UI used to control a <see cref="ReagentDispenserComponent"/>.
     /// </summary>
     [GenerateTypedNameReferences]
-    public sealed partial class ReagentDispenserWindow : FancyWindow
+    public sealed partial class ReagentDispenserWindow : UIKWindow
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly IEntityManager _entityManager = default!;

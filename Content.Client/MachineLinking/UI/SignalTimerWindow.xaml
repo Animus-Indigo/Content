@@ -1,6 +1,6 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc signal-timer-menu-title}">
     <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="150">
         <BoxContainer Name="TextEdit" Orientation="Horizontal">
@@ -16,4 +16,4 @@
         </BoxContainer>
         <Button Name="StartTimer" Text="{Loc signal-timer-menu-start}" />
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

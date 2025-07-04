@@ -1,6 +1,6 @@
-﻿<controls:FancyWindow
+﻿<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc 'research-client-server-selection-menu-title'}"
     MinSize="300 300"
     SetSize="300 300"
@@ -9,4 +9,4 @@
               SelectMode="Single">
         <!-- Servers are added here by code -->
     </ItemList>
-</controls:FancyWindow>
+</uik:UIKWindow>

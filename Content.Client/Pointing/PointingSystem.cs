@@ -1,6 +1,6 @@
 using Content.Client.Pointing.Components;
-using Content.Shared.InterfaceGuidelines;
 using Content.Shared.Pointing;
+using Content.Shared.UIKit;
 using Content.Shared.Verbs;
 using Robust.Client.GameObjects;
 using Robust.Shared.GameStates;

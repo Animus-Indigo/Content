@@ -20,11 +20,13 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.HealthAnalyzer.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class HealthAnalyzerWindow : FancyWindow
+    public sealed partial class HealthAnalyzerWindow : UIKWindow
     {
         private readonly IEntityManager _entityManager;
         private readonly SpriteSystem _spriteSystem;

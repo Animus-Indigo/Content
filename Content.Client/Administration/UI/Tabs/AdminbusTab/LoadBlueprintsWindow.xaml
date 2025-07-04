@@ -1,12 +1,12 @@
-﻿<controls:FancyWindow
+﻿<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc Load Blueprint}">
     <BoxContainer Orientation="Vertical">
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc Map}" MinSize="100 0" />
             <Control MinSize="50 0" />
-            <controls:FancyOptionButton Name="MapOptions" MinSize="100 0" HorizontalExpand="True" />
+            <uik:UIKOptionButton Name="MapOptions" MinSize="100 0" HorizontalExpand="True" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc Path}" MinSize="100 0" />
@@ -32,4 +32,4 @@
         <Button Name="TeleportButton" Text="{Loc Teleport to}" />
         <Button Name="ResetButton" Text="{Loc Reset to default}"></Button>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

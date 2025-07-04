@@ -8,6 +8,8 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Administration.UI;
 
@@ -17,7 +19,7 @@ namespace Content.Client.Administration.UI;
 /// being good with a batong doesn't mean you know engineering and vice versa.
 /// </summary>
 [GenerateTypedNameReferences]
-public sealed partial class JobWhitelistsWindow : FancyWindow
+public sealed partial class JobWhitelistsWindow : UIKWindow
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
 

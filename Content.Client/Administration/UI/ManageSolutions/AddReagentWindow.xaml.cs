@@ -5,6 +5,8 @@ using Robust.Client.Console;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Administration.UI.ManageSolutions
 {
@@ -13,7 +15,7 @@ namespace Content.Client.Administration.UI.ManageSolutions
     ///     cref="EditSolutionsWindow"/>
     /// </summary>
     [GenerateTypedNameReferences]
-    public sealed partial class AddReagentWindow : FancyWindow
+    public sealed partial class AddReagentWindow : UIKWindow
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly IClientConsoleHost _consoleHost = default!;

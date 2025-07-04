@@ -12,11 +12,13 @@ using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Credits
 {
     [GenerateTypedNameReferences]
-    public sealed partial class CreditsWindow : FancyWindow
+    public sealed partial class CreditsWindow : UIKWindow
     {
         [Dependency] private readonly IResourceManager _resourceManager = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;

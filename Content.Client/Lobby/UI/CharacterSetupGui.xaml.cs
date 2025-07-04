@@ -10,6 +10,8 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
+using UIKButton = Content.Client.UIKit.Controls.UIKButton;
+
 
 namespace Content.Client.Lobby.UI
 {
@@ -23,7 +25,7 @@ namespace Content.Client.Lobby.UI
         private readonly IEntityManager _entManager;
         private readonly IPrototypeManager _protomanager;
 
-        private readonly FancyButton _createNewCharacterButton;
+        private readonly UIKButton _createNewCharacterButton;
 
         public event Action<int>? SelectCharacter;
         public event Action<int>? DeleteCharacter;
@@ -40,7 +42,7 @@ namespace Content.Client.Lobby.UI
             _entManager = entManager;
             _protomanager = protoManager;
 
-            _createNewCharacterButton = new FancyButton
+            _createNewCharacterButton = new UIKButton
             {
                 Text = Loc.GetString("character-setup-gui-create-new-character-button"),
             };

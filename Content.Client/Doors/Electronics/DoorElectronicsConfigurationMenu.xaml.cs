@@ -6,14 +6,16 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Content.Client.Access.UI;
 using Content.Client.Doors.Electronics;
+using Content.Client.UserInterface.Controls;
 using Content.Shared.Access;
 using Content.Shared.Doors.Electronics;
-using FancyWindow = Content.Client.UserInterface.Controls.FancyWindow;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Doors.Electronics;
 
 [GenerateTypedNameReferences]
-public sealed partial class DoorElectronicsConfigurationMenu : FancyWindow
+public sealed partial class DoorElectronicsConfigurationMenu : UIKWindow
 {
     private readonly AccessLevelControl _buttonsList = new();
 

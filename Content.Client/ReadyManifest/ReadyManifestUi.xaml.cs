@@ -8,13 +8,14 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Client.Utility;
 using Robust.Shared.Player;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
 
 
 namespace Content.Client.ReadyManifest;
 
 
 [GenerateTypedNameReferences]
-public sealed partial class ReadyManifestUi : FancyWindow
+public sealed partial class ReadyManifestUi : UIKWindow
 {
     private readonly IEntitySystemManager _entitySystem;
     private readonly IPrototypeManager _prototypeManager;

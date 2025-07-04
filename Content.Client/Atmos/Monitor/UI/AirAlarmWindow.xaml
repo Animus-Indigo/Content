@@ -1,7 +1,7 @@
-<ui:FancyWindow xmlns="https://spacestation14.io"
+<controls:UIKWindow xmlns="https://spacestation14.io"
             xmlns:x="http://schemas.microsoft.com/winfx/2007/xaml"
-            xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
             xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+            xmlns:controls="clr-namespace:Content.Client.UIKit.Controls"
             MinSize="500 500" Resizable="True" Title="Air Alarm">
     <BoxContainer Orientation="Vertical" Margin="5 5 5 5">
         <!-- Status (pressure, temperature, alarm state, device total, address, etc) -->
@@ -74,8 +74,8 @@
         <!-- Mode buttons -->
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc 'air-alarm-ui-window-mode-label'}" Margin="0 0 2 0" />
-            <ui:FancyOptionButton Name="CModeButton" HorizontalExpand="True" />
-            <ui:FancyCheckBox Name="AutoModeCheckBox" Text="{Loc 'air-alarm-ui-window-auto-mode-label'}" />
+            <controls:UIKOptionButton Name="CModeButton" HorizontalExpand="True" />
+            <controls:UIKFancyCheckBox Name="AutoModeCheckBox" Text="{Loc 'air-alarm-ui-window-auto-mode-label'}" />
         </BoxContainer>
     </BoxContainer>
-</ui:FancyWindow>
+</controls:UIKWindow>

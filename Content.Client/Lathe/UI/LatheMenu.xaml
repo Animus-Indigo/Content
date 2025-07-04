@@ -1,8 +1,7 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:ui="clr-namespace:Content.Client.Materials.UI"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc 'lathe-menu-title'}"
     MinSize="800 550"
     SetSize="800 550"
@@ -27,13 +26,13 @@
                               HorizontalExpand="True">
                     </LineEdit>
 
-                    <controls:FancyOptionButton Name="FilterOption"
+                    <uik:UIKOptionButton Name="FilterOption"
                                                 MinWidth="100"
                                                 StyleClasses="ButtonSquare" />
                 </BoxContainer>
 
 
-                <controls:FancyPanelContainer VerticalExpand="True"
+                <uik:UIKPanelContainer VerticalExpand="True"
                                               HorizontalExpand="True">
                     <ScrollContainer VerticalExpand="True"
                                      HScrollEnabled="False">
@@ -44,12 +43,12 @@
                                       RectClipContent="True">
                         </BoxContainer>
                     </ScrollContainer>
-                </controls:FancyPanelContainer>
+                </uik:UIKPanelContainer>
 
                 <BoxContainer Orientation="Horizontal"
                               HorizontalExpand="True"
                               SeparationOverride="12">
-                    <controls:FancyLabel Text="{Loc 'lathe-menu-amount'}" />
+                    <uik:UIKLabel Text="{Loc 'lathe-menu-amount'}" />
 
                     <LineEdit Name="AmountLineEdit"
                               PlaceHolder="0"
@@ -66,11 +65,11 @@
                       VerticalExpand="True"
                       HorizontalExpand="True"
                       SeparationOverride="8">
-            <controls:FancyPanelContainer VerticalExpand="True">
+            <uik:UIKPanelContainer VerticalExpand="True">
                 <BoxContainer Orientation="Vertical"
                               Margin="8 8">
 
-                    <controls:FancyLabel Text="{Loc 'lathe-menu-queue-title'}"
+                    <uik:UIKLabel Text="{Loc 'lathe-menu-queue-title'}"
                                          TextStyle="Headline"
                                          Align="Center"
                                          HorizontalExpand="True" />
@@ -83,7 +82,7 @@
                             <BoxContainer Name="FabricatingDisplayContainer"
                                           HorizontalAlignment="Left" />
 
-                            <controls:FancyLabel Name="NameLabel"
+                            <uik:UIKLabel Name="NameLabel"
                                                  RectClipContent="True"
                                                  HorizontalAlignment="Left" />
                         </BoxContainer>
@@ -98,13 +97,13 @@
                         </BoxContainer>
                     </ScrollContainer>
                 </BoxContainer>
-            </controls:FancyPanelContainer>
+            </uik:UIKPanelContainer>
 
-            <controls:FancyPanelContainer VerticalExpand="True"
+            <uik:UIKPanelContainer VerticalExpand="True"
                                           HorizontalExpand="True">
                 <BoxContainer Orientation="Vertical"
                               Margin="8 8">
-                    <controls:FancyLabel Text="{Loc 'lathe-menu-materials-title'}"
+                    <uik:UIKLabel Text="{Loc 'lathe-menu-materials-title'}"
                                          TextStyle="Headline"
                                          HorizontalAlignment="Center" />
 
@@ -118,20 +117,20 @@
                     <BoxContainer Name="MiningPointsContainer"
                                   Orientation="Horizontal"
                                   Visible="False">
-                        <controls:FancyLabel Name="MiningPointsLabel"
+                        <uik:UIKLabel Name="MiningPointsLabel"
                                              HorizontalExpand="True" />
 
-                        <controls:FancyButton Name="MiningPointsClaimButton"
+                        <uik:UIKButton Name="MiningPointsClaimButton"
                                               Color="Accent"
                                               Text="{Loc 'lathe-menu-mining-points-claim-button'}" />
                     </BoxContainer>
                     <!-- End DeltaV Additions: Mining points -->
                 </BoxContainer>
-            </controls:FancyPanelContainer>
+            </uik:UIKPanelContainer>
 
-            <controls:FancyButton Name="ServerListButton"
+            <uik:UIKButton Name="ServerListButton"
                                   Text="{Loc 'lathe-menu-server-list'}"
                                   Mode="Press" />
         </BoxContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

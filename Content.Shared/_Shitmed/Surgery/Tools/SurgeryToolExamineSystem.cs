@@ -1,7 +1,7 @@
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
 using Content.Shared.Examine;
-using Content.Shared.InterfaceGuidelines;
+using Content.Shared.UIKit;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
 

@@ -1,12 +1,12 @@
 <Control xmlns="https://spacestation14.io"
-         xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-         xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
+         xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+         xmlns:uik="clr-namespace:Content.Client.UIKit.Controls">
     <!-- Primary container -->
     <BoxContainer Orientation="Vertical" HorizontalExpand="True">
         <!-- Markings -->
         <BoxContainer Orientation="Vertical" HorizontalExpand="True">
             <BoxContainer HorizontalExpand="True">
-                <controls:FancyOptionButton Name="CMarkingCategoryButton" StyleClasses="OpenBoth" />
+                <uik:UIKOptionButton Name="CMarkingCategoryButton" StyleClasses="OpenBoth" />
                 <Label Name="CMarkingPoints" Text="uwu" Margin="8 0" />
                 <LineEdit Name="CMarkingSearch" PlaceHolder="{Loc 'markings-search'}" HorizontalExpand="True" />
                 <Button Name="ResetButton" Text="{Loc 'ui-options-bind-reset'}" StyleClasses="OpenLeft" />

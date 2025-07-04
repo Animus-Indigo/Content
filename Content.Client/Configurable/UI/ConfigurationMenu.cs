@@ -6,10 +6,12 @@ using Robust.Client.UserInterface.Controls;
 using static Content.Shared.Configurable.ConfigurationComponent;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Configurable.UI
 {
-    public sealed class ConfigurationMenu : FancyWindow
+    public sealed class ConfigurationMenu : UIKWindow
     {
         private readonly BoxContainer _column;
         private readonly BoxContainer _row;

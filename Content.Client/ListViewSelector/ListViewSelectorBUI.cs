@@ -4,6 +4,8 @@ using Content.Shared.ListViewSelector;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 // ReSharper disable InconsistentNaming
 
@@ -14,7 +16,7 @@ public sealed class ListViewSelectorBUI(EntityUid owner, Enum uiKey) : BoundUser
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
-    private FancyWindow _window = new();
+    private UIKWindow _window = new();
     private BoxContainer? _itemsContainer;
     private Dictionary<string, object> _metaData = new();
 
@@ -43,9 +45,9 @@ public sealed class ListViewSelectorBUI(EntityUid owner, Enum uiKey) : BoundUser
             _window.Close();
     }
 
-    private FancyWindow FormWindow()
+    private UIKWindow FormWindow()
     {
-        var window = new FancyWindow
+        var window = new UIKWindow
         {
             HorizontalExpand = true,
             VerticalExpand = true,

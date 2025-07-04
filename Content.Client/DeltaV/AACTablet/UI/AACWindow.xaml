@@ -1,9 +1,9 @@
-<controls:FancyWindow xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+<uik:UIKWindow xmlns="https://spacestation14.io"
+                     xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="AAC Tablet"
     Resizable="False"
     SetSize="540 300"
     MinSize="540 300">
     <ScrollContainer HScrollEnabled="False" Name="WindowBody">
     </ScrollContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

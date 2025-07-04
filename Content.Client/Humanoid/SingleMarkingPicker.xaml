@@ -1,25 +1,25 @@
 <BoxContainer xmlns="https://spacestation14.io"
-              xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+              xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
               Orientation="Vertical"
               HorizontalExpand="True"
               VerticalExpand="True"
               SeparationOverride="8">
     <!-- "Slot" selection -->
-    <controls:FancyLabel Name="CategoryName"
+    <uik:UIKLabel Name="CategoryName"
                          TextStyle="Headline" />
 
     <BoxContainer Name="SlotSelectorContainer"
                   HorizontalExpand="True"
                   SeparationOverride="12">
-        <controls:FancyOptionButton Name="SlotSelector"
+        <uik:UIKOptionButton Name="SlotSelector"
                                     HorizontalExpand="True"
                                     StyleClasses="OpenBoth" />
 
-        <controls:FancyButton Name="AddButton"
+        <uik:UIKButton Name="AddButton"
                               Text="{Loc 'marking-slot-add'}"
                               StyleClasses="OpenBoth" />
 
-        <controls:FancyButton Name="RemoveButton"
+        <uik:UIKButton Name="RemoveButton"
                               Text="{Loc 'marking-slot-remove'}"
                               StyleClasses="OpenLeft" />
     </BoxContainer>

@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Text;
 using Content.Client.Materials;
+using Content.Client.UIKit.Controls;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.DeltaV.Salvage.Components; // DeltaV
 using Content.Shared.DeltaV.Salvage.Systems; // DeltaV
@@ -14,12 +15,13 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing; // DeltaV
+using Robust.Shared.Timing;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow; // DeltaV
 
 namespace Content.Client.Lathe.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class LatheMenu : FancyWindow
+public sealed partial class LatheMenu : UIKWindow
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPlayerManager _player = default!; // DeltaV
@@ -312,7 +314,7 @@ public sealed partial class LatheMenu : FancyWindow
         return new Control();
     }
 
-    private void OnItemSelected(FancyOptionButton.ItemSelectedEventArgs obj)
+    private void OnItemSelected(UIKOptionButton.ItemSelectedEventArgs obj)
     {
         FilterOption.SelectId(obj.Id);
         if (obj.Id == -1)

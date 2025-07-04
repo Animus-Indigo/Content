@@ -9,11 +9,13 @@ using Robust.Shared.Map;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using System.Linq;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Power;
 
 [GenerateTypedNameReferences]
-public sealed partial class PowerMonitoringWindow : FancyWindow
+public sealed partial class PowerMonitoringWindow : UIKWindow
 {
     [Dependency] private IEntityManager _entManager = default!;
     private readonly SpriteSystem _spriteSystem;

@@ -1,11 +1,11 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc 'general-station-record-console-window-title'}"
     MinSize="750 500">
     <BoxContainer Orientation="Vertical">
         <BoxContainer Margin="5 5 5 10" HorizontalExpand="true" VerticalAlignment="Center">
-            <controls:FancyOptionButton Name="StationRecordsFilterType" MinWidth="200" Margin="0 0 10 0"/>
+            <uik:UIKOptionButton Name="StationRecordsFilterType" MinWidth="200" Margin="0 0 10 0"/>
             <LineEdit Name="StationRecordsFiltersValue"
                 PlaceHolder="{Loc 'general-station-record-for-filter-line-placeholder'}" HorizontalExpand="True"/>
             <Button Name="StationRecordsFilters" Text="{Loc 'general-station-record-console-search-records'}"/>
@@ -25,4 +25,4 @@
             </BoxContainer>
         </BoxContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

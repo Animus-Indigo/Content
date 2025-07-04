@@ -1,7 +1,8 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc time-transfer-panel-title}"
     MinWidth="500">
     <BoxContainer Orientation="Vertical" VerticalExpand = "True">
@@ -11,7 +12,7 @@
             <LineEdit Name="PlayerLine" PlaceHolder="PlayerUid" HorizontalExpand="True" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal" Margin="2">
-            <controls:FancyCheckBox Name="GroupCheckbox" Text="{Loc time-transfer-panel-checkbox-group}" MinWidth = "120"/>
+            <uik:UIKFancyCheckBox Name="GroupCheckbox" Text="{Loc time-transfer-panel-checkbox-group}" MinWidth = "120"/>
             <Control MinWidth ="10"/>
             <LineEdit Name="GroupTimeLine" PlaceHolder="0h0m" HorizontalExpand="True" />
         </BoxContainer>
@@ -41,4 +42,4 @@
             <Label Text="{Loc time-transfer-panel-author}" StyleClasses="LabelSubText"/>
         </BoxContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

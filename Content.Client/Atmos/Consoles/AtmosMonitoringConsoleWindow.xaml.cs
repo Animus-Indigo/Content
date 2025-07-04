@@ -14,12 +14,13 @@ using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
 
 
 namespace Content.Client.Atmos.Consoles;
 
 [GenerateTypedNameReferences]
-public sealed partial class AtmosMonitoringConsoleWindow : FancyWindow
+public sealed partial class AtmosMonitoringConsoleWindow : UIKWindow
 {
     private readonly IEntityManager _entManager;
     private readonly IPrototypeManager _protoManager;

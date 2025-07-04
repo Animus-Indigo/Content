@@ -4,11 +4,13 @@ using Robust.Shared.Timing;
 using Content.Client.TextScreen;
 using Content.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.Controls;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.MachineLinking.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class SignalTimerWindow : FancyWindow
+public sealed partial class SignalTimerWindow : UIKWindow
 {
     [Dependency] private readonly IGameTiming _timing = default!;
 

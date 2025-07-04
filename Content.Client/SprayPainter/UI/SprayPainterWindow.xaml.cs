@@ -4,11 +4,13 @@ using Robust.Client.GameObjects;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Utility;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.SprayPainter.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class SprayPainterWindow : FancyWindow
+public sealed partial class SprayPainterWindow : UIKWindow
 {
     [Dependency] private readonly IEntitySystemManager _sysMan = default!;
     private readonly SpriteSystem _spriteSystem;

@@ -8,11 +8,13 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Xenoarchaeology.Ui;
 
 [GenerateTypedNameReferences]
-public sealed partial class AnalysisConsoleMenu : FancyWindow
+public sealed partial class AnalysisConsoleMenu : UIKWindow
 {
     [Dependency] private readonly IEntityManager _ent = default!;
     [Dependency] private readonly IGameTiming _timing = default!;

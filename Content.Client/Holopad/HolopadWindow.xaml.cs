@@ -11,11 +11,13 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using System.Linq;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Holopad;
 
 [GenerateTypedNameReferences]
-public sealed partial class HolopadWindow : FancyWindow
+public sealed partial class HolopadWindow : UIKWindow
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;

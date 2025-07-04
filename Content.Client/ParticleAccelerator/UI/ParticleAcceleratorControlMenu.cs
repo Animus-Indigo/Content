@@ -1,9 +1,8 @@
 using System.Numerics;
-using Content.Client.InterfaceGuidelines;
+using Content.Client.UIKit;
 using Content.Client.Resources;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
-using Content.Shared.InterfaceGuidelines;
 using Content.Shared.Singularity.Components;
 using Robust.Client.Animations;
 using Robust.Client.Graphics;
@@ -14,10 +13,12 @@ using Robust.Shared.Noise;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.ParticleAccelerator.UI
 {
-    public sealed class ParticleAcceleratorControlMenu : FancyWindow
+    public sealed class ParticleAcceleratorControlMenu : UIKWindow
     {
         [Dependency] private readonly IPrototypeManager _protoManager = default!;
         [Dependency] private readonly IResourceCache _cache = default!;

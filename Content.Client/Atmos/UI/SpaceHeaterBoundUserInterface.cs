@@ -1,3 +1,4 @@
+using Content.Client.UIKit.Controls;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Atmos.Piping.Portable.Components;
 using JetBrains.Annotations;
@@ -44,7 +45,7 @@ public sealed class SpaceHeaterBoundUserInterface : BoundUserInterface
         SendMessage(new SpaceHeaterChangeTemperatureMessage(changeAmount));
     }
 
-    private void OnModeChanged(FancyOptionButton.ItemSelectedEventArgs args)
+    private void OnModeChanged(UIKOptionButton.ItemSelectedEventArgs args)
     {
         _window?.ModeSelector.SelectId(args.Id);
         SendMessage(new SpaceHeaterChangeModeMessage((SpaceHeaterMode)args.Id));

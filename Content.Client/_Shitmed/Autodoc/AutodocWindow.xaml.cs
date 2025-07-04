@@ -10,11 +10,13 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Timing;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client._Shitmed.Autodoc;
 
 [GenerateTypedNameReferences]
-public sealed partial class AutodocWindow : FancyWindow
+public sealed partial class AutodocWindow : UIKWindow
 {
     private IEntityManager _entMan;
     private IPlayerManager _player;

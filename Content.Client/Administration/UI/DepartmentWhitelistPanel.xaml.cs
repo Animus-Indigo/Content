@@ -6,6 +6,8 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
+using UIKFancyCheckBox = Content.Client.UIKit.Controls.UIKFancyCheckBox;
+
 
 namespace Content.Client.Administration.UI;
 
@@ -23,7 +25,7 @@ public sealed partial class DepartmentWhitelistPanel : PanelContainer
         foreach (var id in department.Roles)
         {
             var thisJob = id; // closure capturing funny
-            var button = new FancyCheckBox();
+            var button = new UIKFancyCheckBox();
             button.Text = proto.Index<JobPrototype>(id).LocalizedName;
             if (!proto.Index<JobPrototype>(id).Whitelisted)
                 button.Modulate = grey; // Let admins know whitelisting this job is only for futureproofing.

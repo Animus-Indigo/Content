@@ -1,6 +1,6 @@
+using Content.Client.GameBar;
 using Content.Client.Language;
 using Content.Client.Gameplay;
-using Content.Client.UserInterface.GlobalMenu;
 using Content.Shared.Input;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.Controls;
@@ -15,7 +15,7 @@ namespace Content.Client.UserInterface.Systems.Language;
 public sealed class LanguageMenuUIController : UIController, IOnStateEntered<GameplayState>,
     IOnStateExited<GameplayState>
 {
-    [Dependency] private readonly GlobalMenuManager _globalMenuManager = null!;
+    [Dependency] private readonly GameBarManager _gameBarManager = null!;
 
     public LanguageMenuWindow? LanguageWindow;
 
@@ -23,8 +23,8 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
     {
         base.Initialize();
 
-        _globalMenuManager
-            .GetCategory(GlobalMenuCategory.Character)
+        _gameBarManager
+            .GetCategory(GameBarCategory.Character)
             .RegisterItem(
                 new(
                     new("global-menu-character-language-window-item"),

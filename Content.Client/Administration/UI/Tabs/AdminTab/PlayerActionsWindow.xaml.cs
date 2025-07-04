@@ -6,15 +6,18 @@ using Robust.Client.Console;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Utility;
+using UIKButton = Content.Client.UIKit.Controls.UIKButton;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Administration.UI.Tabs.AdminTab
 {
     [GenerateTypedNameReferences]
     [UsedImplicitly]
-    public sealed partial class PlayerActionsWindow : FancyWindow
+    public sealed partial class PlayerActionsWindow : UIKWindow
     {
         private PlayerInfo? _selectedPlayer;
-        private readonly Dictionary<FancyButton, ConfirmationData> _confirmations = new();
+        private readonly Dictionary<UIKButton, ConfirmationData> _confirmations = new();
 
         public PlayerActionsWindow()
         {

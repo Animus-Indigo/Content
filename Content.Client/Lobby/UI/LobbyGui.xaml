@@ -7,12 +7,13 @@
     xmlns:lobbyUi="clr-namespace:Content.Client.Lobby.UI"
     xmlns:info="clr-namespace:Content.Client.Info"
     xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Chat.Widgets"
-    xmlns:ui="clr-namespace:Content.Client.UserInterface.GlobalMenu.UI">
+    xmlns:ui1="clr-namespace:Content.Client.GameBar.UI"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls">
     <!-- Background -->
     <TextureRect Access="Public" VerticalExpand="True" HorizontalExpand="True" Name="Background"
                  Stretch="KeepAspectCovered" />
     <BoxContainer Name="MainContainer" VerticalExpand="True" HorizontalExpand="True" Orientation="Vertical">
-        <ui:GlobalMenu />
+        <ui1:GameBar />
 
         <SplitContainer State="Auto" ResizeMode="NotResizable"
                         HorizontalExpand="True"
@@ -45,11 +46,11 @@
                                                         Text="{Loc 'ui-lobby-observe-button'}"
                                                         WindowType="{x:Type lobbyUi:ObserveWarningWindow}" />
 
-                                    <controls:FancyButton Name="ManifestButton"
+                                    <uik:UIKButton Name="ManifestButton"
                                                           Access="Public"
                                                           Text="Manifest"
                                                           MinWidth="137" />
-                                    <controls:FancyButton Name="ReadyButton"
+                                    <uik:UIKButton Name="ReadyButton"
                                                           Access="Public"
                                                           ToggleMode="True"
                                                           Text="{Loc 'ui-lobby-ready-up-button'}"

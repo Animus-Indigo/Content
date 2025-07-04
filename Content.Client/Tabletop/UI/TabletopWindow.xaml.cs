@@ -5,11 +5,13 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Graphics;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Tabletop.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class TabletopWindow : FancyWindow
+    public sealed partial class TabletopWindow : UIKWindow
     {
         public TabletopWindow(IEye? eye, Vector2i size)
         {

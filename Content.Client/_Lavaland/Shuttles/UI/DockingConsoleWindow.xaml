@@ -1,5 +1,6 @@
-<controls:FancyWindow xmlns="https://spacestation14.io"
+<uik:UIKWindow xmlns="https://spacestation14.io"
         xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+        xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
         SetSize="500 500">
     <BoxContainer Orientation="Vertical">
 	    <ScrollContainer SetHeight="256" HorizontalExpand="True">
@@ -16,4 +17,4 @@
 		</controls:StripeBack>
         <Label Name="MapFTLMessage" Text="{Loc 'docking-console-ftl-message-Unknown'}" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
 	</BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

@@ -5,11 +5,13 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client._Goobstation.UserInterface.Systems.Ghost.Controls
 {
     [GenerateTypedNameReferences]
-    public sealed partial class GhostBarRulesWindow : FancyWindow
+    public sealed partial class GhostBarRulesWindow : UIKWindow
     {
         [Dependency] private readonly IConfigurationManager _cfg = IoCManager.Resolve<IConfigurationManager>();
         private float _timer;

@@ -1,7 +1,7 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     TitlebarStyle="InlinedCompact">
     <BoxContainer Orientation="Vertical" SeparationOverride="8">
         <LineEdit Name="SearchBar"
@@ -16,4 +16,4 @@
                   StyleClasses="transparentBackgroundItemList">
         </ItemList>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

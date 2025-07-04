@@ -1,7 +1,7 @@
-<controls:FancyWindow xmlns="https://spacestation14.io"
-                xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+<uik:UIKWindow xmlns="https://spacestation14.io"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
                 MinSize="800 00"
                 Title="{Loc 'chem-master-bound-user-interface-title'}"
                 TitlebarStyle="Inlined">
@@ -13,7 +13,7 @@
                     <Label Text="{Loc 'chem-master-window-buffer-text'}" />
                     <Control HorizontalExpand="True" />
                     <Button MinSize="80 0" Name="BufferTransferButton" Access="Public" Text="{Loc 'chem-master-window-transfer-button'}" ToggleMode="True" StyleClasses="OpenRight" />
-                    <controls:FancyOptionButton Name="SortMethod" Access="Public" ToolTip="{Loc 'chem-master-window-sort-method-tooltip'}" StyleClasses="OpenBoth" />
+                    <uik:UIKOptionButton Name="SortMethod" Access="Public" ToolTip="{Loc 'chem-master-window-sort-method-tooltip'}" StyleClasses="OpenBoth" />
                     <Button MinSize="80 0" Name="BufferDiscardButton" Access="Public" Text="{Loc 'chem-master-window-discard-button'}" ToggleMode="True" StyleClasses="OpenLeft" />
                 </BoxContainer>
 
@@ -38,7 +38,7 @@
                     <Label Text="{Loc 'chem-master-window-pill-buffer-text'}" />
                     <Control HorizontalExpand="True" />
                     <Button MinSize="80 0" Name="PillBufferTransferButton" Access="Public" Text="{Loc 'chem-master-window-transfer-button'}" ToggleMode="True" StyleClasses="OpenRight" />
-                    <controls:FancyOptionButton Name="PillSortMethod" Access="Public" ToolTip="{Loc 'chem-master-window-sort-method-tooltip'}" StyleClasses="OpenBoth" />
+                    <uik:UIKOptionButton Name="PillSortMethod" Access="Public" ToolTip="{Loc 'chem-master-window-sort-method-tooltip'}" StyleClasses="OpenBoth" />
                     <Button MinSize="80 0" Name="PillBufferDiscardButton" Access="Public" Text="{Loc 'chem-master-window-discard-button'}" ToggleMode="True" StyleClasses="OpenLeft" />
                 </BoxContainer>
 
@@ -152,4 +152,4 @@
                 Columns="4" />
         </BoxContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

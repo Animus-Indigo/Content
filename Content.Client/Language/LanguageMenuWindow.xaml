@@ -1,6 +1,7 @@
-<ui:FancyWindow
+<controls:UIKWindow
     xmlns="https://spacestation14.io"
     xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:controls="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc language-menu-window-title}"
     SetSize="300 300">
     <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="150">
@@ -16,4 +17,4 @@
             </BoxContainer>
         </ScrollContainer>
     </BoxContainer>
-</ui:FancyWindow>
+</controls:UIKWindow>

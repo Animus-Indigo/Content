@@ -3,8 +3,9 @@
     xmlns:cartridges="clr-namespace:Content.Client.DeltaV.CartridgeLoader.Cartridges"
     xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-    xmlns:ig="clr-namespace:Content.Shared.InterfaceGuidelines;assembly=Content.Shared"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ig="clr-namespace:Content.Shared.UIKit;assembly=Content.Shared"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Orientation="Vertical"
     HorizontalExpand="True"
     VerticalExpand="True"
@@ -42,7 +43,7 @@
                         StyleClasses="OpenBoth"
                         Margin="0 0 4 0"
                         ToolTip="{Loc nano-chat-edit}">
-                    <controls:FancyIcon
+                    <uik:UIKIcon
                         Text="{x:Static ig:SymbolIcons.Pen}"
                         TextStyle="Title2"
                         FontWeight="SemiBold" />
@@ -53,7 +54,7 @@
                         StyleClasses="OpenBoth"
                         Margin="0 0 4 0"
                         ToolTip="{Loc nano-chat-delete}">
-                    <controls:FancyIcon
+                    <uik:UIKIcon
                         Text="{x:Static ig:SymbolIcons.Delete}"
                         TextStyle="Title2"
                         FontWeight="SemiBold" />
@@ -64,12 +65,12 @@
                         Margin="0 0 4 0"
                         ToolTip="{Loc nano-chat-toggle-mute}">
                     <Control HorizontalExpand="True" VerticalExpand="True">
-                        <controls:FancyIcon
+                        <uik:UIKIcon
                             Text="{x:Static ig:SymbolIcons.Notifications}"
                             TextStyle="Title2"
                             FontWeight="SemiBold" />
 
-                        <controls:FancyIcon
+                        <uik:UIKIcon
                             Name="BellMutedIcon"
                             Text="{x:Static ig:SymbolIcons.NotificationsOff}"
                             TextStyle="Title2"
@@ -88,7 +89,7 @@
                         StyleClasses="OpenBoth"
                         Margin="0 0 4 0"
                         ToolTip="{Loc nano-chat-look-up}">
-                    <controls:FancyIcon
+                    <uik:UIKIcon
                         Text="{x:Static ig:SymbolIcons.Search}"
                         TextStyle="Title2"
                         FontWeight="SemiBold" />
@@ -99,7 +100,7 @@
                         Margin="0 0 4 0"
                         ToolTip="{Loc nano-chat-list-number}"
                         ToggleMode="True">
-                    <controls:FancyIcon
+                    <uik:UIKIcon
                         Text="{x:Static ig:SymbolIcons.Menu}"
                         TextStyle="Title2"
                         FontWeight="SemiBold" />
@@ -189,7 +190,7 @@
                                 Disabled="True"
                                 StyleClasses="OpenLeft"
                                 Margin="4 0 0 0">
-                            <controls:FancyIcon
+                            <uik:UIKIcon
                                 Text="{x:Static ig:SymbolIcons.ChevronRight}"
                                 TextStyle="Title2"
                                 FontWeight="SemiBold" />

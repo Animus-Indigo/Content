@@ -1,41 +1,41 @@
 ﻿<BoxContainer xmlns="https://spacestation14.io"
-              xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+              xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
               HorizontalExpand="True"
               Orientation="Vertical"
               SeparationOverride="8">
     <BoxContainer Orientation="Vertical" SeparationOverride="8" VerticalExpand="True">
         <BoxContainer Orientation="Vertical" SeparationOverride="8">
-            <controls:FancyCheckBox Name="VSyncCheckBox" Text="{Loc 'ui-options-vsync'}" />
-            <controls:FancyCheckBox Name="FullscreenCheckBox" Text="{Loc 'ui-options-fullscreen'}" />
+            <uik:UIKFancyCheckBox Name="VSyncCheckBox" Text="{Loc 'ui-options-vsync'}" />
+            <uik:UIKFancyCheckBox Name="FullscreenCheckBox" Text="{Loc 'ui-options-fullscreen'}" />
         </BoxContainer>
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
             <Label Text="{Loc 'ui-options-lighting-label'}" />
 
-            <controls:FancyOptionButton Name="LightingPresetOption" />
+            <uik:UIKOptionButton Name="LightingPresetOption" />
         </BoxContainer>
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
             <Label Text="{Loc 'ui-options-scale-label'}" />
 
-            <controls:FancyOptionButton Name="UIScaleOption" />
+            <uik:UIKOptionButton Name="UIScaleOption" />
         </BoxContainer>
 
         <BoxContainer Orientation="Vertical" SeparationOverride="8">
 
             <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                <controls:FancyCheckBox Name="ViewportStretchCheckBox" Text="{Loc 'ui-options-vp-stretch'}" />
-                <controls:FancyCheckBox Name="IntegerScalingCheckBox"
+                <uik:UIKFancyCheckBox Name="ViewportStretchCheckBox" Text="{Loc 'ui-options-vp-stretch'}" />
+                <uik:UIKFancyCheckBox Name="IntegerScalingCheckBox"
                                         Text="{Loc 'ui-options-vp-integer-scaling'}"
                                         ToolTip="{Loc 'ui-options-vp-integer-scaling-tooltip'}" />
-                <controls:FancyCheckBox Name="ViewportVerticalFitCheckBox"
+                <uik:UIKFancyCheckBox Name="ViewportVerticalFitCheckBox"
                                         Text="{Loc 'ui-options-vp-vertical-fit'}"
                                         ToolTip="{Loc 'ui-options-vp-vertical-fit-tooltip'}" />
             </BoxContainer>
 
             <BoxContainer Name="ViewportScaleBox" Orientation="Horizontal" SeparationOverride="12">
                 <Label Name="ViewportScaleText" />
-                <controls:FancySlider Name="ViewportScaleSlider"
+                <uik:UIKSlider Name="ViewportScaleSlider"
                                       MinValue="1"
                                       MaxValue="5"
                                       Rounded="True"
@@ -44,22 +44,22 @@
 
             <BoxContainer Orientation="Horizontal" SeparationOverride="12">
                 <Label Name="ViewportWidthSliderDisplay" />
-                <controls:FancySlider Name="ViewportWidthSlider"
+                <uik:UIKSlider Name="ViewportWidthSlider"
                                       Rounded="True"
                                       MinWidth="200" />
             </BoxContainer>
         </BoxContainer>
 
         <BoxContainer Orientation="Vertical" SeparationOverride="8">
-            <controls:FancyCheckBox Name="ViewportLowResCheckBox" Text="{Loc 'ui-options-vp-low-res'}" />
-            <controls:FancyCheckBox Name="ParallaxLowQualityCheckBox"
+            <uik:UIKFancyCheckBox Name="ViewportLowResCheckBox" Text="{Loc 'ui-options-vp-low-res'}" />
+            <uik:UIKFancyCheckBox Name="ParallaxLowQualityCheckBox"
                                     Text="{Loc 'ui-options-parallax-low-quality'}" />
-            <controls:FancyCheckBox Name="FpsCounterCheckBox" Text="{Loc 'ui-options-fps-counter'}" />
-            <controls:FancyCheckBox Name="MoodVisualEffectsCheckBox" Text="{Loc 'ui-options-mood-visual-effects'}" />
+            <uik:UIKFancyCheckBox Name="FpsCounterCheckBox" Text="{Loc 'ui-options-fps-counter'}" />
+            <uik:UIKFancyCheckBox Name="MoodVisualEffectsCheckBox" Text="{Loc 'ui-options-mood-visual-effects'}" />
         </BoxContainer>
     </BoxContainer>
 
-    <controls:FancyButton Name="ApplyButton"
+    <uik:UIKButton Name="ApplyButton"
                           Color="Accent"
                           Text="{Loc 'ui-options-apply'}"
                           HorizontalAlignment="Right" />

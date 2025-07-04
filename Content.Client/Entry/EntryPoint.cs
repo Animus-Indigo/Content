@@ -6,6 +6,7 @@ using Content.Client.DebugMon;
 using Content.Client.Eui;
 using Content.Client.Flash;
 using Content.Client.Fullscreen;
+using Content.Client.GameBar;
 using Content.Client.GhostKick;
 using Content.Client.Guidebook;
 using Content.Client.Input;
@@ -21,7 +22,6 @@ using Content.Client.Replay;
 using Content.Client.Screenshot;
 using Content.Client.Singularity;
 using Content.Client.Stylesheets;
-using Content.Client.UserInterface.GlobalMenu;
 using Content.Client.Viewport;
 using Content.Client.Voting;
 using Content.Shared.Ame.Components;
@@ -76,7 +76,7 @@ namespace Content.Client.Entry
         [Dependency] private readonly DiscordAuthManager                   _discordAuth                   = default!;
         [Dependency] private readonly DebugMonitorManager                  _debugMonitorManager           = default!;
         [Dependency] private readonly KeyPresetsManager                    _keyPresetsManager             = null!;
-        [Dependency] private readonly GlobalMenuManager                    _globalMenuManager             = null!;
+        [Dependency] private readonly GameBarManager                    _gameBarManager             = null!;
 
         public override void Init()
         {
@@ -185,7 +185,7 @@ namespace Content.Client.Entry
 
             SwitchToDefaultState();
 
-            _globalMenuManager.Initialize();
+            _gameBarManager.Initialize();
         }
 
         private void SwitchToDefaultState(bool disconnected = false)
@@ -223,7 +223,7 @@ namespace Content.Client.Entry
 
         public override void Update(ModUpdateLevel level, FrameEventArgs frameEventArgs)
         {
-            _globalMenuManager.FrameUpdate(frameEventArgs);
+            _gameBarManager.FrameUpdate(frameEventArgs);
 
             if (level == ModUpdateLevel.FramePreEngine)
             {

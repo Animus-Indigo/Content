@@ -1,13 +1,13 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc admin-fax-title}"
     MinWidth="400">
     <BoxContainer Orientation="Vertical" VerticalExpand="True">
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc admin-fax-fax}" />
             <Control MinWidth="4" />
-            <controls:FancyOptionButton Name="FaxSelector" HorizontalExpand="True" />
+            <uik:UIKOptionButton Name="FaxSelector" HorizontalExpand="True" />
             <Control MinWidth="4" />
             <Button Name="FollowButton" Text="{Loc admin-fax-follow}" />
         </BoxContainer>
@@ -21,11 +21,11 @@
         <BoxContainer Orientation="Horizontal">
             <Label Text="{Loc admin-fax-stamp}" />
             <Control MinWidth="5" />
-            <controls:FancyOptionButton Name="StampSelector" HorizontalExpand="True" />
+            <uik:UIKOptionButton Name="StampSelector" HorizontalExpand="True" />
         </BoxContainer>
         <Label Text="{Loc admin-fax-stamp-color}" />
         <ColorSelectorSliders Margin="12 0 0 0" Name="StampColorSelector" Color="#BB3232"/>
         <Control MinHeight="10" />
         <Button Name="SendButton" Text="{Loc admin-fax-send}"></Button>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

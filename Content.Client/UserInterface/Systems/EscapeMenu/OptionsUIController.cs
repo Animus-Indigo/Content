@@ -1,6 +1,6 @@
+using Content.Client.GameBar;
 using Content.Client.Gameplay;
 using Content.Client.Options.UI;
-using Content.Client.UserInterface.GlobalMenu;
 using Content.Shared.Input;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface.Controllers;
@@ -14,7 +14,7 @@ namespace Content.Client.UserInterface.Systems.EscapeMenu;
 public sealed class OptionsUIController : UIController
 {
     [Dependency] private readonly IConsoleHost      _con               = default!;
-    [Dependency] private readonly GlobalMenuManager _globalMenuManager = null!;
+    [Dependency] private readonly GameBarManager _gameBarManager = null!;
 
     public override void Initialize()
     {
@@ -24,8 +24,8 @@ public sealed class OptionsUIController : UIController
             Loc.GetString("cmd-options-help"),
             OptionsCommand);
 
-        _globalMenuManager
-            .GetCategory(GlobalMenuCategory.Global)
+        _gameBarManager
+            .GetCategory(GameBarCategory.Global)
             .RegisterItem(
                 new(
                     new("global-menu-global-options-item"),

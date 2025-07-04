@@ -1,6 +1,6 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc 'instruments-component-band-menu'}"
     MinSize="250 350">
     <BoxContainer Orientation="Vertical" Align="Center" HorizontalExpand="true" VerticalExpand="true">
@@ -9,4 +9,4 @@
         <Button Name="RefreshButton" Text="{Loc 'instrument-component-band-refresh'}" TextAlign="Center"
                 HorizontalExpand="true" Margin="5 5 5 5" SizeFlagsStretchRatio="1" />
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

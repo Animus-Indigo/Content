@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Numerics;
 using Content.Client.Stylesheets;
+using Content.Client.UIKit.Controls;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -295,7 +296,7 @@ public sealed partial class MarkingPicker : Control
             CMarkingPoints.Text = Loc.GetString("marking-points-remaining", ("points", count));
     }
 
-    private void OnCategoryChange(FancyOptionButton.ItemSelectedEventArgs category)
+    private void OnCategoryChange(UIKOptionButton.ItemSelectedEventArgs category)
     {
         CMarkingCategoryButton.SelectId(category.Id);
         _selectedMarkingCategory = _markingCategories[category.Id];

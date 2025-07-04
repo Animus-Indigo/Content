@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Content.Client.UIKit.Controls;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Monitor;
@@ -11,6 +12,8 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Localization;
+using UIKFancyCheckBox = Content.Client.UIKit.Controls.UIKFancyCheckBox;
+
 
 namespace Content.Client.Atmos.Monitor.UI.Widgets;
 
@@ -23,11 +26,11 @@ public sealed partial class ScrubberControl : BoxContainer
     public event Action<string, IAtmosDeviceData>? ScrubberDataChanged;
 	public event Action<IAtmosDeviceData>? ScrubberDataCopied;
 
-    private FancyCheckBox _enabled => CEnableDevice;
+    private UIKFancyCheckBox _enabled => CEnableDevice;
     private CollapsibleHeading _addressLabel => CAddress;
-    private FancyOptionButton _pumpDirection => CPumpDirection;
+    private UIKOptionButton _pumpDirection => CPumpDirection;
     private FloatSpinBox _volumeRate => CVolumeRate;
-    private FancyCheckBox _wideNet => CWideNet;
+    private UIKFancyCheckBox _wideNet => CWideNet;
 	private Button _copySettings => CCopySettings;
 
     private GridContainer _gases => CGasContainer;

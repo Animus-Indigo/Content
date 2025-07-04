@@ -11,10 +11,12 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Arcade
 {
-    public sealed class BlockGameMenu : FancyWindow
+    public sealed class BlockGameMenu : UIKWindow
     {
         private static readonly Color OverlayBackgroundColor = new(74, 74, 81, 180);
         private static readonly Color OverlayShadowColor = new(0, 0, 0, 83);

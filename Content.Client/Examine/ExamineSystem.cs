@@ -1,14 +1,15 @@
 using System.Linq;
 using System.Numerics;
 using System.Threading;
+using Content.Client.UIKit.Controls;
 using Content.Client.UserInterface.Controls;
 using Content.Client.Verbs;
 using Content.Shared.Examine;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Input;
 using Content.Shared.Interaction.Events;
-using Content.Shared.InterfaceGuidelines;
 using Content.Shared.Item;
+using Content.Shared.UIKit;
 using Content.Shared.Verbs;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
@@ -201,7 +202,7 @@ namespace Content.Client.Examine
             }
 
             // Actually open the tooltip.
-            _examineTooltipOpen = new FancyPopup { MaxWidth = 400, AnimateFadeIn = !openAtOldTooltip || oldTooltipPos is null, };
+            _examineTooltipOpen = new UIKPopup { MaxWidth = 400, AnimateFadeIn = !openAtOldTooltip || oldTooltipPos is null, };
             _userInterfaceManager.ModalRoot.AddChild(_examineTooltipOpen);
             var panel = new PanelContainer
                 { Name = "ExaminePopupPanel", StyleClasses = { UIStyleClasses.FancyPopupPanel, }, };

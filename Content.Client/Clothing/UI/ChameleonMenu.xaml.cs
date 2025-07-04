@@ -7,11 +7,13 @@ using Robust.Client.GameObjects;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Clothing.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class ChameleonMenu : FancyWindow
+public sealed partial class ChameleonMenu : UIKWindow
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;

@@ -1,7 +1,7 @@
-﻿<controls:FancyWindow
+﻿<uik:UIKWindow
     Title="{Loc Make Ghost Role}"
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls">
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls">
     <BoxContainer Orientation="Vertical">
         <BoxContainer Orientation="Horizontal">
             <Label Name="RoleEntityLabel" Text="Entity" />
@@ -21,11 +21,11 @@
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
             <Label Name="MakeSentientLabel" Text="Make Sentient" />
-            <controls:FancyCheckBox Name="MakeSentientCheckbox" />
+            <uik:UIKFancyCheckBox Name="MakeSentientCheckbox" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
             <Label Name="RaffleLabel" Text="Raffle Role?" />
-            <controls:FancyOptionButton Name="RaffleButton" />
+            <uik:UIKOptionButton Name="RaffleButton" />
         </BoxContainer>
         <BoxContainer Name="RaffleCustomSettingsContainer" Orientation="Vertical" Visible="False">
             <BoxContainer Orientation="Horizontal">
@@ -46,4 +46,4 @@
         </BoxContainer>
     </BoxContainer>
 
-</controls:FancyWindow>
+</uik:UIKWindow>

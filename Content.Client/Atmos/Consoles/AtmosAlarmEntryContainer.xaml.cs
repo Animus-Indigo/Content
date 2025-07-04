@@ -11,8 +11,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Map;
 using System.Linq;
-using Content.Client.InterfaceGuidelines;
-using Content.Shared.InterfaceGuidelines;
+using Content.Client.UIKit;
 
 
 namespace Content.Client.Atmos.Consoles;

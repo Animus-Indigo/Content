@@ -8,11 +8,13 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client._Shitmed.Autodoc;
 
 [GenerateTypedNameReferences]
-public sealed partial class PickSurgeryWindow : FancyWindow
+public sealed partial class PickSurgeryWindow : UIKWindow
 {
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;

@@ -10,11 +10,13 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client._EE.Supermatter.Consoles;
 
 [GenerateTypedNameReferences]
-public sealed partial class SupermatterConsoleWindow : FancyWindow
+public sealed partial class SupermatterConsoleWindow : UIKWindow
 {
     private readonly IEntityManager _entManager;
 

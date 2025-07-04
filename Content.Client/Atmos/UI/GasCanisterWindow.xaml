@@ -1,91 +1,91 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-    xmlns:ig="clr-namespace:Content.Shared.InterfaceGuidelines;assembly=Content.Shared"
+    xmlns:ig="clr-namespace:Content.Shared.UIKit;assembly=Content.Shared"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     MinSize="480 400"
     Title="Canister"
     TitlebarStyle="Inlined">
     <BoxContainer Orientation="Vertical" SeparationOverride="8">
-        <controls:FancyPanelContainer>
+        <uik:UIKPanelContainer>
             <BoxContainer Orientation="Vertical"
                           VerticalExpand="True"
                           Margin="8 8"
                           SeparationOverride="8">
-                <controls:FancyLabel Text="{Loc comp-gas-canister-ui-canister-status}"
+                <uik:UIKLabel Text="{Loc comp-gas-canister-ui-canister-status}"
                                      TextStyle="Headline" />
 
                 <BoxContainer Orientation="Horizontal"
                               HorizontalExpand="True"
                               SeparationOverride="12">
-                    <controls:FancyLabel Text="{Loc comp-gas-canister-ui-canister-pressure}" />
+                    <uik:UIKLabel Text="{Loc comp-gas-canister-ui-canister-pressure}" />
 
                     <Control HorizontalExpand="True" />
 
-                    <controls:FancyLabel Name="CanisterPressureLabel"
+                    <uik:UIKLabel Name="CanisterPressureLabel"
                                          Align="Right" />
                 </BoxContainer>
 
                 <BoxContainer Orientation="Horizontal"
                               SeparationOverride="12">
-                    <controls:FancyLabel Text="{Loc comp-gas-canister-ui-port-status}" />
+                    <uik:UIKLabel Text="{Loc comp-gas-canister-ui-port-status}" />
 
                     <Control HorizontalExpand="True" />
 
-                    <controls:FancyLabel Name="PortStatusLabel"
+                    <uik:UIKLabel Name="PortStatusLabel"
                                          Align="Right" />
                 </BoxContainer>
             </BoxContainer>
-        </controls:FancyPanelContainer>
+        </uik:UIKPanelContainer>
 
-        <controls:FancyPanelContainer>
+        <uik:UIKPanelContainer>
             <BoxContainer Orientation="Vertical"
                           VerticalExpand="True"
                           Margin="8 8"
                           SeparationOverride="8">
-                <controls:FancyLabel Text="{Loc comp-gas-canister-ui-holding-tank-status}"
+                <uik:UIKLabel Text="{Loc comp-gas-canister-ui-holding-tank-status}"
                                      TextStyle="Headline" />
 
                 <BoxContainer Orientation="Horizontal"
                               SeparationOverride="12">
-                    <controls:FancyLabel Text="{Loc comp-gas-canister-ui-holding-tank-label}" />
+                    <uik:UIKLabel Text="{Loc comp-gas-canister-ui-holding-tank-label}" />
 
                     <Control HorizontalExpand="True" />
 
-                    <controls:FancyButton Name="TankEjectButton"
+                    <uik:UIKButton Name="TankEjectButton"
                                           Text="{Loc comp-gas-canister-ui-holding-tank-label-empty}"
                                           Icon="{x:Static ig:SymbolIcons.Eject}" />
                 </BoxContainer>
 
                 <BoxContainer Orientation="Horizontal"
                               SeparationOverride="8">
-                    <controls:FancyLabel Text="{Loc comp-gas-canister-ui-holding-tank-pressure}" />
+                    <uik:UIKLabel Text="{Loc comp-gas-canister-ui-holding-tank-pressure}" />
 
                     <Control HorizontalExpand="True" />
 
-                    <controls:FancyLabel Name="TankPressureLabel"
+                    <uik:UIKLabel Name="TankPressureLabel"
                                          Align="Right"
                                          HorizontalExpand="True" />
                 </BoxContainer>
             </BoxContainer>
-        </controls:FancyPanelContainer>
+        </uik:UIKPanelContainer>
 
-        <controls:FancyPanelContainer>
+        <uik:UIKPanelContainer>
             <BoxContainer Orientation="Vertical"
                           VerticalExpand="True"
                           Margin="8 8"
                           SeparationOverride="8">
-                <controls:FancyLabel Text="{Loc comp-gas-canister-ui-release-valve-status}"
+                <uik:UIKLabel Text="{Loc comp-gas-canister-ui-release-valve-status}"
                                      TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical"
                               SeparationOverride="8">
-                    <controls:FancyLabel Text="{Loc comp-gas-canister-ui-release-pressure}" />
+                    <uik:UIKLabel Text="{Loc comp-gas-canister-ui-release-pressure}" />
 
                     <BoxContainer Orientation="Horizontal"
                                   HorizontalExpand="True"
                                   SeparationOverride="12">
-                        <controls:FancySlider Name="ReleasePressureSlider"
+                        <uik:UIKSlider Name="ReleasePressureSlider"
                                               HorizontalExpand="True" />
 
                         <FloatSpinBox Name="ReleasePressure"
@@ -94,19 +94,19 @@
 
                     <BoxContainer Orientation="Horizontal"
                                   SeparationOverride="12">
-                        <controls:FancyLabel Text="{Loc comp-gas-canister-ui-release-valve}" />
+                        <uik:UIKLabel Text="{Loc comp-gas-canister-ui-release-valve}" />
 
                         <Control HorizontalExpand="True" />
 
                         <BoxContainer Orientation="Horizontal">
-                            <controls:FancyButton Name="ReleaseValveOpenButton"
+                            <uik:UIKButton Name="ReleaseValveOpenButton"
                                                   Text="{Loc comp-gas-canister-ui-release-valve-open}"
                                                   Color="Danger"
                                                   Style="Outlined"
                                                   BordersStyle="OpenRight"
                                                   ToggleMode="True" />
 
-                            <controls:FancyButton Name="ReleaseValveCloseButton"
+                            <uik:UIKButton Name="ReleaseValveCloseButton"
                                                   Text="{Loc comp-gas-canister-ui-release-valve-close}"
                                                   Color="Danger"
                                                   Style="Outlined"
@@ -116,6 +116,6 @@
                     </BoxContainer>
                 </BoxContainer>
             </BoxContainer>
-        </controls:FancyPanelContainer>
+        </uik:UIKPanelContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

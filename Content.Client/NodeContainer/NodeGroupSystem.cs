@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Content.Client.InterfaceGuidelines;
-using Content.Shared.InterfaceGuidelines;
+using Content.Client.UIKit;
 using Content.Shared.NodeContainer;
 using JetBrains.Annotations;
 using Robust.Client.Graphics;

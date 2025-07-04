@@ -9,11 +9,13 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Robotics.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class RoboticsConsoleWindow : FancyWindow
+public sealed partial class RoboticsConsoleWindow : UIKWindow
 {
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly IGameTiming _timing = default!;

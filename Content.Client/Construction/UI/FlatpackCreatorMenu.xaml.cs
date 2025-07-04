@@ -12,11 +12,13 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Construction.UI;
 
 [GenerateTypedNameReferences]
-public sealed partial class FlatpackCreatorMenu : FancyWindow
+public sealed partial class FlatpackCreatorMenu : UIKWindow
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;

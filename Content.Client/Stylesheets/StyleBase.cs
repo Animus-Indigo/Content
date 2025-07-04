@@ -1,6 +1,5 @@
-using Content.Client.InterfaceGuidelines;
+using Content.Client.UIKit;
 using Content.Client.Resources;
-using Content.Shared.InterfaceGuidelines;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;

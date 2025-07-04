@@ -1,4 +1,4 @@
-﻿using Content.Client.UserInterface.GlobalMenu;
+﻿using Content.Client.GameBar;
 using JetBrains.Annotations;
 using Robust.Client.Console;
 using Robust.Client.UserInterface.Controllers;
@@ -11,14 +11,14 @@ namespace Content.Client.UserInterface.Systems.EscapeMenu;
 public sealed class EscapeUIController : UIController
 {
     [Dependency] private readonly IClientConsoleHost _console           = null!;
-    [Dependency] private readonly GlobalMenuManager  _globalMenuManager = null!;
+    [Dependency] private readonly GameBarManager  _gameBarManager = null!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        _globalMenuManager
-            .GetCategory(GlobalMenuCategory.Global)
+        _gameBarManager
+            .GetCategory(GameBarCategory.Global)
             .RegisterItem(
                 new(
                     new("global-menu-global-disconnect-item"),

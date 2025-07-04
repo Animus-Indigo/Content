@@ -4,10 +4,12 @@ using Content.Client.UserInterface.Systems.EscapeMenu;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.ContentPack;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Info
 {
-    public sealed class RulesAndInfoWindow : FancyWindow
+    public sealed class RulesAndInfoWindow : UIKWindow
     {
         [Dependency] private readonly IResourceManager _resourceManager = default!;
 

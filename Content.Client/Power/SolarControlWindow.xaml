@@ -1,7 +1,7 @@
-﻿<controls:FancyWindow
+﻿<uik:UIKWindow
     xmlns="https://spacestation14.io"
     xmlns:power="clr-namespace:Content.Client.Power"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc 'solar-control-window-title'}"
     Resizable="False">
     <BoxContainer Orientation="Horizontal">
@@ -30,5 +30,5 @@
         </GridContainer>
         <power:SolarControlNotARadar Name="NotARadar"/>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>
 

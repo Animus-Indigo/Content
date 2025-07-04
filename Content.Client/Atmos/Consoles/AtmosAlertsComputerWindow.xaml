@@ -1,7 +1,7 @@
-<controls:FancyWindow xmlns="https://spacestation14.io"
+<uik:UIKWindow xmlns="https://spacestation14.io"
                xmlns:ui="clr-namespace:Content.Client.Pinpointer.UI"
                xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-               xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+               xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
                Title="{Loc 'atmos-alerts-window-title'}"
                Resizable="False"
                SetSize="1120 750"
@@ -83,10 +83,10 @@
                 <BoxContainer Orientation="Vertical" Margin="0 10 0 0">
                     <Label Text="{Loc 'atmos-alerts-window-toggle-overlays'}" Margin="0 0 0 5"/>
                     <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
-                        <controls:FancyCheckBox Name="ShowInactiveAlarms" Text="{Loc 'atmos-alerts-window-invalid-state'}" Pressed="False" HorizontalExpand="True"/>
-                        <controls:FancyCheckBox Name="ShowNormalAlarms" Text="{Loc 'atmos-alerts-window-normal-state'}" Pressed="False" HorizontalExpand="True"/>
-                        <controls:FancyCheckBox Name="ShowWarningAlarms" Text="{Loc 'atmos-alerts-window-warning-state'}" Pressed="True" HorizontalExpand="True"/>
-                        <controls:FancyCheckBox Name="ShowDangerAlarms" Text="{Loc 'atmos-alerts-window-danger-state'}" Pressed="True" HorizontalExpand="True"/>
+                        <uik:UIKFancyCheckBox Name="ShowInactiveAlarms" Text="{Loc 'atmos-alerts-window-invalid-state'}" Pressed="False" HorizontalExpand="True"/>
+                        <uik:UIKFancyCheckBox Name="ShowNormalAlarms" Text="{Loc 'atmos-alerts-window-normal-state'}" Pressed="False" HorizontalExpand="True"/>
+                        <uik:UIKFancyCheckBox Name="ShowWarningAlarms" Text="{Loc 'atmos-alerts-window-warning-state'}" Pressed="True" HorizontalExpand="True"/>
+                        <uik:UIKFancyCheckBox Name="ShowDangerAlarms" Text="{Loc 'atmos-alerts-window-danger-state'}" Pressed="True" HorizontalExpand="True"/>
                     </BoxContainer>
                 </BoxContainer>
             </BoxContainer>
@@ -105,4 +105,4 @@
             </BoxContainer>
         </BoxContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

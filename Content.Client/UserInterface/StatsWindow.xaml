@@ -1,6 +1,6 @@
-﻿<controls:FancyWindow
+﻿<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="Stats window"
     MinSize="600 400">
     <BoxContainer Orientation="Vertical">
@@ -10,4 +10,4 @@
             <GridContainer Name="Values"/>
         </ScrollContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

@@ -1,7 +1,7 @@
 using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
-using Content.Shared.InterfaceGuidelines;
 using Content.Shared.Storage.Components;
+using Content.Shared.UIKit;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
 using Robust.Shared.Serialization;

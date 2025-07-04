@@ -43,7 +43,10 @@ using Robust.Shared.Physics.Components;
 using static Content.Shared.Configurable.ConfigurationComponent;
 using Content.Shared._Impstation.Thaven.Components; // DeltaV
 using Content.Server._Impstation.Thaven;
-using Content.Shared.InterfaceGuidelines; // DeltaV
+using Content.Shared.UIKit;
+
+
+// DeltaV
 
 namespace Content.Server.Administration.Systems
 {

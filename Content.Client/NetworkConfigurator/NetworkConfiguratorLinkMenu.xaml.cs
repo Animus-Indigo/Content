@@ -8,11 +8,13 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.NetworkConfigurator;
 
 [GenerateTypedNameReferences]
-public sealed partial class NetworkConfiguratorLinkMenu : FancyWindow
+public sealed partial class NetworkConfiguratorLinkMenu : UIKWindow
 {
     private const string PanelBgColor = "#202023";
 

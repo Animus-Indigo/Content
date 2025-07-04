@@ -1,8 +1,8 @@
 ﻿using Content.Shared.Damage;
 using Content.Shared.Examine;
-using Content.Shared.InterfaceGuidelines;
 using Content.Shared.Inventory;
 using Content.Shared.Silicons.Borgs;
+using Content.Shared.UIKit;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
 

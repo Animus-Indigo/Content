@@ -3,11 +3,13 @@ using Robust.Client.UserInterface.XAML;
 using Content.Client.Message;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Cloning.CloningConsole;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.CloningConsole.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class CloningConsoleWindow : FancyWindow
+    public sealed partial class CloningConsoleWindow : UIKWindow
     {
         public CloningConsoleWindow()
         {

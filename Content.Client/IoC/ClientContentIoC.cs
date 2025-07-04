@@ -7,9 +7,10 @@ using Content.Client.JoinQueue;
 using Content.Client.DebugMon;
 using Content.Client.Eui;
 using Content.Client.Fullscreen;
+using Content.Client.GameBar;
 using Content.Client.GhostKick;
 using Content.Client.Guidebook;
-using Content.Client.InterfaceGuidelines;
+using Content.Client.UIKit;
 using Content.Client.KeyPresets;
 using Content.Client.Launcher;
 using Content.Client.Mapping;
@@ -23,10 +24,8 @@ using Content.Client.Voting;
 using Content.Shared.Administration.Logs;
 using Content.Client.Lobby;
 using Content.Client.Players.RateLimiting;
-using Content.Client.UserInterface.GlobalMenu;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
-using Content.Shared.InterfaceGuidelines;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
 namespace Content.Client.IoC
@@ -66,7 +65,7 @@ namespace Content.Client.IoC
             collection.Register<DebugMonitorManager>();
             collection.Register<TypographyManager>();
             collection.Register<KeyPresetsManager>();
-            collection.Register<GlobalMenuManager>();
+            collection.Register<GameBarManager>();
         }
     }
 }

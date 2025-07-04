@@ -1,6 +1,6 @@
+using Content.Client.GameBar;
 using Content.Client.Gameplay;
 using Content.Client.Info;
-using Content.Client.UserInterface.GlobalMenu;
 using Content.Shared.CCVar;
 using Content.Shared.Guidebook;
 using Content.Shared.Info;
@@ -19,7 +19,7 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
     [Dependency] private readonly IClientConsoleHost    _consoleHost       = default!;
     [Dependency] private readonly INetManager           _netManager        = default!;
     [Dependency] private readonly IPrototypeManager     _prototype         = default!;
-    [Dependency] private readonly GlobalMenuManager     _globalMenuManager = null!;
+    [Dependency] private readonly GameBarManager     _gameBarManager = null!;
 
     private RulesPopup? _rulesPopup;
     private RulesAndInfoWindow? _infoWindow;
@@ -39,8 +39,8 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
             OnAcceptPressed();
         });
 
-        _globalMenuManager
-            .GetCategory(GlobalMenuCategory.Global)
+        _gameBarManager
+            .GetCategory(GameBarCategory.Global)
             .RegisterItem(
                 new(
                     new("global-menu-global-info-item"),

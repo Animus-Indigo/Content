@@ -10,14 +10,15 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using System.Linq;
 using System.Numerics;
-using Content.Client.InterfaceGuidelines;
-using Content.Shared.InterfaceGuidelines;
+using Content.Client.UIKit;
+using UIKFancyCheckBox = Content.Client.UIKit.Controls.UIKFancyCheckBox;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
 
 
 namespace Content.Client.TurretController;
 
 [GenerateTypedNameReferences]
-public sealed partial class TurretControllerWindow : FancyWindow
+public sealed partial class TurretControllerWindow : UIKWindow
 {
     [Dependency] private IEntityManager _entManager = default!;
     [Dependency] private IPrototypeManager _protoManager = default!;
@@ -33,7 +34,7 @@ public sealed partial class TurretControllerWindow : FancyWindow
     private readonly ButtonGroup _accessGroupsButtons = new();
 
     // Temp values
-    private List<FancyCheckBox> _checkBoxes = new();
+    private List<UIKFancyCheckBox> _checkBoxes = new();
     private HashSet<AccessLevelPrototype> _accessLevelsForTab = new();
     private List<AccessLevelEntry> _accessLevelEntries = new();
 
@@ -327,7 +328,7 @@ public sealed partial class TurretControllerWindow : FancyWindow
         // Toggling this checkbox on will mark all other boxes below it on/off
         if (AccessLevelGrid.ChildCount == 0)
         {
-            var checkBox = new FancyCheckBox
+            var checkBox = new UIKFancyCheckBox
             {
                 Text = Loc.GetString("turret-controls-window-all-checkbox"),
                 Margin = new Thickness(0, 0, 0, 3),
@@ -355,7 +356,7 @@ public sealed partial class TurretControllerWindow : FancyWindow
         var allCheckBoxVisible = _accessLevelsForTab.Count > 1;
 
         // Did something go wrong...?
-        if (AccessLevelGrid.GetChild(0) is not FancyCheckBox { } allCheckBox)
+        if (AccessLevelGrid.GetChild(0) is not UIKFancyCheckBox { } allCheckBox)
             return;
 
         allCheckBox.Visible = allCheckBoxVisible;
@@ -373,7 +374,7 @@ public sealed partial class TurretControllerWindow : FancyWindow
             accessLevelEntry.CheckBox.OnPressed += args =>
             {
                 // If the checkbox and its siblings are checked, check the 'all' checkbox too
-                allCheckBox.Pressed = AreAllCheckBoxesPressed(_accessLevelEntries.Select(x => (FancyCheckBox)x.CheckBox));
+                allCheckBox.Pressed = AreAllCheckBoxesPressed(_accessLevelEntries.Select(x => (UIKFancyCheckBox)x.CheckBox));
 
                 OnAccessLevelsChangedEvent?.Invoke
                     (new HashSet<ProtoId<AccessLevelPrototype>>() { accessLevelEntry.AccessLevel }, accessLevelEntry.CheckBox.Pressed);
@@ -410,7 +411,7 @@ public sealed partial class TurretControllerWindow : FancyWindow
     }
 
 
-    private bool AreAllCheckBoxesPressed(IEnumerable<FancyCheckBox> checkBoxes)
+    private bool AreAllCheckBoxesPressed(IEnumerable<UIKFancyCheckBox> checkBoxes)
     {
         foreach (var checkBox in checkBoxes)
         {
@@ -421,7 +422,7 @@ public sealed partial class TurretControllerWindow : FancyWindow
         return true;
     }
 
-    private void SetCheckBoxPressedState(IEnumerable<FancyCheckBox> checkBoxes, bool pressed)
+    private void SetCheckBoxPressedState(IEnumerable<UIKFancyCheckBox> checkBoxes, bool pressed)
     {
         foreach (var checkBox in checkBoxes)
             checkBox.Pressed = pressed;
@@ -454,7 +455,7 @@ public sealed partial class TurretControllerWindow : FancyWindow
     private sealed class AccessLevelEntry : BoxContainer
     {
         public ProtoId<AccessLevelPrototype> AccessLevel = default!;
-        public FancyCheckBox CheckBox;
+        public UIKFancyCheckBox CheckBox;
         public LineRenderer CheckBoxLink;
 
         public AccessLevelEntry()
@@ -477,7 +478,7 @@ public sealed partial class TurretControllerWindow : FancyWindow
 
             AddChild(CheckBoxLink);
 
-            CheckBox = new FancyCheckBox()
+            CheckBox = new UIKFancyCheckBox()
             {
                 ToggleMode = true,
                 Margin = new Thickness(0f, 0f, 0f, 3f),

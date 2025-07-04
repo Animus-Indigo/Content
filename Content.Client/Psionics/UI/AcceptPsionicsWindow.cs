@@ -3,10 +3,12 @@ using Content.Client.UserInterface.Controls;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Psionics.UI
 {
-    public sealed class AcceptPsionicsWindow : FancyWindow
+    public sealed class AcceptPsionicsWindow : UIKWindow
     {
         public readonly Button DenyButton;
         public readonly Button AcceptButton;

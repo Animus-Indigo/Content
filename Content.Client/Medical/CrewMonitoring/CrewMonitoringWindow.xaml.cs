@@ -17,11 +17,13 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Medical.CrewMonitoring;
 
 [GenerateTypedNameReferences]
-public sealed partial class CrewMonitoringWindow : FancyWindow
+public sealed partial class CrewMonitoringWindow : UIKWindow
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;

@@ -1,6 +1,6 @@
-<controls:FancyWindow
+<uik:UIKWindow
         xmlns="https://spacestation14.io"
-        xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+        xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
         Title="{Loc player-panel-job-whitelists}" MinSize="750 600">
     <BoxContainer Orientation="Vertical">
 	    <Label Name="PlayerName" Margin="4"/>
@@ -8,4 +8,4 @@
     	    <BoxContainer Name="Departments" Orientation="Vertical"/> <!-- Populated with DepartmentWhitelistPanel -->
 	    </ScrollContainer>
     </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

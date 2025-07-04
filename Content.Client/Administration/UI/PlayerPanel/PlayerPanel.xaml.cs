@@ -6,11 +6,13 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Network;
 using Robust.Shared.Utility;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Administration.UI.PlayerPanel;
 
 [GenerateTypedNameReferences]
-public sealed partial class PlayerPanel : FancyWindow
+public sealed partial class PlayerPanel : UIKWindow
 {
     private readonly IClientAdminManager _adminManager;
 

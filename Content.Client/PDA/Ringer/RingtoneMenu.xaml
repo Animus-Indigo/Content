@@ -1,6 +1,6 @@
-<controls:FancyWindow
+<uik:UIKWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
     Title="{Loc 'comp-ringer-ui-menu-title'}"
     MinSize="320 128"
     SetSize="320 128">
@@ -92,4 +92,4 @@
                 </BoxContainer>
             </PanelContainer>
         </BoxContainer>
-</controls:FancyWindow>
+</uik:UIKWindow>

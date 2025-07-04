@@ -1,7 +1,7 @@
 using System.Linq;
 using Content.Client.CharacterInfo;
+using Content.Client.GameBar;
 using Content.Client.Gameplay;
-using Content.Client.UserInterface.GlobalMenu;
 using Content.Client.UserInterface.Systems.Character.Controls;
 using Content.Client.UserInterface.Systems.Character.Windows;
 using Content.Client.UserInterface.Systems.Objectives.Controls;
@@ -32,7 +32,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
     [Dependency] private readonly ILogManager       _logMan            = default!;
     [Dependency] private readonly IPlayerManager    _player            = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager  = default!;
-    [Dependency] private readonly GlobalMenuManager _globalMenuManager = null!;
+    [Dependency] private readonly GameBarManager _gameBarManager = null!;
 
     [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
     [UISystemDependency] private readonly SpriteSystem _sprite = default!;
@@ -47,8 +47,8 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
 
         SubscribeNetworkEvent<MindRoleTypeChangedEvent>(OnRoleTypeChanged);
 
-        _globalMenuManager
-            .GetCategory(GlobalMenuCategory.Character)
+        _gameBarManager
+            .GetCategory(GameBarCategory.Character)
             .RegisterItem(
                 new(
                     new("global-menu-character-window-item"),

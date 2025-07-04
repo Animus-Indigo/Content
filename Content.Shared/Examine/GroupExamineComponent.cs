@@ -1,4 +1,4 @@
-using Content.Shared.InterfaceGuidelines;
+using Content.Shared.UIKit;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 

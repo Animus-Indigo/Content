@@ -1,3 +1,4 @@
+using Content.Client.UIKit.Controls;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Administration;
 using Content.Shared.Chemistry.Components;
@@ -8,6 +9,8 @@ using Robust.Client.Timing;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Timing;
+using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
+
 
 namespace Content.Client.Administration.UI.ManageSolutions
 {
@@ -15,7 +18,7 @@ namespace Content.Client.Administration.UI.ManageSolutions
     ///     A simple window that displays solutions and their contained reagents. Allows you to edit the reagent quantities and add new reagents.
     /// </summary>
     [GenerateTypedNameReferences]
-    public sealed partial class EditSolutionsWindow : FancyWindow
+    public sealed partial class EditSolutionsWindow : UIKWindow
     {
         [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
         [Dependency] private readonly IEntityManager _entityManager = default!;
@@ -274,7 +277,7 @@ namespace Content.Client.Administration.UI.ManageSolutions
         /// <summary>
         ///     When a new solution is selected, set _selectedSolution and update the reagent list.
         /// </summary>
-        private void SolutionSelected(FancyOptionButton.ItemSelectedEventArgs args)
+        private void SolutionSelected(UIKOptionButton.ItemSelectedEventArgs args)
         {
             SolutionOption.SelectId(args.Id);
             _selectedSolution = (string?) SolutionOption.SelectedMetadata;

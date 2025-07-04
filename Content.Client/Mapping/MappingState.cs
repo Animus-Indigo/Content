@@ -6,6 +6,7 @@ using Content.Client.Gameplay;
 using Content.Client.Input;
 using Content.Client.Maps;
 using Content.Client.SubFloor;
+using Content.Client.UIKit.Controls;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Client.Verbs;
@@ -816,7 +817,7 @@ public sealed class MappingState : GameplayStateBase
         _placement.Replacement = args.Pressed;
     }
 
-    private void OnEntityPlacementSelected(FancyOptionButton.ItemSelectedEventArgs args)
+    private void OnEntityPlacementSelected(UIKOptionButton.ItemSelectedEventArgs args)
     {
         Screen.EntityPlacementMode.SelectId(args.Id);
 

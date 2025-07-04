@@ -16,7 +16,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.InterfaceGuidelines;
+using Content.Shared.UIKit;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Dependency = Robust.Shared.IoC.DependencyAttribute;
