@@ -51,11 +51,7 @@ public sealed partial class FancySlider : Range
         MouseFilter = MouseFilterMode.Stop;
 
         LayoutContainer.SetAnchorBottom(SliderGrabber, 1.0f);
-        // LayoutContainer.SetGrowHorizontal(SliderGrabber, LayoutContainer.GrowDirection.Both);
-        // LayoutContainer.SetGrowVertical(SliderGrabber, LayoutContainer.GrowDirection.Both);
-        // LayoutContainer.SetAnchorAndMarginPreset(SliderGrabber, LayoutContainer.LayoutPreset.Wide);
         LayoutContainer.SetAnchorPreset(SliderPanel, LayoutContainer.LayoutPreset.Wide);
-        // LayoutContainer.SetPosition(SliderGrabber, GlobalRect.TopRight);
 
         SliderGrabber.OnKeyBindDown += OnSliderGrabberKeyBindDown;
         SliderGrabber.OnKeyBindUp   += OnSliderGrabberKeyBindUp;
