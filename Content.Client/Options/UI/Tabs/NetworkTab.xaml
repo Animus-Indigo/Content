@@ -7,91 +7,107 @@
               SeparationOverride="8">
     <BoxContainer Orientation="Vertical" SeparationOverride="8" VerticalExpand="True">
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-            <uik:UIKFancyCheckBox Name="NetPredictCheckbox" Text="{Loc 'ui-options-net-predict'}" />
+            <uik:UIKFancyCheckBox Name="NetPredictCheckbox"
+                                  Text="{Loc 'ui-options-net-predict'}" />
         </BoxContainer>
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-            <Label Text="{Loc 'ui-options-net-interp-ratio'}" HorizontalExpand="True" />
+            <uik:UIKLabel Text="{Loc 'ui-options-net-interp-ratio'}"
+                          HorizontalExpand="True" />
 
             <uik:UIKSlider Name="NetInterpRatioSlider"
-                                  ToolTip="{Loc 'ui-options-net-interp-ratio-tooltip'}"
-                                  MaxValue="8"
-                                  HorizontalExpand="True"
-                                  MinSize="80 0"
-                                  Rounded="True" />
+                           ToolTip="{Loc 'ui-options-net-interp-ratio-tooltip'}"
+                           MaxValue="8"
+                           HorizontalExpand="True"
+                           MinSize="80 0"
+                           Rounded="True" />
 
-            <Label Name="NetInterpRatioLabel" MinSize="48 0" Align="Right" />
+            <uik:UIKLabel Name="NetInterpRatioLabel"
+                          MinSize="48 0"
+                          Align="Right" />
         </BoxContainer>
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-            <Label Text="{Loc 'ui-options-net-predict-tick-bias'}" HorizontalExpand="True" />
+            <uik:UIKLabel Text="{Loc 'ui-options-net-predict-tick-bias'}"
+                          HorizontalExpand="True" />
 
             <uik:UIKSlider Name="NetPredictTickBiasSlider"
-                                  ToolTip="{Loc 'ui-options-net-predict-tick-bias-tooltip'}"
-                                  MaxValue="6"
-                                  MinValue="0"
-                                  HorizontalExpand="True"
-                                  MinSize="80 0"
-                                  Rounded="True" />
+                           ToolTip="{Loc 'ui-options-net-predict-tick-bias-tooltip'}"
+                           MaxValue="6"
+                           MinValue="0"
+                           HorizontalExpand="True"
+                           MinSize="80 0"
+                           Rounded="True" />
 
-            <Label Name="NetPredictTickBiasLabel" MinSize="48 0" Align="Right" />
+            <uik:UIKLabel Name="NetPredictTickBiasLabel"
+                          MinSize="48 0"
+                          Align="Right" />
         </BoxContainer>
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-            <Label Text="{Loc 'ui-options-net-pvs-spawn'}" HorizontalExpand="True" />
+            <uik:UIKLabel Text="{Loc 'ui-options-net-pvs-spawn'}"
+                          HorizontalExpand="True" />
 
             <uik:UIKSlider Name="NetPvsSpawnSlider"
-                                  ToolTip="{Loc 'ui-options-net-pvs-spawn-tooltip'}"
-                                  MaxValue="150"
-                                  MinValue="20"
-                                  HorizontalExpand="True"
-                                  MinSize="80 0"
-                                  Rounded="True" />
+                           ToolTip="{Loc 'ui-options-net-pvs-spawn-tooltip'}"
+                           MaxValue="150"
+                           MinValue="20"
+                           HorizontalExpand="True"
+                           MinSize="80 0"
+                           Rounded="True" />
 
-            <Label Name="NetPvsSpawnLabel" MinSize="48 0" Align="Right" />
+            <uik:UIKLabel Name="NetPvsSpawnLabel"
+                          MinSize="48 0"
+                          Align="Right" />
         </BoxContainer>
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-            <Label Text="{Loc 'ui-options-net-pvs-entry'}" HorizontalExpand="True" />
+            <uik:UIKLabel Text="{Loc 'ui-options-net-pvs-entry'}"
+                          HorizontalExpand="True" />
 
             <uik:UIKSlider Name="NetPvsEntrySlider"
-                                  ToolTip="{Loc 'ui-options-net-pvs-entry-tooltip'}"
-                                  MaxValue="500"
-                                  MinValue="20"
-                                  HorizontalExpand="True"
-                                  MinSize="80 0"
-                                  Rounded="True" />
+                           ToolTip="{Loc 'ui-options-net-pvs-entry-tooltip'}"
+                           MaxValue="500"
+                           MinValue="20"
+                           HorizontalExpand="True"
+                           MinSize="80 0"
+                           Rounded="True" />
 
-            <Label Name="NetPvsEntryLabel" MinSize="48 0" Align="Right" />
+            <uik:UIKLabel Name="NetPvsEntryLabel"
+                          MinSize="48 0"
+                          Align="Right" />
         </BoxContainer>
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-            <Label Text="{Loc 'ui-options-net-pvs-leave'}" HorizontalExpand="True" />
+            <uik:UIKLabel Text="{Loc 'ui-options-net-pvs-leave'}"
+                          HorizontalExpand="True" />
 
             <uik:UIKSlider Name="NetPvsLeaveSlider"
-                                  ToolTip="{Loc 'ui-options-net-pvs-leave-tooltip'}"
-                                  MaxValue="300"
-                                  MinValue="20"
-                                  HorizontalExpand="True"
-                                  MinSize="80 0"
-                                  Rounded="True" />
+                           ToolTip="{Loc 'ui-options-net-pvs-leave-tooltip'}"
+                           MaxValue="300"
+                           MinValue="20"
+                           HorizontalExpand="True"
+                           MinSize="80 0"
+                           Rounded="True" />
 
-            <Label Name="NetPvsLeaveLabel" MinSize="48 0" Align="Right" />
+            <uik:UIKLabel Name="NetPvsLeaveLabel"
+                          MinSize="48 0"
+                          Align="Right" />
         </BoxContainer>
     </BoxContainer>
 
     <BoxContainer Orientation="Horizontal" Align="End" HorizontalExpand="True" SeparationOverride="12">
         <uik:UIKButton Name="ResetButton"
-                              Text="{Loc 'ui-options-reset-all'}"
-                              HorizontalAlignment="Right" />
+                       Text="{Loc 'ui-options-reset-all'}"
+                       HorizontalAlignment="Right" />
 
         <uik:UIKButton Name="DefaultButton"
-                              Text="{Loc 'ui-options-default'}"
-                              HorizontalAlignment="Right" />
+                       Text="{Loc 'ui-options-default'}"
+                       HorizontalAlignment="Right" />
 
         <uik:UIKButton Name="ApplyButton"
-                              Color="Accent"
-                              Text="{Loc 'ui-options-apply'}"
-                              HorizontalAlignment="Right" />
+                       Color="Accent"
+                       Text="{Loc 'ui-options-apply'}"
+                       HorizontalAlignment="Right" />
     </BoxContainer>
 </BoxContainer>

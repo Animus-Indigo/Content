@@ -8,49 +8,49 @@
 
             <BoxContainer Orientation="Vertical" SeparationOverride="8">
                 <uik:UIKLabel Text="{Loc 'ui-options-general-ui-style'}"
-                                     TextStyle="Headline" />
+                              TextStyle="Headline" />
 
                 <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-                    <Label Text="{Loc 'ui-options-hud-theme'}" />
+                    <uik:UIKLabel Text="{Loc 'ui-options-hud-theme'}" />
                     <uik:UIKOptionButton Name="HudThemeOption" />
                 </BoxContainer>
             </BoxContainer>
 
             <BoxContainer Orientation="Vertical" SeparationOverride="8">
                 <uik:UIKLabel Text="{Loc 'ui-options-general-accessibility'}"
-                                     TextStyle="Headline" />
+                              TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical" SeparationOverride="8">
                     <uik:UIKFancyCheckBox Name="ReducedMotionCheckBox" Text="{Loc 'ui-options-reduced-motion'}" />
                     <uik:UIKFancyCheckBox Name="EnableColorNameCheckBox"
-                                            Text="{Loc 'ui-options-enable-color-name'}" />
+                                          Text="{Loc 'ui-options-enable-color-name'}" />
                     <uik:UIKFancyCheckBox Name="ColorblindFriendlyCheckBox"
-                                            Text="{Loc 'ui-options-colorblind-friendly'}" />
+                                          Text="{Loc 'ui-options-colorblind-friendly'}" />
                     <uik:UIKFancyCheckBox Name="DisableFiltersCheckBox" Text="{Loc 'ui-options-no-filters'}" />
                 </BoxContainer>
 
                 <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-                    <Label Text="{Loc 'ui-options-chatstack'}" />
+                    <uik:UIKLabel Text="{Loc 'ui-options-chatstack'}" />
 
                     <uik:UIKOptionButton Name="ChatStackOption" />
                 </BoxContainer>
 
                 <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-                    <Label Text="{Loc 'ui-options-screen-shake-intensity'}" />
+                    <uik:UIKLabel Text="{Loc 'ui-options-screen-shake-intensity'}" />
 
                     <uik:UIKSlider Name="ScreenShakeIntensitySlider"
-                                          MinValue="0"
-                                          MaxValue="100"
-                                          Rounded="True"
-                                          MinWidth="200" />
+                                   MinValue="0"
+                                   MaxValue="100"
+                                   Rounded="True"
+                                   MinWidth="200" />
 
-                    <Label Name="ScreenShakeIntensityLabel" />
+                    <uik:UIKLabel Name="ScreenShakeIntensityLabel" />
                 </BoxContainer>
             </BoxContainer>
 
             <BoxContainer Orientation="Vertical" SeparationOverride="8">
                 <uik:UIKLabel Text="{Loc 'ui-options-general-discord'}"
-                                     TextStyle="Headline" />
+                              TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical" SeparationOverride="8">
                     <uik:UIKFancyCheckBox Name="DiscordRich" Text="{Loc 'ui-options-discordrich'}" />
@@ -59,49 +59,49 @@
 
             <BoxContainer Orientation="Vertical" SeparationOverride="8">
                 <uik:UIKLabel Text="{Loc 'ui-options-general-speech'}"
-                                     TextStyle="Headline" />
+                              TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical" SeparationOverride="8">
                     <uik:UIKFancyCheckBox Name="ShowOocPatronColor"
-                                            Text="{Loc 'ui-options-show-ooc-patron-color'}" />
+                                          Text="{Loc 'ui-options-show-ooc-patron-color'}" />
                     <uik:UIKFancyCheckBox Name="ShowLoocAboveHeadCheckBox"
-                                            Text="{Loc 'ui-options-show-looc-on-head'}" />
+                                          Text="{Loc 'ui-options-show-looc-on-head'}" />
                     <uik:UIKFancyCheckBox Name="FancySpeechBubblesCheckBox"
-                                            Text="{Loc 'ui-options-fancy-speech'}" />
+                                          Text="{Loc 'ui-options-fancy-speech'}" />
                     <uik:UIKFancyCheckBox Name="FancyNameBackgroundsCheckBox"
-                                            Text="{Loc 'ui-options-fancy-name-background'}" />
+                                          Text="{Loc 'ui-options-fancy-name-background'}" />
                 </BoxContainer>
             </BoxContainer>
 
             <BoxContainer Orientation="Vertical" SeparationOverride="8">
                 <uik:UIKLabel Text="{Loc 'ui-options-general-cursor'}"
-                                     TextStyle="Headline" />
+                              TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical" SeparationOverride="8">
                     <uik:UIKFancyCheckBox Name="ShowHeldItemCheckBox"
-                                            Text="{Loc 'ui-options-show-held-item'}" />
+                                          Text="{Loc 'ui-options-show-held-item'}" />
                     <uik:UIKFancyCheckBox Name="ShowCombatModeIndicatorsCheckBox"
-                                            Text="{Loc 'ui-options-show-combat-mode-indicators'}" />
+                                          Text="{Loc 'ui-options-show-combat-mode-indicators'}" />
                     <uik:UIKFancyCheckBox Name="ShowOfferModeIndicatorsCheckBox"
-                                            Text="{Loc 'ui-options-show-offer-mode-indicators'}" />
+                                          Text="{Loc 'ui-options-show-offer-mode-indicators'}" />
                 </BoxContainer>
             </BoxContainer>
 
             <BoxContainer Orientation="Vertical" SeparationOverride="8">
                 <uik:UIKLabel Text="{Loc 'ui-options-general-storage'}"
-                                     TextStyle="Headline" />
+                              TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical" SeparationOverride="8">
                     <uik:UIKFancyCheckBox Name="OpaqueStorageWindowCheckBox"
-                                            Text="{Loc 'ui-options-opaque-storage-window'}" />
+                                          Text="{Loc 'ui-options-opaque-storage-window'}" />
                     <uik:UIKFancyCheckBox Name="StaticStorageUI"
-                                            Text="{Loc 'ui-options-static-storage-ui'}" />
+                                          Text="{Loc 'ui-options-static-storage-ui'}" />
                 </BoxContainer>
             </BoxContainer>
 
             <BoxContainer Orientation="Vertical" SeparationOverride='8'>
                 <uik:UIKLabel Text="{Loc 'ui-options-general-other'}"
-                                     TextStyle="Headline" />
+                              TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical" SeparationOverride="8">
                     <uik:UIKFancyCheckBox Name="ModernProgressBar" Text="{Loc 'ui-options-modern-progress-bar'}" />
@@ -112,7 +112,7 @@
     </ScrollContainer>
 
     <uik:UIKButton Name="ApplyButton"
-                          Color="Accent"
-                          Text="{Loc 'ui-options-apply'}"
-                          HorizontalAlignment="Right" />
+                   Color="Accent"
+                   Text="{Loc 'ui-options-apply'}"
+                   HorizontalAlignment="Right" />
 </BoxContainer>

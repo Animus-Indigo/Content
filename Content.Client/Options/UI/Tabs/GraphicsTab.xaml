@@ -10,13 +10,13 @@
         </BoxContainer>
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-            <Label Text="{Loc 'ui-options-lighting-label'}" />
+            <uik:UIKLabel Text="{Loc 'ui-options-lighting-label'}" />
 
             <uik:UIKOptionButton Name="LightingPresetOption" />
         </BoxContainer>
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-            <Label Text="{Loc 'ui-options-scale-label'}" />
+            <uik:UIKLabel Text="{Loc 'ui-options-scale-label'}" />
 
             <uik:UIKOptionButton Name="UIScaleOption" />
         </BoxContainer>
@@ -26,41 +26,41 @@
             <BoxContainer Orientation="Vertical" SeparationOverride="8">
                 <uik:UIKFancyCheckBox Name="ViewportStretchCheckBox" Text="{Loc 'ui-options-vp-stretch'}" />
                 <uik:UIKFancyCheckBox Name="IntegerScalingCheckBox"
-                                        Text="{Loc 'ui-options-vp-integer-scaling'}"
-                                        ToolTip="{Loc 'ui-options-vp-integer-scaling-tooltip'}" />
+                                      Text="{Loc 'ui-options-vp-integer-scaling'}"
+                                      ToolTip="{Loc 'ui-options-vp-integer-scaling-tooltip'}" />
                 <uik:UIKFancyCheckBox Name="ViewportVerticalFitCheckBox"
-                                        Text="{Loc 'ui-options-vp-vertical-fit'}"
-                                        ToolTip="{Loc 'ui-options-vp-vertical-fit-tooltip'}" />
+                                      Text="{Loc 'ui-options-vp-vertical-fit'}"
+                                      ToolTip="{Loc 'ui-options-vp-vertical-fit-tooltip'}" />
             </BoxContainer>
 
             <BoxContainer Name="ViewportScaleBox" Orientation="Horizontal" SeparationOverride="12">
-                <Label Name="ViewportScaleText" />
+                <uik:UIKLabel Name="ViewportScaleText" />
                 <uik:UIKSlider Name="ViewportScaleSlider"
-                                      MinValue="1"
-                                      MaxValue="5"
-                                      Rounded="True"
-                                      MinWidth="200" />
+                               MinValue="1"
+                               MaxValue="5"
+                               Rounded="True"
+                               MinWidth="200" />
             </BoxContainer>
 
             <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-                <Label Name="ViewportWidthSliderDisplay" />
+                <uik:UIKLabel Name="ViewportWidthSliderDisplay" />
                 <uik:UIKSlider Name="ViewportWidthSlider"
-                                      Rounded="True"
-                                      MinWidth="200" />
+                               Rounded="True"
+                               MinWidth="200" />
             </BoxContainer>
         </BoxContainer>
 
         <BoxContainer Orientation="Vertical" SeparationOverride="8">
             <uik:UIKFancyCheckBox Name="ViewportLowResCheckBox" Text="{Loc 'ui-options-vp-low-res'}" />
             <uik:UIKFancyCheckBox Name="ParallaxLowQualityCheckBox"
-                                    Text="{Loc 'ui-options-parallax-low-quality'}" />
+                                  Text="{Loc 'ui-options-parallax-low-quality'}" />
             <uik:UIKFancyCheckBox Name="FpsCounterCheckBox" Text="{Loc 'ui-options-fps-counter'}" />
             <uik:UIKFancyCheckBox Name="MoodVisualEffectsCheckBox" Text="{Loc 'ui-options-mood-visual-effects'}" />
         </BoxContainer>
     </BoxContainer>
 
     <uik:UIKButton Name="ApplyButton"
-                          Color="Accent"
-                          Text="{Loc 'ui-options-apply'}"
-                          HorizontalAlignment="Right" />
+                   Color="Accent"
+                   Text="{Loc 'ui-options-apply'}"
+                   HorizontalAlignment="Right" />
 </BoxContainer>

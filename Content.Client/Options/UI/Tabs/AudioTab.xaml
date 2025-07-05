@@ -6,109 +6,131 @@
               SeparationOverride="8">
     <BoxContainer Orientation="Vertical" SeparationOverride="8">
         <uik:UIKLabel Text="{Loc 'ui-options-volume-label'}"
-                             TextStyle="Headline" />
+                      TextStyle="Headline" />
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-            <Label Text="{Loc 'ui-options-master-volume'}" HorizontalExpand="True" />
+            <uik:UIKLabel Text="{Loc 'ui-options-master-volume'}"
+                          HorizontalExpand="True" />
 
-            <uik:UIKSlider Name="MasterVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True"
-                                  MinSize="80 0" Rounded="True" />
+            <uik:UIKSlider Name="MasterVolumeSlider" MinValue="0"
+                           MaxValue="100" HorizontalExpand="True"
+                           MinSize="80 0" Rounded="True" />
 
-            <Label Name="MasterVolumeLabel" MinSize="48 0" Align="Right" />
+            <uik:UIKLabel Name="MasterVolumeLabel" MinSize="48 0"
+                          Align="Right" />
         </BoxContainer>
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-            <Label Text="{Loc 'ui-options-midi-volume'}" HorizontalExpand="True" />
+            <uik:UIKLabel Text="{Loc 'ui-options-midi-volume'}"
+                          HorizontalExpand="True" />
 
-            <uik:UIKSlider Name="MidiVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True"
-                                  MinSize="80 0"
-                                  Rounded="True" />
+            <uik:UIKSlider Name="MidiVolumeSlider" MinValue="0"
+                           MaxValue="100" HorizontalExpand="True"
+                           MinSize="80 0" Rounded="True" />
 
-            <Label Name="MidiVolumeLabel" MinSize="48 0" Align="Right" />
+            <uik:UIKLabel Name="MidiVolumeLabel" MinSize="48 0" Align="Right" />
         </BoxContainer>
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-            <Label Text="{Loc 'ui-options-ambient-music-volume'}" HorizontalExpand="True" />
+            <uik:UIKLabel Text="{Loc 'ui-options-ambient-music-volume'}"
+                          HorizontalExpand="True" />
 
-            <uik:UIKSlider Name="AmbientMusicVolumeSlider" MinValue="0" MaxValue="100"
-                                  HorizontalExpand="True"
-                                  MinSize="80 0" Rounded="True" />
+            <uik:UIKSlider Name="AmbientMusicVolumeSlider" MinValue="0"
+                           MaxValue="100" HorizontalExpand="True"
+                           MinSize="80 0" Rounded="True" />
 
-            <Label Name="AmbientMusicVolumeLabel" MinSize="48 0" Align="Right" />
+            <uik:UIKLabel Name="AmbientMusicVolumeLabel" MinSize="48 0"
+                          Align="Right" />
         </BoxContainer>
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-            <Label Text="{Loc 'ui-options-ambience-volume'}" HorizontalExpand="True" />
+            <uik:UIKLabel Text="{Loc 'ui-options-ambience-volume'}"
+                          HorizontalExpand="True" />
 
-            <uik:UIKSlider Name="AmbienceVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True"
-                                  MinSize="80 0" Rounded="True" />
+            <uik:UIKSlider Name="AmbienceVolumeSlider" MinValue="0"
+                           MaxValue="100" HorizontalExpand="True"
+                           MinSize="80 0" Rounded="True" />
 
-            <Label Name="AmbienceVolumeLabel" MinSize="48 0" Align="Right" />
+            <uik:UIKLabel Name="AmbienceVolumeLabel"
+                          MinSize="48 0" Align="Right" />
         </BoxContainer>
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-            <Label Text="{Loc 'ui-options-lobby-volume'}" HorizontalExpand="True" />
+            <uik:UIKLabel Text="{Loc 'ui-options-lobby-volume'}"
+                          HorizontalExpand="True" />
 
-            <uik:UIKSlider Name="LobbyVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True"
-                                  MinSize="80 0"
-                                  Rounded="True" />
+            <uik:UIKSlider Name="LobbyVolumeSlider" MinValue="0"
+                           MaxValue="100" HorizontalExpand="True"
+                           MinSize="80 0" Rounded="True" />
 
-            <Label Name="LobbyVolumeLabel" MinSize="48 0" Align="Right" />
+            <uik:UIKLabel Name="LobbyVolumeLabel"
+                          MinSize="48 0" Align="Right" />
         </BoxContainer>
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-            <Label Text="{Loc 'ui-options-interface-volume'}" HorizontalExpand="True" />
+            <uik:UIKLabel Text="{Loc 'ui-options-interface-volume'}"
+                          HorizontalExpand="True" />
 
-            <uik:UIKSlider Name="InterfaceVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True"
-                                  MinSize="80 0" Rounded="True" />
+            <uik:UIKSlider Name="InterfaceVolumeSlider" MinValue="0"
+                           MaxValue="100" HorizontalExpand="True"
+                           MinSize="80 0" Rounded="True" />
 
-            <Label Name="InterfaceVolumeLabel" MinSize="48 0" Align="Right" />
+            <uik:UIKLabel Name="InterfaceVolumeLabel"
+                          MinSize="48 0"
+                          Align="Right" />
         </BoxContainer>
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-            <Label Text="{Loc 'ui-options-ambience-max-sounds'}" HorizontalExpand="True" />
+            <uik:UIKLabel Text="{Loc 'ui-options-ambience-max-sounds'}"
+                          HorizontalExpand="True" />
 
-            <uik:UIKSlider Name="AmbienceSoundsSlider" MinValue="0" MaxValue="1" HorizontalExpand="True"
-                                  MinSize="80 0" Rounded="True" />
+            <uik:UIKSlider Name="AmbienceSoundsSlider" MinValue="0"
+                           MaxValue="1" HorizontalExpand="True"
+                           MinSize="80 0" Rounded="True" />
 
-            <Label Name="AmbienceSoundsLabel" MinSize="48 0" Align="Right" />
+            <uik:UIKLabel Name="AmbienceSoundsLabel"
+                          MinSize="48 0" Align="Right" />
         </BoxContainer>
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-            <Label Text="{Loc 'ui-options-announcer-volume'}" HorizontalExpand="True" />
+            <uik:UIKLabel Text="{Loc 'ui-options-announcer-volume'}"
+                          HorizontalExpand="True" />
 
-            <uik:UIKSlider Name="AnnouncerVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True"
-                                  MinSize="80 0" Rounded="True" />
+            <uik:UIKSlider Name="AnnouncerVolumeSlider" MinValue="0"
+                           MaxValue="100" HorizontalExpand="True"
+                           MinSize="80 0" Rounded="True" />
 
-            <Label Name="AnnouncerVolumeLabel" MinSize="48 0" Align="Right" />
+            <uik:UIKLabel Name="AnnouncerVolumeLabel"
+                          MinSize="48 0"
+                          Align="Right" />
         </BoxContainer>
 
         <BoxContainer Orientation="Vertical" SeparationOverride="8">
             <uik:UIKFancyCheckBox Name="LobbyMusicCheckBox"
-                                    Text="{Loc 'ui-options-lobby-music'}" />
+                                  Text="{Loc 'ui-options-lobby-music'}" />
 
             <uik:UIKFancyCheckBox Name="RestartSoundsCheckBox"
-                                    Text="{Loc 'ui-options-restart-sounds'}" />
+                                  Text="{Loc 'ui-options-restart-sounds'}" />
 
             <uik:UIKFancyCheckBox Name="EventMusicCheckBox"
-                                    Text="{Loc 'ui-options-event-music'}" />
+                                  Text="{Loc 'ui-options-event-music'}" />
 
             <uik:UIKFancyCheckBox Name="AnnouncerDisableMultipleSoundsCheckBox"
-                                    Text="{Loc 'ui-options-announcer-disable-multiple-sounds'}"
-                                    ToolTip="{Loc 'ui-options-announcer-disable-multiple-sounds-tooltip'}" />
+                                  Text="{Loc 'ui-options-announcer-disable-multiple-sounds'}"
+                                  ToolTip="{Loc 'ui-options-announcer-disable-multiple-sounds-tooltip'}" />
 
             <uik:UIKFancyCheckBox Name="AdminSoundsCheckBox"
-                                    Text="{Loc 'ui-options-admin-sounds'}" />
+                                  Text="{Loc 'ui-options-admin-sounds'}" />
         </BoxContainer>
     </BoxContainer>
 
     <BoxContainer Orientation="Horizontal" Align="End" HorizontalExpand="True" SeparationOverride="12">
         <uik:UIKButton Name="ResetButton"
-                              Text="{Loc 'ui-options-reset-all'}"
-                              HorizontalAlignment="Right" />
+                       Text="{Loc 'ui-options-reset-all'}"
+                       HorizontalAlignment="Right" />
         <uik:UIKButton Name="ApplyButton"
-                              Color="Accent"
-                              Text="{Loc 'ui-options-apply'}"
-                              HorizontalAlignment="Right" />
+                       Color="Accent"
+                       Text="{Loc 'ui-options-apply'}"
+                       HorizontalAlignment="Right" />
     </BoxContainer>
 </BoxContainer>

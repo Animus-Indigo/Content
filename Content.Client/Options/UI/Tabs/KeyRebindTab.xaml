@@ -1,5 +1,4 @@
 ﻿<BoxContainer xmlns="https://spacestation14.io"
-              xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
               xmlns:uik="clr-namespace:Content.Client.UIKit.Controls"
               HorizontalExpand="True"
               Orientation="Vertical"
@@ -7,19 +6,19 @@
     <BoxContainer Orientation="Vertical" SeparationOverride="8">
         <BoxContainer Orientation="Horizontal" SeparationOverride="12"
                       HorizontalExpand="True">
-            <Label Text="{Loc ui-options-binds-keys-preset}" />
+            <uik:UIKLabel Text="{Loc ui-options-binds-keys-preset}" />
 
             <uik:UIKOptionButton Name="KeyPresetsOption" />
 
-            <controls:HSpacer HorizontalExpand="True" />
+            <Control HorizontalExpand="True" />
 
             <uik:UIKButton Text="{Loc 'ui-options-binds-apply-keys-preset'}"
-                                  Color="Accent"
-                                  Name="ApplyKeysPreset" />
+                           Color="Accent"
+                           Name="ApplyKeysPreset" />
         </BoxContainer>
 
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-            <Label Text="{Loc 'ui-options-binds-search'}" />
+            <uik:UIKLabel Text="{Loc 'ui-options-binds-search'}" />
 
             <LineEdit Name="SearchInput"
                       HorizontalExpand="True"
@@ -38,14 +37,14 @@
     <BoxContainer Orientation="Horizontal" SeparationOverride="12" HorizontalExpand="True">
         <uik:UIKLabel
             Text="{Loc 'ui-options-binds-explanation'}"
-            FontWeight="SemiBold"
+            TextStyle="Footnote"
             HorizontalAlignment="Left" />
 
-        <controls:HSpacer HorizontalExpand="True" />
+        <Control HorizontalExpand="True" />
 
         <uik:UIKButton Name="ResetAllButton"
-                              Color="Danger"
-                              Text="{Loc 'ui-options-binds-reset-all'}"
-                              HorizontalAlignment="Right" />
+                       Color="Danger"
+                       Text="{Loc 'ui-options-binds-reset-all'}"
+                       HorizontalAlignment="Right" />
     </BoxContainer>
 </BoxContainer>
