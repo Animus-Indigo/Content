@@ -35,6 +35,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg
   - type: AmmoCounter
+  - type: Execution
   - type: Appearance
   - type: GenericVisualizer
     visuals:
