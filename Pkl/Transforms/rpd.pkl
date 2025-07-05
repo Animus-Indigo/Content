@@ -66,9 +66,6 @@ output: Index.TransformFunction = (v) -> v.add(new Typings.EntityPrototype {
 }).add(new Typings.EntityPrototype {
     parent { "RPD" }
     id = "RPDRecharging"
-    name = "experimental RPD"
-    description = "A bluespace-enhanced rapid piping device that passively generates its own compressed matter."
-    suffix = "AutoRecharge"
     components {
         new Typings.LimitedChargesComponent {
             maxCharges = 25
@@ -81,9 +78,6 @@ output: Index.TransformFunction = (v) -> v.add(new Typings.EntityPrototype {
 }).add(new Typings.EntityPrototype {
     parent { "RPD" }
     id = "RPDExperimental"
-    suffix = "Admeme"
-    name = "experimental RPD"
-    description = "A bluespace-enhanced rapid piping device that passively generates its own compressed matter."
     components {
         new Typings.AutoRechargeComponent {
             rechargeDuration = "1"

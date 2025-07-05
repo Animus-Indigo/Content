@@ -10,8 +10,6 @@ const local function getIDs(v: Index.Content): Set<String> =
 output: Index.TransformFunction = (v) -> v.add(new Typings.EntityPrototype {
     parent { "BaseItem" }
     id = "RCD"
-    name = "RCD"
-    description = "The rapid construction device can be used to quickly place and remove various station structures and fixtures. Requires compressed matter to function."
     components {
         new Typings.RCDComponent {
             availablePrototypes = getIDs(v)
@@ -76,7 +74,6 @@ output: Index.TransformFunction = (v) -> v.add(new Typings.EntityPrototype {
 }).add(new Typings.EntityPrototype {
     parent { "RCD" }
     id = "RCDEmpty"
-    suffix = "Empty"
     components {
         new Typings.LimitedChargesComponent {
             charges = 0
@@ -85,8 +82,6 @@ output: Index.TransformFunction = (v) -> v.add(new Typings.EntityPrototype {
 }).add(new Typings.EntityPrototype {
     parent { "RCD" }
     id = "RCDRecharging"
-    name = "experimental RCD"
-    description = "A bluespace-enhanced rapid construction device that passively generates its own compressed matter."
     suffix = "AutoRecharge"
     components {
         new Typings.LimitedChargesComponent {
