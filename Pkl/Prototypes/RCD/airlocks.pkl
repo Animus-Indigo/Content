@@ -1,0 +1,44 @@
+amends ".../Typings.pkl"
+
+import ".../Transforms/rcd.pkl"
+
+content {
+    new rcd.SmartRCDPrototype {
+        id = "Airlock"
+        category = "Airlocks"
+        sprite = "/Textures/Interface/Radial/RCD/airlock.png"
+        mode = "ConstructObject"
+        prototype = "Airlock"
+        cost = 4
+        delay = 4.0
+        collisionMask = "FullTileMask"
+        rotation = "Camera"
+        fx = "EffectRCDConstruct4"
+    }
+
+    new rcd.SmartRCDPrototype {
+        id = "AirlockGlass"
+        category = "Airlocks"
+        sprite = "/Textures/Interface/Radial/RCD/glass_airlock.png"
+        mode = "ConstructObject"
+        prototype = "AirlockGlass"
+        cost = 4
+        delay = 4.0
+        collisionMask = "FullTileMask"
+        rotation = "Camera"
+        fx = "EffectRCDConstruct4"
+    }
+
+    new rcd.SmartRCDPrototype {
+        id = "Firelock"
+        category = "Airlocks"
+        sprite = "/Textures/Interface/Radial/RCD/firelock.png"
+        mode = "ConstructObject"
+        prototype = "Firelock"
+        cost = 4
+        delay = 3.0
+        collisionMask = "FullTileMask"
+        rotation = "Camera"
+        fx = "EffectRCDConstruct3"
+    }
+}

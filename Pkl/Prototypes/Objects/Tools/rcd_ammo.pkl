@@ -1,0 +1,36 @@
+amends ".../Typings.pkl"
+
+content {
+    new EntityPrototype {
+        parent { "BaseItem" }
+        id = "RCDAmmo"
+        name = "compressed matter"
+        description = "A cartridge of raw matter compacted by bluespace technology. Used in rapid construction devices."
+        components {
+            new RCDAmmoComponent {}
+            new SpriteComponent {
+                sprite = "/Textures/Objects/Tools/rcd.rsi"
+                state = "ammo"
+            }
+            new ItemComponent {
+                sprite = "/Textures/Objects/Tools/rcd.rsi"
+                heldPrefix = "ammo"
+            }
+            new PhysicalCompositionComponent {
+                materialComposition {
+                    ["Steel"] = 300
+                    ["Plastic"] = 100
+                }
+            }
+            new StaticPriceComponent {
+                price = 60.0
+            }
+            new ReverseEngineeringComponent {
+                difficulty = 3
+                recipes {
+                    "RCDAmmo"
+                }
+            }
+        }
+    }
+}

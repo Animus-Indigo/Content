@@ -1,44 +1,62 @@
 import ".../Typings.pkl"
 import ".../Index.pkl"
 
-class SmartRPDPrototype extends Typings.RCDPrototype {
+class SmartRCDPrototype extends Typings.RCDPrototype {
 }
 
 const local function getIDs(v: Index.Content): Set<String> =
-    v.filter((p) -> p is SmartRPDPrototype).map((p) -> p.id).toSet()
+    v.filter((p) -> p is SmartRCDPrototype).map((p) -> p.id).toSet()
 
 output: Index.TransformFunction = (v) -> v.add(new Typings.EntityPrototype {
-    parent { "RCD" }
-    id = "RPD"
+    parent { "BaseItem" }
+    id = "RCD"
+    name = "RCD"
+    description = "The rapid construction device can be used to quickly place and remove various station structures and fixtures. Requires compressed matter to function."
     components {
-        new Typings.TagComponent {
-            tags = Set("RPD")
-        }
         new Typings.RCDComponent {
-            isRpd = true
             availablePrototypes = getIDs(v)
         }
         new Typings.LimitedChargesComponent {
-            maxCharges = 50
-            charges = 50
+            maxCharges = 30
+            charges = 30
         }
+        new Typings.UseDelayComponent {}
         new Typings.SpriteComponent {
-            sprite = "/Textures/Objects/Tools/rpd.rsi"
+            sprite = "/Textures/Objects/Tools/rcd.rsi"
+            state = "icon"
+        }
+        new Typings.ItemComponent {
+            size = "Normal"
+        }
+        new Typings.ClothingComponent {
+            sprite = "/Textures/Objects/Tools/rcd.rsi"
+            quickEquip = false
+            slots = "BELT"
         }
         new Typings.PhysicalCompositionComponent {
             materialComposition {
-                ["Steel"] = 500
-                ["Plastic"] = 150
+                ["Steel"] = 400
+                ["Plastic"] = 100
                 ["Circuitry"] = 50
             }
         }
         new Typings.StaticPriceComponent {
             price = 100.0
         }
+        new Typings.UserInterfaceComponent {
+            interfaces {
+                ["enum.RcdUiKey.Key"] {
+                    type = "RCDMenuBoundUserInterface"
+                }
+            }
+        }
+        new Typings.ActivatableUIComponent {
+            key = "enum.RcdUiKey.Key"
+        }
         new Typings.ReverseEngineeringComponent {
             difficulty = 3
             recipes {
-                "RPD"
+                "RCD"
             }
         }
         new Typings.FixturesComponent {
@@ -56,34 +74,35 @@ output: Index.TransformFunction = (v) -> v.add(new Typings.EntityPrototype {
         }
     }
 }).add(new Typings.EntityPrototype {
-    parent { "RPD" }
-    id = "RPDEmpty"
+    parent { "RCD" }
+    id = "RCDEmpty"
+    suffix = "Empty"
     components {
         new Typings.LimitedChargesComponent {
             charges = 0
         }
     }
 }).add(new Typings.EntityPrototype {
-    parent { "RPD" }
-    id = "RPDRecharging"
-    name = "experimental RPD"
-    description = "A bluespace-enhanced rapid piping device that passively generates its own compressed matter."
+    parent { "RCD" }
+    id = "RCDRecharging"
+    name = "experimental RCD"
+    description = "A bluespace-enhanced rapid construction device that passively generates its own compressed matter."
     suffix = "AutoRecharge"
     components {
         new Typings.LimitedChargesComponent {
-            maxCharges = 25
-            charges = 25
+            maxCharges = 20
+            charges = 20
         }
         new Typings.AutoRechargeComponent {
             rechargeDuration = "10"
         }
     }
 }).add(new Typings.EntityPrototype {
-    parent { "RPD" }
-    id = "RPDExperimental"
+    parent { "RCD" }
+    id = "RCDExperimental"
     suffix = "Admeme"
-    name = "experimental RPD"
-    description = "A bluespace-enhanced rapid piping device that passively generates its own compressed matter."
+    name = "experimental RCD"
+    description = "A bluespace-enhanced rapid construction device that passively generates its own compressed matter."
     components {
         new Typings.AutoRechargeComponent {
             rechargeDuration = "1"

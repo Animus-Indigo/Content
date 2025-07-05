@@ -1,0 +1,61 @@
+amends ".../Typings.pkl"
+
+import ".../Transforms/rcd.pkl"
+
+content {
+    new rcd.SmartRCDPrototype {
+        id = "LVCable"
+        category = "Electrical"
+        sprite = "/Textures/Interface/Radial/RCD/lv_coil.png"
+        mode = "ConstructObject"
+        prototype = "CableApcExtension"
+        cost = 1
+        delay = 0.0
+        collisionMask = "InteractImpassable"
+        rules = Set("MustBuildOnSubfloor")
+        rotation = "Fixed"
+        fx = "EffectRCDConstruct0"
+    }
+
+    new rcd.SmartRCDPrototype {
+        id = "MVCable"
+        category = "Electrical"
+        sprite = "/Textures/Interface/Radial/RCD/mv_coil.png"
+        mode = "ConstructObject"
+        prototype = "CableMV"
+        cost = 1
+        delay = 0.0
+        collisionMask = "InteractImpassable"
+        rules = Set("MustBuildOnSubfloor")
+        rotation = "Fixed"
+        fx = "EffectRCDConstruct0"
+    }
+
+    new rcd.SmartRCDPrototype {
+        id = "HVCable"
+        category = "Electrical"
+        sprite = "/Textures/Interface/Radial/RCD/hv_coil.png"
+        mode = "ConstructObject"
+        prototype = "CableHV"
+        cost = 1
+        delay = 0.0
+        collisionMask = "InteractImpassable"
+        rules = Set("MustBuildOnSubfloor")
+        rotation = "Fixed"
+        fx = "EffectRCDConstruct0"
+    }
+
+    new rcd.SmartRCDPrototype {
+        id = "CableTerminal"
+        category = "Electrical"
+        sprite = "/Textures/Interface/Radial/RCD/cable_terminal.png"
+        mode = "ConstructObject"
+        prototype = "CableTerminal"
+        cost = 1
+        delay = 0.0
+        collisionMask = "InteractImpassable"
+        rules = Set("MustBuildOnSubfloor")
+        rotation = "User"
+        fx = "EffectRCDConstruct0"
+    }
+}

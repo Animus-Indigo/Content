@@ -1,0 +1,47 @@
+amends ".../Typings.pkl"
+
+import ".../Transforms/rcd.pkl"
+
+content {
+    new rcd.SmartRCDPrototype {
+        id = "Plating"
+        name = "rcd-component-plating"
+        category = "WallsAndFlooring"
+        sprite = "/Textures/Interface/Radial/RCD/plating.png"
+        mode = "ConstructTile"
+        prototype = "Plating"
+        cost = 1
+        delay = 1.0
+        collisionMask = "InteractImpassable"
+        rules = Set("CanBuildOnEmptyTile")
+        fx = "EffectRCDConstruct1"
+    }
+
+    new rcd.SmartRCDPrototype {
+        id = "FloorSteel"
+        name = "rcd-component-floor-steel"
+        category = "WallsAndFlooring"
+        sprite = "/Textures/Interface/Radial/RCD/metal_tile.png"
+        mode = "ConstructTile"
+        prototype = "FloorSteel"
+        cost = 1
+        delay = 1.0
+        collisionMask = "InteractImpassable"
+        rules = Set("CanBuildOnEmptyTile")
+        fx = "EffectRCDConstruct1"
+    }
+
+    new rcd.SmartRCDPrototype {
+        id = "Catwalk"
+        category = "WallsAndFlooring"
+        sprite = "/Textures/Interface/Radial/RCD/catwalk.png"
+        mode = "ConstructObject"
+        prototype = "Catwalk"
+        cost = 1
+        delay = 1.0
+        collisionMask = "InteractImpassable"
+        rules = Set("MustBuildOnSubfloor", "IsCatwalk")
+        rotation = "Fixed"
+        fx = "EffectRCDConstruct1"
+    }
+}

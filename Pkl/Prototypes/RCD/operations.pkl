@@ -1,0 +1,40 @@
+amends ".../Typings.pkl"
+
+// Hidden prototype - do not add to RCDs
+
+content {
+    new RCDPrototype {
+        id = "Invalid"
+        mode = "Invalid"
+    }
+
+    new RCDPrototype {
+        id = "Deconstruct"
+        name = "rcd-component-deconstruct"
+        category = "Main"
+        sprite = "/Textures/Interface/Radial/RCD/deconstruct.png"
+        mode = "Deconstruct"
+        prototype = "EffectRCDDeconstructPreview"
+        rotation = "Camera"
+    }
+
+    new RCDPrototype {
+        id = "DeconstructLattice"
+        name = "rcd-component-deconstruct"
+        mode = "Deconstruct"
+        cost = 2
+        delay = 0.0
+        rotation = "Camera"
+        fx = "EffectRCDConstruct0"
+    }
+
+    new RCDPrototype {
+        id = "DeconstructTile"
+        name = "rcd-component-deconstruct"
+        mode = "Deconstruct"
+        cost = 4
+        delay = 4.0
+        rotation = "Camera"
+        fx = "EffectRCDDeconstruct4"
+    }
+}
