@@ -1,0 +1,67 @@
+amends ".../Typings.pkl"
+
+import ".../Transforms/rpd.pkl"
+import ".../constants.pkl"
+
+local typealias PipeLayer = constants.PipeLayer
+
+content {
+    generateFilter(0)
+    generateFilter(1)
+    generateFilter(2)
+    generateFilter(3)
+    generateFilter(4)
+
+    generateMixer(0)
+    generateMixer(1)
+    generateMixer(2)
+    generateMixer(3)
+    generateMixer(4)
+
+    generatePressureControlledValve(0)
+    generatePressureControlledValve(1)
+    generatePressureControlledValve(2)
+    generatePressureControlledValve(3)
+    generatePressureControlledValve(4)
+}
+
+local const function generateFilter(l: PipeLayer): rpd.SmartRPDPrototype = new {
+    id = "FilterGas\(l)"
+    category = "AtmosphericUtility"
+    sprite = "/Textures/Interface/Radial/RPD/gas_filter.png"
+    mode = "ConstructObject"
+    prototype = "GasFilter\(l)"
+    mirrorPrototype = "GasFilterFlipped\(l)"
+    cost = 1
+    delay = 0.0
+    collisionMask = "Impassable"
+    rotation = "User"
+    fx = "EffectRCDConstruct0"
+}
+
+local const function generateMixer(l: PipeLayer): rpd.SmartRPDPrototype = new {
+    id = "MixerGas\(l)"
+    category = "AtmosphericUtility"
+    sprite = "/Textures/Interface/Radial/RPD/gas_mixer.png"
+    mode = "ConstructObject"
+    prototype = "GasMixer\(l)"
+    mirrorPrototype = "GasMixerFlipped\(l)"
+    cost = 1
+    delay = 0.0
+    collisionMask = "Impassable"
+    rotation = "User"
+    fx = "EffectRCDConstruct0"
+}
+
+local const function generatePressureControlledValve(l: PipeLayer): rpd.SmartRPDPrototype = new {
+    id = "PressureValve\(l)"
+    category = "PumpsValves"
+    sprite = "/Textures/Interface/Radial/RPD/pneumatic_valve.png"
+    mode = "ConstructObject"
+    prototype = "PressureControlledValve\(l)"
+    cost = 1
+    delay = 0.0
+    collisionMask = "Impassable"
+    rotation = "User"
+    fx = "EffectRCDConstruct0"
+}

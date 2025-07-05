@@ -1,11 +1,22 @@
 import "Typings.pkl"
 import* "Prototypes/**.pkl" as modules
+import* "Transforms/**.pkl" as transforms
+
+typealias Content = List<Typings.Prototype|Typings.EntityPrototype>
+typealias TransformFunction = Function1<Content, Content>
+
+const local flattenContent: Content = modules
+    .toMap()
+    .values
+    .map((m) -> m.output.value)
+    .flatten()
+
+const local flattenTransforms: List<TransformFunction> = transforms
+    .toMap()
+    .values
+    .map((m) -> m.output)
 
 output {
-    value = modules
-        .toMap()
-        .values
-        .map((m) -> m.output.value)
-        .flatten()
+    value = flattenTransforms.fold(flattenContent, (fc, t) -> t.apply(fc))
     renderer = Typings.output.renderer
 }

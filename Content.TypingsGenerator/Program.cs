@@ -579,7 +579,7 @@ internal record struct ClassDefinition : ITypeDefinition
         Name = name;
         Fields = fields;
         Base = baseClass;
-        Modifier = modifier ?? ClassModifier.None;
+        Modifier = modifier ?? ClassModifier.Open;
     }
 
     public string Stringify()
@@ -731,7 +731,7 @@ internal static class Program
             """
             // END
 
-            content: Listing<Prototype|EntityPrototype> = new {}
+            content: Listing<Prototype|EntityPrototype>
 
             local const function RenderTaggedClass(v: TaggedClass): Any = new Mapping {
                 [new RenderDirective { text = "!type" }] = new RenderDirective { text = v.getClass().simpleName }
@@ -1023,9 +1023,6 @@ internal static class Program
                     newClass = newClass with { Base = new Type("Prototype", false, null), };
                 else if (t.IsAssignableTo(typeof(Component)))
                     newClass = newClass with { Base = new Type("Component", false, null), };
-
-                if (t.IsAssignableTo(typeof(IInheritingPrototype)))
-                    newClass = newClass with { Modifier = ClassModifier.Open, };
 
                 def = new Type(newClass.Name, false, null);
 

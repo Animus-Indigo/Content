@@ -1,0 +1,73 @@
+import ".../Typings.pkl"
+import ".../Index.pkl"
+
+class SmartRPDPrototype extends Typings.RCDPrototype {
+}
+
+const local function getIDs(v: Index.Content): Set<String> =
+    v.filter((p) -> p is SmartRPDPrototype).map((p) -> p.id).toSet()
+
+output: Index.TransformFunction = (v) -> v.add(new Typings.EntityPrototype {
+    parent { "RCD" }
+    id = "RPD"
+    components {
+        new Typings.TagComponent {
+            tags = Set("RPD")
+        }
+        new Typings.RCDComponent {
+            isRpd = true
+            availablePrototypes = getIDs(v)
+        }
+        new Typings.LimitedChargesComponent {
+            maxCharges = 50
+            charges = 50
+        }
+        new Typings.SpriteComponent {
+            sprite = "/Textures/Objects/Tools/rpd.rsi"
+        }
+        new Typings.PhysicalCompositionComponent {
+            materialComposition {
+                ["Steel"] = 500
+                ["Plastic"] = 150
+                ["Circuitry"] = 50
+            }
+        }
+        new Typings.StaticPriceComponent {
+            price = 100.0
+        }
+        new Typings.ReverseEngineeringComponent {
+            difficulty = 3
+            recipes {
+                "RPD"
+            }
+        }
+        new Typings.FixturesComponent {
+            fixtures {
+                ["fix1"] {
+                    shape = new Typings.PhysShapeAabb {
+                        bounds = Typings.Box2(-0.25, -0.25, 0.25, 0.25)
+                    }
+                    density = 65.0
+                    mask = Set("ItemMask")
+                    restitution = 0.3
+                    friction = 0.2
+                }
+            }
+        }
+    }
+}).add(new Typings.EntityPrototype {
+    parent { "RPD" }
+    id = "RPDEmpty"
+    components {
+        new Typings.LimitedChargesComponent {
+            charges = 0
+        }
+        new Typings.TagComponent {
+            tags = Set("RPD")
+        }
+        new Typings.RCDComponent {
+            isRpd = true
+            availablePrototypes = getIDs(v)
+        }
+    }
+})

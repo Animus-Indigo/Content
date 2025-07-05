@@ -1,0 +1,135 @@
+amends ".../Typings.pkl"
+
+import ".../Transforms/rpd.pkl"
+import ".../constants.pkl"
+
+local typealias PipeLayer = constants.PipeLayer
+
+content {
+    generatePressurePump(0)
+    generatePressurePump(1)
+    generatePressurePump(2)
+    generatePressurePump(3)
+    generatePressurePump(4)
+
+    generateVolumePump(0)
+    generateVolumePump(1)
+    generateVolumePump(2)
+    generateVolumePump(3)
+    generateVolumePump(4)
+
+    generateValve(0)
+    generateValve(1)
+    generateValve(2)
+    generateValve(3)
+    generateValve(4)
+
+    generateSignalControlledValve(0)
+    generateSignalControlledValve(1)
+    generateSignalControlledValve(2)
+    generateSignalControlledValve(3)
+    generateSignalControlledValve(4)
+
+    generatePort(0)
+    generatePort(1)
+    generatePort(2)
+    generatePort(3)
+    generatePort(4)
+
+    generateDualPortVentPump(0)
+    generateDualPortVentPump(1)
+    generateDualPortVentPump(2)
+    generateDualPortVentPump(3)
+    generateDualPortVentPump(4)
+
+    new rpd.SmartRPDPrototype {
+        id = "Radiator"
+        category = "AtmosphericUtility"
+        sprite = "/Textures/Interface/Radial/RPD/radiator.png"
+        mode = "ConstructObject"
+        prototype = "HeatExchanger"
+        cost = 1
+        delay = 0.0
+        collisionMask = "Impassable"
+        rotation = "User"
+        fx = "EffectRCDConstruct0"
+    }
+}
+
+local const function generatePressurePump(l: PipeLayer): rpd.SmartRPDPrototype = new {
+    id = "PressurePump\(l)"
+    category = "PumpsValves"
+    sprite = "/Textures/Interface/Radial/RPD/pump_pressure.png"
+    mode = "ConstructObject"
+    prototype = "GasPressurePump\(l)"
+    cost = 1
+    delay = 0.0
+    collisionMask = "Impassable"
+    rotation = "User"
+    fx = "EffectRCDConstruct0"
+}
+
+local const function generateVolumePump(l: PipeLayer): rpd.SmartRPDPrototype = new {
+    id = "VolumePump\(l)"
+    category = "PumpsValves"
+    sprite = "/Textures/Interface/Radial/RPD/pump_volume.png"
+    mode = "ConstructObject"
+    prototype = "GasVolumePump\(l)"
+    cost = 1
+    delay = 0.0
+    collisionMask = "Impassable"
+    rotation = "User"
+    fx = "EffectRCDConstruct0"
+}
+
+local const function generateValve(l: PipeLayer): rpd.SmartRPDPrototype = new {
+    id = "Valve\(l)"
+    category = "PumpsValves"
+    sprite = "/Textures/Interface/Radial/RPD/pump_manual_valve.png"
+    mode = "ConstructObject"
+    prototype = "GasValve\(l)"
+    cost = 1
+    delay = 0.0
+    collisionMask = "Impassable"
+    rotation = "User"
+    fx = "EffectRCDConstruct0"
+}
+
+local const function generateSignalControlledValve(l: PipeLayer): rpd.SmartRPDPrototype = new {
+    id = "SignalValve\(l)"
+    category = "PumpsValves"
+    sprite = "/Textures/Interface/Radial/RPD/pump_signal_valve.png"
+    mode = "ConstructObject"
+    prototype = "SignalControlledValve\(l)"
+    cost = 1
+    delay = 0.0
+    collisionMask = "Impassable"
+    rotation = "User"
+    fx = "EffectRCDConstruct0"
+}
+
+local const function generatePort(l: PipeLayer): rpd.SmartRPDPrototype = new {
+    id = "CanisterPort\(l)"
+    category = "AtmosphericUtility"
+    sprite = "/Textures/Interface/Radial/RPD/port.png"
+    mode = "ConstructObject"
+    prototype = "GasPort\(l)"
+    cost = 1
+    delay = 0.0
+    collisionMask = "Impassable"
+    rotation = "User"
+    fx = "EffectRCDConstruct0"
+}
+
+local const function generateDualPortVentPump(l: PipeLayer): rpd.SmartRPDPrototype = new {
+    id = "DualPortVent\(l)"
+    category = "Vents"
+    sprite = "/Textures/Interface/Radial/RPD/dual_port.png"
+    mode = "ConstructObject"
+    prototype = "GasDualPortVentPump\(l)"
+    cost = 1
+    delay = 0.0
+    collisionMask = "Impassable"
+    rotation = "User"
+    fx = "EffectRCDConstruct0"
+}

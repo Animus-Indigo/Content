@@ -1,0 +1,84 @@
+amends ".../Typings.pkl"
+
+import ".../Transforms/rpd.pkl"
+import ".../constants.pkl"
+
+local typealias PipeLayer = constants.PipeLayer
+
+content {
+    generateVentPump(0)
+    generateVentPump(1)
+    generateVentPump(2)
+    generateVentPump(3)
+    generateVentPump(4)
+
+    generatePassiveVent(0)
+    generatePassiveVent(1)
+    generatePassiveVent(2)
+    generatePassiveVent(3)
+    generatePassiveVent(4)
+
+    generateVentScrubber(0)
+    generateVentScrubber(1)
+    generateVentScrubber(2)
+    generateVentScrubber(3)
+    generateVentScrubber(4)
+
+    generateOutletInjector(0)
+    generateOutletInjector(1)
+    generateOutletInjector(2)
+    generateOutletInjector(3)
+    generateOutletInjector(4)
+}
+
+local const function generateVentPump(l: PipeLayer): rpd.SmartRPDPrototype = new {
+    id = "VentGas\(l)"
+    category = "Vents"
+    sprite = "/Textures/Interface/Radial/RPD/vent_off.png"
+    mode = "ConstructObject"
+    prototype = "GasVentPump\(l)"
+    cost = 1
+    delay = 0.0
+    collisionMask = "Impassable"
+    rotation = "User"
+    fx = "EffectRCDConstruct0"
+}
+
+local const function generatePassiveVent(l: PipeLayer): rpd.SmartRPDPrototype = new {
+    id = "VentPassive\(l)"
+    category = "Vents"
+    sprite = "/Textures/Interface/Radial/RPD/vent_passive.png"
+    mode = "ConstructObject"
+    prototype = "GasPassiveVent\(l)"
+    cost = 1
+    delay = 0.0
+    collisionMask = "Impassable"
+    rotation = "User"
+    fx = "EffectRCDConstruct0"
+}
+
+local const function generateVentScrubber(l: PipeLayer): rpd.SmartRPDPrototype = new {
+    id = "VentScrubber\(l)"
+    category = "Vents"
+    sprite = "/Textures/Interface/Radial/RPD/scrub_off.png"
+    mode = "ConstructObject"
+    prototype = "GasVentScrubber\(l)"
+    cost = 1
+    delay = 0.0
+    collisionMask = "Impassable"
+    rotation = "User"
+    fx = "EffectRCDConstruct0"
+}
+
+local const function generateOutletInjector(l: PipeLayer): rpd.SmartRPDPrototype = new {
+    id = "OutletInjector\(l)"
+    category = "Vents"
+    sprite = "/Textures/Interface/Radial/RPD/injector.png"
+    mode = "ConstructObject"
+    prototype = "GasOutletInjector\(l)"
+    cost = 1
+    delay = 0.0
+    collisionMask = "Impassable"
+    rotation = "User"
+    fx = "EffectRCDConstruct0"
+}

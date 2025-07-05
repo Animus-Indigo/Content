@@ -1,0 +1,81 @@
+amends ".../Typings.pkl"
+
+import ".../Transforms/rpd.pkl"
+import ".../constants.pkl"
+
+local typealias PipeLayer = constants.PipeLayer
+
+content {
+    generatePipeStraight(0)
+    generatePipeStraight(1)
+    generatePipeStraight(2)
+    generatePipeStraight(3)
+    generatePipeStraight(4)
+
+    generatePipeBend(0)
+    generatePipeBend(1)
+    generatePipeBend(2)
+    generatePipeBend(3)
+    generatePipeBend(4)
+
+    generatePipeTJunction(0)
+    generatePipeTJunction(1)
+    generatePipeTJunction(2)
+    generatePipeTJunction(3)
+    generatePipeTJunction(4)
+
+    generatePipeFourway(0)
+    generatePipeFourway(1)
+    generatePipeFourway(2)
+    generatePipeFourway(3)
+    generatePipeFourway(4)
+}
+
+local const function generatePipeStraight(l: PipeLayer): rpd.SmartRPDPrototype = new {
+    id = "PipeStraight\(l)"
+    category = "Piping"
+    sprite = "/Textures/Interface/Radial/RPD/straight.png"
+    mode = "ConstructObject"
+    prototype = "GasPipeStraight\(l)"
+    cost = 1
+    delay = 0.0
+    rotation = "User"
+    fx = "EffectRCDConstruct0"
+}
+
+local const function generatePipeBend(l: PipeLayer): rpd.SmartRPDPrototype = new {
+    id = "PipeBend\(l)"
+    category = "Piping"
+    sprite = "/Textures/Interface/Radial/RPD/bend.png"
+    mode = "ConstructObject"
+    prototype = "GasPipeBend\(l)"
+    cost = 1
+    delay = 0.0
+    rotation = "User"
+    fx = "EffectRCDConstruct0"
+}
+
+local const function generatePipeTJunction(l: PipeLayer): rpd.SmartRPDPrototype = new {
+    id = "PipeTJunction\(l)"
+    category = "Piping"
+    sprite = "/Textures/Interface/Radial/RPD/tjunction.png"
+    mode = "ConstructObject"
+    prototype = "GasPipeTJunction\(l)"
+    cost = 1
+    delay = 0.0
+    collisionMask = "Impassable"
+    rotation = "User"
+    fx = "EffectRCDConstruct0"
+}
+
+local const function generatePipeFourway(l: PipeLayer): rpd.SmartRPDPrototype = new {
+    id = "PiepFourway\(l)"
+    category = "Piping"
+    sprite = "/Textures/Interface/Radial/RPD/fourway.png"
+    mode = "ConstructObject"
+    prototype = "GasPipeFourway\(l)"
+    cost = 1
+    delay = 0.0
+    rotation = "User"
+    fx = "EffectRCDConstruct0"
+}
