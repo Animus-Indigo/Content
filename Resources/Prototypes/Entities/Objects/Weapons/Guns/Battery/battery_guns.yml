@@ -29,6 +29,7 @@
     steps: 5
     zeroVisible: false
   - type: Appearance
+  - type: Execution
   - type: StaticPrice
     price: 500
   - type: MeleeWeapon
