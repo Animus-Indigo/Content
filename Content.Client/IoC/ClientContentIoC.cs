@@ -5,6 +5,7 @@ using Content.Client.DeltaV.NanoChat;
 using Content.Client.DiscordAuth;
 using Content.Client.JoinQueue;
 using Content.Client.DebugMon;
+using Content.Client.DrawKit;
 using Content.Client.Eui;
 using Content.Client.Fullscreen;
 using Content.Client.GameBar;
@@ -28,6 +29,8 @@ using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
+
+
 namespace Content.Client.IoC
 {
     internal static class ClientContentIoC
@@ -66,6 +69,7 @@ namespace Content.Client.IoC
             collection.Register<TypographyManager>();
             collection.Register<KeyPresetsManager>();
             collection.Register<GameBarManager>();
+            collection.Register<DrawKitManager>();
         }
     }
 }

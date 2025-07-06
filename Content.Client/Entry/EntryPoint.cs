@@ -3,6 +3,7 @@ using Content.Client.Chat.Managers;
 using Content.Client.DiscordAuth;
 using Content.Client.JoinQueue;
 using Content.Client.DebugMon;
+using Content.Client.DrawKit;
 using Content.Client.Eui;
 using Content.Client.Flash;
 using Content.Client.Fullscreen;
@@ -76,7 +77,8 @@ namespace Content.Client.Entry
         [Dependency] private readonly DiscordAuthManager                   _discordAuth                   = default!;
         [Dependency] private readonly DebugMonitorManager                  _debugMonitorManager           = default!;
         [Dependency] private readonly KeyPresetsManager                    _keyPresetsManager             = null!;
-        [Dependency] private readonly GameBarManager                    _gameBarManager             = null!;
+        [Dependency] private readonly GameBarManager                       _gameBarManager                = null!;
+        [Dependency] private readonly DrawKitManager                       _drawKitManager                = null!;
 
         public override void Init()
         {
@@ -150,6 +152,7 @@ namespace Content.Client.Entry
         {
             base.PostInit();
 
+            _drawKitManager.Initialize();
             _keyPresetsManager.Initialize();
             _stylesheetManager.Initialize();
 

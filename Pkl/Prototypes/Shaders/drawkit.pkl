@@ -1,0 +1,15 @@
+amends ".../Typings.pkl"
+
+content {
+    new ShaderPrototype {
+        id = "DrawKitCircle"
+        kind = "source"
+        path = "/Textures/Shaders/DrawKit/circle.swsl"
+    }
+
+    new ShaderPrototype {
+        id = "DrawKitRectangle"
+        kind = "source"
+        path = "/Textures/Shaders/DrawKit/rectangle.swsl"
+    }
+}

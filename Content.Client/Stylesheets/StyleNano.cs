@@ -161,19 +161,19 @@ public sealed class StyleNano : StyleBase
     public static RectBox FancyWindowPanel =>
         new()
         {
-            Rounding        = new(14.0f),
-            Borders         = new(Colors.WindowBorder, new(2.0f)),
-            InsetBorders    = new(Colors.WindowInsetBorder, new(2.0f)),
-            BackgroundColor = Colors.WindowBackground
+            Rounding = new(Rounding.Large),
+            Border   = new(Colors.WindowBorder, new(2.0f)),
+            Inset    = new(Colors.WindowInsetBorder, new(2.0f)),
+            Color    = Colors.WindowBackground.WithAlpha(0.99f)
         };
 
     public static RectBox FancyWindowPanelSmall =>
         new()
         {
-            Rounding        = new(6.0f),
-            Borders         = new(Colors.WindowBorder, new(2.0f)),
-            InsetBorders    = new(Colors.WindowInsetBorder, new(2.0f)),
-            BackgroundColor = Colors.WindowBackground
+            Rounding = new(Rounding.Small),
+            Border   = new(Colors.WindowBorder, new(2.0f)),
+            Inset    = new(Colors.WindowInsetBorder, new(2.0f)),
+            Color    = Colors.WindowBackground
         };
 
     #endregion
@@ -183,29 +183,29 @@ public sealed class StyleNano : StyleBase
     public static RectBox SliderPanel =>
         new()
         {
-            Rounding        = new(2.0f),
-            BackgroundColor = Colors.SliderBackground
+            Rounding = new(2.0f),
+            Color    = Colors.SliderBackground
         };
 
     public static RectBox SliderGrabberPanel =>
         new()
         {
-            Rounding        = new(6.0f),
-            BackgroundColor = Colors.SliderGrabberBackground
+            Rounding = new(Rounding.Xs),
+            Color    = Colors.SliderGrabberBackground
         };
 
     public static RectBox SliderGrabberPressedPanel =>
         new()
         {
-            Rounding        = new(6.0f),
-            BackgroundColor = Colors.SliderGrabberPressedBackground
+            Rounding = new(Rounding.Xs),
+            Color    = Colors.SliderGrabberPressedBackground
         };
 
     public static RectBox SliderGrabberDisabledPanel =>
         new()
         {
-            Rounding        = new(6.0f),
-            BackgroundColor = Colors.SliderGrabberDisabledBackground
+            Rounding = new(Rounding.Xs),
+            Color    = Colors.SliderGrabberDisabledBackground
         };
 
     #endregion
@@ -215,10 +215,11 @@ public sealed class StyleNano : StyleBase
     public static RectBox LineEditPanel =>
         new()
         {
-            Rounding                    = new(0.0f),
-            Borders                     = new(Colors.LineEditBorder, new(2.0f)),
-            InsetBorders                = new(Colors.LineEditInsetBorder, new(0.0f, 0.0f, 0.0f, 1.0f)),
-            BackgroundColor             = Colors.LineEditBackground,
+            Rounding = new(0.0f),
+            Border   = new(Colors.LineEditBorder, new(2.0f)),
+            // TODO: Add variable border thickness
+            // Inset                = new(Colors.LineEditInsetBorder, new(0.0f, 0.0f, 0.0f, 1.0f)),
+            Color                       = Colors.LineEditBackground,
             ContentMarginTopOverride    = 4.0f,
             ContentMarginBottomOverride = 4.0f,
             ContentMarginLeftOverride   = 8.0f
@@ -231,30 +232,30 @@ public sealed class StyleNano : StyleBase
     public static RectBox FancyCheckBoxPanel =>
         new()
         {
-            Rounding        = new(6.0f),
-            BackgroundColor = Colors.CheckBoxBackground,
-            Borders         = new(Color.Black.WithAlpha(0.1f), new(2.0f))
+            Rounding = new(Rounding.Xs),
+            Color    = Colors.CheckBoxBackground,
+            Border   = new(Color.Black.WithAlpha(0.1f), new(2.0f))
         };
 
     public static RectBox FancyCheckBoxCheckedPanel =>
         new()
         {
-            Rounding        = new(6.0f),
-            BackgroundColor = Colors.CheckBoxCheckedBackground,
-            Borders         = new(Color.Black.WithAlpha(0.1f), new(2.0f))
+            Rounding = new(Rounding.Xs),
+            Color    = Colors.CheckBoxCheckedBackground,
+            Border   = new(Color.Black.WithAlpha(0.1f), new(2.0f))
         };
 
     #endregion
 
-    #region Popup
+    #region Popupß
 
     public static RectBox FancyPopupPanel =>
         new()
         {
-            Rounding        = new(8.0f),
-            Borders         = new(Colors.PopupBorder, new(2.0f)),
-            InsetBorders    = new(Colors.PopupInsetBorder, new(2.0f)),
-            BackgroundColor = Colors.PopupBackground
+            Rounding = new(Rounding.Medium),
+            Border   = new(Colors.PopupBorder, new(2.0f)),
+            Inset    = new(Colors.PopupInsetBorder, new(2.0f)),
+            Color    = Colors.PopupBackground.WithAlpha(0.99f)
         };
 
     public static StyleBoxFlat FancyPopupItemPanel =>
@@ -276,9 +277,9 @@ public sealed class StyleNano : StyleBase
     public static RectBox ChatPanel =>
         new()
         {
-            Borders         = new(Colors.ChatBorder, new(2.0f, 0.0f, 0.0f, 0.0f)),
-            InsetBorders    = new(Colors.ChatInsetBorder, new(2.0f, 0.0f, 0.0f, 0.0f)),
-            BackgroundColor = Colors.ChatBackground
+            Border = new(Colors.ChatBorder, new(2.0f, 0.0f, 0.0f, 0.0f)),
+            Inset  = new(Colors.ChatInsetBorder, new(2.0f, 0.0f, 0.0f, 0.0f)),
+            Color  = Colors.ChatBackground
         };
 
     #endregion

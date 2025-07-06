@@ -13,24 +13,12 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Content.Shared.UIKit;
-using Robust.Client.UserInterface.Controls;
+namespace Content.Client.UIKit;
 
 
-namespace Content.Client.UIKit.Controls;
-
-
-public sealed class UIKPanelContainer : PanelContainer
+public enum TitlebarStyle
 {
-    public Rounding Rounding { get; set; } = new(0.0f);
-
-    public UIKPanelContainer()
-    {
-        PanelOverride = new RectBox
-        {
-            Color    = Colors.IndigoGray1400,
-            Border   = new(Colors.WindowInsetBorder, new(2.0f)),
-            Rounding = Rounding
-        };
-    }
+    Default,
+    Inlined,
+    InlinedCompact
 }

@@ -1,0 +1,40 @@
+// Copyright (C) 2025 Igor Spichkin
+
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+light_mode unshaded;
+
+uniform highp vec4 fillColor;
+uniform highp vec4 borderColor;
+uniform highp vec4 insetColor;
+// X, Y, RADIUS, UNUSED
+uniform highp vec4 params;
+// BORDER, INSET, UNUSED, UNUSED
+uniform highp vec4 thickness;
+
+void fragment() {
+    highp vec2 coords = vec2(FRAGCOORD.x, 1.0 / SCREEN_PIXEL_SIZE.y - FRAGCOORD.y);
+
+    highp vec2 pos = params.xy;
+    highp float radius = params.z;
+    highp float border = thickness.x;
+    highp float inset = thickness.y;
+
+    highp float distance = length(coords - pos) - radius;
+    highp float absDistance = abs(distance);
+
+    COLOR = (distance < absDistance - border - inset) ? fillColor :
+            ((distance < absDistance - border) ? insetColor :
+            ((distance <= 0.0) ? borderColor : vec4(0.0, 0.0, 0.0, 0.0)));
+}

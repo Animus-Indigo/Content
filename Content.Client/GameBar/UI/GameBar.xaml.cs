@@ -13,7 +13,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Content.Client.UserInterface.Controls;
+using Content.Client.UIKit;
 using Content.Shared.Localizations;
 using Content.Shared.UIKit;
 using Robust.Client.Animations;
@@ -32,29 +32,29 @@ public sealed partial class GameBar : UIWidget
 {
     private const string ChangeStyleAnimationKey = "ChangeStyleAnimationKey";
 
-    private readonly GameBarPopup  _popup = new();
-    private readonly RectBox          _panel;
+    private readonly GameBarPopup     _popup = new();
+    private readonly RectBox       _panel;
     private          LocalizedString? _currentCategory;
 
     [Animatable]
     public Color BackgroundColor
     {
-        get => _panel.BackgroundColor;
-        set => _panel.BackgroundColor = value;
+        get => _panel.Color;
+        set => _panel.Color = value;
     }
 
     [Animatable]
     public Color BorderColor
     {
-        get => _panel.Borders!.Value.Color;
-        set => _panel.Borders = _panel.Borders!.Value with { Color = value, };
+        get => _panel.Border.Color;
+        set => _panel.Border = _panel.Border with { Color = value, };
     }
 
     [Animatable]
     public Color InsetBorderColor
     {
-        get => _panel.InsetBorders!.Value.Color;
-        set => _panel.InsetBorders = _panel.Borders!.Value with { Color = value, };
+        get => _panel.Inset.Color;
+        set => _panel.Inset = _panel.Inset with { Color = value, };
     }
 
     public event Action<LocalizedString, LocalizedString>? ItemPressed;
@@ -67,9 +67,9 @@ public sealed partial class GameBar : UIWidget
 
         GlobalMenuPanel.PanelOverride = _panel = new()
         {
-            Borders         = new(defaultStyle.Border, new(0.0f, 0.0f, 0.0f, 2.0f)),
-            InsetBorders    = new(defaultStyle.InsetBorder, new(0.0f, 0.0f, 0.0f, 2.0f)),
-            BackgroundColor = defaultStyle.Background
+            Border = new(defaultStyle.Border, new(2.0f)),
+            Inset  = new(defaultStyle.InsetBorder, new(2.0f)),
+            Color  = defaultStyle.Background
         };
 
         SetStyle(defaultStyle);
@@ -109,7 +109,7 @@ public sealed partial class GameBar : UIWidget
                     Property = nameof(BackgroundColor),
                     KeyFrames =
                     {
-                        new(currentPanel.BackgroundColor, 0.0f),
+                        new(currentPanel.Color, 0.0f),
                         new(style.Background, AnimationConstants.ControlFadeInDuration)
                     }
                 },
@@ -118,7 +118,7 @@ public sealed partial class GameBar : UIWidget
                     Property = nameof(BorderColor),
                     KeyFrames =
                     {
-                        new(currentPanel.Borders!.Value.Color, 0.0f),
+                        new(currentPanel.Border.Color, 0.0f),
                         new(style.Border, AnimationConstants.ControlFadeInDuration)
                     }
                 },
@@ -127,7 +127,7 @@ public sealed partial class GameBar : UIWidget
                     Property = nameof(InsetBorderColor),
                     KeyFrames =
                     {
-                        new(currentPanel.InsetBorders!.Value.Color, 0.0f),
+                        new(currentPanel.Inset.Color, 0.0f),
                         new(style.InsetBorder, AnimationConstants.ControlFadeInDuration)
                     }
                 }

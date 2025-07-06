@@ -13,24 +13,20 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Content.Shared.UIKit;
-using Robust.Client.UserInterface.Controls;
+namespace Content.Client.UIKit;
 
 
-namespace Content.Client.UIKit.Controls;
-
-
-public sealed class UIKPanelContainer : PanelContainer
+public readonly record struct Rounding(float TopLeft, float TopRight, float BottomRight, float BottomLeft)
 {
-    public Rounding Rounding { get; set; } = new(0.0f);
+    public const float Large = 18.0f;
 
-    public UIKPanelContainer()
-    {
-        PanelOverride = new RectBox
-        {
-            Color    = Colors.IndigoGray1400,
-            Border   = new(Colors.WindowInsetBorder, new(2.0f)),
-            Rounding = Rounding
-        };
-    }
+    public const float Medium = 12.0f;
+
+    public const float Small = 8.0f;
+
+    public const float Xs = 6.0f;
+
+    public Rounding(float uniform) : this(uniform, uniform, uniform, uniform) { }
+
+    public float Sum() => TopLeft + TopRight + BottomRight + BottomLeft;
 }

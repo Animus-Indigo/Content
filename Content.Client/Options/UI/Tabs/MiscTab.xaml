@@ -5,7 +5,6 @@
               SeparationOverride="8">
     <ScrollContainer VerticalExpand="True" HorizontalExpand="True">
         <BoxContainer Orientation="Vertical" VerticalExpand="True" SeparationOverride="12">
-
             <BoxContainer Orientation="Vertical" SeparationOverride="8">
                 <uik:UIKLabel Text="{Loc 'ui-options-general-ui-style'}"
                               TextStyle="Headline" />
