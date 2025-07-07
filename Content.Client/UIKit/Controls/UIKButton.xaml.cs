@@ -274,6 +274,7 @@ public partial class UIKButton : ContainerButton
         };
 
         Color   backgroundColor;
+        Border? border;
         Border? insetBorders;
 
         if (Style == ButtonStyle.Outlined)
@@ -281,6 +282,7 @@ public partial class UIKButton : ContainerButton
             var insetBorderColor = GetColorFor(Color, DrawModeEnum.Normal);
 
             backgroundColor = Pressed ? insetBorderColor : Colors.WindowBackground;
+            border          = null;
             insetBorders = new(
                 insetBorderColor,
                 new(
@@ -302,6 +304,15 @@ public partial class UIKButton : ContainerButton
             };
 
             backgroundColor = GetColorFor(Color, DrawMode);
+            border = new Border(
+                Colors.ButtonBorder,
+                new(
+                    rounding.TopLeft + rounding.BottomLeft == 0.0f ? 0.0f : 1.0f,
+                    1.0f,
+                    rounding.TopRight + rounding.BottomRight == 0.0f ? 0.0f : 1.0f,
+                    1.0f
+                )
+            );
             insetBorders = DrawMode == DrawModeEnum.Disabled
                 ? null
                 : new(insetBorderColor, new(0.0f, 1.0f, 0.0f, 0.0f));
@@ -312,6 +323,7 @@ public partial class UIKButton : ContainerButton
         {
             Rounding = rounding,
             Color    = backgroundColor,
+            Border   = border ?? new(),
             Inset    = insetBorders ?? new()
         };
     }

@@ -244,8 +244,9 @@ public static class Colors
 
     #region Button
 
-    public static Color ButtonLabel         => Color.White;
-    public static Color ButtonDisabledLabel => Gray600;
+    public static          Color ButtonLabel         => Color.White;
+    public static          Color ButtonDisabledLabel => Gray600;
+    public static readonly Color ButtonBorder = Color.Black.WithAlpha(0.25f);
 
     #region Default
 
@@ -287,7 +288,7 @@ public static class Colors
 
     #region Line Edit
 
-    public static          Color LineEditBackground => IndigoGray1200;
+    public static          Color LineEditBackground => IndigoGray1200.WithAlpha(0.50f);
     public static readonly Color LineEditBorder      = IndigoGray1000;
     public static readonly Color LineEditInsetBorder = IndigoGray800;
     public static          Color LineEditPlaceholder => ButtonDisabledLabel;
@@ -300,6 +301,7 @@ public static class Colors
 
     public static Color CheckBoxBackground        => ButtonBackground;
     public static Color CheckBoxCheckedBackground => ButtonAccentBackground;
+    public static Color CheckBoxBorder            => ButtonBorder;
 
     #endregion
 

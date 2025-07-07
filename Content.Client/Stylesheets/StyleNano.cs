@@ -232,6 +232,7 @@ public sealed class StyleNano : StyleBase
         new()
         {
             Rounding = new(Rounding.Xs),
+            Border   = new(Colors.CheckBoxBorder, new(1.0f)),
             Color    = Colors.CheckBoxBackground
         };
 
@@ -239,6 +240,7 @@ public sealed class StyleNano : StyleBase
         new()
         {
             Rounding = new(Rounding.Xs),
+            Border   = new(Colors.CheckBoxBorder, new(1.0f)),
             Color    = Colors.CheckBoxCheckedBackground
         };
 
