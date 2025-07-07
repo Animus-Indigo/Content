@@ -67,8 +67,8 @@ public sealed partial class GameBar : UIWidget
 
         GlobalMenuPanel.PanelOverride = _panel = new()
         {
-            Border = new(defaultStyle.Border, new(1.0f)),
-            Inset  = new(defaultStyle.InsetBorder, new(1.0f)),
+            Border = new(defaultStyle.Border, new(0.0f, 0.0f, 0.0f, 1.0f)),
+            Inset  = new(defaultStyle.InsetBorder, new(0.0f, 0.0f, 0.0f, 1.0f)),
             Color  = defaultStyle.Background
         };
 

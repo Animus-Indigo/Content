@@ -114,7 +114,6 @@ public sealed class DrawKitManager
             }
         }
 
-        // TODO: Add variable border thickness
         public void DrawRectangle(
             UIBox2   rect,
             Color    color,
@@ -140,12 +139,21 @@ public sealed class DrawKitManager
                 new Vector4(rounding.TopLeft, rounding.TopRight, rounding.BottomRight, rounding.BottomLeft)
             );
             shader.SetParameter(
-                "thickness",
+                "borderThickness",
                 new Vector4(
-                    border.Thickness.Left,
-                    inset.Thickness.Left,
-                    0.0f,
-                    0.0f
+                    border.Thickness.Bottom,
+                    border.Thickness.Right,
+                    border.Thickness.Top,
+                    border.Thickness.Left
+                )
+            );
+            shader.SetParameter(
+                "insetThickness",
+                new Vector4(
+                    inset.Thickness.Bottom,
+                    inset.Thickness.Right,
+                    inset.Thickness.Top,
+                    inset.Thickness.Left
                 )
             );
 

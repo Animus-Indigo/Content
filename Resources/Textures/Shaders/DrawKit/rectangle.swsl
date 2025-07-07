@@ -22,8 +22,10 @@ uniform highp vec4 insetColor;
 uniform highp vec4 rect;
 // TopLeft, TopRight, BottomRight, BottomLeft
 uniform highp vec4 rounding;
-// BORDER, INSET, UNUSED, UNUSED
-uniform highp vec4 thickness;
+// Top, Right, Bottom, Left
+uniform highp vec4 borderThickness;
+// Top, Right, Bottom, Left
+uniform highp vec4 insetThickness;
 
 highp float sdf(in highp vec2 pos, in highp vec2 size, in highp vec4 rounding)
 {
@@ -35,25 +37,75 @@ highp float sdf(in highp vec2 pos, in highp vec2 size, in highp vec4 rounding)
     return min(max(q.x, q.y), 0.0) + length(max(q, 0.0)) - rounding.z;
 }
 
+highp vec2 calcHalfSize(in highp vec4 thickness) {
+    return vec2(thickness.y + thickness.w, thickness.x + thickness.z) / 2.0;
+}
+
+highp vec2 calcOffset(in highp vec4 thickness) {
+    return vec2(thickness.y - thickness.w, thickness.x - thickness.z) / 2.0;
+}
+
+highp vec4 calcRounding(in highp vec4 thickness) {
+    return vec4(
+       min(thickness.w, thickness.x),
+       min(thickness.x, thickness.y),
+       min(thickness.y, thickness.z),
+       min(thickness.z, thickness.w)
+   );
+}
+
 void fragment() {
-    highp vec2 coords = vec2(FRAGCOORD.x, 1.0 / SCREEN_PIXEL_SIZE.y - FRAGCOORD.y);
+    highp vec2 coords = vec2(
+        FRAGCOORD.x,
+        1.0 / SCREEN_PIXEL_SIZE.y - FRAGCOORD.y
+    );
 
     highp vec2 pos = rect.xy;
     highp vec2 size = rect.zw;
-    highp float border = thickness.x;
-    highp float inset = thickness.y;
+
+    vec2 borderHalfSize = calcHalfSize(borderThickness);
+    vec2 borderOffset = calcOffset(borderThickness);
+    vec4 borderRounding = calcRounding(borderThickness);
+
+    vec2 insetHalfSize = calcHalfSize(insetThickness);
+    vec2 insetOffset = calcOffset(insetThickness);
+    vec4 insetRounding = calcRounding(insetThickness);
 
     highp vec2 nPos = coords - pos;
 
-	highp float dFill = sdf(nPos, size - inset - border, rounding - inset - border);
-    highp float dInset = sdf(nPos, size - border, rounding - border);
-    highp float dBorder = sdf(nPos, size, rounding);
+	highp float dFill = sdf(
+	    nPos + borderOffset + insetOffset,
+	    size - borderHalfSize - insetHalfSize,
+	    rounding - borderRounding - insetRounding
+    );
+    highp float dInset = sdf(
+        nPos + borderOffset,
+        size - borderHalfSize,
+        rounding - borderRounding
+    );
+    highp float dBorder = sdf(
+        nPos,
+        size,
+        rounding
+    );
 
     highp float wFill = 0.5 * fwidth(dFill);
     highp float wInset = 0.5 * fwidth(dInset);
     highp float wBorder = 0.5 * fwidth(dBorder);
 
-    COLOR = mix(borderColor, vec4(0.0, 0.0, 0.0, 0.0), smoothstep(-wBorder, wBorder, dBorder));
-    COLOR = mix(insetColor, COLOR, smoothstep(-wInset, wInset, dInset));
-    COLOR = mix(fillColor, COLOR, smoothstep(-wFill, wFill, dFill));
+    COLOR = mix(
+        borderColor,
+        vec4(0.0, 0.0, 0.0, 0.0),
+        smoothstep(-wBorder, wBorder, dBorder)
+    );
+    COLOR = mix(
+        insetColor,
+        COLOR,
+        smoothstep(-wInset, wInset, dInset)
+    );
+    COLOR = mix(
+        fillColor,
+        COLOR,
+        smoothstep(-wFill, wFill, dFill)
+    );
 }

@@ -215,10 +215,9 @@ public sealed class StyleNano : StyleBase
     public static RectBox LineEditPanel =>
         new()
         {
-            Rounding = new(0.0f),
-            Border   = new(Colors.LineEditBorder, new(2.0f)),
-            // TODO: Add variable border thickness
-            // Inset                = new(Colors.LineEditInsetBorder, new(0.0f, 0.0f, 0.0f, 1.0f)),
+            Rounding                    = new(0.0f),
+            Border                      = new(Colors.LineEditBorder, new(2.0f)),
+            Inset                       = new(Colors.LineEditInsetBorder, new(0.0f, 0.0f, 0.0f, 1.0f)),
             Color                       = Colors.LineEditBackground,
             ContentMarginTopOverride    = 4.0f,
             ContentMarginBottomOverride = 4.0f,
