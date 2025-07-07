@@ -164,7 +164,7 @@ public sealed class StyleNano : StyleBase
             Rounding = new(Rounding.Large),
             Border   = new(Colors.WindowBorder, new(1.0f)),
             Inset    = new(Colors.WindowInsetBorder, new(1.0f)),
-            Color    = Colors.WindowBackground.WithAlpha(0.99f)
+            Color    = Colors.WindowBackground.WithAlpha(0.98f)
         };
 
     public static RectBox FancyWindowPanelSmall =>
@@ -254,7 +254,7 @@ public sealed class StyleNano : StyleBase
             Rounding = new(Rounding.Medium),
             Border   = new(Colors.PopupBorder, new(1.0f)),
             Inset    = new(Colors.PopupInsetBorder, new(1.0f)),
-            Color    = Colors.PopupBackground.WithAlpha(0.99f)
+            Color    = Colors.PopupBackground.WithAlpha(0.98f)
         };
 
     public static StyleBoxFlat FancyPopupItemPanel =>
