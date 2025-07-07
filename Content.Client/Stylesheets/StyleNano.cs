@@ -162,8 +162,8 @@ public sealed class StyleNano : StyleBase
         new()
         {
             Rounding = new(Rounding.Large),
-            Border   = new(Colors.WindowBorder, new(2.0f)),
-            Inset    = new(Colors.WindowInsetBorder, new(2.0f)),
+            Border   = new(Colors.WindowBorder, new(1.0f)),
+            Inset    = new(Colors.WindowInsetBorder, new(1.0f)),
             Color    = Colors.WindowBackground.WithAlpha(0.99f)
         };
 
@@ -171,8 +171,8 @@ public sealed class StyleNano : StyleBase
         new()
         {
             Rounding = new(Rounding.Small),
-            Border   = new(Colors.WindowBorder, new(2.0f)),
-            Inset    = new(Colors.WindowInsetBorder, new(2.0f)),
+            Border   = new(Colors.WindowBorder, new(1.0f)),
+            Inset    = new(Colors.WindowInsetBorder, new(1.0f)),
             Color    = Colors.WindowBackground
         };
 
@@ -247,14 +247,14 @@ public sealed class StyleNano : StyleBase
 
     #endregion
 
-    #region Popupß
+    #region Popup
 
     public static RectBox FancyPopupPanel =>
         new()
         {
             Rounding = new(Rounding.Medium),
-            Border   = new(Colors.PopupBorder, new(2.0f)),
-            Inset    = new(Colors.PopupInsetBorder, new(2.0f)),
+            Border   = new(Colors.PopupBorder, new(1.0f)),
+            Inset    = new(Colors.PopupInsetBorder, new(1.0f)),
             Color    = Colors.PopupBackground.WithAlpha(0.99f)
         };
 
@@ -264,10 +264,12 @@ public sealed class StyleNano : StyleBase
             Padding = new(12.0f, 4.0f)
         };
 
-    public static StyleBoxFlat FancyPopupItemPanelHover =>
-        new(Colors.Accent800.WithAlpha(0.4f))
+    public static RectBox FancyPopupItemPanelHover =>
+        new()
         {
-            Padding = new(12.0f, 4.0f)
+            Color    = Colors.Accent800.WithAlpha(0.4f),
+            Rounding = new(Rounding.Xs),
+            Padding  = new(12.0f, 4.0f)
         };
 
     #endregion
@@ -277,8 +279,8 @@ public sealed class StyleNano : StyleBase
     public static RectBox ChatPanel =>
         new()
         {
-            Border = new(Colors.ChatBorder, new(2.0f, 0.0f, 0.0f, 0.0f)),
-            Inset  = new(Colors.ChatInsetBorder, new(2.0f, 0.0f, 0.0f, 0.0f)),
+            Border = new(Colors.ChatBorder, new(1.0f, 0.0f, 0.0f, 0.0f)),
+            Inset  = new(Colors.ChatInsetBorder, new(1.0f, 0.0f, 0.0f, 0.0f)),
             Color  = Colors.ChatBackground
         };
 

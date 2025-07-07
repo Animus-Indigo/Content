@@ -28,13 +28,21 @@ void fragment() {
 
     highp vec2 pos = params.xy;
     highp float radius = params.z;
-    highp float border = thickness.x;
-    highp float inset = thickness.y;
+    highp float border = thickness.x / 2.0;
+    highp float inset = thickness.y / 2.0;
 
-    highp float distance = length(coords - pos) - radius;
-    highp float absDistance = abs(distance);
+    highp vec2 nPos = coords - pos;
+    highp float d = length(nPos) - radius;
 
-    COLOR = (distance < absDistance - border - inset) ? fillColor :
-            ((distance < absDistance - border) ? insetColor :
-            ((distance <= 0.0) ? borderColor : vec4(0.0, 0.0, 0.0, 0.0)));
+    highp float dFill = d - border - inset;
+    highp float dInset = d - border;
+    highp float dBorder = d;
+
+    highp float wFill = 0.5 * fwidth(dFill);
+    highp float wInset = 0.5 * fwidth(dInset);
+    highp float wBorder = 0.5 * fwidth(dBorder);
+
+    COLOR = mix(borderColor, vec4(0.0, 0.0, 0.0, 0.0), smoothstep(-wBorder, wBorder, dBorder));
+    COLOR = mix(insetColor, COLOR, smoothstep(-wInset, wInset, dInset));
+    COLOR = mix(fillColor, COLOR, smoothstep(-wFill, wFill, dFill));
 }

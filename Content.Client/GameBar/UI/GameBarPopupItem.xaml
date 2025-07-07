@@ -19,13 +19,18 @@
     xmlns="https://spacestation14.io"
     xmlns:ui="clr-namespace:Content.Client.GameBar.UI"
     StyleClasses="FancyPopupItemButton">
-    <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
-        <Label Name="TitleLabel" HorizontalAlignment="Left" />
+    <BoxContainer Orientation="Horizontal"
+                  HorizontalExpand="True"
+                  Margin="4 0">
+        <Label Name="TitleLabel"
+               HorizontalAlignment="Left" />
 
-        <Control Margin="12" HorizontalExpand="True"
+        <Control Margin="16 12"
+                 HorizontalExpand="True"
                  HorizontalAlignment="Stretch" />
 
-        <Label Name="HotKeyLabel" StyleClasses="FancyPopupItemHotkeyLabel"
+        <Label Name="HotKeyLabel"
+               StyleClasses="FancyPopupItemHotkeyLabel"
                HorizontalAlignment="Right" />
     </BoxContainer>
 </ui:GameBarPopupItem>
