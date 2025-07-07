@@ -7,7 +7,7 @@
     <PanelContainer StyleClasses="FancyWindowPanel" HorizontalExpand="True">
         <BoxContainer Orientation="Horizontal">
             <BoxContainer Orientation="Vertical" VerticalAlignment="Center">
-                <uik:UIKFancyCheckBox Name="GroupCheckbox" HorizontalAlignment="Center"/>
+                <uik:UIKCheckBox Name="GroupCheckbox" HorizontalAlignment="Center"/>
             </BoxContainer>
             <customControls:VSeparator Margin="0 0 10 0"/>
             <BoxContainer Orientation="Vertical" HorizontalExpand="True">

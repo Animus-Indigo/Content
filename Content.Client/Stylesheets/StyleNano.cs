@@ -232,16 +232,14 @@ public sealed class StyleNano : StyleBase
         new()
         {
             Rounding = new(Rounding.Xs),
-            Color    = Colors.CheckBoxBackground,
-            Border   = new(Color.Black.WithAlpha(0.1f), new(2.0f))
+            Color    = Colors.CheckBoxBackground
         };
 
     public static RectBox FancyCheckBoxCheckedPanel =>
         new()
         {
             Rounding = new(Rounding.Xs),
-            Color    = Colors.CheckBoxCheckedBackground,
-            Border   = new(Color.Black.WithAlpha(0.1f), new(2.0f))
+            Color    = Colors.CheckBoxCheckedBackground
         };
 
     #endregion
@@ -810,26 +808,26 @@ public sealed class StyleNano : StyleBase
                         .Class(UIStyleClasses.GlobalMenuCategoryButton)
                         .Prop(
                             ContainerButton.StylePropertyStyleBox,
-                            new StyleBoxEmpty
-                            {
-                                Padding = new(8.0f, 0.0f)
-                            }),
+                            new StyleBoxEmpty()
+                        ),
 
                     Element<ContainerButton>()
                         .Class(UIStyleClasses.GlobalMenuCategoryButton)
                         .Pseudo(ContainerButton.StylePseudoClassHover)
                         .Prop(
                             ContainerButton.StylePropertyStyleBox,
-                            new StyleBoxFlat(new Color(255, 255, 255, 8))
+                            new RectBox
                             {
-                                Padding = new(8.0f, 0.0f)
+                                Color    = Color.White.WithAlpha(0.05f),
+                                Rounding = new(Rounding.Xs),
                             }),
 
                     Element<Label>()
                         .Class(UIStyleClasses.GlobalMenuCategoryLabel)
                         .Prop(
                             Label.StylePropertyFont,
-                            typographyManager.GetFont(FontType.SansSerif, weight: FontWeight.SemiBold)),
+                            typographyManager.GetFont(FontType.SansSerif, weight: FontWeight.SemiBold)
+                        ),
 
                     Element<Label>()
                         .Class(UIStyleClasses.GlobalMenuCategoryIcon)

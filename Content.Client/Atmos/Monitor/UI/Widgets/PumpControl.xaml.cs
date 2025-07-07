@@ -9,7 +9,6 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Localization;
-using UIKFancyCheckBox = Content.Client.UIKit.Controls.UIKFancyCheckBox;
 
 
 namespace Content.Client.Atmos.Monitor.UI.Widgets;
@@ -23,7 +22,7 @@ public sealed partial class PumpControl : BoxContainer
     public event Action<string, IAtmosDeviceData>? PumpDataChanged;
 	public event Action<IAtmosDeviceData>? PumpDataCopied;
 
-    private UIKFancyCheckBox      _enabled       => CEnableDevice;
+    private UIKCheckBox      _enabled       => CEnableDevice;
     private CollapsibleHeading _addressLabel  => CAddress;
     private UIKOptionButton  _pumpDirection => CPumpDirection;
     private UIKOptionButton  _pressureCheck => CPressureCheck;

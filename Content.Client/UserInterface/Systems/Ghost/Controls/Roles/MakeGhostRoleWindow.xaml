@@ -21,7 +21,7 @@
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
             <Label Name="MakeSentientLabel" Text="Make Sentient" />
-            <uik:UIKFancyCheckBox Name="MakeSentientCheckbox" />
+            <uik:UIKCheckBox Name="MakeSentientCheckbox" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal">
             <Label Name="RaffleLabel" Text="Raffle Role?" />

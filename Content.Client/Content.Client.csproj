@@ -28,6 +28,9 @@
     <Compile Update="Lobby\UI\LobbyCharacterPanel.xaml.cs">
       <DependentUpon>LobbyCharacterPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Update="UIKit\Controls\UIKCheckBox.xaml.cs">
+      <DependentUpon>UIKCheckBox.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
   <Import Project="..\RobustToolbox\MSBuild\XamlIL.targets" />

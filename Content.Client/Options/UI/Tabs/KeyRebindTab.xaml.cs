@@ -19,7 +19,6 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
 using UIKButton = Content.Client.UIKit.Controls.UIKButton;
-using UIKFancyCheckBox = Content.Client.UIKit.Controls.UIKFancyCheckBox;
 using UIKStripedList = Content.Client.UIKit.Controls.UIKStripedList;
 
 
@@ -256,7 +255,7 @@ namespace Content.Client.Options.UI.Tabs
                 if (!ShouldDisplayCheckBox(checkBoxName))
                     return;
 
-                var newCheckBox = new UIKFancyCheckBox() { Text = Loc.GetString(checkBoxName) };
+                var newCheckBox = new UIKCheckBox() { Text = Loc.GetString(checkBoxName) };
                 newCheckBox.Pressed   =  currentState;
                 newCheckBox.OnToggled += callBackOnClick;
 

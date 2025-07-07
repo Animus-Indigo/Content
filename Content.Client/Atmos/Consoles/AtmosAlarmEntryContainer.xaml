@@ -74,7 +74,7 @@
             </Control>
 
             <!-- Check box for silencing this alarm -->
-            <uik:UIKFancyCheckBox Name="SilenceCheckBox" Text="{Loc 'atmos-alerts-window-silence-alerts'}" HorizontalAlignment="Left" Margin="5 5 5 5" Access="Public"></uik:UIKFancyCheckBox>
+            <uik:UIKCheckBox Name="SilenceCheckBox" Text="{Loc 'atmos-alerts-window-silence-alerts'}" HorizontalAlignment="Left" Margin="5 5 5 5" Access="Public"></uik:UIKCheckBox>
         </BoxContainer>
     </PanelContainer>
 

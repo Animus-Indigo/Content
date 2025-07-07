@@ -6,8 +6,8 @@
         <BoxContainer Orientation="Vertical" HorizontalExpand="True">
             <humanoid:MarkingPicker Name="MarkingPickerWidget" />
             <BoxContainer>
-                <uik:UIKFancyCheckBox Name="MarkingForced" Text="Force" Pressed="True" />
-                <uik:UIKFancyCheckBox Name="MarkingIgnoreSpecies" Text="Ignore Species" Pressed="True" />
+                <uik:UIKCheckBox Name="MarkingForced" Text="Force" Pressed="True" />
+                <uik:UIKCheckBox Name="MarkingIgnoreSpecies" Text="Ignore Species" Pressed="True" />
             </BoxContainer>
             <Collapsible HorizontalExpand="True">
                 <CollapsibleHeading Title="Base layers" />

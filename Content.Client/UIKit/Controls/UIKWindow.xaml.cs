@@ -110,7 +110,7 @@ public partial class UIKWindow : BaseWindow
                 WindowTitlebar.PanelOverride = new RectBox
                 {
                     Rounding = new(Rounding.Large, Rounding.Large, 0.0f, 0.0f),
-                    Border   = new(Colors.WindowTitlebarBorder, new(1.0f)),
+                    Border   = new(Colors.WindowTitlebarBorder, new(1.0f, 1.0f, 1.0f, 0.0f)),
                     Inset    = new(Colors.WindowTitlebarInsetBorder, new(1.0f)),
                     Color    = Colors.WindowTitlebarBackground
                 };

@@ -1,4 +1,5 @@
 using System;
+using Content.Client.UIKit.Controls;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Monitor;
@@ -8,7 +9,6 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Localization;
-using UIKFancyCheckBox = Content.Client.UIKit.Controls.UIKFancyCheckBox;
 
 
 // holy FUCK
@@ -26,7 +26,7 @@ public sealed partial class ThresholdControl : BoxContainer
     public event Action<AtmosMonitorThresholdType, AtmosAlarmThreshold, Gas?>? ThresholdDataChanged;
 
     private CollapsibleHeading _name => CName;
-    private UIKFancyCheckBox _enabled => CEnabled;
+    private UIKCheckBox _enabled => CEnabled;
     private BoxContainer _dangerBounds => CDangerBounds;
     private BoxContainer _warningBounds => CWarningBounds;
     private ThresholdBoundControl _upperBoundControl;

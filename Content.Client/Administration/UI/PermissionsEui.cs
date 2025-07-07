@@ -18,7 +18,6 @@ using Robust.Shared.Maths;
 using Robust.Shared.Utility;
 using static Content.Shared.Administration.PermissionsEuiMsg;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
-using UIKFancyCheckBox = Content.Client.UIKit.Controls.UIKFancyCheckBox;
 using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
 
 
@@ -534,7 +533,7 @@ namespace Content.Client.Administration.UI
             public readonly LineEdit NameEdit;
             public readonly Button SaveButton;
             public readonly Button? RemoveButton;
-            public readonly Dictionary<AdminFlags, UIKFancyCheckBox> FlagCheckBoxes = new();
+            public readonly Dictionary<AdminFlags, UIKCheckBox> FlagCheckBoxes = new();
 
             public EditAdminRankWindow(PermissionsEui ui, KeyValuePair<int, PermissionsEuiState.AdminRankData>? data)
             {
@@ -570,7 +569,7 @@ namespace Content.Client.Administration.UI
                     var disable = !ui._adminManager.HasFlag(flag);
                     var flagName = flag.ToString().ToUpper();
 
-                    var checkBox = new UIKFancyCheckBox
+                    var checkBox = new UIKCheckBox
                     {
                         Disabled = disable,
                         Text = flagName

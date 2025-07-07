@@ -19,8 +19,8 @@ using JetBrains.Annotations;
 using Content.Shared.Atmos;
 using System.Linq;
 using Content.Client.UIKit;
+using Content.Client.UIKit.Controls;
 using Robust.Shared.Utility;
-using UIKFancyCheckBox = Content.Client.UIKit.Controls.UIKFancyCheckBox;
 
 
 namespace Content.Client.Pinpointer.UI;
@@ -107,7 +107,7 @@ public partial class NavMapControl : MapGridControl
         Disabled = true,
     };
 
-    private readonly UIKFancyCheckBox _beacons = new()
+    private readonly UIKCheckBox _beacons = new()
     {
         Text = Loc.GetString("navmap-toggle-beacons"),
         VerticalAlignment = VAlignment.Center,

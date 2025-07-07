@@ -7,7 +7,7 @@
         <CollapsibleBody Margin="20 0 0 0">
             <BoxContainer Orientation="Vertical">
                 <BoxContainer Orientation="Horizontal" Margin="0 0 0 2">
-                    <uik:UIKFancyCheckBox Name="CEnableDevice" Text="{Loc 'air-alarm-ui-widget-enable'}" />
+                    <uik:UIKCheckBox Name="CEnableDevice" Text="{Loc 'air-alarm-ui-widget-enable'}" />
                 </BoxContainer>
                 <!-- Upper row: toggle, direction, volume rate, widenet, copy settings -->
                 <BoxContainer Orientation="Horizontal" Margin="0 0 0 2" HorizontalExpand="True">
@@ -21,7 +21,7 @@
                     </BoxContainer>
                 </BoxContainer>
                 <BoxContainer>
-                    <uik:UIKFancyCheckBox Name="CWideNet" Text="{Loc 'air-alarm-ui-scrubber-wide-net-label'}" />
+                    <uik:UIKCheckBox Name="CWideNet" Text="{Loc 'air-alarm-ui-scrubber-wide-net-label'}" />
                 </BoxContainer>
                 <BoxContainer Orientation="Horizontal" Margin ="0 0 0 2">
                     <Button Name="CCopySettings" Text="{Loc 'air-alarm-ui-widget-copy'}" ToolTip="{Loc 'air-alarm-ui-widget-copy-tooltip'}" />

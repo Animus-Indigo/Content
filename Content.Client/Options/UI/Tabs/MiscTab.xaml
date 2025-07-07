@@ -20,12 +20,12 @@
                               TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                    <uik:UIKFancyCheckBox Name="ReducedMotionCheckBox" Text="{Loc 'ui-options-reduced-motion'}" />
-                    <uik:UIKFancyCheckBox Name="EnableColorNameCheckBox"
+                    <uik:UIKCheckBox Name="ReducedMotionCheckBox" Text="{Loc 'ui-options-reduced-motion'}" />
+                    <uik:UIKCheckBox Name="EnableColorNameCheckBox"
                                           Text="{Loc 'ui-options-enable-color-name'}" />
-                    <uik:UIKFancyCheckBox Name="ColorblindFriendlyCheckBox"
+                    <uik:UIKCheckBox Name="ColorblindFriendlyCheckBox"
                                           Text="{Loc 'ui-options-colorblind-friendly'}" />
-                    <uik:UIKFancyCheckBox Name="DisableFiltersCheckBox" Text="{Loc 'ui-options-no-filters'}" />
+                    <uik:UIKCheckBox Name="DisableFiltersCheckBox" Text="{Loc 'ui-options-no-filters'}" />
                 </BoxContainer>
 
                 <BoxContainer Orientation="Horizontal" SeparationOverride="12">
@@ -52,7 +52,7 @@
                               TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                    <uik:UIKFancyCheckBox Name="DiscordRich" Text="{Loc 'ui-options-discordrich'}" />
+                    <uik:UIKCheckBox Name="DiscordRich" Text="{Loc 'ui-options-discordrich'}" />
                 </BoxContainer>
             </BoxContainer>
 
@@ -61,13 +61,13 @@
                               TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                    <uik:UIKFancyCheckBox Name="ShowOocPatronColor"
+                    <uik:UIKCheckBox Name="ShowOocPatronColor"
                                           Text="{Loc 'ui-options-show-ooc-patron-color'}" />
-                    <uik:UIKFancyCheckBox Name="ShowLoocAboveHeadCheckBox"
+                    <uik:UIKCheckBox Name="ShowLoocAboveHeadCheckBox"
                                           Text="{Loc 'ui-options-show-looc-on-head'}" />
-                    <uik:UIKFancyCheckBox Name="FancySpeechBubblesCheckBox"
+                    <uik:UIKCheckBox Name="FancySpeechBubblesCheckBox"
                                           Text="{Loc 'ui-options-fancy-speech'}" />
-                    <uik:UIKFancyCheckBox Name="FancyNameBackgroundsCheckBox"
+                    <uik:UIKCheckBox Name="FancyNameBackgroundsCheckBox"
                                           Text="{Loc 'ui-options-fancy-name-background'}" />
                 </BoxContainer>
             </BoxContainer>
@@ -77,11 +77,11 @@
                               TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                    <uik:UIKFancyCheckBox Name="ShowHeldItemCheckBox"
+                    <uik:UIKCheckBox Name="ShowHeldItemCheckBox"
                                           Text="{Loc 'ui-options-show-held-item'}" />
-                    <uik:UIKFancyCheckBox Name="ShowCombatModeIndicatorsCheckBox"
+                    <uik:UIKCheckBox Name="ShowCombatModeIndicatorsCheckBox"
                                           Text="{Loc 'ui-options-show-combat-mode-indicators'}" />
-                    <uik:UIKFancyCheckBox Name="ShowOfferModeIndicatorsCheckBox"
+                    <uik:UIKCheckBox Name="ShowOfferModeIndicatorsCheckBox"
                                           Text="{Loc 'ui-options-show-offer-mode-indicators'}" />
                 </BoxContainer>
             </BoxContainer>
@@ -91,9 +91,9 @@
                               TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                    <uik:UIKFancyCheckBox Name="OpaqueStorageWindowCheckBox"
+                    <uik:UIKCheckBox Name="OpaqueStorageWindowCheckBox"
                                           Text="{Loc 'ui-options-opaque-storage-window'}" />
-                    <uik:UIKFancyCheckBox Name="StaticStorageUI"
+                    <uik:UIKCheckBox Name="StaticStorageUI"
                                           Text="{Loc 'ui-options-static-storage-ui'}" />
                 </BoxContainer>
             </BoxContainer>
@@ -103,7 +103,7 @@
                               TextStyle="Headline" />
 
                 <BoxContainer Orientation="Vertical" SeparationOverride="8">
-                    <uik:UIKFancyCheckBox Name="ModernProgressBar" Text="{Loc 'ui-options-modern-progress-bar'}" />
+                    <uik:UIKCheckBox Name="ModernProgressBar" Text="{Loc 'ui-options-modern-progress-bar'}" />
                 </BoxContainer>
             </BoxContainer>
 

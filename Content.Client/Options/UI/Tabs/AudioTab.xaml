@@ -106,20 +106,20 @@
         </BoxContainer>
 
         <BoxContainer Orientation="Vertical" SeparationOverride="8">
-            <uik:UIKFancyCheckBox Name="LobbyMusicCheckBox"
+            <uik:UIKCheckBox Name="LobbyMusicCheckBox"
                                   Text="{Loc 'ui-options-lobby-music'}" />
 
-            <uik:UIKFancyCheckBox Name="RestartSoundsCheckBox"
+            <uik:UIKCheckBox Name="RestartSoundsCheckBox"
                                   Text="{Loc 'ui-options-restart-sounds'}" />
 
-            <uik:UIKFancyCheckBox Name="EventMusicCheckBox"
+            <uik:UIKCheckBox Name="EventMusicCheckBox"
                                   Text="{Loc 'ui-options-event-music'}" />
 
-            <uik:UIKFancyCheckBox Name="AnnouncerDisableMultipleSoundsCheckBox"
+            <uik:UIKCheckBox Name="AnnouncerDisableMultipleSoundsCheckBox"
                                   Text="{Loc 'ui-options-announcer-disable-multiple-sounds'}"
                                   ToolTip="{Loc 'ui-options-announcer-disable-multiple-sounds-tooltip'}" />
 
-            <uik:UIKFancyCheckBox Name="AdminSoundsCheckBox"
+            <uik:UIKCheckBox Name="AdminSoundsCheckBox"
                                   Text="{Loc 'ui-options-admin-sounds'}" />
         </BoxContainer>
     </BoxContainer>

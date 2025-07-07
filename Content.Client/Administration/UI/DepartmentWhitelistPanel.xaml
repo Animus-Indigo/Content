@@ -5,7 +5,7 @@
         HorizontalExpand="True"
         Margin="4">
     <BoxContainer Orientation="Vertical">
-        <uik:UIKFancyCheckBox Name="Department"/> <!-- Toggles all jobs in the department at once -->
+        <uik:UIKCheckBox Name="Department"/> <!-- Toggles all jobs in the department at once -->
 	    <GridContainer Name="JobsContainer" Columns="4"/> <!-- Populated with each job to toggle individually-->
     </BoxContainer>
 </PanelContainer>

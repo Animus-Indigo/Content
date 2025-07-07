@@ -8,22 +8,22 @@
             <!-- Basic info -->
             <BoxContainer Orientation="Vertical" HorizontalExpand="True">
                 <BoxContainer Orientation="Horizontal" Margin="2">
-                    <uik:UIKFancyCheckBox Name="PlayerCheckbox" MinWidth="100" Text="{Loc ban-panel-player}" Pressed="True" />
+                    <uik:UIKCheckBox Name="PlayerCheckbox" MinWidth="100" Text="{Loc ban-panel-player}" Pressed="True" />
                     <Control MinWidth="50" />
                     <LineEdit Name="PlayerNameLine" MinWidth="100" HorizontalExpand="True" PlaceHolder="{Loc ban-panel-player}" />
                 </BoxContainer>
                 <BoxContainer Orientation="Horizontal" Margin="2">
-                    <uik:UIKFancyCheckBox Name="IpCheckbox" MinWidth="100" Text="{Loc ban-panel-ip}" Pressed="True" />
+                    <uik:UIKCheckBox Name="IpCheckbox" MinWidth="100" Text="{Loc ban-panel-ip}" Pressed="True" />
                     <Control MinWidth="50" />
                     <LineEdit Name="IpLine" MinWidth="100" HorizontalExpand="True" PlaceHolder="{Loc ban-panel-ip}" ToolTip="{Loc ban-panel-ip-hwid-tooltip}" Editable="False" />
                 </BoxContainer>
                 <BoxContainer Orientation="Horizontal" Margin="2">
-                    <uik:UIKFancyCheckBox Name="HwidCheckbox" MinWidth="100" Text="{Loc ban-panel-hwid}" Pressed="True" />
+                    <uik:UIKCheckBox Name="HwidCheckbox" MinWidth="100" Text="{Loc ban-panel-hwid}" Pressed="True" />
                     <Control MinWidth="50" />
                     <LineEdit Name="HwidLine" MinWidth="100" HorizontalExpand="True" PlaceHolder="{Loc ban-panel-hwid}" ToolTip="{Loc ban-panel-ip-hwid-tooltip}" />
                 </BoxContainer>
-                <uik:UIKFancyCheckBox Name="LastConnCheckbox" Margin="2" Text="{Loc ban-panel-last-conn}" Pressed="True" />
-                <uik:UIKFancyCheckBox Name="EraseCheckbox" Margin="2" Text="{Loc ban-panel-erase}" Pressed="False" />
+                <uik:UIKCheckBox Name="LastConnCheckbox" Margin="2" Text="{Loc ban-panel-last-conn}" Pressed="True" />
+                <uik:UIKCheckBox Name="EraseCheckbox" Margin="2" Text="{Loc ban-panel-erase}" Pressed="False" />
                 <BoxContainer Orientation="Horizontal" Margin="2">
                     <LineEdit Name="TimeLine" MaxWidth="150" MinWidth="70" PlaceHolder="0" />
                     <uik:UIKOptionButton Name="MultiplierOption" />

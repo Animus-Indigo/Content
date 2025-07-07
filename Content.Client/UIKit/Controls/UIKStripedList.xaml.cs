@@ -50,8 +50,8 @@ public sealed partial class UIKStripedList : BoxContainer
     public List<Color> Colors =
         new()
         {
-            Shared.UIKit.Colors.IndigoGray1300,
-            Shared.UIKit.Colors.IndigoGray1200
+            Shared.UIKit.Colors.IndigoGray1500.WithAlpha(0.8f),
+            Shared.UIKit.Colors.IndigoGray1500.WithAlpha(0.4f)
         };
 
 

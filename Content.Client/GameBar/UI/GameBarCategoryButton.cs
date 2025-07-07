@@ -26,6 +26,7 @@ public sealed class GameBarCategoryButton : Button
     {
         SetOnlyStyleClass(UIStyleClasses.GlobalMenuCategoryButton);
         Label.SetOnlyStyleClass(isIcon ? UIStyleClasses.GlobalMenuCategoryIcon : UIStyleClasses.GlobalMenuCategoryLabel);
+        Label.Margin = new(16.0f, 0.0f);
 
         if (isIcon)
             Label.VAlign = Label.VAlignMode.Center;

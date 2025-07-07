@@ -230,7 +230,7 @@ public static class Colors
 
     public static          Color WindowBackground => IndigoGray1300;
     public static readonly Color WindowBorder      = Color.Black;
-    public static readonly Color WindowInsetBorder = IndigoGray1000;
+    public static readonly Color WindowInsetBorder = IndigoGray900;
 
     public static readonly Color WindowTitle = Gray400;
     public static          Color WindowTitlebarBackground => IndigoGray1100;
@@ -250,7 +250,7 @@ public static class Colors
     #region Default
 
     public static Color ButtonBackground         => IndigoGray900;
-    public static Color ButtonPressedBackground  => IndigoGray800;
+    public static Color ButtonPressedBackground  => IndigoGray700;
     public static Color ButtonDisabledBackground => IndigoGray1000;
     public static Color ButtonInsetBorder        => IndigoGray700;
 
@@ -259,7 +259,7 @@ public static class Colors
     #region Accent
 
     public static Color ButtonAccentBackground         => Accent900;
-    public static Color ButtonAccentPressedBackground  => Accent800;
+    public static Color ButtonAccentPressedBackground  => Accent700;
     public static Color ButtonAccentDisabledBackground => Accent1000;
     public static Color ButtonAccentInsetBorder        => Accent700;
 
@@ -278,7 +278,7 @@ public static class Colors
 
     #region Slider
 
-    public static readonly Color SliderBackground = IndigoGray1500;
+    public static readonly Color SliderBackground = Color.Black.WithAlpha(0.5f);
     public static          Color SliderGrabberBackground         => ButtonBackground;
     public static          Color SliderGrabberPressedBackground  => ButtonPressedBackground;
     public static          Color SliderGrabberDisabledBackground => ButtonDisabledBackground;
@@ -307,7 +307,7 @@ public static class Colors
 
     public static Color PopupBackground  => IndigoGray1400;
     public static Color PopupBorder      => Color.Black;
-    public static Color PopupInsetBorder => IndigoGray1200;
+    public static Color PopupInsetBorder => IndigoGray1000;
 
     #endregion
 

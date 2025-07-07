@@ -16,10 +16,10 @@
             <ColorSelectorSliders Name="ColorPicker" IsAlphaVisible="True" />
             <Button Name="PickerOpen" Text="{Loc 'decal-placer-window-palette'}" />
         </BoxContainer>
-        <uik:UIKFancyCheckBox Name="EnableAuto" Text="{Loc 'decal-placer-window-enable-auto'}" Margin="0 0 0 10"/>
-        <uik:UIKFancyCheckBox Name="EnableColor" Text="{Loc 'decal-placer-window-use-color'}" />
-        <uik:UIKFancyCheckBox Name="EnableSnap" Text="{Loc 'decal-placer-window-enable-snap'}" />
-        <uik:UIKFancyCheckBox Name="EnableCleanable" Text="{Loc 'decal-placer-window-enable-cleanable'}" />
+        <uik:UIKCheckBox Name="EnableAuto" Text="{Loc 'decal-placer-window-enable-auto'}" Margin="0 0 0 10"/>
+        <uik:UIKCheckBox Name="EnableColor" Text="{Loc 'decal-placer-window-use-color'}" />
+        <uik:UIKCheckBox Name="EnableSnap" Text="{Loc 'decal-placer-window-enable-snap'}" />
+        <uik:UIKCheckBox Name="EnableCleanable" Text="{Loc 'decal-placer-window-enable-cleanable'}" />
         <BoxContainer HorizontalExpand="True" Orientation="Vertical">
             <Label Text="{Loc 'decal-placer-window-positionx'}" />
             <Slider HorizontalExpand="True" Name="PositionX" MinValue="-1" MaxValue="1" Value="0" />

@@ -28,7 +28,7 @@ public sealed class UIKPanelContainer : PanelContainer
     {
         PanelOverride = new RectBox
         {
-            Color    = Colors.IndigoGray1400,
+            Color    = Colors.IndigoGray1500.WithAlpha(0.6f),
             Border   = new(Colors.WindowInsetBorder, new(2.0f)),
             Rounding = Rounding
         };

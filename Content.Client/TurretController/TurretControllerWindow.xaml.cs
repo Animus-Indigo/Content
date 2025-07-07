@@ -11,7 +11,7 @@ using Robust.Shared.Prototypes;
 using System.Linq;
 using System.Numerics;
 using Content.Client.UIKit;
-using UIKFancyCheckBox = Content.Client.UIKit.Controls.UIKFancyCheckBox;
+using Content.Client.UIKit.Controls;
 using UIKWindow = Content.Client.UIKit.Controls.UIKWindow;
 
 
@@ -34,7 +34,7 @@ public sealed partial class TurretControllerWindow : UIKWindow
     private readonly ButtonGroup _accessGroupsButtons = new();
 
     // Temp values
-    private List<UIKFancyCheckBox> _checkBoxes = new();
+    private List<UIKCheckBox> _checkBoxes = new();
     private HashSet<AccessLevelPrototype> _accessLevelsForTab = new();
     private List<AccessLevelEntry> _accessLevelEntries = new();
 
@@ -328,7 +328,7 @@ public sealed partial class TurretControllerWindow : UIKWindow
         // Toggling this checkbox on will mark all other boxes below it on/off
         if (AccessLevelGrid.ChildCount == 0)
         {
-            var checkBox = new UIKFancyCheckBox
+            var checkBox = new UIKCheckBox
             {
                 Text = Loc.GetString("turret-controls-window-all-checkbox"),
                 Margin = new Thickness(0, 0, 0, 3),
@@ -356,7 +356,7 @@ public sealed partial class TurretControllerWindow : UIKWindow
         var allCheckBoxVisible = _accessLevelsForTab.Count > 1;
 
         // Did something go wrong...?
-        if (AccessLevelGrid.GetChild(0) is not UIKFancyCheckBox { } allCheckBox)
+        if (AccessLevelGrid.GetChild(0) is not UIKCheckBox { } allCheckBox)
             return;
 
         allCheckBox.Visible = allCheckBoxVisible;
@@ -374,7 +374,7 @@ public sealed partial class TurretControllerWindow : UIKWindow
             accessLevelEntry.CheckBox.OnPressed += args =>
             {
                 // If the checkbox and its siblings are checked, check the 'all' checkbox too
-                allCheckBox.Pressed = AreAllCheckBoxesPressed(_accessLevelEntries.Select(x => (UIKFancyCheckBox)x.CheckBox));
+                allCheckBox.Pressed = AreAllCheckBoxesPressed(_accessLevelEntries.Select(x => (UIKCheckBox)x.CheckBox));
 
                 OnAccessLevelsChangedEvent?.Invoke
                     (new HashSet<ProtoId<AccessLevelPrototype>>() { accessLevelEntry.AccessLevel }, accessLevelEntry.CheckBox.Pressed);
@@ -411,7 +411,7 @@ public sealed partial class TurretControllerWindow : UIKWindow
     }
 
 
-    private bool AreAllCheckBoxesPressed(IEnumerable<UIKFancyCheckBox> checkBoxes)
+    private bool AreAllCheckBoxesPressed(IEnumerable<UIKCheckBox> checkBoxes)
     {
         foreach (var checkBox in checkBoxes)
         {
@@ -422,7 +422,7 @@ public sealed partial class TurretControllerWindow : UIKWindow
         return true;
     }
 
-    private void SetCheckBoxPressedState(IEnumerable<UIKFancyCheckBox> checkBoxes, bool pressed)
+    private void SetCheckBoxPressedState(IEnumerable<UIKCheckBox> checkBoxes, bool pressed)
     {
         foreach (var checkBox in checkBoxes)
             checkBox.Pressed = pressed;
@@ -455,7 +455,7 @@ public sealed partial class TurretControllerWindow : UIKWindow
     private sealed class AccessLevelEntry : BoxContainer
     {
         public ProtoId<AccessLevelPrototype> AccessLevel = default!;
-        public UIKFancyCheckBox CheckBox;
+        public UIKCheckBox CheckBox;
         public LineRenderer CheckBoxLink;
 
         public AccessLevelEntry()
@@ -478,7 +478,7 @@ public sealed partial class TurretControllerWindow : UIKWindow
 
             AddChild(CheckBoxLink);
 
-            CheckBox = new UIKFancyCheckBox()
+            CheckBox = new UIKCheckBox()
             {
                 ToggleMode = true,
                 Margin = new Thickness(0f, 0f, 0f, 3f),

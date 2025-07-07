@@ -23,7 +23,7 @@ namespace Content.Client.UIKit.Controls;
 
 
 [GenerateTypedNameReferences, Virtual,]
-public partial class UIKFancyCheckBox : ContainerButton
+public partial class UIKCheckBox : ContainerButton
 {
     /// <summary>
     ///     The text displayed by the button.
@@ -33,7 +33,7 @@ public partial class UIKFancyCheckBox : ContainerButton
 
     private readonly bool _inited;
 
-    public UIKFancyCheckBox()
+    public UIKCheckBox()
     {
         RobustXamlLoader.Load(this);
 

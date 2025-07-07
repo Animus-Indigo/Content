@@ -12,7 +12,7 @@
             <LineEdit Name="PlayerLine" PlaceHolder="PlayerUid" HorizontalExpand="True" />
         </BoxContainer>
         <BoxContainer Orientation="Horizontal" Margin="2">
-            <uik:UIKFancyCheckBox Name="GroupCheckbox" Text="{Loc time-transfer-panel-checkbox-group}" MinWidth = "120"/>
+            <uik:UIKCheckBox Name="GroupCheckbox" Text="{Loc time-transfer-panel-checkbox-group}" MinWidth = "120"/>
             <Control MinWidth ="10"/>
             <LineEdit Name="GroupTimeLine" PlaceHolder="0h0m" HorizontalExpand="True" />
         </BoxContainer>

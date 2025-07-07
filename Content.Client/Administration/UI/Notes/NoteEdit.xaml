@@ -12,9 +12,9 @@
         <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
             <uik:UIKOptionButton Name="TypeOption" HorizontalAlignment="Center" />
             <uik:UIKOptionButton Name="SeverityOption" HorizontalAlignment="Center" />
-            <uik:UIKFancyCheckBox Name="SecretCheckBox" Text="{Loc admin-note-editor-secret}"
+            <uik:UIKCheckBox Name="SecretCheckBox" Text="{Loc admin-note-editor-secret}"
                                     ToolTip="{Loc admin-note-editor-secret-tooltip}" />
-            <uik:UIKFancyCheckBox Name="PermanentCheckBox" Pressed="True" Text="{Loc admin-note-editor-expiry-checkbox}"
+            <uik:UIKCheckBox Name="PermanentCheckBox" Pressed="True" Text="{Loc admin-note-editor-expiry-checkbox}"
                                     ToolTip="{Loc admin-note-editor-expiry-checkbox-tooltip}" />
             <Button Name="SubmitButton" Text="{Loc admin-note-editor-submit}" HorizontalAlignment="Right" />
         </BoxContainer>

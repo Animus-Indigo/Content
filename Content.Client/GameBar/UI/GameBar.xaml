@@ -21,7 +21,6 @@
     <PanelContainer Name="GlobalMenuPanel" HorizontalExpand="True" MaxHeight="40" MinHeight="40">
         <BoxContainer Margin="4 8" Orientation="Horizontal">
             <BoxContainer Name="MenuContainer"
-                          SeparationOverride="4"
                           HorizontalAlignment="Left"
                           VerticalAlignment="Center"
                           Orientation="Horizontal">
@@ -30,7 +29,6 @@
             <Control HorizontalExpand="True" HorizontalAlignment="Stretch" />
 
             <BoxContainer Name="StatusContainer"
-                          SeparationOverride="4"
                           HorizontalAlignment="Right"
                           VerticalAlignment="Center"
                           Orientation="Horizontal">

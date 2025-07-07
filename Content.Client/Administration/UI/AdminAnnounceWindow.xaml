@@ -12,7 +12,7 @@
         <TextEdit Name="Announcement" Access="Public" VerticalExpand="True" MinHeight="100" />
 
         <GridContainer Rows="1">
-            <uik:UIKFancyCheckBox Name="KeepWindowOpen" Access="Public" Text="{Loc 'admin-announce-keep-open'}" />
+            <uik:UIKCheckBox Name="KeepWindowOpen" Access="Public" Text="{Loc 'admin-announce-keep-open'}" />
             <Button Name="AnnounceButton" Access="Public" Disabled="True" Text="{Loc admin-announce-button}" HorizontalAlignment="Center"/>
         </GridContainer>
     </GridContainer>

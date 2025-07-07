@@ -7,7 +7,7 @@
               SeparationOverride="8">
     <BoxContainer Orientation="Vertical" SeparationOverride="8" VerticalExpand="True">
         <BoxContainer Orientation="Horizontal" SeparationOverride="12">
-            <uik:UIKFancyCheckBox Name="NetPredictCheckbox"
+            <uik:UIKCheckBox Name="NetPredictCheckbox"
                                   Text="{Loc 'ui-options-net-predict'}" />
         </BoxContainer>
 

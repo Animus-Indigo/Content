@@ -9,17 +9,17 @@
             <Label Text="NPC" HorizontalAlignment="Center"/>
         </controls:StripeBack>
         <BoxContainer Name="NPCBox" Orientation="Vertical">
-            <uik:UIKFancyCheckBox Name="NPCThonk" Text="Thonk"/>
+            <uik:UIKCheckBox Name="NPCThonk" Text="Thonk"/>
         </BoxContainer>
         <controls:StripeBack>
             <Label Text="Pathfinder" HorizontalAlignment="Center"/>
         </controls:StripeBack>
         <BoxContainer Name="PathfinderBox" Orientation="Vertical">
-            <uik:UIKFancyCheckBox Name="PathCrumbs" Text="Breadcrumbs"/>
-            <uik:UIKFancyCheckBox Name="PathPolys" Text="Polygons"/>
-            <uik:UIKFancyCheckBox Name="PathNeighbors" Text="Neighbors"/>
-            <uik:UIKFancyCheckBox Name="PathRouteCosts" Text="Route costs"/>
-            <uik:UIKFancyCheckBox Name="PathRoutes" Text="Routes"/>
+            <uik:UIKCheckBox Name="PathCrumbs" Text="Breadcrumbs"/>
+            <uik:UIKCheckBox Name="PathPolys" Text="Polygons"/>
+            <uik:UIKCheckBox Name="PathNeighbors" Text="Neighbors"/>
+            <uik:UIKCheckBox Name="PathRouteCosts" Text="Route costs"/>
+            <uik:UIKCheckBox Name="PathRoutes" Text="Routes"/>
         </BoxContainer>
     </BoxContainer>
 </uik:UIKWindow>
