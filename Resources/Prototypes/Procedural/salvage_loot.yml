@@ -124,8 +124,6 @@
           cost: 3
         - proto: PKAUpgradeRange
           cost: 2
-        - proto: CrateSecuritySwat
-          cost: 10
         - proto: ClothingOuterArmorBasic
           cost: 5
         - proto: Claymore
