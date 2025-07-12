@@ -157,3 +157,14 @@
     contents:
       - id: IngotSilver
         amount: 3
+
+- type: entity
+  id: CrateMaterialSilk
+  name: silk crate
+  description: 100 pieces of silk.
+  parent: CrateGenericSteel
+  components:
+  - type: StorageFill
+    contents:
+      - id: MaterialWebSilk
+        amount: 2
