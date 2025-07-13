@@ -2,12 +2,8 @@
   name: DT-8 "Terminus"
   parent: BaseItem
   id: Terminus
-  description: An advanced weapon crafted specifically for an oni. Capable of firing a spread of disabler shots from its tip.
+  description: An advanced weapon capable of firing a spread of disabler shots from its tip.
   components:
-  - type: RestrictedMelee
-    whitelist:
-      components:
-        - Oni
   - type: Sprite
     sprite: Objects/Weapons/Melee/terminus.rsi
     state: icon

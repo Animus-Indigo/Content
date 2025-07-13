@@ -137,3 +137,13 @@
   cost: 3000
   category: cargoproduct-category-name-materials
   group: market
+
+- type: cargoProduct
+  id: MaterialSilk
+  icon:
+    sprite: Objects/Materials/silk.rsi
+    state: icon
+  product: CrateMaterialSilk
+  cost: 1000
+  category: cargoproduct-category-name-materials
+  group: market
